@@ -188,3 +188,89 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
 | **Timing donde inicia la entrevista** | 0:45                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | **Duracion de la entrevista**         | 9:39                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | **Resumen**                           | Paul tiene 29 años, vive en Lima y realiza actividades de aventura cada dos o tres meses, principalmente trekking y rutas de montaña. En una de sus experiencias recientes realizó un trekking de varios días en Cusco junto a amigos y contrató una agencia debido a la dificultad de la ruta. <br> <br> Durante sus recorridos ha experimentado pérdida total de señal, lo que genera preocupación especialmente cuando alguien se separa del grupo o necesita ayuda. Actualmente utiliza mapas offline, Google Maps cuando existe cobertura y un reloj deportivo para registrar distancia, altitud y frecuencia cardíaca, además de compartir su ubicación mediante WhatsApp cuando es posible. <br> <br> Consideraría útil utilizar un dispositivo que monitoree su ubicación y signos vitales durante rutas largas o peligrosas. También valora recibir alertas de riesgo, clima y desviaciones de ruta, así como registrar automáticamente sus recorridos y fotos georreferenciadas. Sin embargo, considera fundamental que exista transparencia sobre la recopilación, almacenamiento y acceso a sus datos personales y de salud. |
+
+## 2.5. Ubiquitous Language
+
+En esta sección se presenta el glosario de términos del dominio de negocio de **VitalTrek**, orientado a la operación y seguridad del turismo de aventura en zonas con conectividad limitada del Perú. El objetivo de este lenguaje ubicuo es que todos los miembros del equipo Nexum Devs y los stakeholders (agencias, guías de campo y turistas) utilicen los mismos términos, con el mismo significado y sin ambigüedad, tanto en las entrevistas y el análisis de requerimientos como en la especificación de User Stories, el EventStorming y la comunicación diaria del proyecto.
+
+Los términos se presentan en **inglés** (idioma establecido para todos los productos de la solución), acompañados de su equivalente en español entre paréntesis cuando existe, y su definición en español. Se incluyen únicamente conceptos propios del dominio del turismo de aventura, la operación de tours y la seguridad preventiva en campo; no se incluyen términos técnicos de ingeniería de software.
+
+---
+
+### Actores del dominio
+
+| Término (inglés) | Equivalente (español) | Definición |
+| --- | --- | --- |
+| **Tour Operator** | Operador turístico / Agencia | Empresa formalmente constituida y registrada ante DIRCETUR/GERCETUR que organiza y opera tours de aventura. Es la responsable de la ruta, del personal de campo y de la seguridad de los turistas durante el recorrido. Constituye el cliente principal del segmento B2B. |
+| **Operations Administrator** | Administrador de operaciones | Persona dentro de la agencia encargada de planificar rutas, definir los puntos de control esperados, asignar guías y supervisar el estado de los grupos activos desde la base de operaciones. |
+| **Field Guide** | Guía de campo | Profesional acreditado que acompaña físicamente al grupo durante el recorrido, lidera la ruta, verifica el estado de los turistas y ejecuta las acciones de respuesta ante un incidente. |
+| **Adventure Tourist** | Turista de aventura | Persona nacional o extranjera que participa en una actividad de aventura (trekking, montañismo, expedición) contratada a una agencia. Porta el dispositivo de monitoreo y consulta la información de la ruta durante el recorrido. |
+| **Emergency Contact** | Contacto de emergencia | Persona designada por el turista al momento de la inscripción, a quien la agencia debe notificar ante un incidente que comprometa su integridad. |
+| **Rescue Entity** | Entidad de rescate | Organización externa responsable de la asistencia y evacuación en campo (Policía de Alta Montaña, SERNANP, Defensa Civil, servicios de salud locales) a la que la agencia escala un incidente crítico. |
+
+---
+
+### Operación del tour
+
+| Término (inglés) | Equivalente (español) | Definición |
+| --- | --- | --- |
+| **Adventure Tour** | Tour de aventura | Servicio turístico organizado por una agencia que implica el desplazamiento de un grupo por un entorno natural bajo condiciones de esfuerzo físico y exposición a riesgos del terreno. Tiene fecha de inicio, fecha de fin, ruta definida y guía responsable. |
+| **Route** | Ruta | Trazado geográfico oficial que sigue un tour, compuesto por una secuencia ordenada de puntos de control, con distancia, altitud y duración estimada conocidas por la agencia. |
+| **Expedition Group** | Grupo de expedición | Conjunto de turistas que recorren una misma ruta en una misma fecha bajo la responsabilidad de uno o más guías. Es la unidad mínima de supervisión operativa para la agencia. |
+| **Itinerary** | Itinerario | Programación por etapas del recorrido, que establece los tramos a cubrir por jornada, los tiempos esperados de llegada a cada punto de control y los lugares de descanso o pernocte. |
+| **Leg (Route Segment)** | Tramo | Porción de la ruta comprendida entre dos puntos de control consecutivos, a la que se asocia una ventana de tiempo esperada. |
+| **Checkpoint** | Punto de control | Ubicación física predefinida en la ruta por la que se espera que pase el grupo. Sirve como referencia para confirmar el avance del recorrido y como punto donde el dispositivo del turista transmite la información acumulada. |
+| **Expected Time Window** | Ventana de tiempo esperada | Rango de tiempo dentro del cual la agencia estima que un turista o grupo debe registrar su paso por un punto de control determinado, según la dificultad del tramo y el perfil del grupo. |
+| **Check-in Record** | Registro de paso | Evidencia de que un turista pasó por un punto de control en un momento determinado. Es la unidad básica de trazabilidad del recorrido. |
+| **Coverage Gap** | Zona sin cobertura | Tramo de la ruta donde no existe señal de red móvil, por lo que la agencia pierde contacto directo con el grupo hasta el siguiente punto de control. |
+| **High Season** | Temporada alta | Periodo del año con mayor volumen de tours operados simultáneamente (típicamente de mayo a setiembre en los circuitos andinos), en el que se incrementa la carga de supervisión de la agencia. |
+| **Tour Summary** | Resumen del recorrido | Consolidado generado al finalizar el tour con el recorrido efectivamente realizado, los puntos de control registrados y los eventos relevantes ocurridos. |
+
+---
+
+### Seguridad y monitoreo
+
+| Término (inglés) | Equivalente (español) | Definición |
+| --- | --- | --- |
+| **Wearable Device** | Dispositivo wearable | Equipo portátil entregado por la agencia al turista al inicio del tour, que registra su posición y sus signos vitales durante el recorrido. |
+| **Telemetry** | Telemetría | Conjunto de mediciones de posición y signos vitales capturadas por el dispositivo del turista a lo largo del recorrido. |
+| **Vital Signs** | Signos vitales | Indicadores fisiológicos del turista considerados por la operación para valorar su condición durante la ruta, principalmente frecuencia cardíaca y saturación de oxígeno. |
+| **Baseline Range** | Rango basal | Intervalo de valores considerado normal para un turista en una ruta y altitud determinadas, tomado como referencia para identificar una posible descompensación. |
+| **Anomaly** | Anomalía | Desviación de los signos vitales de un turista respecto de su rango basal que sugiere una posible descompensación física y requiere la atención del guía. |
+| **Delay** | Retraso | Situación en la que un turista o grupo no registra su paso por un punto de control dentro de la ventana de tiempo esperada. |
+| **Route Deviation** | Desviación de ruta | Situación en la que la posición registrada de un turista se aleja del trazado oficial de la ruta más allá del margen tolerado. |
+| **Early Warning Alert** | Alerta temprana | Aviso generado a partir de un retraso, una anomalía o una desviación de ruta, dirigido al administrador de operaciones y al guía de campo para permitir una respuesta antes de que la situación se convierta en emergencia. |
+| **False Alarm** | Falsa alarma | Alerta temprana que, al ser verificada en campo, no corresponde a una situación real de riesgo. Su exceso reduce la confianza del guía en el sistema de alertas. |
+| **Incident** | Incidencia | Suceso ocurrido durante el tour que afecta la seguridad, la salud o la continuidad del recorrido de un turista o del grupo, y que la agencia debe atender y registrar. |
+| **Emergency** | Emergencia | Incidencia de gravedad que compromete la integridad física de una persona y exige asistencia inmediata, escalamiento a entidades de rescate y, eventualmente, evacuación. |
+| **Safety Protocol** | Protocolo de seguridad | Conjunto de procedimientos establecidos por la agencia para prevenir, atender y escalar incidencias durante el recorrido. |
+| **Evacuation** | Evacuación | Traslado de un turista fuera de la ruta hacia un punto de atención médica o de acceso vehicular, como respuesta a una emergencia. |
+| **Altitude Sickness** | Mal de altura (soroche) | Cuadro clínico provocado por la exposición a gran altitud, frecuente en rutas andinas, que se manifiesta con cefalea, náuseas, fatiga extrema y dificultad respiratoria. |
+| **Acclimatization** | Aclimatación | Periodo de adaptación progresiva del turista a la altitud antes de iniciar los tramos más exigentes de la ruta. |
+| **Critical Point** | Punto crítico | Ubicación de la ruta identificada por la agencia como de mayor riesgo por sus condiciones (derrumbes, crecidas, pasos expuestos, cruces de río). |
+| **Route Note** | Nota de ruta | Información técnica sobre el estado del terreno o los puntos críticos de una ruta, cargada y validada por la agencia o el guía responsable de esa ruta, y consultable por el turista sin conexión. |
+| **Offline Consultation** | Consulta offline | Acceso del turista a la información de su ruta (mapa, puntos de control, notas de ruta) sin requerir conexión a red móvil o internet. |
+
+---
+
+### Modelo de negocio
+
+| Término (inglés) | Equivalente (español) | Definición |
+| --- | --- | --- |
+| **Subscription Plan** | Plan de suscripción | Modalidad de contratación mensual o anual mediante la cual una agencia accede al servicio, diferenciada según el volumen de grupos o turistas gestionados. |
+| **Pilot** | Piloto | Periodo de uso gratuito y acotado del servicio otorgado a una agencia con el fin de validar su utilidad operativa antes de una contratación pagada. |
+| **Booking** | Reserva | Compromiso de un turista de participar en un tour en una fecha determinada. Se considera parte del contexto del negocio de la agencia, pero está fuera del alcance funcional de VitalTrek. |
+| **Tourist Manifest** | Manifiesto de turistas | Relación oficial de los turistas que integran un grupo de expedición, con sus datos de contacto de emergencia y observaciones de salud relevantes. |
+
+---
+
+### Criterios de uso del lenguaje
+
+Para mantener la consistencia del lenguaje ubicuo a lo largo del proyecto, el equipo adopta los siguientes acuerdos:
+
+- Se usa **Checkpoint** y no "estación", "parada" o "hito"; el término designa siempre una ubicación esperada de la ruta.
+- Se distingue **Alert** (aviso generado por el sistema de reglas) de **Incident** (suceso real verificado por el guía) y de **Emergency** (incidencia grave con escalamiento externo).
+- Se distingue **Delay** (desviación respecto del tiempo esperado) de **Route Deviation** (desviación respecto del trazado de la ruta); ambas pueden originar una alerta temprana, pero responden a causas distintas.
+- Se usa **Expedition Group** para la unidad de supervisión y **Adventure Tour** para el servicio comercial; un tour puede operar más de un grupo en la misma fecha.
+- Se usa **Route Note** exclusivamente para la información técnica cargada por la agencia o el guía responsable de la ruta. VitalTrek no contempla reseñas abiertas de rutas publicadas por cualquier usuario.
+
