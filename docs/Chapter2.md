@@ -143,3 +143,39 @@ Las entrevistas constituyen la principal técnica de investigación cualitativa 
 **Ética:** Antes de cada entrevista se informará al participante sobre el propósito de la investigación, la confidencialidad de sus respuestas y su derecho a retirarse en cualquier momento. No se recopilará información personal identificable más allá de la necesaria para el reclutamiento.
  
 ---
+
+### 2.2.2. Registro de Entrevistas
+En esta sección presentamos los registros de las entrevistas que hicimos para cada segmento objetivo de nuestra aplicación.
+
+
+#### Segmento 1: Dueños o Responsables de Agencias de Turismo de Aventura
+
+| **Entrevista #1** |     |
+| ----------------- | --- |
+| **Nombre**        |     |
+| **Apellidos**     |     |
+| **Edad**          |     |
+| **Rol**           |     |
+|                   |
+
+
+#### Segmento 2: Turistas de Aventura
+
+| **Entrevista #1**                     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Nombre**                            | Jose                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| **Apellidos**                         | Asto Jacome                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| **Edad**                              | 21 años                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| **Rol**                               | Turista de Aventura                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| **Evidencias**                        | ![Entrevista 1 Segmento 2](../assets/images/chapter-2/entrevistas/entrevista1_segmento2.jpeg)                                                                                                                                                                                                                                                                                                                                                                      |
+| **Link**                              | [Ver Video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312566_upc_edu_pe/IQBmQZSUuC4rQL-ykZyS0tXxAQZmBNgqqT1MYFnG7LJnUVU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=q4dbKK)                                                                                                                          |
+| **Timing donde inicia la entrevista** | 0:30 min                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| **Duracion de la entrevista**         | 9:09 min                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| **Resumen**                           | El entrevistado realiza actividades de aventura dos o tres veces al año y suele contratar agencias para rutas largas, de alta montaña o selva, principalmente por seguridad y logística. Identificó la falta de conectividad como uno de los principales riesgos, ya que ha vivido situaciones de desorientación durante el Camino Inca y presenciado una emergencia por mal de altura en Huaraz donde la falta de comunicación satelital dificultó la evacuación. |
+
+Actualmente utiliza Maps.me, Garmin y Strava para orientarse y registrar distancia, altitud, desnivel y ritmo cardíaco. Sin embargo, señaló que compartir su ubicación por WhatsApp deja de funcionar al perder cobertura y que el celular consume rápidamente su batería intentando encontrar señal. Por ello, considera especialmente importante contar con mapas offline, ubicación exacta, distancia restante, alertas climáticas y avisos sobre riesgos de la ruta.
+
+También mostró interés en recibir información histórica y de puntos de interés durante el recorrido, así como en generar automáticamente una bitácora digital mediante fotos georreferenciadas. Estaría dispuesto a utilizar un wearable que monitoree su ubicación y signos vitales, siempre que sea cómodo, tenga buena batería y la agencia pueda recibir la señal en zonas remotas. Su principal preocupación sería la privacidad de sus datos, por lo que espera que sean utilizados únicamente durante el tour y posteriormente eliminados.
+
+Finalmente, considera que el monitoreo en tiempo real y los protocolos avanzados de emergencia serían un factor decisivo para elegir una agencia, e incluso estaría dispuesto a pagar un costo adicional por contar con mayor seguridad tecnológica.
+
