@@ -139,40 +139,40 @@ El estado actual de la gestión operativa turística y la seguridad preventiva e
 
 #### 1.2.2.3. Lean UX Hypothesis Statement
 
-* **Hipótesis 1 - Sincronización offline en Checkpoints y Telemetría** 
+* **Hipótesis 1 — Plataforma de configuración y supervisión de rutas** 
 
-**Creemos que** lograremos registrar exitosamente el paso de al menos el 95% de los turistas por los checkpoints configurados, manteniendo una pérdida de datos inferior al 5% <br>
-**Si** los operadores de agencias de turismo de aventura y los guías de campo <br>
-**Obtienen** visibilidad continua sobre la posición y el estado de sus grupos en tramos sin cobertura celular <br>
-**Con** el motor de sincronización asincrónica por checkpoints Bluetooth <br>
+**Creemos que** lograremos una reducción del 40% en el tiempo promedio requerido por las agencias para identificar y gestionar incidencias operativas durante los recorridos <br>
+**Si** los administradores y operadores de agencias de turismo de aventura<br>
+**Obtienen** sisibilidad continua sobre el progreso de sus grupos y la trazabilidad de tiempos estimados de paso sin depender de cobertura celular continua <br>
+**Con** una plataforma web centralizada que permita configurar rutas, establecer checkpoints esperados y supervisar periódicamente el avance de las expediciones. <br>
 
-* **Hipótesis 2 - Motor de Detección Temprana de Anomalías y Retrasos**
+* **Hipótesis 2 — Sincronización en ráfaga de telemetría vía Bluetooth**
 
-**Creemos que** lograremos reducir en un 40% el tiempo promedio de detección de retrasos o posibles anomalías durante los recorridos <br>
-**Si** los administradores de operaciones de la agencia y los guías de campo <br>
-**Obtienen** la capacidad de identificar tempranamente cuadros de descompensación física o desviaciones de tiempo antes de que se conviertan en emergencias <br>
-**Con** el algoritmo de detección temprana de anomalías en signos vitales y retrasos <br>
+**Creemos que** lograremos el registro exitoso del paso de al menos el 95% de los turistas por los checkpoints configurados, manteniendo una pérdida de datos inferior al 5% durante las pruebas del sistema<br>
+**Si** los operadores de agencias, guías y turistas de aventura
+**Obtienen** la recolección y transmisión automática de datos telemétricos aun en zonas remotas sin señal móvil <br>
+**Con** una arquitectura que reciba la telemetría del dispositivo del turista y la sincronice en ráfagas mediante checkpoints Bluetooth hacia una API RESTful. <br>
 
-* **Hipótesis 3 - Dashboard Web Centralizado de Operaciones e Incidentes**
+* **Hipótesis 3 — Motor de detección de anomalías y alertas en dashboard**
 
-**Creemos que** lograremos reducir en un 40% el tiempo promedio requerido por las agencias para identificar y gestionar incidencias durante las expediciones <br>
-**Si** las agencias y operadores de turismo de aventura (MYPEs) <br>
-**Obtienen** control centralizado de la seguridad operativa de todas sus expediciones y menor carga administrativa en reportes <br>
-**Con** el dashboard web centralizado de operaciones e incidentes <br>
+**Creemos que** lograremos una reducción del 40% en el tiempo promedio de detección de retrasos o posibles anomalías durante los primeros seis meses de uso en campo<br>
+**Si** los administradores de agencias y el personal de operaciones en base<br>
+**Obtienen** la identificación oportuna de demoras críticas y signos vitales alterados para actuar preventivamente ante emergencias <br>
+**Con** un motor de evaluación automática basado en reglas y un dashboard centralizado que presente alertas visuales priorizadas. <br>
 
-* **Hipótesis 4 - Módulo de Curaduría de Notas Técnicas de Ruta**
+* **Hipótesis 4 — Módulo de notas de terreno, consulta offline y resumen**
 
-**Creemos que** lograremos que al menos el 85% de los turistas encuestados califique como "Alta" o "Muy Alta" su percepción de seguridad y utilidad de las herramientas durante la ruta <br>
-**Si** los guías de campo y los turistas de aventura <br>
-**Obtienen** prevención ante riesgos del terreno (derrumbes o crecidas) y autonomía para consultar información técnica verificada en modo offline <br>
-**Con** el módulo de curaduría de notas técnicas de ruta y puntos críticos <br>
+**Creemos que** lograremos que al menos el 85% de los turistas encuestados califique como "Alta" o "Muy Alta" su percepción de seguridad y la utilidad de las herramientas del tour <br>
+**Si** los turistas de aventura y los guías responsables de ruta <br>
+**Obtienen** acceso a información técnica verificada de la ruta sin conexión, navegación contextual asistida y un resumen digital automático de su recorrido<br>
+**Con** una funcionalidad de notas operativas sobre puntos críticos cargadas por la agencia/guía, soporte de consulta offline y generación automática de reportes de recorrido.<br>
 
-* **Hipótesis 5 - Gestión Automatizada de Suscripciones SaaS con MercadoPago**
+* **Hipótesis 5 — Módulo de suscripciones SaaS con MercadoPago**
 
-**Creemos que** lograremos la conversión de al menos el 25% de las agencias participantes en pilotos gratuitos hacia una suscripción anual pagada durante los primeros 3 meses <br>
-**Si** los administradores de agencias de turismo de aventura en Cusco, Áncash, Arequipa y Puno <br>
-**Obtienen** la facilidad de activar y renovar el servicio mediante métodos de pago locales y flexibles sin fricciones administrativas <br>
-**Con** el módulo de gestión de suscripciones SaaS integrado con la pasarela de pagos de MercadoPago <br>
+**Creemos que** lograremos la conversión de al menos el 25% de las agencias participantes en el programa piloto a una suscripción pagada durante los primeros tres meses posteriores <br>
+**Si** las micro y pequeñas empresas (MYPEs) de turismo de aventura en Cusco, Áncash, Arequipa y Puno <br>
+**Obtienen** un proceso ágil y transparente para activar y renovar planes de servicio sin fricciones administrativas ni cobros manuales <br>
+**Con** un módulo de gestión de suscripciones SaaS integrado con la pasarela de pagos de MercadoPago. <br>
 
 #### 1.2.2.4. Lean UX Canvas
 
