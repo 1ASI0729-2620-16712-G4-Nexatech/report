@@ -25,10 +25,14 @@
       <td>Milenko Rubén Cayanchi Avila</td>
     </tr>
     <tr>
-      <td>-</td>
-      <td>-</td>
+      <td>u202319027</td>
+      <td>Diego Fernando Herrera Enriquez</td>
     </tr>
-        <tr>
+    <tr>
+      <td>u20241A827</td>
+      <td>Miler Alexander Rodriguez Rojas</td>
+    </tr>
+    <tr>
       <td>u202422549</td>
       <td>Jorge Mateo León Naupari</td>
     </tr>
@@ -39,12 +43,13 @@
 
 ## Registro de Versiones del Informe
 
-| Versión | Fecha      | Autores                      | Descripción de modificación                                              |
-| ------- | ---------- | ---------------------------- | ------------------------------------------------------------------------ |
-| 1.0     | 30/08/2026 | Milenko Rubén Cayanchi Avila | Redacción Antecedentes y problemática (1.2.1) y Segmentos Objetivo (1.3) |
-| 1.0     | 30/08/2026 | Jorge Mateo León Naupari     | Descripción de la Startup () y  (1.1.2)                                  |
-1.1 | 30/08/2026 | Mendoza Blanco Ariel Roberto | Analizis y Desarrollo de Lean UX Hypothesis Statements (1.2.2.3 )
-1.2 | 6/08/2026 | Mendoza Blanco Ariel Roberto | Desarrollo te la entrevista N°4; Segmento 2 (2.2.2)
+| Versión | Fecha      | Autores                         | Descripción de modificación                                                     |
+|---------|------------|---------------------------------|---------------------------------------------------------------------------------|
+| 1.0     | 30/08/2026 | Milenko Rubén Cayanchi Avila    | Redacción Antecedentes y problemática (1.2.1) y Segmentos Objetivo (1.3)        |
+| 1.0     | 30/08/2026 | Jorge Mateo León Naupari        | Descripción de la Startup () y  (1.1.2)                                         |
+| 1.1     | 30/08/2026 | Mendoza Blanco Ariel Roberto    | Analizis y Desarrollo de Lean UX Hypothesis Statements (1.2.2.3 )               |
+| 1.2     | 6/08/2026  | Mendoza Blanco Ariel Roberto    | Desarrollo te la entrevista N°4; Segmento 2 (2.2.2)                             |
+| 1.2     | 6/08/2026  | Diego Fernando Herrera Enriquez | Análisis de la entrevista N°1; Segmento 1 y entrevista N°2; Segmento 2 (2.2.2)  |
 
 ## Contenido
 
