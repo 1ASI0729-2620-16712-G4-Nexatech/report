@@ -317,6 +317,45 @@ Se ha elaborado una ficha de User Persona por cada segmento objetivo, utilizando
 
 #### 2.3.2. User Task Matrix
 
+En esta sección se presenta el User Task Matrix de VitalTrek, elaborado a partir del análisis de entrevistas de la sección 2.2.3 y de los dos User Personas presentados en la sección anterior. **Vanessa Quispe** representa al segmento de agencias y operadores de turismo de aventura, y su arquetipo se sustenta en las entrevistas a Vannya (Cusco), Celeste (Ayacucho) y Édgar (Huaraz). **Sebastian Rojas** representa al segmento de turistas de aventura nacionales y extranjeros, y su arquetipo se sustenta en las entrevistas a Jose, Paul y Elynor.
+
+Las tareas listadas corresponden a actividades que ambos User Personas realizan actualmente para cumplir sus objetivos, con independencia de la existencia de VitalTrek. No se trata de funcionalidades del software, sino del comportamiento real identificado en las entrevistas: coordinar por WhatsApp, esperar el reporte del guía, descargar mapas para usarlos sin conexión o avisar a un familiar antes de salir. Para cada tarea se evalúa la **Frecuencia** (Siempre, A menudo, A veces, Rara vez, Nunca) y la **Importancia** (Alta, Media, Baja) que tiene para cada User Persona.
+
+| Task (Tarea) | Vanessa Quispe<br>Frecuencia | Vanessa Quispe<br>Importancia | Sebastian Rojas<br>Frecuencia | Sebastian Rojas<br>Importancia |
+| --- | :---: | :---: | :---: | :---: |
+| Planificar la ruta, el itinerario y los tiempos esperados del recorrido | Siempre | Alta | A veces | Media |
+| Verificar las condiciones del terreno y del clima antes de la salida | Siempre | Alta | A menudo | Alta |
+| Asignar guías, movilidad y equipos a cada grupo | Siempre | Alta | Nunca | Baja |
+| Registrar los datos del turista y su contacto de emergencia | Siempre | Alta | A menudo | Media |
+| Comunicarse con el grupo o con la base durante el recorrido | Siempre | Alta | A menudo | Alta |
+| Esperar y recibir el reporte del guía al llegar a un punto con señal | Siempre | Alta | Rara vez | Baja |
+| Confirmar el avance del grupo en puntos de referencia de la ruta | A menudo | Alta | A veces | Media |
+| Verificar el estado físico de los integrantes durante el recorrido | A menudo | Alta | A menudo | Alta |
+| Orientarse y ubicarse dentro de la ruta | A veces | Media | Siempre | Alta |
+| Consultar mapas e información de la ruta sin conexión | A veces | Media | Siempre | Alta |
+| Avisar a un familiar o contacto de emergencia sobre su ubicación y estado | A veces | Media | Siempre | Alta |
+| Gestionar la batería y los dispositivos durante el recorrido | Rara vez | Baja | A menudo | Alta |
+| Detectar y atender una situación de riesgo o incidencia durante el tour | A menudo | Alta | Rara vez | Alta |
+| Coordinar la evacuación y el escalamiento a entidades de rescate | Rara vez | Alta | Rara vez | Alta |
+| Registrar por escrito las incidencias y los recorridos realizados | A menudo | Media | Rara vez | Baja |
+| Documentar la experiencia del recorrido con fotografías y registros | Rara vez | Baja | A menudo | Media |
+| Informarse sobre el contexto cultural e histórico de la ruta | Rara vez | Baja | A menudo | Media |
+| Revisar referencias y protocolos de seguridad antes de contratar u operar | A veces | Media | A menudo | Alta |
+| Gestionar el cobro o el pago del servicio del tour | Siempre | Alta | A veces | Media |
+
+**Análisis del User Task Matrix**
+
+Para Vanessa Quispe las tareas de mayor frecuencia e importancia se concentran en la preparación y la supervisión del tour: planificar la ruta y los tiempos esperados, verificar las condiciones del terreno, asignar guías y movilidad, registrar los datos de los turistas y mantener comunicación con el grupo. A ellas se suma una tarea que aparece en las tres entrevistas del segmento y que resulta particularmente reveladora: esperar el reporte del guía. El 100% de los entrevistados depende de WhatsApp, llamadas telefónicas y del aviso del guía para conocer la situación de sus grupos, de modo que la supervisión no es una acción que la agencia ejecuta, sino una espera a la que está sometida.
+
+Para Sebastian Rojas las tareas de frecuencia Siempre e importancia Alta son orientarse dentro de la ruta, consultar mapas sin conexión y avisar a un familiar sobre su ubicación y estado, lo que coincide con su frustración principal de no poder comunicarse con su familia durante varios días. La gestión de la batería y los dispositivos también resulta relevante, ya que en las entrevistas se menciona que el celular se descarga rápidamente al buscar señal y que se recurre a baterías portátiles. Informarse sobre el contexto cultural e histórico de la ruta aparece con importancia media, alineada con su motivación de enriquecer la experiencia del viaje.
+
+Entre las coincidencias, tres tareas resultan de importancia Alta para ambos User Personas: verificar las condiciones del terreno y el clima, verificar el estado físico durante el recorrido y comunicarse durante la ruta. Estas constituyen el núcleo compartido del problema, dado que ambos dependen del mismo canal de comunicación y este deja de operar al ingresar en zonas sin cobertura, situación reportada por el 100% de los entrevistados de ambos segmentos. Del mismo modo, coordinar una evacuación es una tarea de baja frecuencia pero de importancia Alta para ambos, pues ocurre pocas veces y cuando ocurre determina el desenlace del incidente.
+
+Entre las diferencias, las tareas de planificación, asignación de recursos, registro de incidencias y gestión del cobro son propias de Vanessa y prácticamente inexistentes para Sebastian, ya que corresponden al rol operativo y administrativo de la agencia. A la inversa, orientarse en la ruta, consultar información sin conexión, avisar a un familiar, gestionar la batería y documentar la experiencia son tareas frecuentes y valoradas por Sebastian, mientras que para Vanessa tienen menor frecuencia o se ejecutan de forma indirecta a través del guía. Otra diferencia relevante se observa en la detección de incidencias: para Vanessa es una tarea recurrente porque supervisa varios grupos de forma simultánea en temporada alta, mientras que para Sebastian es un evento excepcional, aunque de máxima importancia cuando ocurre.
+
+En conjunto, la matriz evidencia que ambos segmentos convergen en las tareas de verificación del estado del grupo y comunicación durante el recorrido, y que ambas se interrumpen por la falta de conectividad. Esto sustenta priorizar en el MVP las capacidades asociadas a la confirmación de avance mediante puntos de control, la detección de retrasos y anomalías, y la consulta offline de la información de la ruta, que coinciden con las funcionalidades señaladas como prioritarias por los propios entrevistados en la sección 2.2.3.
+
+
 #### 2.3.3. User Journey Mapping
 
 #### 2.3.4. Empathy Mapping
