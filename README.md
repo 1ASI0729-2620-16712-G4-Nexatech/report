@@ -17,8 +17,8 @@
       <th><strong>Apellidos y Nombres</strong></th>
     </tr>
     <tr>
-      <td>-</td>
-      <td>-</td>
+      <td>u202419667</td>
+      <td>Mendoza Blanco Ariel Roberto</td>
     </tr>
     <tr>
       <td>u202312566</td>
@@ -41,8 +41,10 @@
 
 | Versión | Fecha      | Autores                      | Descripción de modificación                                              |
 | ------- | ---------- | ---------------------------- | ------------------------------------------------------------------------ |
-| 1.0     | 30/10/2026 | Milenko Rubén Cayanchi Avila | Redacción Antecedentes y problemática (1.2.1) y Segmentos Objetivo (1.3) |
-| 1.0     | 30/10/2026 | Jorge Mateo León Naupari     | Descripción de la Startup () y  (1.1.2)                                  |
+| 1.0     | 30/08/2026 | Milenko Rubén Cayanchi Avila | Redacción Antecedentes y problemática (1.2.1) y Segmentos Objetivo (1.3) |
+| 1.0     | 30/08/2026 | Jorge Mateo León Naupari     | Descripción de la Startup () y  (1.1.2)                                  |
+1.1 | 30/08/2026 | Mendoza Blanco Ariel Roberto | Analizis y Desarrollo de Lean UX Hypothesis Statements (1.2.2.3 )
+1.2 | 6/08/2026 | Mendoza Blanco Ariel Roberto | Desarrollo te la entrevista N°4; Segmento 2 (2.2.2)
 
 ## Contenido
 
