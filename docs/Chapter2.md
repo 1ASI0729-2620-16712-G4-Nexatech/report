@@ -237,7 +237,7 @@ Para el segmento de dueños o responsables de agencias de turismo de aventura se
 | **Dependencia de WhatsApp y llamadas para el seguimiento**      | 3 de 3 entrevistados (100%) utilizan principalmente WhatsApp y llamadas telefónicas para comunicarse con sus grupos. | Celeste, Vannya y Édgar señalaron que utilizan WhatsApp y llamadas como principales medios de comunicación durante los tours.                                                                                    | El arquetipo necesita una solución que centralice la comunicación y el seguimiento de los grupos.            |
 | **Pérdida de señal durante los recorridos**                     | 3 de 3 entrevistados (100%) reportan problemas de conectividad en zonas remotas.                                     | Celeste señala que deben esperar hasta recuperar la señal; Vannya identifica dificultades de comunicación en zonas alejadas; Édgar indica que aproximadamente el 80% de algunos recorridos carece de cobertura.  | El funcionamiento sin conexión es una característica fundamental para VitalTrek.                             |
 | **Dificultad para conocer la ubicación y estado de los grupos** | 3 de 3 entrevistados (100%) dependen de los reportes de los guías o de recuperar la comunicación.                    | Los entrevistados indicaron que no pueden conocer continuamente la situación de los grupos cuando estos se encuentran sin cobertura.                                                                             | VitalTrek debe permitir registrar y sincronizar información mediante checkpoints incluso en zonas sin señal. |
-| **Experiencias relacionadas con situaciones de riesgo**         | 2 de 3 entrevistados (66.7%) han identificado o experimentado situaciones de riesgo durante los tours.                | Celeste relató un incidente relacionado con las condiciones de ruta; Vannya señaló las emergencias como una preocupación; Édgar relató un caso de mal de altura cuya información llegó varias horas después.     | La solución debe facilitar la detección temprana de riesgos y mejorar la capacidad de respuesta.             |
+| **Experiencias relacionadas con situaciones de riesgo**         | 2 de 3 entrevistados (66.7%) han identificado o experimentado situaciones de riesgo durante los tours.               | Celeste relató un incidente relacionado con las condiciones de ruta; Vannya señaló las emergencias como una preocupación; Édgar relató un caso de mal de altura cuya información llegó varias horas después.     | La solución debe facilitar la detección temprana de riesgos y mejorar la capacidad de respuesta.             |
 | **Interés en una plataforma de monitoreo**                      | 3 de 3 entrevistados (100%) consideran útil implementar una solución especializada.                                  | Celeste considera factible utilizar una plataforma de monitoreo; Vannya valora los checkpoints, alertas y detección de desviaciones; Édgar considera útil confirmar el paso de los grupos por puntos de control. | Se valida la necesidad de una plataforma como VitalTrek para mejorar la supervisión de las operaciones.      |
 | **Necesidad de ubicación y GPS**                                | 3 de 3 entrevistados (100%) consideran importante conocer la ubicación de sus grupos o unidades.                     | Celeste considera indispensable el GPS; Vannya valora el monitoreo mediante checkpoints; Édgar prioriza la confirmación de paso por puntos de control.                                                           | El seguimiento de ubicación debe formar parte del núcleo funcional de VitalTrek.                             |
 | **Necesidad de alertas ante situaciones anormales**             | 2 de 3 entrevistados (66.7%) mencionan explícitamente las alertas como una funcionalidad prioritaria.                | Vannya considera importantes las alertas de emergencia y desviaciones de ruta; Édgar prioriza una alerta cuando un grupo no llega a tiempo a un punto de control.                                                | VitalTrek debe incorporar alertas automáticas para facilitar la detección temprana de riesgos.               |
@@ -357,27 +357,27 @@ En esta sección se presenta el User Task Matrix de VitalTrek, elaborado a parti
 
 Las tareas listadas corresponden a actividades que ambos User Personas realizan actualmente para cumplir sus objetivos, con independencia de la existencia de VitalTrek. No se trata de funcionalidades del software, sino del comportamiento real identificado en las entrevistas: coordinar por WhatsApp, esperar el reporte del guía, descargar mapas para usarlos sin conexión o avisar a un familiar antes de salir. Para cada tarea se evalúa la **Frecuencia** (Siempre, A menudo, A veces, Rara vez, Nunca) y la **Importancia** (Alta, Media, Baja) que tiene para cada User Persona.
 
-| Task (Tarea) | Vanessa Quispe<br>Frecuencia | Vanessa Quispe<br>Importancia | Sebastian Rojas<br>Frecuencia | Sebastian Rojas<br>Importancia |
-| --- | :---: | :---: | :---: | :---: |
-| Planificar la ruta, el itinerario y los tiempos esperados del recorrido | Siempre | Alta | A veces | Media |
-| Verificar las condiciones del terreno y del clima antes de la salida | Siempre | Alta | A menudo | Alta |
-| Asignar guías, movilidad y equipos a cada grupo | Siempre | Alta | Nunca | Baja |
-| Registrar los datos del turista y su contacto de emergencia | Siempre | Alta | A menudo | Media |
-| Comunicarse con el grupo o con la base durante el recorrido | Siempre | Alta | A menudo | Alta |
-| Esperar y recibir el reporte del guía al llegar a un punto con señal | Siempre | Alta | Rara vez | Baja |
-| Confirmar el avance del grupo en puntos de referencia de la ruta | A menudo | Alta | A veces | Media |
-| Verificar el estado físico de los integrantes durante el recorrido | A menudo | Alta | A menudo | Alta |
-| Orientarse y ubicarse dentro de la ruta | A veces | Media | Siempre | Alta |
-| Consultar mapas e información de la ruta sin conexión | A veces | Media | Siempre | Alta |
-| Avisar a un familiar o contacto de emergencia sobre su ubicación y estado | A veces | Media | Siempre | Alta |
-| Gestionar la batería y los dispositivos durante el recorrido | Rara vez | Baja | A menudo | Alta |
-| Detectar y atender una situación de riesgo o incidencia durante el tour | A menudo | Alta | Rara vez | Alta |
-| Coordinar la evacuación y el escalamiento a entidades de rescate | Rara vez | Alta | Rara vez | Alta |
-| Registrar por escrito las incidencias y los recorridos realizados | A menudo | Media | Rara vez | Baja |
-| Documentar la experiencia del recorrido con fotografías y registros | Rara vez | Baja | A menudo | Media |
-| Informarse sobre el contexto cultural e histórico de la ruta | Rara vez | Baja | A menudo | Media |
-| Revisar referencias y protocolos de seguridad antes de contratar u operar | A veces | Media | A menudo | Alta |
-| Gestionar el cobro o el pago del servicio del tour | Siempre | Alta | A veces | Media |
+| Task (Tarea)                                                              | Vanessa Quispe<br>Frecuencia | Vanessa Quispe<br>Importancia | Sebastian Rojas<br>Frecuencia | Sebastian Rojas<br>Importancia |
+| ------------------------------------------------------------------------- | :--------------------------: | :---------------------------: | :---------------------------: | :----------------------------: |
+| Planificar la ruta, el itinerario y los tiempos esperados del recorrido   |           Siempre            |             Alta              |            A veces            |             Media              |
+| Verificar las condiciones del terreno y del clima antes de la salida      |           Siempre            |             Alta              |           A menudo            |              Alta              |
+| Asignar guías, movilidad y equipos a cada grupo                           |           Siempre            |             Alta              |             Nunca             |              Baja              |
+| Registrar los datos del turista y su contacto de emergencia               |           Siempre            |             Alta              |           A menudo            |             Media              |
+| Comunicarse con el grupo o con la base durante el recorrido               |           Siempre            |             Alta              |           A menudo            |              Alta              |
+| Esperar y recibir el reporte del guía al llegar a un punto con señal      |           Siempre            |             Alta              |           Rara vez            |              Baja              |
+| Confirmar el avance del grupo en puntos de referencia de la ruta          |           A menudo           |             Alta              |            A veces            |             Media              |
+| Verificar el estado físico de los integrantes durante el recorrido        |           A menudo           |             Alta              |           A menudo            |              Alta              |
+| Orientarse y ubicarse dentro de la ruta                                   |           A veces            |             Media             |            Siempre            |              Alta              |
+| Consultar mapas e información de la ruta sin conexión                     |           A veces            |             Media             |            Siempre            |              Alta              |
+| Avisar a un familiar o contacto de emergencia sobre su ubicación y estado |           A veces            |             Media             |            Siempre            |              Alta              |
+| Gestionar la batería y los dispositivos durante el recorrido              |           Rara vez           |             Baja              |           A menudo            |              Alta              |
+| Detectar y atender una situación de riesgo o incidencia durante el tour   |           A menudo           |             Alta              |           Rara vez            |              Alta              |
+| Coordinar la evacuación y el escalamiento a entidades de rescate          |           Rara vez           |             Alta              |           Rara vez            |              Alta              |
+| Registrar por escrito las incidencias y los recorridos realizados         |           A menudo           |             Media             |           Rara vez            |              Baja              |
+| Documentar la experiencia del recorrido con fotografías y registros       |           Rara vez           |             Baja              |           A menudo            |             Media              |
+| Informarse sobre el contexto cultural e histórico de la ruta              |           Rara vez           |             Baja              |           A menudo            |             Media              |
+| Revisar referencias y protocolos de seguridad antes de contratar u operar |           A veces            |             Media             |           A menudo            |              Alta              |
+| Gestionar el cobro o el pago del servicio del tour                        |           Siempre            |             Alta              |            A veces            |             Media              |
 
 **Análisis del User Task Matrix**
 
@@ -397,6 +397,19 @@ En conjunto, la matriz evidencia que ambos segmentos convergen en las tareas de 
 #### 2.3.4. Empathy Mapping
 
 ### 2.4. Big Picture EventStorming
+El Big Picture EventStorming de VitalTrek representa, en una línea temporal, los principales eventos del dominio relacionados con la planificación, ejecución, supervisión y cierre de un **Adventure Tour** en zonas con conectividad limitada.
+
+El flujo comienza con la configuración de la **Route**, los **Checkpoints**, las **Expected Time Windows** y el **Safety Protocol**. Luego se registra el **Expedition Group**, se asignan el **Field Guide** y los dispositivos de monitoreo, y se inicia el recorrido.
+
+Durante la operación, el grupo puede ingresar a una **Coverage Gap**. En este escenario, la telemetría se almacena offline y se sincroniza posteriormente mediante Bluetooth al llegar a un **Checkpoint**. La plataforma procesa la información recibida, actualiza el estado del grupo y evalúa retrasos, anomalías, signos vitales y desviaciones de ruta.
+
+Cuando se identifica una situación de riesgo, se genera y prioriza una **Early Warning Alert**. Según la gravedad, se confirma el incidente, se declara una emergencia, se notifica al **Emergency Contact** y se contacta a una **Rescue Entity**.
+
+Finalmente, se registra el último checkpoint, se sincroniza la telemetría final, se genera el **Tour Summary**, se revisan las **Route Notes**, se devuelve el dispositivo y se cierra el **Expedition Group**.
+
+![Big Picture EventStorming de VitalTrek](../assets/images/chapter-2/event_storming.png)
+
+**Figura X.** Big Picture EventStorming de VitalTrek.
 
 ### 2.5. Ubiquitous Language
 
