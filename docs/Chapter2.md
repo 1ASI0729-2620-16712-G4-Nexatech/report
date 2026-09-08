@@ -437,7 +437,6 @@ Finalmente, se registra el último checkpoint, se sincroniza la telemetría fina
 
 ![Big Picture EventStorming de VitalTrek](../assets/images/chapter-2/event_storming.png)
 
-**Figura X.** Big Picture EventStorming de VitalTrek.
 
 ### 2.5. Ubiquitous Language
 
