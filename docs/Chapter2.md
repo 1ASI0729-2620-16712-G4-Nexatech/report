@@ -394,7 +394,35 @@ En conjunto, la matriz evidencia que ambos segmentos convergen en las tareas de 
 
 #### 2.3.3. User Journey Mapping
 
+La elaboración de los mapas de viaje se estructuró bajo el escenario As-Is (situación actual), describiendo la experiencia que atraviesan los usuarios sin la existencia de VitalTrek. Este análisis evidencia las fricciones operativas, los vacíos de comunicación y la vulnerabilidad física a la que se enfrentan tanto operadores como excursionistas en zonas remotas de alta montaña.
+
+**User Journey Map 1: Vanessa Quispe (Segmento 1 — Operadora de Agencia MYPE)**
+
+User Persona vinculada: Vanessa Quispe (Ana Lucía), 36 años, Gerente de Operaciones en agencia de turismo de aventura (Cusco).  
+
+Escenario As-Is: Supervisión operativa de un grupo de 12 turistas en la ruta Salkantay Trek durante el cruce del paso de montaña (4,630 m.s.n.m.) sin cobertura celular ni telemetría automatizada.
+
+![Vanessa Quispe](../assets/images/chapter-2/UserJourneyMap1_VanessaQuispe.png)
+
+**User Journey Map 2: Sebastian Rojas (Segmento 2 — Turista de Aventura)**
+
+User Persona vinculada: Sebastian Rojas (Marco), 45 años, arquitecto independiente de Madrid, España. 
+ 
+Escenario As-Is: Realización del trekking autoguiado/asistido en la ruta Salkantay, experimentando síntomas de mal de montaña en tramos aislados. 
+
+![Sebastian Rojas](../assets/images/chapter-2/UserJourneyMap2_SebastianRojas.png)
+
 #### 2.3.4. Empathy Mapping
+
+La construcción de los mapas de empatía se fundamenta en las respuestas, actitudes y dolores identificados durante las sesiones de entrevistas a representantes de agencias operadoras y turistas internacionales.
+
+**Empathy Map 1: Vanessa Quispe (Segmento 1 — Agencias y Operadores de Turismo de Aventura)**
+
+![Vanessa Quispe](../assets/images/chapter-2/EmpathyMap1_VanessaQuispe.png)
+
+**Empathy Map 2: Sebastian Rojas (Segmento 2 — Turistas de Aventura)**
+
+![Sebastian Rojas](../assets/images/chapter-2/EmpathyMap2_SebastianRojas.png)
 
 ### 2.4. Big Picture EventStorming
 El Big Picture EventStorming de VitalTrek representa, en una línea temporal, los principales eventos del dominio relacionados con la planificación, ejecución, supervisión y cierre de un **Adventure Tour** en zonas con conectividad limitada.
