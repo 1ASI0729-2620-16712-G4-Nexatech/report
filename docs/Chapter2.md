@@ -307,7 +307,7 @@ En consecuencia, el arquetipo del turista objetivo de VitalTrek debe representar
 
 ---
 
-### Conclusión del análisis de entrevistas
+#### Conclusión del análisis de entrevistas
 
 ![Figura 5. Necesidades coincidentes entre agencias y turistas](../assets/images/chapter-2/graficos/figura5_comparativo_agencias_turistas.png)
 
@@ -326,11 +326,11 @@ Los resultados también permiten identificar como funcionalidades prioritarias d
 
 > **Nota metodológica:** dado que la muestra corresponde a 3 entrevistados por segmento, los porcentajes reportados (100% = 3 de 3; 66.7% = 2 de 3) deben interpretarse como resultados de la muestra entrevistada y no como una estadística representativa de todas las agencias o turistas del Perú. Se recomienda usar expresiones como "en la muestra de entrevistados..." en lugar de "el 100% de las agencias de turismo del Perú...".
 
-### 2.3. Needfinding
+## 2.3. Needfinding
 
 En esta sección se presentan los artefactos resultantes del proceso de análisis de la información recolectada durante la fase de Needfinding. A partir de las entrevistas realizadas a los segmentos objetivo y del análisis competitivo desarrollado en el capítulo anterior, el equipo ha sintetizado los hallazgos en artefactos que permiten visualizar de forma estructurada las características, comportamientos, motivaciones y necesidades de los usuarios potenciales de VitalTrek. Estos artefactos servirán como base para la definición de requerimientos funcionales y de diseño de la solución, asegurando que cada decisión esté centrada en el usuario y respaldada por evidencia recolectada en campo.
 
-#### 2.3.1. User Personas
+### 2.3.1. User Personas
 
 A continuación se presentan las fichas de User Persona elaboradas para cada uno de los dos segmentos objetivo de VitalTrek, identificados previamente en la sección de Segmentos Objetivo del capítulo anterior. La elaboración de estos arquetipos se sustenta en el análisis cualitativo de las entrevistas realizadas a representantes de cada segmento, así como en los hallazgos obtenidos del análisis competitivo, donde se evidenciaron brechas en la oferta actual de productos digitales para turismo de aventura en zonas de baja conectividad.
 
@@ -351,7 +351,7 @@ Se ha elaborado una ficha de User Persona por cada segmento objetivo, utilizando
 
 ![Sebastian Rojas](../assets/images/chapter-2/Sebastian%20Rojas.png)
 
-#### 2.3.2. User Task Matrix
+### 2.3.2. User Task Matrix
 
 En esta sección se presenta el User Task Matrix de VitalTrek, elaborado a partir del análisis de entrevistas de la sección 2.2.3 y de los dos User Personas presentados en la sección anterior. **Vanessa Quispe** representa al segmento de agencias y operadores de turismo de aventura, y su arquetipo se sustenta en las entrevistas a Vannya (Cusco), Celeste (Ayacucho) y Édgar (Huaraz). **Sebastian Rojas** representa al segmento de turistas de aventura nacionales y extranjeros, y su arquetipo se sustenta en las entrevistas a Jose, Paul y Elynor.
 
@@ -392,7 +392,7 @@ Entre las diferencias, las tareas de planificación, asignación de recursos, re
 En conjunto, la matriz evidencia que ambos segmentos convergen en las tareas de verificación del estado del grupo y comunicación durante el recorrido, y que ambas se interrumpen por la falta de conectividad. Esto sustenta priorizar en el MVP las capacidades asociadas a la confirmación de avance mediante puntos de control, la detección de retrasos y anomalías, y la consulta offline de la información de la ruta, que coinciden con las funcionalidades señaladas como prioritarias por los propios entrevistados en la sección 2.2.3.
 
 
-#### 2.3.3. User Journey Mapping
+### 2.3.3. User Journey Mapping
 
 La elaboración de los mapas de viaje se estructuró bajo el escenario As-Is (situación actual), describiendo la experiencia que atraviesan los usuarios sin la existencia de VitalTrek. Este análisis evidencia las fricciones operativas, los vacíos de comunicación y la vulnerabilidad física a la que se enfrentan tanto operadores como excursionistas en zonas remotas de alta montaña.
 
@@ -412,7 +412,7 @@ Escenario As-Is: Realización del trekking autoguiado/asistido en la ruta Salkan
 
 ![Sebastian Rojas](../assets/images/chapter-2/UserJourneyMap2_SebastianRojas.png)
 
-#### 2.3.4. Empathy Mapping
+### 2.3.4. Empathy Mapping
 
 La construcción de los mapas de empatía se fundamenta en las respuestas, actitudes y dolores identificados durante las sesiones de entrevistas a representantes de agencias operadoras y turistas internacionales.
 
@@ -424,7 +424,7 @@ La construcción de los mapas de empatía se fundamenta en las respuestas, actit
 
 ![Sebastian Rojas](../assets/images/chapter-2/EmpathyMap2_SebastianRojas.png)
 
-### 2.4. Big Picture EventStorming
+## 2.4. Big Picture EventStorming
 El Big Picture EventStorming de VitalTrek representa, en una línea temporal, los principales eventos del dominio relacionados con la planificación, ejecución, supervisión y cierre de un **Adventure Tour** en zonas con conectividad limitada.
 
 El flujo comienza con la configuración de la **Route**, los **Checkpoints**, las **Expected Time Windows** y el **Safety Protocol**. Luego se registra el **Expedition Group**, se asignan el **Field Guide** y los dispositivos de monitoreo, y se inicia el recorrido.
@@ -438,7 +438,7 @@ Finalmente, se registra el último checkpoint, se sincroniza la telemetría fina
 ![Big Picture EventStorming de VitalTrek](../assets/images/chapter-2/event_storming.png)
 
 
-### 2.5. Ubiquitous Language
+## 2.5. Ubiquitous Language
 
 En esta sección se presenta el glosario de términos del dominio de negocio de **VitalTrek**, orientado a la operación y seguridad del turismo de aventura en zonas con conectividad limitada del Perú. El objetivo de este lenguaje ubicuo es que todos los miembros del equipo y los stakeholders (agencias, guías de campo y turistas) utilicen los mismos términos, con el mismo significado y sin ambigüedad, tanto en las entrevistas y el análisis de requerimientos como en la especificación de User Stories, el EventStorming y la comunicación diaria del proyecto.
 
@@ -508,8 +508,7 @@ Los términos se presentan en **inglés** (idioma establecido para todos los pro
 Para mantener la consistencia del lenguaje ubicuo a lo largo del proyecto, el equipo adopta los siguientes acuerdos:
 
 - Se usa **Checkpoint** y no estación, parada o hito; el término designa siempre una ubicación esperada de la ruta.
-- - Se distingue **Alert** (aviso generado por el sistema de reglas) de **Incident** (suceso real verificado por el guía) y de **Emergency** (incidencia grave con escalamiento externo).
-  - - Se distingue **Delay** (desviación respecto del tiempo esperado) de **Route Deviation** (desviación respecto del trazado de la ruta); ambas pueden originar una alerta temprana, pero responden a causas distintas.
-    - - Se usa **Expedition Group** para la unidad de supervisión y **Adventure Tour** para el servicio comercial; un tour puede operar más de un grupo en la misma fecha.
-      - - Se usa **Route Note** exclusivamente para la información técnica cargada por la agencia o el guía responsable de la ruta. VitalTrek no contempla reseñas abiertas de rutas publicadas por cualquier usuario.
-        - 
+- Se distingue **Alert** (aviso generado por el sistema de reglas) de **Incident** (suceso real verificado por el guía) y de **Emergency** (incidencia grave con escalamiento externo).
+- Se distingue **Delay** (desviación respecto del tiempo esperado) de **Route Deviation** (desviación respecto del trazado de la ruta); ambas pueden originar una alerta temprana, pero responden a causas distintas.
+- Se usa **Expedition Group** para la unidad de supervisión y **Adventure Tour** para el servicio comercial; un tour puede operar más de un grupo en la misma fecha.
+- Se usa **Route Note** exclusivamente para la información técnica cargada por la agencia o el guía responsable de la ruta. VitalTrek no contempla reseñas abiertas de rutas publicadas por cualquier usuario.
