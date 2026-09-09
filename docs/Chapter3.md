@@ -59,6 +59,83 @@ Las siguientes historias de usuario describen las funcionalidades que VitalTrek 
 | US31     | Finalización del tour       | Como Field Guide quiero finalizar el Adventure Tour para cerrar formalmente el recorrido.                                              | **Dado que** el grupo completó la ruta o terminó la operación<br>**Cuando** confirmo el cierre<br>**Entonces** se registra el último checkpoint y el tour cambia a estado finalizado. |
 | US32     | Generación del Tour Summary | Como Operations Administrator quiero consultar un Tour Summary para revisar el recorrido, checkpoints, alertas e incidentes ocurridos. | **Dado que** el tour fue finalizado<br>**Cuando** solicito el resumen<br>**Entonces** el sistema genera un consolidado del recorrido y sus eventos relevantes.                        |
 
-## 3.2. Impact mapping 
+## 3.2. Impact Mapping
+
+En esta sección se explica y se presentan las capturas del Impact Mapping elaborado para el modelo de negocio digital de **VitalTrek**, construido en la herramienta **UXPressia**. Previamente a la elaboración del mapa, se crearon en la herramienta las fichas de **User Persona** correspondientes a los dos segmentos objetivo del producto, las cuales se muestran a continuación.
+
+### 3.2.1. User Personas elaboradas previamente
+
+| Segmento objetivo | Persona | Descripción |
+|---|---|---|
+| **Segmento 1: Agencias y Operadores de Turismo de Aventura** | Vanessa Quispe | Gerente de operaciones (Operations Administrator) de una agencia de turismo de aventura en Cusco; responsable de la seguridad y supervisión de los grupos en ruta. Es la decisora de compra del producto. |
+| **Segmento 2: Turistas de Aventura** | Sebastian Rojas | Turista de aventura (Adventure Tourist) que contrata tours en rutas remotas; necesita seguridad, trazabilidad y comunicación con su familia durante el recorrido. |
+
+*(Insertar aquí las capturas de las fichas de Persona exportadas desde UXPressia)*
+
+### 3.2.2. Business Goals (criterios SMART)
+
+Se identificaron 3 Business Goals para el Impact Map, cada uno cumpliendo los criterios SMART (específico, medible, alcanzable, relevante y con plazo definido):
+
+**Business Goal 1**
+> Reducir en 40% el tiempo promedio de respuesta ante incidentes de seguridad en rutas remotas durante los primeros 12 meses de operación.
+
+**Business Goal 2**
+> Lograr que el 80% de los Adventure Tours configurados en la plataforma cuenten con ruta, manifiesto y protocolo de seguridad completos antes de iniciar el recorrido, durante los primeros 6 meses de lanzamiento.
+
+**Business Goal 3**
+> Incrementar en 30% el número de agencias/operadores turísticos suscritos a un plan de VitalTrek durante el primer semestre desde el lanzamiento comercial.
+
+| Criterio SMART | Goal 1 | Goal 2 | Goal 3 |
+|---|---|---|---|
+| Específico | Tiempo de respuesta ante incidentes de seguridad | Completitud de configuración del tour antes de iniciar | Crecimiento de agencias suscritas a un plan pago |
+| Medible | Reducción del 40% | 80% de los tours cumpliendo el criterio | Incremento del 30% |
+| Alcanzable | Mediante alertas automatizadas y sincronización offline | A través de los módulos de configuración ya definidos en el backlog | Vía landing page con propuesta de valor y captación de leads |
+| Relevante | Núcleo del valor diferencial de VitalTrek | Prerrequisito operativo para la seguridad del tour | Condiciona la sostenibilidad comercial del producto |
+| Con plazo | 12 meses desde el inicio de operación | 6 meses desde el lanzamiento | Primer semestre desde el lanzamiento comercial |
+
+### 3.2.3. Impact Map
+
+La siguiente tabla presenta el Impact Map completo, respondiendo para cada rama las preguntas guía de la metodología:
+
+- **Business Goals** - ¿Por qué lo hacemos?
+- **Actors/Personas** - ¿Quiénes me ayudarán a lograr la meta?
+- **Impact** - ¿Qué tendría que hacer o cómo tendría que comportarse el Persona para ayudar a lograr la meta?
+- **Deliverables** - ¿Qué puedo hacer como negocio digital para provocar esos Impacts?
+- **User Stories** - Historias en formato "Como... deseo... para..." que permiten obtener los features que producen cada Deliverable.
+
+El patrón se repite de la siguiente forma en cada rama del mapa:
+
+```mermaid
+flowchart LR
+    A[Business Goal] --> B[Actor/Persona]
+    B --> C[Impact]
+    C --> D[Deliverable]
+    D --> E[User Stories]
+```
+
+#### Business Goal 1 — Reducir el tiempo de respuesta ante incidentes
+
+| Actor/Persona | Impact | Deliverables | User Stories |
+|---|---|---|---|
+| Vanessa Quispe (Segmento 1) | Dejar de depender de WhatsApp/radios y monitorear el estado del grupo en tiempo real; declarar y coordinar emergencias sin demoras | Dashboard de estado operativo, motor de evaluación de riesgo y módulo de declaración de emergencia | Como Operations Administrator quiero recibir la ubicación, telemetría y check-in sincronizados para actualizar el estado operativo del grupo. <br> Como Operations Administrator quiero declarar una emergencia cuando el riesgo compromete la integridad del grupo. |
+| Sebastian Rojas (Segmento 2) | Confiar en que su ubicación y signos vitales se registran aunque pierda señal; que su familia sea notificada automáticamente | Captura y sincronización offline de telemetría (wearable + Bluetooth) y registro de Emergency Contact | Como Adventure Tourist quiero que mi wearable almacene ubicación y signos vitales sin conexión para mantener la trazabilidad en una Coverage Gap. <br> Como Adventure Tourist quiero registrar un Emergency Contact para que pueda ser notificado ante un incidente. |
+
+#### Business Goal 2 — Preparación completa de los tours
+
+| Actor/Persona | Impact | Deliverables | User Stories |
+|---|---|---|---|
+| Vanessa Quispe (Segmento 1) | Configurar rutas, checkpoints y protocolos de forma estandarizada; asignar guías sin coordinación informal | Módulo de configuración de rutas, protocolos y asignación de Field Guide | Como Operations Administrator quiero registrar una Route con sus datos geográficos y operativos para planificar un Adventure Tour. <br> Como Operations Administrator quiero asignar un Field Guide a un Expedition Group para establecer la responsabilidad operativa. |
+| Sebastian Rojas (Segmento 2) | Activar su wearable dando consentimiento antes de iniciar el tour | Flujo de asignación y activación del wearable | Como Adventure Tourist quiero activar mi Wearable Device antes de iniciar el tour para permitir la captura de datos. |
+
+#### Business Goal 3 — Crecimiento de agencias suscritas
+
+| Actor/Persona | Impact | Deliverables | User Stories |
+|---|---|---|---|
+| Vanessa Quispe (Segmento 1) | Evaluar cómo VitalTrek profesionaliza su gestión operativa frente a agencias internacionales y solicitar una demo | Landing page con propuesta de valor, planes y formulario de contacto | Como representante de una agencia quiero consultar los planes, precios y características para elegir una alternativa adecuada. <br> Como visitante quiero enviar una consulta a VitalTrek para solicitar información o una demostración. |
+| Sebastian Rojas (Segmento 2) | Reconocer, vía la agencia o marketing, que VitalTrek le da tranquilidad y trazabilidad durante su aventura | Contenido de landing orientado a seguridad y confianza | Como visitante quiero entender cómo VitalTrek mejora la seguridad en rutas remotas para evaluar su utilidad. |
+
+### 3.2.4. Capturas del Impact Map en UXPressia
+
+![Impact Map VitalTrek - Business Goal 1](../assets/images/chapter-3/impact-mapping.png)
 
 ## 3.3. Product Backlog
