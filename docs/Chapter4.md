@@ -19,7 +19,7 @@ La interfaz usa inglés como idioma predeterminado (`en_US`) y ofrece español l
 #### Principios de diseño
 
 | Principio                     | Aplicación en VitalTrek                                                                                                           |
-|-------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
+| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | Seguridad comprensible        | La información crítica se presenta con jerarquía clara, etiquetas explícitas y acciones reconocibles.                             |
 | Claridad antes que decoración | Cada sección y componente comunica un objetivo concreto; se evita saturar las pantallas con elementos visuales no funcionales.    |
 | Offline-aware                 | El contenido explica que la telemetría se almacena offline y se sincroniza en checkpoints; no promete conectividad continua.      |
@@ -29,7 +29,7 @@ La interfaz usa inglés como idioma predeterminado (`en_US`) y ofrece español l
 #### Paleta de color
 
 | Token        | Color     | Uso principal                                                                             |
-|--------------|-----------|-------------------------------------------------------------------------------------------|
+| ------------ | --------- | ----------------------------------------------------------------------------------------- |
 | Forest Green | `#0F3D2E` | Color institucional, encabezados oscuros, footer y superficies de alta jerarquía.         |
 | Alpine Teal  | `#1C7C7D` | Elementos interactivos secundarios, indicadores de estado y enlaces destacados.           |
 | Safety Amber | `#F2A93B` | Call-to-action prioritarios, indicadores de atención y acentos visuales.                  |
@@ -42,15 +42,15 @@ El color nunca es el único medio para comunicar un estado. Una alerta, error o 
 
 #### Tipografía
 
-| Uso                 | Familia             |  Peso   | Tamaño desktop   | Tamaño móvil   |
-|---------------------|---------------------|--------:|-----------------:|---------------:|
-| Display / Hero      | Sora, sans-serif    |     700 |            56 px |          40 px |
-| H1                  | Sora, sans-serif    |     700 |            48 px |          36 px |
-| H2                  | Sora, sans-serif    |     600 |            36 px |          28 px |
-| H3                  | Sora, sans-serif    |     600 |            24 px |          22 px |
-| Texto de cuerpo     | DM Sans, sans-serif |     400 |            16 px |          16 px |
-| Texto de apoyo      | DM Sans, sans-serif | 400–500 |            14 px |          14 px |
-| Botones y etiquetas | DM Sans, sans-serif |     600 |         14–16 px |       14–16 px |
+| Uso                 | Familia             |    Peso | Tamaño desktop | Tamaño móvil |
+| ------------------- | ------------------- | ------: | -------------: | -----------: |
+| Display / Hero      | Sora, sans-serif    |     700 |          56 px |        40 px |
+| H1                  | Sora, sans-serif    |     700 |          48 px |        36 px |
+| H2                  | Sora, sans-serif    |     600 |          36 px |        28 px |
+| H3                  | Sora, sans-serif    |     600 |          24 px |        22 px |
+| Texto de cuerpo     | DM Sans, sans-serif |     400 |          16 px |        16 px |
+| Texto de apoyo      | DM Sans, sans-serif | 400–500 |          14 px |        14 px |
+| Botones y etiquetas | DM Sans, sans-serif |     600 |       14–16 px |     14–16 px |
 
 Los encabezados utilizan Sora por su estructura contemporánea y legible. DM Sans se utiliza en cuerpos de texto, formularios y controles por su claridad en tamaños pequeños. La altura de línea mínima es `1.5` para párrafos y `1.2` para títulos.
 
@@ -87,7 +87,7 @@ La iconografía debe ser lineal, simple y consistente. Todo ícono que comunique
 El Landing Page es mobile-first y se adapta a los principales anchos de pantalla.
 
 | Breakpoint   | Rango         | Comportamiento esperado                                                                  |
-|--------------|---------------|------------------------------------------------------------------------------------------|
+| ------------ | ------------- | ---------------------------------------------------------------------------------------- |
 | Mobile       | 320–767 px    | Una columna, menú colapsado, CTAs a ancho completo cuando sea necesario.                 |
 | Tablet       | 768–1023 px   | Dos columnas en secciones de beneficios y tarjetas adaptadas.                            |
 | Desktop      | 1024–1439 px  | Grid de 12 columnas, navegación completa y composición horizontal del hero.              |
@@ -96,7 +96,7 @@ El Landing Page es mobile-first y se adapta a los principales anchos de pantalla
 #### Componentes web
 
 | Componente         | Regla visual e interacción                                                                                                              |
-|--------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
 | Header             | Navegación persistente, logo enlazado al inicio, selector de idioma y CTA visible en desktop. En móvil se transforma en menú colapsado. |
 | Botón primario     | Fondo Safety Amber, texto Charcoal, etiqueta con verbo de acción; por ejemplo, `Request a demo`.                                        |
 | Botón secundario   | Fondo transparente o Forest Green, borde visible y etiqueta descriptiva; por ejemplo, `See how it works`.                               |
@@ -138,10 +138,10 @@ VitalTrek implementa los siguientes estándares de accesibilidad en la web:
 
 La interfaz web soporta dos locales:
 
-| Locale                 | Código   | Idioma por defecto   |
-|------------------------|----------|----------------------|
-| English                | `en-US`  | Sí                   |
-| Latin American Spanish | `es-419` | No                   |
+| Locale                 | Código   | Idioma por defecto |
+| ---------------------- | -------- | ------------------ |
+| English                | `en-US`  | Sí                 |
+| Latin American Spanish | `es-419` | No                 |
 
 El sistema i18n se implementa mediante atributos `data-i18n` en el HTML y un objeto `translations` en `main.js`. La función `toggleLanguage()` actualiza `document.documentElement.lang`, todos los elementos `[data-i18n]`, el pill del botón de idioma y anuncia el cambio mediante `aria-live`. El modal de Join también responde al toggle de idioma. El idioma predeterminado al cargar la página es inglés, conforme al statement del proyecto.
 
@@ -162,7 +162,7 @@ Respecto a los esquemas de categorización, el contenido se agrupa principalment
 Las etiquetas de VitalTrek buscan el mínimo número de palabras posible sin perder claridad, reutilizan los términos ya fijados en el Ubiquitous Language (Route, Checkpoint, Expedition Group, Early Warning Alert, Tour Summary) y se presentan en inglés por defecto, con equivalente en español latinoamericano mediante i18n, tal como establece el 4.1. Se evitan etiquetas de implementación interna o ambiguas: por ejemplo, se usa *Sync at checkpoint* y no *Sync job*, y *Early Warning Alert* y no *Alert record*.
 
 | Área                     | Etiqueta (inglés)        | Equivalente `es_419`        | Propósito                                                                    |
-|--------------------------|--------------------------|-----------------------------|------------------------------------------------------------------------------|
+| ------------------------ | ------------------------ | --------------------------- | ---------------------------------------------------------------------------- |
 | Landing — navegación     | `Home`                   | `Inicio`                    | Volver al inicio del Landing Page.                                           |
 | Landing — navegación     | `How it works`           | `Cómo funciona`             | Explicar el proceso completo del producto.                                   |
 | Landing — navegación     | `For operators`          | `Para operadores`           | Mostrar beneficios dirigidos a Agencias y Operadores de Turismo de Aventura. |
@@ -187,7 +187,7 @@ Los estados de las entidades operativas se etiquetan siguiendo el mismo vocabula
 **Landing Page (`index.html`)**
 
 | Elemento                              | Valor propuesto                                                                                                                               |
-|---------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+| ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
 | `title`                               | `VitalTrek \| Safer adventure tours beyond signal`                                                                                            |
 | `meta name="description"`             | `VitalTrek helps adventure tour operators monitor expeditions, synchronize offline telemetry at checkpoints, and act on early safety alerts.` |
 | `meta name="keywords"`                | `adventure tourism safety, trekking monitoring, offline telemetry, checkpoint synchronization, tour operator, Peru`                           |
@@ -209,7 +209,7 @@ La imagen usada en `og:image` debe incluir el logo de VitalTrek y un fondo de mo
 Estas vistas son privadas y no deben indexarse, por lo que comparten `meta name="robots" content="noindex, nofollow"` y `meta name="author" content="Nexum Devs"`, variando solo el `title` y la `description` según la vista:
 
 | Vista                                     | `title`                          | `meta name="description"`                                                                              |
-|-------------------------------------------|----------------------------------|--------------------------------------------------------------------------------------------------------|
+| ----------------------------------------- | -------------------------------- | ------------------------------------------------------------------------------------------------------ |
 | Login                                     | `Sign in — VitalTrek`            | `Sign in to your VitalTrek account to manage tours, monitor expeditions and respond to safety alerts.` |
 | Operations Dashboard — Active expeditions | `Active expeditions — VitalTrek` | `Monitor active Expedition Groups, their last checkpoint and current risk status in real time.`        |
 | Operations Dashboard — Alerts             | `Alerts — VitalTrek`             | `Review prioritized Early Warning Alerts and respond before a risk becomes an emergency.`              |
@@ -220,7 +220,7 @@ Estas vistas son privadas y no deben indexarse, por lo que comparten `meta name=
 VitalTrek combina navegación global, local, contextual y de utilidad, manteniendo en desktop y en móvil el mismo orden y las mismas opciones, tal como especifica el 4.1.
 
 | Tipo       | Aplicación                                                                                                                                                                                                                                                                                                                   |
-|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Global     | Header persistente del Landing Page con `Home`, `How it works`, `For operators`, `Safety`, `Plans`, selector de idioma y CTA `Request a demo`; menú lateral persistente en el Operations Dashboard y en el Field Guide Workspace, con acceso directo a cada módulo.                                                          |
 | Local      | Anclas con scroll suave dentro del Landing Page; dentro de cada módulo de la Web Application, un patrón hub and spoke en el que el módulo (por ejemplo, *Routes and checkpoints*) funciona como hub y cada elemento abre una vista de detalle con un botón de retorno explícito, sin depender del botón atrás del navegador. |
 | Contextual | CTAs del hero y de la sección *Plans* que dirigen al formulario de contacto; dentro de una expedición activa, acciones directas como *Register checkpoint* o *Report incident* disponibles sin salir del contexto del grupo.                                                                                                 |
@@ -237,7 +237,7 @@ El Landing Page no incorpora un buscador global, dado que su contenido es breve,
 Las futuras Web Applications sí requieren búsqueda y filtros, ya que el volumen de expediciones, alertas y rutas que un Operations Administrator o un Field Guide deben supervisar crece de forma considerable en temporada alta.
 
 | Módulo                 | Búsqueda / filtros                                                                                                                    | Resultado esperado                                                                                                                                   |
-|------------------------|---------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Active expeditions     | Texto libre por nombre de Expedition Group; filtros por Route, Field Guide asignado y estado (en ruta, retrasado, con alerta activa). | Lista de grupos coincidentes con su último checkpoint, tramo actual y nivel de riesgo, ordenada por prioridad de atención.                           |
 | Alerts                 | Filtros por prioridad, tipo (Delay, Anomaly, Route Deviation), estado (activa o revisada) y Expedition Group.                         | Cola de Early Warning Alerts ordenada por criticidad y recencia, con la causa y el protocolo recomendado visibles sin abrir el detalle.              |
 | Routes and checkpoints | Texto libre por nombre de Route; filtros por dificultad y estado (en uso o archivada).                                                | Rutas coincidentes con su número de Checkpoints y duración estimada.                                                                                 |
@@ -245,102 +245,160 @@ Las futuras Web Applications sí requieren búsqueda y filtros, ya que el volume
 
 Estos sistemas de búsqueda mantienen el mismo comportamiento en todos los módulos: los filtros aplicados nunca modifican los datos subyacentes y pueden restablecerse en cualquier momento mediante un control de tipo *Clear filters*; cuando una búsqueda no devuelve resultados, el sistema distingue entre la ausencia real de registros, por ejemplo ninguna expedición activa en ese momento, y la falta de coincidencias con los filtros aplicados, para que el Operations Administrator o el Field Guide no interpreten ese vacío como una falla del sistema. No existe una búsqueda global entre módulos, ya que entidades relacionadas como Route y Expedition Group deben mantenerse en contextos separados para evitar resultados ambiguos, y cada elemento devuelto por una búsqueda expone directamente su acción más frecuente, como abrir una alerta desde el propio resultado, para reducir pasos en escenarios donde el tiempo de respuesta incide en la seguridad del turista.
 
-## 4.6. Domain-Driven Software Architecture
-
-En esta sección se presenta la arquitectura de software de VitalTrek aplicando el **C4 Model**, a partir del dominio identificado en el Big Picture EventStorming y del Ubiquitous Language definido en la sección 2.5. Los diagramas se elaboran bajo el enfoque de diagram-as-code con Mermaid, alternativa contemplada para los C4 Model Diagrams.
-
-Las decisiones de tecnología responden al stack establecido para la solución: HTML5, CSS3 y JavaScript para el Landing Page, Vue Framework con PrimeVue para las Frontend Web Applications, ASP.NET Core con Entity Framework Core y C# para los Web Services bajo estilo arquitectónico RESTful, y PostgreSQL o MySQL como motor de base de datos relacional.
-
-La arquitectura responde a la restricción central del dominio: los grupos de expedición operan durante horas o días en zonas sin cobertura móvil, por lo que la solución no puede depender de conectividad continua. Esto determina que la sincronización de telemetría ocurra en ráfagas al pasar por los puntos de control y que la aplicación del turista funcione en modo offline.
 
 ### 4.6.2. Software Architecture Context Diagram
 
-El Context Diagram corresponde al nivel 1 del C4 Model. Presenta a VitalTrek como una única caja central y muestra quiénes lo usan y con qué sistemas externos se relaciona, sin entrar en detalles de tecnología ni de estructura interna.
+#### Propósito y alcance
 
-```mermaid
-flowchart TB
-    admin["Operations Administrator<br/>Administrador de operaciones de la agencia"]
-    guide["Field Guide<br/>Guia de campo"]
-    tourist["Adventure Tourist<br/>Turista de aventura"]
-    vt["VitalTrek<br/>Plataforma de gestion y monitoreo de tours<br/>de aventura en zonas sin cobertura"]
-    iot["Ecosistema IoT<br/>Wearables y checkpoints Bluetooth"]
-    pay["MercadoPago<br/>Pasarela de pagos"]
-    notif["Servicio de notificaciones<br/>Correo y push"]
-    maps["Proveedor de mapas"]
+El Software Architecture Context Diagram presenta VitalTrek en el Nivel 1 del modelo C4. Su propósito es definir el límite del sistema e identificar a las personas y sistemas externos que interactúan con la plataforma. No describe aplicaciones internas, base de datos, API ni detalles de implementación; estos elementos se presentan en los diagramas C4 posteriores.
 
-    admin -->|Configura rutas y checkpoints, supervisa grupos activos| vt
-    guide -->|Recibe alertas tempranas y consulta el estado del grupo| vt
-    tourist -->|Consulta mapa, checkpoints y notas de ruta sin conexion| vt
-    iot -->|Envia telemetria en rafagas al pasar por un checkpoint| vt
-    vt -->|Registra y cobra la suscripcion| pay
-    vt -->|Emite alertas tempranas y avisos operativos| notif
-    vt -->|Descarga los mapas base de las rutas| maps
-```
+VitalTrek es el sistema de software central. Permite a las agencias de turismo de aventura que operan en rutas montañosas remotas configurar rutas, monitorear expediciones, consultar información de ruta sin conexión, sincronizar telemetría en checkpoints Bluetooth, generar alertas tempranas de seguridad y gestionar incidentes.
 
-| Elemento | Tipo | Descripción |
-| --- | --- | --- |
-| Operations Administrator | Persona | Responsable de la agencia. Configura rutas y puntos de control, asigna guías y supervisa los grupos activos desde la base de operaciones. |
-| Field Guide | Persona | Acompaña físicamente al grupo durante el recorrido. Recibe las alertas tempranas y ejecuta la respuesta en campo. |
-| Adventure Tourist | Persona | Participa en el tour, porta el dispositivo de monitoreo y consulta la información de la ruta sin conexión. |
-| Ecosistema IoT | Sistema externo | Wearables y checkpoints Bluetooth que capturan posición y signos vitales. Su comportamiento es simulado para el alcance del MVP. |
-| MercadoPago | Sistema externo | Pasarela de pagos para la gestión de suscripciones de las agencias. |
-| Servicio de notificaciones | Sistema externo | Entrega de alertas por correo y notificaciones push. |
-| Proveedor de mapas | Sistema externo | Provee los mapas base que se descargan para su uso sin conexión. |
+El diagrama diferencia los dos segmentos objetivo definidos para VitalTrek. El primer segmento está compuesto por agencias y operadores de turismo de aventura. Se representa mediante dos roles operativos: el Operations Administrator configura rutas y supervisa grupos activos, mientras que el Field Guide acompaña a la expedición en campo y recibe alertas operativas. El segundo segmento está conformado por los Adventure Tourists, quienes consultan rutas, checkpoints y notas de ruta durante el recorrido, incluso cuando existe conectividad limitada. Aunque el primer segmento contiene dos roles, ambos pertenecen a una misma organización cliente: la agencia de turismo.
 
-VitalTrek se sitúa entre dos ámbitos que hoy permanecen desconectados: la operación de la agencia, que ocurre en oficina y con conectividad, y el recorrido en campo, donde la cobertura es intermitente o nula. Los tres actores interactúan con el mismo sistema pero en momentos distintos: el Operations Administrator antes y durante el tour desde la base de operaciones, el Field Guide durante el recorrido, y el Adventure Tourist en ruta y de forma offline.
+El diagrama también incluye a Emergency Contacts y Rescue Entities como stakeholders externos. No son segmentos objetivo ni clientes directos, pero pueden recibir notificaciones o coordinar una respuesta cuando se confirma un incidente crítico. El IoT Telemetry Ecosystem representa los wearables y checkpoints Bluetooth que capturan datos de ubicación y signos vitales. En lugar de asumir conectividad continua, el ecosistema sincroniza lotes de telemetría cuando la expedición llega a un checkpoint. El Notification Provider entrega las alertas tempranas y de emergencia, mientras que el Map Provider proporciona mapas base descargables para su consulta offline.
 
-Respecto de los sistemas externos, el ecosistema IoT es el único que no es consumido por VitalTrek sino que lo alimenta: constituye la fuente de la telemetría que hace posible la detección de retrasos y anomalías. Los otros tres son servicios que la plataforma consume. Esta distinción resulta relevante porque el ecosistema IoT es el punto de entrada de datos crítico y, a la vez, el elemento con mayor incertidumbre respecto de la conectividad.
+Esta vista establece el límite de responsabilidad de VitalTrek. La plataforma administra la lógica operativa, de seguridad, alertas e incidentes; la captura de telemetría mediante hardware, la entrega de notificaciones y la provisión de mapas base corresponden a sistemas externos.
+
+
+#### Diagrama de contexto
+
+![Diagrama de contexto](../assets/images/chapter-4/c4/context_diagram.png)
+
 
 ### 4.6.3. Software Architecture Container Diagrams
 
-El Container Diagram corresponde al nivel 2 del C4 Model. Descompone VitalTrek en sus unidades de despliegue independientes, indicando la responsabilidad de cada una, la tecnología seleccionada y la forma en que se comunican entre sí.
+#### Propósito y alcance
 
-```mermaid
-flowchart TB
-    admin["Operations Administrator"]
-    guide["Field Guide"]
-    tourist["Adventure Tourist"]
-    iot["Ecosistema IoT<br/>Wearables y checkpoints"]
-    pay["MercadoPago"]
-    notif["Servicio de notificaciones"]
-    maps["Proveedor de mapas"]
+El Software Architecture Container Diagram presenta VitalTrek en el Nivel 2 del modelo C4. Un contenedor es una unidad técnica ejecutable o desplegable de forma independiente dentro del sistema, por ejemplo, una aplicación web, una API o una base de datos. Este diagrama descompone el límite del sistema definido en el diagrama de contexto e identifica las tecnologías y comunicaciones de alto nivel entre sus contenedores.
 
-    subgraph VitalTrek
-        landing["Landing Page<br/>HTML5, CSS3, JavaScript"]
-        webagency["Agency Web Application<br/>Vue + PrimeVue"]
-        webtourist["Tourist Web Application<br/>Vue + PrimeVue, PWA offline"]
-        api["RESTful API<br/>ASP.NET Core + EF Core, C#"]
-        sync["Checkpoint Sync Service<br/>ASP.NET Core, C#"]
-        db[("Base de datos<br/>PostgreSQL / MySQL")]
-    end
+La **Landing Page** pública está implementada con HTML5, CSS3 y JavaScript. Comunica la propuesta de valor de VitalTrek, explica su enfoque de seguridad para el turismo de aventura en zonas remotas, presenta los planes y ofrece un medio para solicitar una demostración o establecer contacto. Se separa de las aplicaciones operativas autenticadas porque es un artefacto público de marketing y forma parte del alcance de AV1.
 
-    admin -->|Consulta planes y se registra| landing
-    admin -->|Configura tours y monitorea grupos| webagency
-    guide -->|Consulta alertas de su grupo| webagency
-    tourist -->|Consulta ruta y notas offline| webtourist
-    webagency -->|JSON / HTTPS| api
-    webtourist -->|Sincroniza al recuperar conexion, JSON / HTTPS| api
-    iot -->|Transmite telemetria acumulada| sync
-    sync -->|Entrega telemetria validada y ordenada| api
-    api -->|Lee y escribe, SQL| db
-    api -->|Gestiona suscripciones, HTTPS| pay
-    api -->|Emite alertas, HTTPS| notif
-    webtourist -->|Descarga mapas para uso offline| maps
-```
+La **Operations Web Application** es una aplicación web desarrollada con Vue.js y PrimeVue, utilizada por el segmento de agencias. Contiene vistas basadas en roles, no despliegues distintos: los Operations Administrators configuran rutas, checkpoints y grupos; los Field Guides consultan sus grupos asignados, alertas e incidentes. Ambos roles usan una misma aplicación operativa, pero cada uno accede únicamente a las funciones autorizadas para su perfil.
 
-| Container | Tecnología | Responsabilidad |
-| --- | --- | --- |
-| Landing Page | HTML5, CSS3, JavaScript | Presenta la propuesta de valor, los planes de suscripción y deriva al registro de nuevas agencias. |
-| Agency Web Application | Vue Framework con PrimeVue | Configuración de rutas y checkpoints, dashboard de grupos activos, gestión de alertas e incidencias y administración de la suscripción. |
-| Tourist Web Application | Vue Framework con PrimeVue, PWA con almacenamiento local | Mapa de la ruta, checkpoints, notas de ruta y resumen del recorrido. Opera sin conexión y sincroniza al recuperar conectividad. |
-| RESTful API | ASP.NET Core con Entity Framework Core, C# | Lógica de negocio: gestión de tours y rutas, evaluación del motor de reglas, generación de alertas tempranas y gestión de suscripciones. |
-| Checkpoint Sync Service | ASP.NET Core, C# | Recibe las ráfagas de telemetría provenientes de los checkpoints, las valida, ordena por marca de tiempo y las entrega a la API. |
-| Base de datos | PostgreSQL o MySQL | Almacena agencias, usuarios, rutas, checkpoints, grupos de expedición, registros de paso, telemetría, alertas, incidencias y suscripciones. |
+La **Tourist Web Application** es una Progressive Web Application (PWA) con enfoque offline-first. Permite a los Adventure Tourists consultar rutas, checkpoints y notas de ruta. El contenido se sincroniza cuando existe conectividad y permanece disponible mediante almacenamiento local durante la expedición. Este contenedor se comunica con el Map Provider para descargar mapas base destinados a la navegación offline.
 
-La separación entre las dos aplicaciones web responde a que los segmentos objetivo tienen necesidades opuestas. La Agency Web Application es un panel de supervisión que asume conectividad y prioriza la densidad de información. La Tourist Web Application, en cambio, debe funcionar con el dispositivo sin señal, por lo que se plantea como Progressive Web App con almacenamiento local: descarga la información de la ruta antes de iniciar el recorrido y la consulta sin depender de la red.
+La **RESTful API**, desarrollada con ASP.NET Core, Entity Framework Core y C#, centraliza las reglas de negocio de VitalTrek. Gestiona autenticación, operaciones de rutas y expediciones, sincronización de telemetría, evaluación de seguridad, generación de alertas y gestión de incidentes. El IoT Telemetry Ecosystem envía lotes de telemetría a la API al habilitarse la sincronización en checkpoints Bluetooth. La API valida y almacena estos datos antes de evaluarlos según ventanas de tiempo esperadas, rangos basales y desviaciones de ruta.
 
-El Checkpoint Sync Service se separa de la API por una razón propia del dominio. La telemetría no llega de forma continua ni ordenada, sino en ráfagas cuando un checkpoint recupera conectividad, y puede contener registros de varias horas atrás. Aislar esa recepción evita que los picos de ingesta afecten la disponibilidad del dashboard de la agencia y permite validar y ordenar los datos antes de que el motor de reglas los evalúe.
+La **VitalTrek Relational Database**, implementada con PostgreSQL, almacena información de agencias, usuarios, rutas, checkpoints, grupos de expedición, telemetría, alertas, incidentes y notas de ruta. Se utiliza una única tecnología de base de datos para evitar ambigüedad arquitectónica en este diseño inicial.
 
-El motor de reglas reside dentro de la RESTful API porque requiere consultar la ruta, las ventanas de tiempo esperadas y los rangos basales de cada turista para determinar si un registro de paso constituye un retraso o una anomalía. Esa decisión no puede tomarse en el punto de ingesta, que solo conoce el dato aislado.
+La API se integra con dos sistemas externos: el Notification Provider, encargado de entregar alertas tempranas y notificaciones de emergencia; y el Map Provider, desde el cual la Tourist Web Application obtiene mapas descargables. El procesamiento de pagos se excluye de esta arquitectura AV1 porque aún no se encuentra definido como una User Story validada ni como una capacidad implementada del producto.
 
-Finalmente, los contenedores comparten una única base de datos relacional. Esta decisión resulta adecuada para el alcance del MVP, dado el volumen esperado y la fuerte relación entre las entidades del dominio: una agencia tiene rutas, una ruta tiene checkpoints, y un grupo de expedición recorre una ruta y genera registros de paso.
+#### Diagrama de contenedores
+
+![Diagrama de contenedores](../assets/images/chapter-4/c4/container_diagram.png)
+
+
+### 4.6.4. Software Architecture Components Diagrams
+
+#### Propósito y alcance
+
+El Software Architecture Components Diagram presenta la RESTful API en el Nivel 3 del modelo C4. Descompone el contenedor de la API en sus componentes internos principales y explica cómo se distribuyen sus responsabilidades. Este nivel no representa clases individuales ni tablas de base de datos; dichos detalles corresponden a las secciones de diseño orientado a objetos y diseño de base de datos.
+
+El componente **Identity & Access Management** autentica usuarios y aplica autorización basada en roles para cuentas de agencias, Operations Administrators y Field Guides. De esta manera, garantiza que la Operations Web Application muestre las capacidades correspondientes a cada perfil.
+
+El componente **Route & Checkpoint Management** gestiona rutas, checkpoints, ventanas de tiempo esperadas, protocolos de seguridad y notas de ruta. También expone el contenido de rutas que la Tourist Web Application sincroniza para su consulta offline. El componente **Expedition Operations** administra grupos de expedición, manifiestos de turistas, asignación de guías y wearables, procesos de check-in y cierre de tours.
+
+El componente **Telemetry Synchronization** recibe lotes de telemetría de ubicación y signos vitales desde el IoT Telemetry Ecosystem. Luego valida, ordena y persiste la información recibida. Este diseño respalda explícitamente el enfoque offline-first de VitalTrek: la telemetría se sincroniza en checkpoints Bluetooth, en lugar de depender de conectividad permanente en rutas montañosas remotas.
+
+El componente **Safety & Alerting** evalúa la telemetría validada considerando reglas de seguridad, ventanas de tiempo esperadas, rangos basales e indicadores de desviación de ruta. Cuando detecta una condición relevante de riesgo, genera una alerta temprana y la envía mediante el Notification Provider. Las alertas críticas pueden escalarse al componente **Incident & Emergency Management**, responsable de gestionar la confirmación del incidente, declaración de emergencia, notificación a contactos de emergencia y coordinación de evacuación.
+
+Todos los componentes de negocio utilizan **Persistence Infrastructure**. Este componente proporciona acceso a datos mediante Entity Framework Core, el DbContext de la aplicación y repositorios. Es el único componente que lee y escribe directamente en PostgreSQL, reduciendo el acoplamiento entre la lógica de negocio y la tecnología de almacenamiento.
+
+El diagrama de componentes traduce los eventos identificados en el Design-Level EventStorming a responsabilidades arquitectónicas. Por ejemplo, la sincronización de telemetría conduce a la evaluación de seguridad; dicha evaluación puede generar una alerta temprana; y una alerta crítica puede iniciar el flujo de gestión de incidentes y emergencias.
+
+#### Diagrama de componentes
+![Diagrama de componentes](../assets/images/chapter-4/c4/component_diagram.png)
+
+## 4.7. Software Object-Oriented Design.
+
+### 4.7.1. Class Diagrams.
+
+
+
+## 4.8. Database Design.
+
+El diseño de base de datos de VitalTrek define una estructura relacional en PostgreSQL para almacenar de forma consistente la información operativa y de seguridad de las expediciones. El modelo persiste agencias, usuarios, rutas, checkpoints, grupos de expedición, turistas, wearables, telemetría sincronizada, alertas, incidentes y notificaciones. Las relaciones se implementan mediante claves primarias y foráneas, evitando duplicidad y manteniendo la integridad de los datos.
+
+
+### 4.8.1. Database Diagrams
+
+#### A. Gestión de agencias y usuarios
+
+| Tabla      | Propósito                                                                       | Claves y atributos relevantes                                                                                                                       |
+| ---------- | ------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `agencies` | Representa a la agencia u operador de turismo de aventura cliente de VitalTrek. | `id` (PK), `legal_name` y `email` únicos, teléfono, estado y fecha de creación.                                                                     |
+| `users`    | Almacena las cuentas del personal de una agencia.                               | `id` (PK), `agency_id` (FK), nombre, correo único, contraseña cifrada, rol y estado. El rol se limita a `operations_administrator` o `field_guide`. |
+
+Una agencia puede emplear varios usuarios, pero cada usuario pertenece a una única agencia. La autorización basada en roles se implementa mediante el campo `role`; las reglas funcionales definen qué vistas y acciones puede usar cada rol en la Operations Web Application.
+
+### B. Configuración de rutas y seguridad
+
+| Tabla                   | Propósito                                                                     | Claves y atributos relevantes                                                                                                                            |
+| ----------------------- | ----------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `routes`                | Define una ruta operada por una agencia.                                      | `id` (PK), `agency_id` (FK), nombre, descripción, nivel de dificultad, duración estimada y estado.                                                       |
+| `route_notes`           | Almacena indicaciones o notas que el turista puede consultar durante la ruta. | `id` (PK), `route_id` (FK), título, contenido y orden de visualización. El par `route_id + display_order` es único.                                      |
+| `safety_protocols`      | Guarda el protocolo de seguridad aplicable a una ruta.                        | `id` (PK), `route_id` (FK único), nombre, instrucciones y estado. La restricción única establece un protocolo vigente por ruta en este alcance.          |
+| `checkpoints`           | Define los puntos de control físicos de una ruta.                             | `id` (PK), `route_id` (FK), nombre, orden secuencial, coordenadas, identificador Bluetooth único y estado. El par `route_id + sequence_number` es único. |
+| `expected_time_windows` | Define la ventana de llegada esperada para cada checkpoint.                   | `id` (PK), `checkpoint_id` (FK único), minuto mínimo, minuto máximo y fecha de creación.                                                                 |
+
+Una agencia puede crear varias rutas. Cada ruta puede contener varias notas, checkpoints y grupos de expedición. Los checkpoints están ordenados dentro de su ruta y poseen un identificador Bluetooth único para asociar la sincronización de telemetría con el punto físico correcto. Cada checkpoint tiene una ventana de tiempo esperada que sirve como insumo para detectar retrasos.
+
+### C. Participantes y recursos de expedición
+
+| Tabla                | Propósito                                                                     | Claves y atributos relevantes                                                                                                                         |
+| -------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `adventure_tourists` | Registra a los turistas incluidos en expediciones.                            | `id` (PK), nombre, documento único, correo, teléfono, notas médicas y fecha de creación.                                                              |
+| `emergency_contacts` | Registra los contactos de emergencia de cada turista.                         | `id` (PK), `tourist_id` (FK), nombre, parentesco, teléfono y correo opcional.                                                                         |
+| `wearable_devices`   | Representa los dispositivos wearables disponibles para las expediciones.      | `id` (PK), código único, modelo y estado: disponible, asignado, en mantenimiento o inactivo.                                                          |
+| `expedition_groups`  | Representa una salida programada sobre una ruta específica.                   | `id` (PK), `agency_id`, `route_id` y `field_guide_id` como FK; nombre, inicio programado y estado.                                                    |
+| `expedition_members` | Representa la participación de un turista en un grupo y su wearable asignado. | `id` (PK), `expedition_group_id`, `tourist_id` y `wearable_device_id` como FK; check-in y estado. El par `expedition_group_id + tourist_id` es único. |
+
+Un grupo de expedición pertenece a una agencia, utiliza una ruta y tiene un Field Guide asignado. Un turista puede participar en diferentes grupos a lo largo del tiempo, mientras que un grupo contiene varios turistas. La tabla `expedition_members` evita repetir información y mantiene el historial de la asignación de wearables por expedición.
+
+### D. Telemetría y monitoreo de seguridad
+
+| Tabla               | Propósito                                                                       | Claves y atributos relevantes                                                                                                                     |
+| ------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `telemetry_records` | Almacena los datos capturados por un wearable y sincronizados en un checkpoint. | `id` (PK), `expedition_member_id` y `sync_checkpoint_id` como FK; fechas de captura y sincronización, coordenadas, frecuencia cardiaca y batería. |
+| `safety_alerts`     | Registra alertas generadas por condiciones de riesgo.                           | `id` (PK), `expedition_group_id` (FK), `telemetry_record_id` opcional (FK), tipo, prioridad, estado, descripción y fechas.                        |
+
+Cada registro de telemetría pertenece a un miembro de expedición y se sincroniza en un checkpoint. Los campos `recorded_at` y `synchronized_at` permiten diferenciar el momento en que el wearable generó el dato del momento en que VitalTrek lo recibió. Una alerta pertenece a un grupo de expedición y puede relacionarse con un registro específico de telemetría. La relación es opcional porque algunas alertas, como una desviación de ruta o un retraso, pueden originarse por reglas calculadas y no por un único dato.
+
+Los tipos de alerta permitidos son `delay`, `route_deviation`, `vital_sign` y `coverage_gap`. Las prioridades son `low`, `medium`, `high` y `critical`; los estados posibles son `open`, `acknowledged`, `resolved` y `escalated`.
+
+### E. Incidentes, notificaciones y rescate
+
+| Tabla                  | Propósito                                                                                | Claves y atributos relevantes                                                                                                                        |
+| ---------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `incidents`            | Registra un incidente operativo o de seguridad confirmado.                               | `id` (PK), `expedition_group_id` (FK), `safety_alert_id` opcional (FK), severidad, estado, descripción y fechas de declaración/cierre.               |
+| `notifications`        | Registra el intento de entrega de una comunicación originada por una alerta o incidente. | `id` (PK), `safety_alert_id`, `incident_id` y `emergency_contact_id` opcionales como FK; dirección del destinatario, canal, estado y fecha de envío. |
+| `rescue_coordinations` | Registra acciones de coordinación con una entidad de rescate externa.                    | `id` (PK), `incident_id` (FK), nombre de organización, teléfono, estado, fecha de contacto y notas.                                                  |
+
+Un incidente pertenece a un grupo de expedición. Puede derivarse de una alerta previa o declararse manualmente por un guía u operador; por esa razón `safety_alert_id` es opcional. Los estados de incidente son `reported`, `confirmed`, `emergency_declared` y `closed`.
+
+La tabla `notifications` permite guardar comunicaciones enviadas por correo, push o SMS. Una notificación se relaciona con una alerta o con un incidente. Esta exclusividad debe validarse en la capa de aplicación: una notificación no debería quedar sin origen ni relacionarse a ambos al mismo tiempo. La tabla `rescue_coordinations` no modela una cuenta interna de rescate porque las entidades de rescate son externas a VitalTrek; únicamente registra la coordinación realizada ante un incidente.
+
+## Relaciones principales y cardinalidades
+
+| Relación                                   |    Cardinalidad | Regla de negocio representada                                                                                                |
+| ------------------------------------------ | --------------: | ---------------------------------------------------------------------------------------------------------------------------- |
+| `agencies` → `users`                       |           1 : N | Una agencia emplea varios usuarios; cada usuario pertenece a una agencia.                                                    |
+| `agencies` → `routes`                      |           1 : N | Una agencia administra varias rutas.                                                                                         |
+| `routes` → `route_notes`                   |           1 : N | Una ruta puede tener múltiples notas ordenadas.                                                                              |
+| `routes` → `safety_protocols`              |           1 : 1 | Una ruta posee un protocolo de seguridad activo en este alcance.                                                             |
+| `routes` → `checkpoints`                   |           1 : N | Una ruta contiene múltiples checkpoints ordenados.                                                                           |
+| `checkpoints` → `expected_time_windows`    |           1 : 1 | Cada checkpoint posee una ventana de llegada esperada.                                                                       |
+| `routes` → `expedition_groups`             |           1 : N | Una ruta puede ser utilizada por varios grupos en diferentes fechas.                                                         |
+| `users` → `expedition_groups`              |           1 : N | Un Field Guide puede estar asignado a varios grupos; la aplicación valida que el usuario tenga ese rol.                      |
+| `expedition_groups` ↔ `adventure_tourists` |           N : M | Un grupo contiene varios turistas y un turista puede participar en varios grupos. Se resuelve mediante `expedition_members`. |
+| `wearable_devices` → `expedition_members`  | 1 : N histórico | Un wearable puede asignarse a diferentes miembros en expediciones distintas.                                                 |
+| `expedition_members` → `telemetry_records` |           1 : N | Un miembro genera múltiples registros de telemetría durante una expedición.                                                  |
+| `checkpoints` → `telemetry_records`        |           1 : N | Un checkpoint puede sincronizar múltiples registros de telemetría.                                                           |
+| `expedition_groups` → `safety_alerts`      |           1 : N | Un grupo puede generar varias alertas de seguridad.                                                                          |
+| `safety_alerts` → `incidents`              |           0 : 1 | Una alerta puede escalar a un incidente; un incidente también puede ser declarado manualmente.                               |
+| `incidents` → `notifications`              |           1 : N | Un incidente puede generar varias notificaciones.                                                                            |
+| `incidents` → `rescue_coordinations`       |           1 : N | Un incidente puede requerir varias acciones de coordinación con rescate.                                                     |
+
+
+![Diagrama de base de datos](../assets/images/chapter-4/baseDatos.png)
