@@ -310,3 +310,95 @@ El diagrama de componentes traduce los eventos identificados en el Design-Level 
 #### Diagrama de componentes
 ![Diagrama de componentes](../assets/images/chapter-4/c4/component_diagram.png)
 
+## 4.7. Software Object-Oriented Design.
+
+### 4.7.1. Class Diagrams.
+
+
+
+## 4.8. Database Design.
+
+El diseño de base de datos de VitalTrek define una estructura relacional en PostgreSQL para almacenar de forma consistente la información operativa y de seguridad de las expediciones. El modelo persiste agencias, usuarios, rutas, checkpoints, grupos de expedición, turistas, wearables, telemetría sincronizada, alertas, incidentes y notificaciones. Las relaciones se implementan mediante claves primarias y foráneas, evitando duplicidad y manteniendo la integridad de los datos.
+
+
+### 4.8.1. Database Diagrams
+
+#### A. Gestión de agencias y usuarios
+
+| Tabla      | Propósito                                                                       | Claves y atributos relevantes                                                                                                                       |
+| ---------- | ------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `agencies` | Representa a la agencia u operador de turismo de aventura cliente de VitalTrek. | `id` (PK), `legal_name` y `email` únicos, teléfono, estado y fecha de creación.                                                                     |
+| `users`    | Almacena las cuentas del personal de una agencia.                               | `id` (PK), `agency_id` (FK), nombre, correo único, contraseña cifrada, rol y estado. El rol se limita a `operations_administrator` o `field_guide`. |
+
+Una agencia puede emplear varios usuarios, pero cada usuario pertenece a una única agencia. La autorización basada en roles se implementa mediante el campo `role`; las reglas funcionales definen qué vistas y acciones puede usar cada rol en la Operations Web Application.
+
+### B. Configuración de rutas y seguridad
+
+| Tabla                   | Propósito                                                                     | Claves y atributos relevantes                                                                                                                            |
+| ----------------------- | ----------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `routes`                | Define una ruta operada por una agencia.                                      | `id` (PK), `agency_id` (FK), nombre, descripción, nivel de dificultad, duración estimada y estado.                                                       |
+| `route_notes`           | Almacena indicaciones o notas que el turista puede consultar durante la ruta. | `id` (PK), `route_id` (FK), título, contenido y orden de visualización. El par `route_id + display_order` es único.                                      |
+| `safety_protocols`      | Guarda el protocolo de seguridad aplicable a una ruta.                        | `id` (PK), `route_id` (FK único), nombre, instrucciones y estado. La restricción única establece un protocolo vigente por ruta en este alcance.          |
+| `checkpoints`           | Define los puntos de control físicos de una ruta.                             | `id` (PK), `route_id` (FK), nombre, orden secuencial, coordenadas, identificador Bluetooth único y estado. El par `route_id + sequence_number` es único. |
+| `expected_time_windows` | Define la ventana de llegada esperada para cada checkpoint.                   | `id` (PK), `checkpoint_id` (FK único), minuto mínimo, minuto máximo y fecha de creación.                                                                 |
+
+Una agencia puede crear varias rutas. Cada ruta puede contener varias notas, checkpoints y grupos de expedición. Los checkpoints están ordenados dentro de su ruta y poseen un identificador Bluetooth único para asociar la sincronización de telemetría con el punto físico correcto. Cada checkpoint tiene una ventana de tiempo esperada que sirve como insumo para detectar retrasos.
+
+### C. Participantes y recursos de expedición
+
+| Tabla                | Propósito                                                                     | Claves y atributos relevantes                                                                                                                         |
+| -------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `adventure_tourists` | Registra a los turistas incluidos en expediciones.                            | `id` (PK), nombre, documento único, correo, teléfono, notas médicas y fecha de creación.                                                              |
+| `emergency_contacts` | Registra los contactos de emergencia de cada turista.                         | `id` (PK), `tourist_id` (FK), nombre, parentesco, teléfono y correo opcional.                                                                         |
+| `wearable_devices`   | Representa los dispositivos wearables disponibles para las expediciones.      | `id` (PK), código único, modelo y estado: disponible, asignado, en mantenimiento o inactivo.                                                          |
+| `expedition_groups`  | Representa una salida programada sobre una ruta específica.                   | `id` (PK), `agency_id`, `route_id` y `field_guide_id` como FK; nombre, inicio programado y estado.                                                    |
+| `expedition_members` | Representa la participación de un turista en un grupo y su wearable asignado. | `id` (PK), `expedition_group_id`, `tourist_id` y `wearable_device_id` como FK; check-in y estado. El par `expedition_group_id + tourist_id` es único. |
+
+Un grupo de expedición pertenece a una agencia, utiliza una ruta y tiene un Field Guide asignado. Un turista puede participar en diferentes grupos a lo largo del tiempo, mientras que un grupo contiene varios turistas. La tabla `expedition_members` evita repetir información y mantiene el historial de la asignación de wearables por expedición.
+
+### D. Telemetría y monitoreo de seguridad
+
+| Tabla               | Propósito                                                                       | Claves y atributos relevantes                                                                                                                     |
+| ------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `telemetry_records` | Almacena los datos capturados por un wearable y sincronizados en un checkpoint. | `id` (PK), `expedition_member_id` y `sync_checkpoint_id` como FK; fechas de captura y sincronización, coordenadas, frecuencia cardiaca y batería. |
+| `safety_alerts`     | Registra alertas generadas por condiciones de riesgo.                           | `id` (PK), `expedition_group_id` (FK), `telemetry_record_id` opcional (FK), tipo, prioridad, estado, descripción y fechas.                        |
+
+Cada registro de telemetría pertenece a un miembro de expedición y se sincroniza en un checkpoint. Los campos `recorded_at` y `synchronized_at` permiten diferenciar el momento en que el wearable generó el dato del momento en que VitalTrek lo recibió. Una alerta pertenece a un grupo de expedición y puede relacionarse con un registro específico de telemetría. La relación es opcional porque algunas alertas, como una desviación de ruta o un retraso, pueden originarse por reglas calculadas y no por un único dato.
+
+Los tipos de alerta permitidos son `delay`, `route_deviation`, `vital_sign` y `coverage_gap`. Las prioridades son `low`, `medium`, `high` y `critical`; los estados posibles son `open`, `acknowledged`, `resolved` y `escalated`.
+
+### E. Incidentes, notificaciones y rescate
+
+| Tabla                  | Propósito                                                                                | Claves y atributos relevantes                                                                                                                        |
+| ---------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `incidents`            | Registra un incidente operativo o de seguridad confirmado.                               | `id` (PK), `expedition_group_id` (FK), `safety_alert_id` opcional (FK), severidad, estado, descripción y fechas de declaración/cierre.               |
+| `notifications`        | Registra el intento de entrega de una comunicación originada por una alerta o incidente. | `id` (PK), `safety_alert_id`, `incident_id` y `emergency_contact_id` opcionales como FK; dirección del destinatario, canal, estado y fecha de envío. |
+| `rescue_coordinations` | Registra acciones de coordinación con una entidad de rescate externa.                    | `id` (PK), `incident_id` (FK), nombre de organización, teléfono, estado, fecha de contacto y notas.                                                  |
+
+Un incidente pertenece a un grupo de expedición. Puede derivarse de una alerta previa o declararse manualmente por un guía u operador; por esa razón `safety_alert_id` es opcional. Los estados de incidente son `reported`, `confirmed`, `emergency_declared` y `closed`.
+
+La tabla `notifications` permite guardar comunicaciones enviadas por correo, push o SMS. Una notificación se relaciona con una alerta o con un incidente. Esta exclusividad debe validarse en la capa de aplicación: una notificación no debería quedar sin origen ni relacionarse a ambos al mismo tiempo. La tabla `rescue_coordinations` no modela una cuenta interna de rescate porque las entidades de rescate son externas a VitalTrek; únicamente registra la coordinación realizada ante un incidente.
+
+## Relaciones principales y cardinalidades
+
+| Relación                                   |    Cardinalidad | Regla de negocio representada                                                                                                |
+| ------------------------------------------ | --------------: | ---------------------------------------------------------------------------------------------------------------------------- |
+| `agencies` → `users`                       |           1 : N | Una agencia emplea varios usuarios; cada usuario pertenece a una agencia.                                                    |
+| `agencies` → `routes`                      |           1 : N | Una agencia administra varias rutas.                                                                                         |
+| `routes` → `route_notes`                   |           1 : N | Una ruta puede tener múltiples notas ordenadas.                                                                              |
+| `routes` → `safety_protocols`              |           1 : 1 | Una ruta posee un protocolo de seguridad activo en este alcance.                                                             |
+| `routes` → `checkpoints`                   |           1 : N | Una ruta contiene múltiples checkpoints ordenados.                                                                           |
+| `checkpoints` → `expected_time_windows`    |           1 : 1 | Cada checkpoint posee una ventana de llegada esperada.                                                                       |
+| `routes` → `expedition_groups`             |           1 : N | Una ruta puede ser utilizada por varios grupos en diferentes fechas.                                                         |
+| `users` → `expedition_groups`              |           1 : N | Un Field Guide puede estar asignado a varios grupos; la aplicación valida que el usuario tenga ese rol.                      |
+| `expedition_groups` ↔ `adventure_tourists` |           N : M | Un grupo contiene varios turistas y un turista puede participar en varios grupos. Se resuelve mediante `expedition_members`. |
+| `wearable_devices` → `expedition_members`  | 1 : N histórico | Un wearable puede asignarse a diferentes miembros en expediciones distintas.                                                 |
+| `expedition_members` → `telemetry_records` |           1 : N | Un miembro genera múltiples registros de telemetría durante una expedición.                                                  |
+| `checkpoints` → `telemetry_records`        |           1 : N | Un checkpoint puede sincronizar múltiples registros de telemetría.                                                           |
+| `expedition_groups` → `safety_alerts`      |           1 : N | Un grupo puede generar varias alertas de seguridad.                                                                          |
+| `safety_alerts` → `incidents`              |           0 : 1 | Una alerta puede escalar a un incidente; un incidente también puede ser declarado manualmente.                               |
+| `incidents` → `notifications`              |           1 : N | Un incidente puede generar varias notificaciones.                                                                            |
+| `incidents` → `rescue_coordinations`       |           1 : N | Un incidente puede requerir varias acciones de coordinación con rescate.                                                     |
+
+
+![Diagrama de base de datos](../assets/images/chapter-4/baseDatos.png)
