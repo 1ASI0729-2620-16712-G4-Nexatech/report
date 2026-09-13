@@ -265,40 +265,40 @@ La sesión se desarrolló en Miro. El tablero está compartido en modo lectura p
 
 #### Código de colores utilizado
 
-| Color | Elemento | Convención de nombre | Ejemplo en VitalTrek |
-| --- | --- | --- | --- |
-| Naranja | Domain Event | Verbo en pasado | TelemetryIngested |
-| Azul | Command | Verbo en imperativo | Ingest Telemetry |
-| Amarillo | Aggregate | Sustantivo del dominio | SyncBatch |
-| Lila | Policy | Regla del tipo cuando ocurre X entonces Y | Cuando TelemetryIngested se evalúan las reglas de Safety Monitoring |
-| Verde | Read Model | Vista que alguien consulta para decidir | Operations Dashboard |
-| Rosado | External System | Nombre del sistema externo | Bluetooth Checkpoint |
-| Amarillo claro | Actor | Rol del dominio | Operations Administrator |
-| Rojo | Hotspot | Pregunta abierta del equipo | ¿Qué pasa si el batch llega horas después del evento? |
+| Color          | Elemento        | Convención de nombre                      | Ejemplo en VitalTrek                                                |
+| -------------- | --------------- | ----------------------------------------- | ------------------------------------------------------------------- |
+| Naranja        | Domain Event    | Verbo en pasado                           | TelemetryIngested                                                   |
+| Azul           | Command         | Verbo en imperativo                       | Ingest Telemetry                                                    |
+| Amarillo       | Aggregate       | Sustantivo del dominio                    | SyncBatch                                                           |
+| Lila           | Policy          | Regla del tipo cuando ocurre X entonces Y | Cuando TelemetryIngested se evalúan las reglas de Safety Monitoring |
+| Verde          | Read Model      | Vista que alguien consulta para decidir   | Operations Dashboard                                                |
+| Rosado         | External System | Nombre del sistema externo                | Bluetooth Checkpoint                                                |
+| Amarillo claro | Actor           | Rol del dominio                           | Operations Administrator                                            |
+| Rojo           | Hotspot         | Pregunta abierta del equipo               | ¿Qué pasa si el batch llega horas después del evento?               |
 
 #### Bounded contexts identificados
 
-| Bounded Context | Fase de la operación | Responsabilidad principal |
-| --- | --- | --- |
-| BC 01. Expedition Setup | Oficina | Configurar el tour, la ruta, los checkpoints y las ventanas de tiempo esperadas. |
-| BC 02. Field Tracking | Campo sin cobertura | Registrar el avance del grupo y capturar telemetría de forma local. |
-| BC 03. Checkpoint Sync | Checkpoint Bluetooth | Recibir, validar y ordenar la telemetría transmitida en ráfaga. |
-| BC 04. Safety Monitoring | Oficina | Evaluar retrasos, anomalías y desviaciones, y levantar alertas tempranas. |
-| BC 05. Incident Response | Campo y oficina | Confirmar la incidencia, notificar y escalar a la entidad de rescate. |
-| BC 06. Tour Closure | Retorno | Cerrar la expedición, liberar los wearables y consolidar el recorrido. |
+| Bounded Context          | Fase de la operación | Responsabilidad principal                                                        |
+| ------------------------ | -------------------- | -------------------------------------------------------------------------------- |
+| BC 01. Expedition Setup  | Oficina              | Configurar el tour, la ruta, los checkpoints y las ventanas de tiempo esperadas. |
+| BC 02. Field Tracking    | Campo sin cobertura  | Registrar el avance del grupo y capturar telemetría de forma local.              |
+| BC 03. Checkpoint Sync   | Checkpoint Bluetooth | Recibir, validar y ordenar la telemetría transmitida en ráfaga.                  |
+| BC 04. Safety Monitoring | Oficina              | Evaluar retrasos, anomalías y desviaciones, y levantar alertas tempranas.        |
+| BC 05. Incident Response | Campo y oficina      | Confirmar la incidencia, notificar y escalar a la entidad de rescate.            |
+| BC 06. Tour Closure      | Retorno              | Cerrar la expedición, liberar los wearables y consolidar el recorrido.           |
 
 #### BC 01. Expedition Setup
 
 La agencia define el tour, la ruta, sus checkpoints y las ventanas de tiempo esperadas antes de la salida. Es el único contexto que ocurre íntegramente con conectividad, por lo que concentra toda la configuración de la que dependerá el resto del recorrido.
 
-| Elemento | Contenido modelado |
-| --- | --- |
-| Actor | Operations Administrator |
-| Commands | Create Adventure Tour, Define Route, Add Checkpoint, Set Expected Time Window, Assign Field Guide, Register Tourist, Assign Wearable Device, Publish Tour |
-| Aggregates | AdventureTour, Route, Checkpoint, ExpeditionGroup |
-| Domain Events | AdventureTourCreated, RouteDefined, CheckpointAdded, ExpectedTimeWindowSet, FieldGuideAssigned, TouristRegistered, WearableDeviceAssigned, TourPublished |
-| Policies | Cuando TourPublished se genera el Tourist Manifest. Cuando WearableDeviceAssigned se registra el Baseline Range del turista. |
-| Read Models | Tour Configuration View, Tourist Manifest |
+| Elemento      | Contenido modelado                                                                                                                                        |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Actor         | Operations Administrator                                                                                                                                  |
+| Commands      | Create Adventure Tour, Define Route, Add Checkpoint, Set Expected Time Window, Assign Field Guide, Register Tourist, Assign Wearable Device, Publish Tour |
+| Aggregates    | AdventureTour, Route, Checkpoint, ExpeditionGroup                                                                                                         |
+| Domain Events | AdventureTourCreated, RouteDefined, CheckpointAdded, ExpectedTimeWindowSet, FieldGuideAssigned, TouristRegistered, WearableDeviceAssigned, TourPublished  |
+| Policies      | Cuando TourPublished se genera el Tourist Manifest. Cuando WearableDeviceAssigned se registra el Baseline Range del turista.                              |
+| Read Models   | Tour Configuration View, Tourist Manifest                                                                                                                 |
 
 ![BC 01. Expedition Setup](../assets/images/chapter-4/461-bc01-expedition-setup.jpg)
 
@@ -306,16 +306,16 @@ La agencia define el tour, la ruta, sus checkpoints y las ventanas de tiempo esp
 
 El grupo avanza por la ruta y el wearable captura telemetría de forma local, sin red. Este contexto explica por qué VitalTrek no promete monitoreo continuo: durante el tramo sin cobertura la información existe, pero todavía no ha llegado a la plataforma.
 
-| Elemento | Contenido modelado |
-| --- | --- |
-| Actores | Adventure Tourist, Field Guide |
-| Commands | Download Offline Route, Start Expedition, Capture Telemetry, Record Check-in |
-| Aggregates | ExpeditionGroup, TelemetryRecord, CheckInRecord |
-| Domain Events | OfflineRouteDownloaded, ExpeditionStarted, TelemetryCaptured, CheckpointReached, CheckInRecorded, CoverageLost |
-| Policies | Cuando ExpeditionStarted se activan las Expected Time Windows. Cuando CoverageLost la telemetría se almacena en el wearable. |
-| Read Models | Route Map Offline, Last Known Position |
-| External Systems | Wearable Device, Proveedor de mapas |
-| Hotspot | ¿Cada cuánto captura el wearable sin agotar la batería? |
+| Elemento         | Contenido modelado                                                                                                           |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Actores          | Adventure Tourist, Field Guide                                                                                               |
+| Commands         | Download Offline Route, Start Expedition, Capture Telemetry, Record Check-in                                                 |
+| Aggregates       | ExpeditionGroup, TelemetryRecord, CheckInRecord                                                                              |
+| Domain Events    | OfflineRouteDownloaded, ExpeditionStarted, TelemetryCaptured, CheckpointReached, CheckInRecorded, CoverageLost               |
+| Policies         | Cuando ExpeditionStarted se activan las Expected Time Windows. Cuando CoverageLost la telemetría se almacena en el wearable. |
+| Read Models      | Route Map Offline, Last Known Position                                                                                       |
+| External Systems | Wearable Device, Proveedor de mapas                                                                                          |
+| Hotspot          | ¿Cada cuánto captura el wearable sin agotar la batería?                                                                      |
 
 ![BC 02. Field Tracking](../assets/images/chapter-4/461-bc02-field-tracking.jpg)
 
@@ -323,58 +323,58 @@ El grupo avanza por la ruta y el wearable captura telemetría de forma local, si
 
 Al alcanzar un checkpoint Bluetooth, la telemetría acumulada se transmite en ráfaga, se valida y se ordena por marca de tiempo. Este contexto es el punto de entrada real de los datos a la plataforma.
 
-| Elemento | Contenido modelado |
-| --- | --- |
-| Actor | Bluetooth Checkpoint, de operación automática |
-| Commands | Transmit Telemetry Batch, Validate Batch, Order By Timestamp, Ingest Telemetry, Retry Failed Sync |
-| Aggregate | SyncBatch |
-| Domain Events | TelemetryBatchReceived, BatchValidated, DuplicateRecordDiscarded, TelemetryIngested, SyncCompleted, SyncFailed |
-| Policies | Cuando TelemetryIngested se evalúan las reglas de Safety Monitoring. Si SyncFailed se reintenta en el siguiente checkpoint. |
-| Read Model | Sync Status por Checkpoint |
-| External System | Bluetooth Checkpoint |
-| Hotspot | ¿Qué pasa si el batch llega horas después del evento? |
+| Elemento        | Contenido modelado                                                                                                          |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| Actor           | Bluetooth Checkpoint, de operación automática                                                                               |
+| Commands        | Transmit Telemetry Batch, Validate Batch, Order By Timestamp, Ingest Telemetry, Retry Failed Sync                           |
+| Aggregate       | SyncBatch                                                                                                                   |
+| Domain Events   | TelemetryBatchReceived, BatchValidated, DuplicateRecordDiscarded, TelemetryIngested, SyncCompleted, SyncFailed              |
+| Policies        | Cuando TelemetryIngested se evalúan las reglas de Safety Monitoring. Si SyncFailed se reintenta en el siguiente checkpoint. |
+| Read Model      | Sync Status por Checkpoint                                                                                                  |
+| External System | Bluetooth Checkpoint                                                                                                        |
+| Hotspot         | ¿Qué pasa si el batch llega horas después del evento?                                                                       |
 
 #### BC 04. Safety Monitoring
 
 El motor de reglas compara lo recibido contra la ventana de tiempo esperada, el rango basal del turista y el trazado de la ruta. Es el contexto que convierte datos en una decisión operativa.
 
-| Elemento | Contenido modelado |
-| --- | --- |
-| Actores | Operations Administrator, Field Guide |
-| Commands | Evaluate Delay, Evaluate Vital Signs, Evaluate Route Deviation, Raise Early Warning Alert, Acknowledge Alert, Dismiss False Alarm |
-| Aggregates | EarlyWarningAlert, BaselineRange |
-| Domain Events | DelayDetected, VitalSignAnomalyDetected, RouteDeviationDetected, EarlyWarningAlertRaised, AlertAcknowledged, FalseAlarmDismissed |
-| Policies | Si vence la Expected Time Window sin check-in se genera DelayDetected. Al levantar una alerta se notifica al guía y al administrador. |
-| Read Models | Operations Dashboard, Alert Inbox |
-| External System | Servicio de notificaciones |
-| Hotspot | ¿Cuántas falsas alarmas tolera el guía antes de ignorarlas? |
+| Elemento        | Contenido modelado                                                                                                                    |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| Actores         | Operations Administrator, Field Guide                                                                                                 |
+| Commands        | Evaluate Delay, Evaluate Vital Signs, Evaluate Route Deviation, Raise Early Warning Alert, Acknowledge Alert, Dismiss False Alarm     |
+| Aggregates      | EarlyWarningAlert, BaselineRange                                                                                                      |
+| Domain Events   | DelayDetected, VitalSignAnomalyDetected, RouteDeviationDetected, EarlyWarningAlertRaised, AlertAcknowledged, FalseAlarmDismissed      |
+| Policies        | Si vence la Expected Time Window sin check-in se genera DelayDetected. Al levantar una alerta se notifica al guía y al administrador. |
+| Read Models     | Operations Dashboard, Alert Inbox                                                                                                     |
+| External System | Servicio de notificaciones                                                                                                            |
+| Hotspot         | ¿Cuántas falsas alarmas tolera el guía antes de ignorarlas?                                                                           |
 
 #### BC 05. Incident Response
 
 La alerta se confirma en campo y se convierte en una incidencia con clasificación, notificación al contacto de emergencia y, si el caso lo exige, escalamiento a una entidad de rescate y evacuación.
 
-| Elemento | Contenido modelado |
-| --- | --- |
-| Actores | Field Guide, Operations Administrator |
-| Commands | Declare Incident, Classify Incident, Notify Emergency Contact, Escalate To Rescue Entity, Request Evacuation, Close Incident |
-| Aggregates | Incident, EvacuationRequest |
-| Domain Events | IncidentDeclared, IncidentClassified, EmergencyContactNotified, RescueEntityNotified, EvacuationRequested, EvacuationCompleted, IncidentClosed |
-| Policy | Si la incidencia es crítica se notifica al Emergency Contact y a la Rescue Entity. |
-| Read Models | Incident Log, Protocolo de respuesta |
-| External Systems | Rescue Entity, Emergency Contact |
+| Elemento         | Contenido modelado                                                                                                                             |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| Actores          | Field Guide, Operations Administrator                                                                                                          |
+| Commands         | Declare Incident, Classify Incident, Notify Emergency Contact, Escalate To Rescue Entity, Request Evacuation, Close Incident                   |
+| Aggregates       | Incident, EvacuationRequest                                                                                                                    |
+| Domain Events    | IncidentDeclared, IncidentClassified, EmergencyContactNotified, RescueEntityNotified, EvacuationRequested, EvacuationCompleted, IncidentClosed |
+| Policy           | Si la incidencia es crítica se notifica al Emergency Contact y a la Rescue Entity.                                                             |
+| Read Models      | Incident Log, Protocolo de respuesta                                                                                                           |
+| External Systems | Rescue Entity, Emergency Contact                                                                                                               |
 
 #### BC 06. Tour Closure
 
 El grupo regresa, se devuelven los wearables y se consolida el recorrido realizado. Es el contexto que cierra el ciclo y alimenta el historial operativo de la agencia.
 
-| Elemento | Contenido modelado |
-| --- | --- |
-| Actores | Field Guide, Adventure Tourist |
-| Commands | Finish Expedition, Return Wearable Device, Consolidate Tour Summary, Register Incident Report, Rate Experience |
-| Aggregate | TourSummary |
-| Domain Events | ExpeditionFinished, WearableDeviceReturned, TourSummaryGenerated, IncidentReportRegistered, ExperienceRated |
-| Policy | Al finalizar la expedición se consolida el resumen y se liberan los wearables. |
-| Read Models | Tour Summary View, Historial de recorridos |
+| Elemento      | Contenido modelado                                                                                             |
+| ------------- | -------------------------------------------------------------------------------------------------------------- |
+| Actores       | Field Guide, Adventure Tourist                                                                                 |
+| Commands      | Finish Expedition, Return Wearable Device, Consolidate Tour Summary, Register Incident Report, Rate Experience |
+| Aggregate     | TourSummary                                                                                                    |
+| Domain Events | ExpeditionFinished, WearableDeviceReturned, TourSummaryGenerated, IncidentReportRegistered, ExperienceRated    |
+| Policy        | Al finalizar la expedición se consolida el resumen y se liberan los wearables.                                 |
+| Read Models   | Tour Summary View, Historial de recorridos                                                                     |
 
 #### Trazabilidad con el resto del informe
 
@@ -448,9 +448,98 @@ El diagrama de componentes traduce los eventos identificados en el Design-Level 
 ![Diagrama de componentes](../assets/images/chapter-4/c4/component_diagram.png)
 
 ## 4.7. Software Object-Oriented Design.
+Esta sección presenta el diseño orientado a objetos propuesto para **VitalTrek**. Debido a que el proyecto se encuentra en la etapa de planificación correspondiente a AV1, los modelos representan el diseño conceptual que guiará la implementación posterior y no una estructura derivada de código existente.
+
+El diseño toma como base las User Stories definidas en el capítulo III, el Ubiquitous Language, los eventos y agregados identificados mediante Design-Level EventStorming, y las responsabilidades establecidas en los diagramas C4. Para mantener límites claros entre responsabilidades, las clases se organizan según los seis bounded contexts identificados: **Expedition Setup**, **Field Tracking**, **Checkpoint Sync**, **Safety Monitoring**, **Incident Response** y **Tour Closure**.
 
 ### 4.7.1. Class Diagrams.
+Los siguientes diagramas muestran las clases, interfaces, enumeraciones, atributos, métodos, relaciones y multiplicidades que conforman cada bounded context. Los nombres se mantienen en inglés para conservar consistencia con el Ubiquitous Language de VitalTrek y con las convenciones de código establecidas para el proyecto.
 
+#### Expedition Setup Bounded Context
+
+Este bounded context reúne las responsabilidades necesarias para configurar un Adventure Tour antes de su inicio. Comprende la definición de la Route, sus Checkpoints, las Expected Time Windows y el Safety Protocol, además de la creación del Expedition Group, la asignación del Field Guide y el registro de turistas y wearables. Se relaciona principalmente con las User Stories US07 a US16.
+
+![Class Diagram del Expedition Setup Bounded Context](../assets/images/chapter-4/class-diagrams/expedition-setup.png)
+
+*Figura 4.7.1.1. Class Diagram del Expedition Setup Bounded Context.*
+
+`AdventureTour`, `Route` y `ExpeditionGroup` actúan como aggregate roots porque controlan ciclos de vida y reglas diferentes dentro de la configuración. Una `Route` contiene uno o más `Checkpoint`; cada checkpoint posee una `ExpectedTimeWindow` que determina el intervalo esperado de llegada. La ruta puede definir un `SafetyProtocol` aplicable durante la operación.
+
+Un `AdventureTour` utiliza una ruta y organiza uno o más grupos de expedición. Cada `ExpeditionGroup` tiene un `FieldGuide` asignado y contiene registros `ExpeditionMember`, utilizados para asociar al turista con el wearable entregado para esa expedición. El turista mantiene sus `EmergencyContact` y un `BaselineRange` que sirve como referencia durante la evaluación posterior de signos vitales.
+
+Las interfaces `IAdventureTourRepository` e `IRouteRepository` separan el modelo de dominio de la tecnología de persistencia. Las enumeraciones `TourStatus`, `RouteDifficulty` y `DeviceStatus` restringen los estados permitidos y evitan el uso de valores ambiguos.
+
+#### Field Tracking Bounded Context
+
+Este bounded context modela el seguimiento del grupo durante el recorrido, especialmente cuando atraviesa una Coverage Gap. Su responsabilidad es iniciar la expedición, registrar posiciones y signos vitales en el wearable, mantener la telemetría pendiente, consultar información de ruta sin conexión y registrar el paso del grupo por un checkpoint. Se relaciona con las User Stories US17 a US21.
+
+![Class Diagram del Field Tracking Bounded Context](../assets/images/chapter-4/class-diagrams/field-tracking.png)
+
+*Figura 4.7.1.2. Class Diagram del Field Tracking Bounded Context.*
+
+`ExpeditionGroup` es el aggregate root del seguimiento en campo. Mantiene el estado operativo del grupo, su conectividad y la última posición conocida. Durante una Coverage Gap acumula objetos `TelemetryRecord`, que conservan el instante de captura, posición, frecuencia cardíaca, saturación de oxígeno y batería del dispositivo. La separación entre captura y sincronización permite representar el comportamiento offline-first de VitalTrek.
+
+`CheckInRecord` registra el paso del grupo por un checkpoint y conserva la posición y hora observadas. `OfflineRoute` contiene las `RouteNote` descargadas antes de iniciar el recorrido y permite consultarlas sin Internet. `GeoPosition` se representa como value object para reutilizar una estructura geográfica consistente.
+
+`ITelemetryCapturePort` abstrae la captura realizada por el wearable, mientras que `IOfflineRouteStore` abstrae el almacenamiento local de la ruta. `IFieldTrackingRepository` define la persistencia de grupos, registros de telemetría y check-ins sin acoplar el dominio a una base de datos concreta.
+
+#### Checkpoint Sync Bounded Context
+
+Este bounded context administra la recepción y procesamiento de la telemetría acumulada cuando un wearable se conecta con un checkpoint Bluetooth. Incluye la validación del lote, eliminación de duplicados, ordenamiento cronológico, ingesta de registros y control de reintentos. Se relaciona directamente con las User Stories US22 y US23.
+
+![Class Diagram del Checkpoint Sync Bounded Context](../assets/images/chapter-4/class-diagrams/checkpoint-sync.png)
+
+*Figura 4.7.1.3. Class Diagram del Checkpoint Sync Bounded Context.*
+
+`SyncBatch` es el aggregate root y controla el ciclo completo de un lote, desde su recepción hasta su ingesta o fallo. El lote contiene uno o más `TelemetryPacket`, cada uno identificado de forma única y protegido mediante un checksum para detectar datos corruptos. `BatchValidationResult` concentra el resultado de la validación y diferencia registros aceptados, rechazados y errores.
+
+`SyncAttempt` registra cada intento de transmisión y permite conservar trazabilidad cuando la sincronización falla y debe repetirse en un checkpoint posterior. `CheckpointIdentity` valida que el identificador Bluetooth corresponda a un checkpoint conocido.
+
+`ITelemetryIngestionPort` entrega los registros validados al componente responsable de persistir la telemetría. `ISyncBatchRepository` conserva los lotes procesados y permite detectar paquetes duplicados. `ICheckpointRegistry` resuelve la identidad del checkpoint sin introducir dependencias directas con el bounded context de configuración.
+
+#### Safety Monitoring Bounded Context
+
+Este bounded context transforma la telemetría sincronizada en información operativa de seguridad. Evalúa retrasos, alteraciones en signos vitales y desviaciones respecto de la ruta, y genera una Early Warning Alert cuando una regla identifica una condición de riesgo. Se relaciona con las User Stories US24 a US26.
+
+![Class Diagram del Safety Monitoring Bounded Context](../assets/images/chapter-4/class-diagrams/safety-monitoring.png)
+
+*Figura 4.7.1.4. Class Diagram del Safety Monitoring Bounded Context.*
+
+`EarlyWarningAlert` es el aggregate root y controla el tipo, prioridad y estado de una alerta. Sus operaciones permiten reconocerla, resolverla, escalarla o descartarla como False Alarm. Cada alerta conserva una o más instancias de `RiskEvidence` para explicar qué dato produjo la condición de riesgo.
+
+`SafetyEvaluation` ejecuta un conjunto de reglas sobre `RiskEvaluationContext` y produce objetos `RiskEvaluationResult`. La interfaz `IRiskRule` permite aplicar reglas intercambiables sin concentrar toda la lógica en una sola clase. `DelayRule`, `VitalSignsRule` y `RouteDeviationRule` implementan el contrato para evaluar respectivamente la Expected Time Window, el Baseline Range y la distancia respecto del trazado oficial.
+
+`IAlertRepository` abstrae la persistencia de alertas. `IAlertNotificationPort` permite distribuirlas al Operations Administrator y al Field Guide mediante un proveedor externo. Las enumeraciones `AlertType`, `AlertPriority` y `AlertStatus` restringen los valores válidos empleados durante el flujo.
+
+#### Incident Response Bounded Context
+
+Este bounded context gestiona la respuesta cuando una Early Warning Alert es verificada y se confirma una incidencia. Permite clasificar su severidad, declarar una emergencia, notificar a los contactos involucrados y coordinar una evacuación con una Rescue Entity. Se relaciona con las User Stories US27 a US30.
+
+![Class Diagram del Incident Response Bounded Context](../assets/images/chapter-4/class-diagrams/incident-response.png)
+
+*Figura 4.7.1.5. Class Diagram del Incident Response Bounded Context.*
+
+`Incident` es el aggregate root y controla la transición desde una incidencia reportada hasta su confirmación, escalamiento, evacuación y cierre. Puede originarse en una alerta, aunque esa relación es opcional porque el Field Guide también puede declarar manualmente una incidencia observada en campo. Cada incidente se documenta mediante una o más instancias de `IncidentEvidence`.
+
+Cuando la situación requiere evacuar a un turista, el incidente crea una `EvacuationRequest` asociada con una `GeoLocation`. Las comunicaciones se representan mediante `Notification`, que conserva el canal, destinatario y estado de entrega. `EmergencyContact` y `RescueEntity` representan destinatarios externos, mientras que `RescueCoordination` registra las acciones realizadas con la entidad de rescate.
+
+`IIncidentRepository` abstrae la persistencia del agregado. `INotificationPort` desacopla el dominio del proveedor utilizado para enviar correo, SMS, push o comunicaciones telefónicas. Las enumeraciones controlan la severidad, el estado del incidente, el canal de comunicación, la entrega y el estado de evacuación.
+
+#### Tour Closure Bounded Context
+
+Este bounded context controla el cierre formal de la expedición y la consolidación de la información generada durante el recorrido. Incluye la finalización del grupo, devolución de wearables y generación del Tour Summary con checkpoints, alertas e incidencias. Se relaciona principalmente con las User Stories US31 y US32.
+
+![Class Diagram del Tour Closure Bounded Context](../assets/images/chapter-4/class-diagrams/tour-closure.png)
+
+*Figura 4.7.1.6. Class Diagram del Tour Closure Bounded Context.*
+
+`TourClosure` es el aggregate root y coordina las condiciones necesarias para completar el recorrido. Registra las devoluciones mediante `DeviceReturn` y genera un `TourSummary` cuando la expedición termina. La enumeración `DeviceReturnCondition` permite determinar si un wearable puede volver al inventario, necesita mantenimiento o debe registrarse como perdido.
+
+`TourSummary` consolida objetos `CheckpointSummary`, `AlertSummary` e `IncidentSummary`. Estos value objects representan información proveniente de otros bounded contexts sin incorporar directamente sus agregados internos, reduciendo el acoplamiento entre módulos. El resumen incluye duración, distancia, checkpoints completados y cantidad de alertas e incidencias.
+
+`ITourSummarySource` define el contrato para consultar la información necesaria desde los demás bounded contexts. `ITourSummaryRepository` abstrae la persistencia del resumen y `IWearableInventoryPort` comunica la devolución del dispositivo al inventario correspondiente. `ClosureStatus` restringe los estados permitidos durante la consolidación y cierre del tour.
+
+En conjunto, los seis diagramas mantienen separación de responsabilidades y trazabilidad con el flujo operativo definido para VitalTrek. Los aggregate roots controlan las reglas de cada bounded context; las interfaces aíslan el dominio de la infraestructura; y los value objects permiten intercambiar información sin compartir directamente los modelos internos de otros contextos. Este diseño servirá como base para la implementación posterior de la RESTful API con ASP.NET Core, C# y Entity Framework Core.
 
 
 ## 4.8. Database Design.
