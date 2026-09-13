@@ -244,3 +244,103 @@ Las futuras Web Applications sí requieren búsqueda y filtros, ya que el volume
 | Reports                | Filtros por rango de fechas, Route y Expedition Group.                                                                                | Listado de Tour Summary disponibles para revisión operativa, con acceso directo al detalle del recorrido, los checkpoints y los eventos registrados. |
 
 Estos sistemas de búsqueda mantienen el mismo comportamiento en todos los módulos: los filtros aplicados nunca modifican los datos subyacentes y pueden restablecerse en cualquier momento mediante un control de tipo *Clear filters*; cuando una búsqueda no devuelve resultados, el sistema distingue entre la ausencia real de registros, por ejemplo ninguna expedición activa en ese momento, y la falta de coincidencias con los filtros aplicados, para que el Operations Administrator o el Field Guide no interpreten ese vacío como una falla del sistema. No existe una búsqueda global entre módulos, ya que entidades relacionadas como Route y Expedition Group deben mantenerse en contextos separados para evitar resultados ambiguos, y cada elemento devuelto por una búsqueda expone directamente su acción más frecuente, como abrir una alerta desde el propio resultado, para reducir pasos en escenarios donde el tiempo de respuesta incide en la seguridad del turista.
+
+## 4.6. Domain-Driven Software Architecture
+
+En esta sección se presenta la arquitectura de software de VitalTrek aplicando el **C4 Model**, a partir del dominio identificado en el Big Picture EventStorming y del Ubiquitous Language definido en la sección 2.5. Los diagramas se elaboran bajo el enfoque de diagram-as-code con Mermaid, alternativa contemplada para los C4 Model Diagrams.
+
+Las decisiones de tecnología responden al stack establecido para la solución: HTML5, CSS3 y JavaScript para el Landing Page, Vue Framework con PrimeVue para las Frontend Web Applications, ASP.NET Core con Entity Framework Core y C# para los Web Services bajo estilo arquitectónico RESTful, y PostgreSQL o MySQL como motor de base de datos relacional.
+
+La arquitectura responde a la restricción central del dominio: los grupos de expedición operan durante horas o días en zonas sin cobertura móvil, por lo que la solución no puede depender de conectividad continua. Esto determina que la sincronización de telemetría ocurra en ráfagas al pasar por los puntos de control y que la aplicación del turista funcione en modo offline.
+
+### 4.6.2. Software Architecture Context Diagram
+
+El Context Diagram corresponde al nivel 1 del C4 Model. Presenta a VitalTrek como una única caja central y muestra quiénes lo usan y con qué sistemas externos se relaciona, sin entrar en detalles de tecnología ni de estructura interna.
+
+```mermaid
+flowchart TB
+    admin["Operations Administrator<br/>Administrador de operaciones de la agencia"]
+    guide["Field Guide<br/>Guia de campo"]
+    tourist["Adventure Tourist<br/>Turista de aventura"]
+    vt["VitalTrek<br/>Plataforma de gestion y monitoreo de tours<br/>de aventura en zonas sin cobertura"]
+    iot["Ecosistema IoT<br/>Wearables y checkpoints Bluetooth"]
+    pay["MercadoPago<br/>Pasarela de pagos"]
+    notif["Servicio de notificaciones<br/>Correo y push"]
+    maps["Proveedor de mapas"]
+
+    admin -->|Configura rutas y checkpoints, supervisa grupos activos| vt
+    guide -->|Recibe alertas tempranas y consulta el estado del grupo| vt
+    tourist -->|Consulta mapa, checkpoints y notas de ruta sin conexion| vt
+    iot -->|Envia telemetria en rafagas al pasar por un checkpoint| vt
+    vt -->|Registra y cobra la suscripcion| pay
+    vt -->|Emite alertas tempranas y avisos operativos| notif
+    vt -->|Descarga los mapas base de las rutas| maps
+```
+
+| Elemento | Tipo | Descripción |
+| --- | --- | --- |
+| Operations Administrator | Persona | Responsable de la agencia. Configura rutas y puntos de control, asigna guías y supervisa los grupos activos desde la base de operaciones. |
+| Field Guide | Persona | Acompaña físicamente al grupo durante el recorrido. Recibe las alertas tempranas y ejecuta la respuesta en campo. |
+| Adventure Tourist | Persona | Participa en el tour, porta el dispositivo de monitoreo y consulta la información de la ruta sin conexión. |
+| Ecosistema IoT | Sistema externo | Wearables y checkpoints Bluetooth que capturan posición y signos vitales. Su comportamiento es simulado para el alcance del MVP. |
+| MercadoPago | Sistema externo | Pasarela de pagos para la gestión de suscripciones de las agencias. |
+| Servicio de notificaciones | Sistema externo | Entrega de alertas por correo y notificaciones push. |
+| Proveedor de mapas | Sistema externo | Provee los mapas base que se descargan para su uso sin conexión. |
+
+VitalTrek se sitúa entre dos ámbitos que hoy permanecen desconectados: la operación de la agencia, que ocurre en oficina y con conectividad, y el recorrido en campo, donde la cobertura es intermitente o nula. Los tres actores interactúan con el mismo sistema pero en momentos distintos: el Operations Administrator antes y durante el tour desde la base de operaciones, el Field Guide durante el recorrido, y el Adventure Tourist en ruta y de forma offline.
+
+Respecto de los sistemas externos, el ecosistema IoT es el único que no es consumido por VitalTrek sino que lo alimenta: constituye la fuente de la telemetría que hace posible la detección de retrasos y anomalías. Los otros tres son servicios que la plataforma consume. Esta distinción resulta relevante porque el ecosistema IoT es el punto de entrada de datos crítico y, a la vez, el elemento con mayor incertidumbre respecto de la conectividad.
+
+### 4.6.3. Software Architecture Container Diagrams
+
+El Container Diagram corresponde al nivel 2 del C4 Model. Descompone VitalTrek en sus unidades de despliegue independientes, indicando la responsabilidad de cada una, la tecnología seleccionada y la forma en que se comunican entre sí.
+
+```mermaid
+flowchart TB
+    admin["Operations Administrator"]
+    guide["Field Guide"]
+    tourist["Adventure Tourist"]
+    iot["Ecosistema IoT<br/>Wearables y checkpoints"]
+    pay["MercadoPago"]
+    notif["Servicio de notificaciones"]
+    maps["Proveedor de mapas"]
+
+    subgraph VitalTrek
+        landing["Landing Page<br/>HTML5, CSS3, JavaScript"]
+        webagency["Agency Web Application<br/>Vue + PrimeVue"]
+        webtourist["Tourist Web Application<br/>Vue + PrimeVue, PWA offline"]
+        api["RESTful API<br/>ASP.NET Core + EF Core, C#"]
+        sync["Checkpoint Sync Service<br/>ASP.NET Core, C#"]
+        db[("Base de datos<br/>PostgreSQL / MySQL")]
+    end
+
+    admin -->|Consulta planes y se registra| landing
+    admin -->|Configura tours y monitorea grupos| webagency
+    guide -->|Consulta alertas de su grupo| webagency
+    tourist -->|Consulta ruta y notas offline| webtourist
+    webagency -->|JSON / HTTPS| api
+    webtourist -->|Sincroniza al recuperar conexion, JSON / HTTPS| api
+    iot -->|Transmite telemetria acumulada| sync
+    sync -->|Entrega telemetria validada y ordenada| api
+    api -->|Lee y escribe, SQL| db
+    api -->|Gestiona suscripciones, HTTPS| pay
+    api -->|Emite alertas, HTTPS| notif
+    webtourist -->|Descarga mapas para uso offline| maps
+```
+
+| Container | Tecnología | Responsabilidad |
+| --- | --- | --- |
+| Landing Page | HTML5, CSS3, JavaScript | Presenta la propuesta de valor, los planes de suscripción y deriva al registro de nuevas agencias. |
+| Agency Web Application | Vue Framework con PrimeVue | Configuración de rutas y checkpoints, dashboard de grupos activos, gestión de alertas e incidencias y administración de la suscripción. |
+| Tourist Web Application | Vue Framework con PrimeVue, PWA con almacenamiento local | Mapa de la ruta, checkpoints, notas de ruta y resumen del recorrido. Opera sin conexión y sincroniza al recuperar conectividad. |
+| RESTful API | ASP.NET Core con Entity Framework Core, C# | Lógica de negocio: gestión de tours y rutas, evaluación del motor de reglas, generación de alertas tempranas y gestión de suscripciones. |
+| Checkpoint Sync Service | ASP.NET Core, C# | Recibe las ráfagas de telemetría provenientes de los checkpoints, las valida, ordena por marca de tiempo y las entrega a la API. |
+| Base de datos | PostgreSQL o MySQL | Almacena agencias, usuarios, rutas, checkpoints, grupos de expedición, registros de paso, telemetría, alertas, incidencias y suscripciones. |
+
+La separación entre las dos aplicaciones web responde a que los segmentos objetivo tienen necesidades opuestas. La Agency Web Application es un panel de supervisión que asume conectividad y prioriza la densidad de información. La Tourist Web Application, en cambio, debe funcionar con el dispositivo sin señal, por lo que se plantea como Progressive Web App con almacenamiento local: descarga la información de la ruta antes de iniciar el recorrido y la consulta sin depender de la red.
+
+El Checkpoint Sync Service se separa de la API por una razón propia del dominio. La telemetría no llega de forma continua ni ordenada, sino en ráfagas cuando un checkpoint recupera conectividad, y puede contener registros de varias horas atrás. Aislar esa recepción evita que los picos de ingesta afecten la disponibilidad del dashboard de la agencia y permite validar y ordenar los datos antes de que el motor de reglas los evalúe.
+
+El motor de reglas reside dentro de la RESTful API porque requiere consultar la ruta, las ventanas de tiempo esperadas y los rangos basales de cada turista para determinar si un registro de paso constituye un retraso o una anomalía. Esa decisión no puede tomarse en el punto de ingesta, que solo conoce el dato aislado.
+
+Finalmente, los contenedores comparten una única base de datos relacional. Esta decisión resulta adecuada para el alcance del MVP, dado el volumen esperado y la fuerte relación entre las entidades del dominio: una agencia tiene rutas, una ruta tiene checkpoints, y un grupo de expedición recorre una ruta y genera registros de paso.
