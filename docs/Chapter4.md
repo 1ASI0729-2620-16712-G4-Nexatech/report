@@ -245,6 +245,127 @@ Las futuras Web Applications sí requieren búsqueda y filtros, ya que el volume
 
 Estos sistemas de búsqueda mantienen el mismo comportamiento en todos los módulos: los filtros aplicados nunca modifican los datos subyacentes y pueden restablecerse en cualquier momento mediante un control de tipo *Clear filters*; cuando una búsqueda no devuelve resultados, el sistema distingue entre la ausencia real de registros, por ejemplo ninguna expedición activa en ese momento, y la falta de coincidencias con los filtros aplicados, para que el Operations Administrator o el Field Guide no interpreten ese vacío como una falla del sistema. No existe una búsqueda global entre módulos, ya que entidades relacionadas como Route y Expedition Group deben mantenerse en contextos separados para evitar resultados ambiguos, y cada elemento devuelto por una búsqueda expone directamente su acción más frecuente, como abrir una alerta desde el propio resultado, para reducir pasos en escenarios donde el tiempo de respuesta incide en la seguridad del turista.
 
+### 4.3. Landing Page UI Design.
+
+La Landing Page de **VitalTrek** presenta la propuesta de valor, funcionamiento, beneficios, planes y medios de contacto para agencias y turistas de aventura. Su diseño aplica las Style Guidelines y la Information Architecture definidas, utilizando una interfaz responsive, accesible y disponible en inglés y español. Los call-to-action permiten consultar los planes, conocer el proceso de seguridad y solicitar una demostración.
+
+#### 4.3.1. Landing Page Wireframe.
+El wireframe establece la estructura, jerarquía y distribución inicial del contenido de la Landing Page de VitalTrek. La navegación sigue una secuencia vertical que permite conocer la propuesta de valor, comprender el problema, revisar el funcionamiento de la solución, comparar planes y solicitar una demostración.
+
+![Wireframe general de la Landing Page](../assets/images/chapter-4/wireframes/Wireframe-VitalRek.png)
+
+*Figura 4.X. Wireframe desktop de la Landing Page de VitalTrek.*
+
+**Encabezado, Hero y métricas**
+
+![Wireframe del Hero](../assets/images/chapter-4/wireframes/hero-metrics.png)
+
+*Figura 4.X. Estructura del encabezado, Hero y métricas.*
+
+El encabezado contiene la navegación principal, el selector de idioma y el CTA. El Hero organiza la propuesta de valor, las acciones principales y una representación del dashboard. Debajo se muestran las métricas principales del producto.
+
+**Problema, solución y funcionamiento**
+
+![Wireframe del problema y funcionamiento](../assets/images/chapter-4/wireframes/problem-how-it-works.png)
+
+*Figura 4.X. Estructura del problema, solución y funcionamiento.*
+
+La información se organiza en columnas para contrastar las limitaciones actuales con la propuesta de VitalTrek. Luego se presenta un flujo secuencial de tres pasos que explica el funcionamiento general.
+
+**Segmentos y funcionalidades**
+
+![Wireframe de segmentos y funcionalidades](../assets/images/chapter-4/wireframes/audiences-features.png)
+
+*Figura 4.X. Distribución de segmentos y funcionalidades.*
+
+Los beneficios para operadores y turistas se separan en dos tarjetas. Las funcionalidades se organizan posteriormente mediante una cuadrícula que facilita su exploración.
+
+**Privacidad y planes**
+
+![Wireframe de privacidad y planes](../assets/images/chapter-4/wireframes/privacy-plans.png)
+
+*Figura 4.X. Estructura de privacidad y comparación de planes.*
+
+La sección de privacidad combina principios de tratamiento de datos con una representación de su flujo. Los planes utilizan tarjetas comparables y destacan una alternativa recomendada mediante mayor jerarquía visual.
+
+**Equipo, preguntas frecuentes y cierre**
+
+![Wireframe de las secciones finales](../assets/images/chapter-4/wireframes/team-faq-footer.png)
+
+*Figura 4.X. Estructura del equipo, preguntas frecuentes, CTA y footer.*
+
+La parte final contiene las tarjetas del equipo, un componente de preguntas frecuentes, el CTA de demostración y el footer con navegación e información legal.
+
+#### 4.3.2. Landing Page Mock-up.
+El mock-up de la Landing Page aplica la identidad visual de VitalTrek mediante tonos verdes, fondos claros, tipografía de alto contraste y acentos amarillos para los call-to-action. Su contenido sigue una secuencia que presenta el problema, explica la solución, diferencia los segmentos objetivo y conduce al visitante hacia la solicitud de una demostración.
+
+![Mock-up general de la Landing Page](../assets/images/chapter-4/mockups/landinPage-VitalRek.png)
+
+*Figura 4.X. Mock-up general de la Landing Page de VitalTrek.*
+
+**Hero y métricas principales**
+
+![Hero y métricas](../assets/images/chapter-4/mockups/hero-metrics.png)
+
+*Figura 4.X. Hero y métricas principales.*
+
+El Hero comunica la propuesta de seguridad y monitoreo de VitalTrek, presenta una vista previa del dashboard y ofrece los CTA `Request a demo` y `See how it works`. Las métricas resumen los objetivos de registro en checkpoints, detección de anomalías y funcionamiento offline.
+
+**Problema y propuesta de solución**
+
+![Problema y solución](../assets/images/chapter-4/mockups/problem-solution.png)
+
+*Figura 4.X. Presentación del problema y la solución.*
+
+Esta sección contrasta las limitaciones del monitoreo tradicional con la propuesta de visibilidad basada en checkpoints, sincronización periódica, alertas y operación offline.
+
+**Funcionamiento de VitalTrek**
+
+![Funcionamiento](../assets/images/chapter-4/mockups/how-it-works.png)
+
+*Figura 4.X. Flujo general de funcionamiento.*
+
+El proceso se explica mediante tres pasos: configuración de la ruta, sincronización de datos en campo y respuesta ante riesgos. La disposición secuencial facilita comprender el flujo operativo.
+
+**Segmentos objetivo y funcionalidades**
+
+![Segmentos y funcionalidades](../assets/images/chapter-4/mockups/audiences-features.png)
+
+*Figura 4.X. Contenido dirigido a operadores y turistas.*
+
+La Landing Page diferencia los beneficios para Tour Operators y Adventure Tourists. Posteriormente, presenta las funcionalidades principales mediante tarjetas organizadas en una cuadrícula visual.
+
+**Seguridad y privacidad**
+
+![Seguridad y privacidad](../assets/images/chapter-4/mockups/security-privacy.png)
+
+*Figura 4.X. Tratamiento responsable de los datos.*
+
+Esta sección explica el consentimiento informado, acceso restringido, tratamiento transparente y almacenamiento controlado de datos. También muestra el recorrido de la información desde el wearable hasta la agencia.
+
+**Planes**
+
+![Planes](../assets/images/chapter-4/mockups/plans.png)
+
+*Figura 4.X. Comparación de planes de suscripción.*
+
+Los planes se presentan mediante tarjetas comparables que muestran precio, alcance y características. El plan recomendado utiliza mayor contraste visual para orientar la decisión del representante de la agencia.
+
+**Equipo, preguntas frecuentes y CTA final**
+
+![Equipo y cierre](../assets/images/chapter-4/mockups/team-faq-cta.png)
+
+*Figura 4.X. Equipo, preguntas frecuentes y cierre de la Landing Page.*
+
+La sección final presenta a Nexum Devs, resuelve dudas mediante un componente de preguntas frecuentes y cierra con un CTA para solicitar una demostración. El footer proporciona acceso a navegación, información legal y cambio de idioma.
+
+### 4.4. Web Applications UX/UI Design.
+#### 4.4.1. Web Applications Wireframes.
+#### 4.4.2. Web Applications Wireflow Diagrams.
+#### 4.4.3. Web Applications Mock-ups.
+#### 4.4.4. Web Applications User Flow Diagrams.
+### 4.5. Web Applications Prototyping.
+
 ### 4.6.1. Design-Level Event Storming
 
 #### Propósito y alcance
