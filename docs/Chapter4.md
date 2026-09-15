@@ -254,13 +254,13 @@ El wireframe establece la estructura, jerarquía y distribución inicial del con
 
 ![Wireframe general de la Landing Page](../assets/images/chapter-4/wireframes/Wireframe-VitalRek.png)
 
-*Figura 4.X. Wireframe desktop de la Landing Page de VitalTrek.*
+*Figura 4.1. Wireframe desktop de la Landing Page de VitalTrek.*
 
 **Encabezado, Hero y métricas**
 
 ![Wireframe del Hero](../assets/images/chapter-4/wireframes/hero-metrics.png)
 
-*Figura 4.X. Estructura del encabezado, Hero y métricas.*
+*Figura 4.2. Estructura del encabezado, Hero y métricas.*
 
 El encabezado contiene la navegación principal, el selector de idioma y el CTA. El Hero organiza la propuesta de valor, las acciones principales y una representación del dashboard. Debajo se muestran las métricas principales del producto.
 
@@ -268,7 +268,7 @@ El encabezado contiene la navegación principal, el selector de idioma y el CTA.
 
 ![Wireframe del problema y funcionamiento](../assets/images/chapter-4/wireframes/problem-how-it-works.png)
 
-*Figura 4.X. Estructura del problema, solución y funcionamiento.*
+*Figura 4.3. Estructura del problema, solución y funcionamiento.*
 
 La información se organiza en columnas para contrastar las limitaciones actuales con la propuesta de VitalTrek. Luego se presenta un flujo secuencial de tres pasos que explica el funcionamiento general.
 
@@ -276,7 +276,7 @@ La información se organiza en columnas para contrastar las limitaciones actuale
 
 ![Wireframe de segmentos y funcionalidades](../assets/images/chapter-4/wireframes/audiences-features.png)
 
-*Figura 4.X. Distribución de segmentos y funcionalidades.*
+*Figura 4.4. Distribución de segmentos y funcionalidades.*
 
 Los beneficios para operadores y turistas se separan en dos tarjetas. Las funcionalidades se organizan posteriormente mediante una cuadrícula que facilita su exploración.
 
@@ -292,7 +292,7 @@ La sección de privacidad combina principios de tratamiento de datos con una rep
 
 ![Wireframe de las secciones finales](../assets/images/chapter-4/wireframes/team-faq-footer.png)
 
-*Figura 4.X. Estructura del equipo, preguntas frecuentes, CTA y footer.*
+*Figura 4.5. Estructura del equipo, preguntas frecuentes, CTA y footer.*
 
 La parte final contiene las tarjetas del equipo, un componente de preguntas frecuentes, el CTA de demostración y el footer con navegación e información legal.
 
@@ -301,13 +301,13 @@ El mock-up de la Landing Page aplica la identidad visual de VitalTrek mediante t
 
 ![Mock-up general de la Landing Page](../assets/images/chapter-4/mockups/landinPage-VitalRek.png)
 
-*Figura 4.X. Mock-up general de la Landing Page de VitalTrek.*
+*Figura 4.6. Mock-up general de la Landing Page de VitalTrek.*
 
 **Hero y métricas principales**
 
 ![Hero y métricas](../assets/images/chapter-4/mockups/hero-metrics.png)
 
-*Figura 4.X. Hero y métricas principales.*
+*Figura 4.7. Hero y métricas principales.*
 
 El Hero comunica la propuesta de seguridad y monitoreo de VitalTrek, presenta una vista previa del dashboard y ofrece los CTA `Request a demo` y `See how it works`. Las métricas resumen los objetivos de registro en checkpoints, detección de anomalías y funcionamiento offline.
 
@@ -315,7 +315,7 @@ El Hero comunica la propuesta de seguridad y monitoreo de VitalTrek, presenta un
 
 ![Problema y solución](../assets/images/chapter-4/mockups/problem-solution.png)
 
-*Figura 4.X. Presentación del problema y la solución.*
+*Figura 4.8. Presentación del problema y la solución.*
 
 Esta sección contrasta las limitaciones del monitoreo tradicional con la propuesta de visibilidad basada en checkpoints, sincronización periódica, alertas y operación offline.
 
@@ -323,7 +323,7 @@ Esta sección contrasta las limitaciones del monitoreo tradicional con la propue
 
 ![Funcionamiento](../assets/images/chapter-4/mockups/how-it-works.png)
 
-*Figura 4.X. Flujo general de funcionamiento.*
+*Figura 4.9. Flujo general de funcionamiento.*
 
 El proceso se explica mediante tres pasos: configuración de la ruta, sincronización de datos en campo y respuesta ante riesgos. La disposición secuencial facilita comprender el flujo operativo.
 
@@ -331,7 +331,7 @@ El proceso se explica mediante tres pasos: configuración de la ruta, sincroniza
 
 ![Segmentos y funcionalidades](../assets/images/chapter-4/mockups/audiences-features.png)
 
-*Figura 4.X. Contenido dirigido a operadores y turistas.*
+*Figura 4.10. Contenido dirigido a operadores y turistas.*
 
 La Landing Page diferencia los beneficios para Tour Operators y Adventure Tourists. Posteriormente, presenta las funcionalidades principales mediante tarjetas organizadas en una cuadrícula visual.
 
@@ -339,7 +339,7 @@ La Landing Page diferencia los beneficios para Tour Operators y Adventure Touris
 
 ![Seguridad y privacidad](../assets/images/chapter-4/mockups/security-privacy.png)
 
-*Figura 4.X. Tratamiento responsable de los datos.*
+*Figura 4.11. Tratamiento responsable de los datos.*
 
 Esta sección explica el consentimiento informado, acceso restringido, tratamiento transparente y almacenamiento controlado de datos. También muestra el recorrido de la información desde el wearable hasta la agencia.
 
@@ -347,7 +347,7 @@ Esta sección explica el consentimiento informado, acceso restringido, tratamien
 
 ![Planes](../assets/images/chapter-4/mockups/plans.png)
 
-*Figura 4.X. Comparación de planes de suscripción.*
+*Figura 4.12. Comparación de planes de suscripción.*
 
 Los planes se presentan mediante tarjetas comparables que muestran precio, alcance y características. El plan recomendado utiliza mayor contraste visual para orientar la decisión del representante de la agencia.
 
@@ -355,15 +355,24 @@ Los planes se presentan mediante tarjetas comparables que muestran precio, alcan
 
 ![Equipo y cierre](../assets/images/chapter-4/mockups/team-faq-cta.png)
 
-*Figura 4.X. Equipo, preguntas frecuentes y cierre de la Landing Page.*
+*Figura 4.13. Equipo, preguntas frecuentes y cierre de la Landing Page.*
 
 La sección final presenta a Nexum Devs, resuelve dudas mediante un componente de preguntas frecuentes y cierra con un CTA para solicitar una demostración. El footer proporciona acceso a navegación, información legal y cambio de idioma.
 
 ### 4.4. Web Applications UX/UI Design.
+
+Los wireframes y mockups aquí presentados muestran la estructura inicial de las vistas principales, priorizando la jerarquía visual, la simplicidad de navegación, la accesibilidad, la escalabilidad futura y la claridad en la presentación de información crítica como rutas, paraderos, notificaciones y configuraciones del usuario.
+
 #### 4.4.1. Web Applications Wireframes.
+
+Wireframe 1: Operations Dashboard — Active Expeditions
+
 #### 4.4.2. Web Applications Wireflow Diagrams.
+
 #### 4.4.3. Web Applications Mock-ups.
+
 #### 4.4.4. Web Applications User Flow Diagrams.
+
 ### 4.5. Web Applications Prototyping.
 
 ### 4.6.1. Design-Level Event Storming
