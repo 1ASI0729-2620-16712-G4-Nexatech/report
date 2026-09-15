@@ -367,6 +367,10 @@ Los wireframes y mockups aquí presentados muestran la estructura inicial de las
 
 La sección de wireframes presenta la estructura base de las interfaces web operativas de VitalTrek, orientadas a la supervisión de rutas, el control de expediciones, la asignación de personal y la respuesta ante incidentes. Estas pantallas priorizan la legibilidad, la rapidez operativa y la toma de decisiones en contexto, especialmente cuando el personal trabaja en condiciones de cobertura limitada o con alta carga de riesgo.
 
+**Wireframe 0 - Login - Sign in**
+
+![Wireframe Login](../assets/images/chapter-4/wireframes/WebApplicationWLogin.jpg)
+
 **Wireframe 1 - Dashboard de expediciones**
 
 Este primer wireframe corresponde a un panel principal de control para el Operations Administrator. En la parte izquierda se observa un menú lateral con módulos como “Active Expeditions”, “Route & Checkpoints” y “Emergency Response”, mientras que el cuerpo principal muestra indicadores resumidos sobre expediciones completadas, verificadas y no programadas. La vista se complementa con una tabla histórica de tours y un panel lateral de detalle que permite consultar el estado, los días de recorrido, la cantidad de tripulantes y el nivel de cumplimiento de la ruta. La intención del diseño es ofrecer una visión global del estado operativo sin saturar la pantalla.
@@ -407,6 +411,11 @@ El último wireframe concentra el estado operativo global con una perspectiva m�
 
 #### 4.4.3. Web Applications Mock-ups.
 Los mock-ups representan la evolución visual de los wireframes anteriores, aplicando la identidad gráfica de VitalTrek y refinando la jerarquía de información para que cada pantalla se perciba como una herramienta operativa clara, profesional y confiable. Aquí se incorporan componentes visuales más definidos, estados de riesgo, etiquetas funcionales y un sistema de navegación que facilita la lectura rápida de información crítica.
+
+
+**Mock-up 0 - Login - Sign in**
+
+![Mock-up 0](../assets/images/chapter-4/mockups/WebApplicationMULogin.jpg)
 
 **Mock-up 1 - Reportes de expedición e historial**
 
