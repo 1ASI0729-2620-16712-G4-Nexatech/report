@@ -365,33 +365,82 @@ Los wireframes y mockups aquí presentados muestran la estructura inicial de las
 
 #### 4.4.1. Web Applications Wireframes.
 
-Wireframe 1: Operations Dashboard — Active Expeditions
+La sección de wireframes presenta la estructura base de las interfaces web operativas de VitalTrek, orientadas a la supervisión de rutas, el control de expediciones, la asignación de personal y la respuesta ante incidentes. Estas pantallas priorizan la legibilidad, la rapidez operativa y la toma de decisiones en contexto, especialmente cuando el personal trabaja en condiciones de cobertura limitada o con alta carga de riesgo.
+
+**Wireframe 1 - Dashboard de expediciones**
+
+Este primer wireframe corresponde a un panel principal de control para el Operations Administrator. En la parte izquierda se observa un menú lateral con módulos como “Active Expeditions”, “Route & Checkpoints” y “Emergency Response”, mientras que el cuerpo principal muestra indicadores resumidos sobre expediciones completadas, verificadas y no programadas. La vista se complementa con una tabla histórica de tours y un panel lateral de detalle que permite consultar el estado, los días de recorrido, la cantidad de tripulantes y el nivel de cumplimiento de la ruta. La intención del diseño es ofrecer una visión global del estado operativo sin saturar la pantalla.
 
 ![Wireframe 1](../assets/images/chapter-4/wireframes/WebApplicationW1.jpg)
 
+**Wireframe 2 - Espacio de despacho**
+
+Este wireframe presenta la vista de despacho y asignación de personal. Se organiza como un tablero de coordinación donde se puede visualizar el estado de cada grupo de expedición, seleccionar líderes de grupo, asignar asistentes, revisar equipo técnico y confirmar los protocolos de seguridad antes de salir. El diseño prioriza la comparación entre grupos, agrupando información clave como guía principal, asistentes, hardware, radios y cumplimiento de requisitos. Es una vista centrada en la preparación y ejecución operativa del tour.
+
 ![Wireframe 2](../assets/images/chapter-4/wireframes/WebApplicationW2.jpg)
+
+**Wireframe 3 - Monitor de alertas e incidentes**
+
+Este wireframe corresponde a la consola de alertas críticas y respuesta a incidentes. La interfaz muestra tarjetas con eventos como retrasos, anomalías biométricas, alertas de pánico y casos activos, así como indicadores detalle de la condición del turista. La vista también incorpora información del guía, del sector y del protocolo de evacuación, y se apoya en controles que permiten tomar decisiones rápidas: activar rescate, notificar a contactos, registrar la causa del incidente o revisar el historial del caso. La pantalla está pensada para que el operador actúe con rapidez en condiciones de emergencia.
 
 ![Wireframe 3](../assets/images/chapter-4/wireframes/WebApplicationW3.jpg)
 
+**Wireframe 4 - Configuración de ruta y checkpoints**
+
+Este wireframe muestra la vista de planeación y configuración de una ruta. En el centro se presenta el recorrido geográfico, dividido por checkpoints y con marcadores de elevación, distancia y tiempo estimado. Además, se visualiza la secuencia de puntos de control, los rangos de tiempo esperados y los protocolos que deben activarse en cada etapa. La disposición del contenido permite al usuario entender la ruta como una secuencia lógica, con puntos críticos y ventanas de tolerancia que pueden influir directamente en la seguridad del grupo.
+
 ![Wireframe 4](../assets/images/chapter-4/wireframes/WebApplicationW4.jpg)
 
+**Wireframe 5 - Asignación de guías y equipos**
+
+Esta vista está enfocada en la distribución del personal y el equipamiento antes del inicio del tour. El diseño presenta una lista de grupos pendientes y disponibles, junto con una selección de guías certificados, asistentes y unidades de apoyo. En la columna derecha se muestran la asignación de hardware, radios, equipo médico y cierres de seguridad requeridos para cada expedición. Su objetivo es garantizar que cada grupo cuente con la persona adecuada y con los medios necesarios para operar sin contratiempos.
+
 ![Wireframe 5](../assets/images/chapter-4/wireframes/WebApplicationW5.jpg)
+
+**Wireframe 6 - Consola de alertas y resolución**
+
+El último wireframe concentra el estado operativo global con una perspectiva más ejecutiva. En la parte superior se listan alertas activas, incidencias biométricas y casos resueltos; en el bloque central se muestra un caso crítico con información del turista, el estado fisiológico, protocolo recomendado y acciones a ejecutar. El panel lateral incluye instrucciones para el equipo de campo, contactos de emergencia, mapeo del recorrido, y un resumen del último escenario operativo. Esta vista es clave para priorizar atención, cerrar incidentes y conservar trazabilidad del evento.
 
 ![Wireframe 6](../assets/images/chapter-4/wireframes/WebApplicationW6.jpg)
 
 #### 4.4.2. Web Applications Wireflow Diagrams.
 
 #### 4.4.3. Web Applications Mock-ups.
+Los mock-ups representan la evolución visual de los wireframes anteriores, aplicando la identidad gráfica de VitalTrek y refinando la jerarquía de información para que cada pantalla se perciba como una herramienta operativa clara, profesional y confiable. Aquí se incorporan componentes visuales más definidos, estados de riesgo, etiquetas funcionales y un sistema de navegación que facilita la lectura rápida de información crítica.
+
+**Mock-up 1 - Reportes de expedición e historial**
+
+Este mock-up presenta la interfaz de reportes y registros históricos de expediciones. El diseño conserva la estructura de un dashboard operativo, pero con una presentación más pulida: indicadores de cumplimiento, filtros de búsqueda, tabla de eventos y un panel lateral con un resumen del tour seleccionado. La vista comunica de manera clara la evolución del recorrido, el grado de cumplimiento, la verificación de checkpoints y la trazabilidad del historial operativo, ideal para revisión de desempeño y auditoría.
 
 ![Mock-up 1](../assets/images/chapter-4/mockups/WebApplicationMU1.jpg)
 
+**Mock-up 2 - Alerta crítica y protocolo de rescate**
+
+Este mock-up enfatiza la respuesta ante una emergencia. La pantalla muestra una alerta crítica activa con detalles del turista afectado, su condición fisiológica, la ruta, el equipo asignado y el protocolo de rescate en curso. El panel derecho centraliza las decisiones operativas: activar rescate, verificar la política de seguridad, contactar a emergencia y coordinar la respuesta. El uso de color, contraste y jerarquía visual ayuda a distinguir la gravedad del evento y a reducir el tiempo de reacción del operador.
+
 ![Mock-up 2](../assets/images/chapter-4/mockups/WebApplicationMU2.jpg)
+
+**Mock-up 3 - Seguimiento activo de la flota**
+
+En esta vista se presenta un mapa operativo y un listado de expediciones activas. La interfaz combina indicadores de estado, nivel de riesgo, tiempos estimados y datos de sincronización en tiempo real para cada grupo. La parte izquierda muestra la colección de expediciones, mientras que el panel derecho ofrece una vista consolidada de un tour específico con mapa, métricas de salud, checkpoints y condiciones del entorno. Es una pantalla orientada a la supervisión continua y la gestión de riesgo en campo.
 
 ![Mock-up 3](../assets/images/chapter-4/mockups/WebApplicationMU3.jpg)
 
+**Mock-up 4 - Ruta, checkpoints y ventanas de tiempo**
+
+Este mock-up se centra en la configuración técnica de una ruta y la validación de ventanas de tiempo. Se visualiza el recorrido en un gráfico, la secuencia de checkpoints, el tiempo estimado entre puntos, la ruta de evacuación y el estado de sincronización. La pantalla integra información operativa y normativa para asegurar que cada punto del recorrido cumple con los parámetros definidos. Tiene una fuerte intención de control y trazabilidad, permitiendo detectar desviaciones antes de que se conviertan en incidentes.
+
 ![Mock-up 4](../assets/images/chapter-4/mockups/WebApplicationMU4.jpg)
 
+**Mock-up 5 - Despacho y asignación de guías**
+
+Esta pantalla refleja la operación de despacho y asignación de personal para una expedición. La vista cuenta con un panel de grupos pendientes, supervisión de guías disponibles, checklist de equipamiento y aprobación de protocolos de seguridad. El diseño facilita la selección del guía adecuado, la validación del hardware, y la coordinación con el equipo de campo antes del inicio del recorrido. Se espera que esta interfaz reduzca errores humanos y acelere la preparación de cada tour.
+
 ![Mock-up 5](../assets/images/chapter-4/mockups/WebApplicationMU5.jpg)
+
+**Mock-up 6 - Consola de alertas y resolución de incidentes**
+
+El mock-up final muestra una consola de control para alertas, incidentes y resolución operativa. Las tarjetas superiores resumen eventos críticos, anómalos y resueltos, mientras que el panel central presenta un caso activo con los datos relevantes del turista y la recomendación inmediata del sistema. A la derecha se muestra un esquema operativo con contactos, protocolos y un mapa de ubicación. La composición visual refuerza la prioridad del contenido y facilita que el administrador tome decisiones seguras, rápidas y bien documentadas.
 
 ![Mock-up 6](../assets/images/chapter-4/mockups/WebApplicationMU6.jpg)
 
