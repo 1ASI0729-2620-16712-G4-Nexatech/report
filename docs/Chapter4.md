@@ -367,9 +367,33 @@ Los wireframes y mockups aquí presentados muestran la estructura inicial de las
 
 Wireframe 1: Operations Dashboard — Active Expeditions
 
+![Wireframe 1](../assets/images/chapter-4/wireframes/WebApplicationW1.jpg)
+
+![Wireframe 2](../assets/images/chapter-4/wireframes/WebApplicationW2.jpg)
+
+![Wireframe 3](../assets/images/chapter-4/wireframes/WebApplicationW3.jpg)
+
+![Wireframe 4](../assets/images/chapter-4/wireframes/WebApplicationW4.jpg)
+
+![Wireframe 5](../assets/images/chapter-4/wireframes/WebApplicationW5.jpg)
+
+![Wireframe 6](../assets/images/chapter-4/wireframes/WebApplicationW6.jpg)
+
 #### 4.4.2. Web Applications Wireflow Diagrams.
 
 #### 4.4.3. Web Applications Mock-ups.
+
+![Mock-up 1](../assets/images/chapter-4/mockups/WebApplicationMU1.jpg)
+
+![Mock-up 2](../assets/images/chapter-4/mockups/WebApplicationMU2.jpg)
+
+![Mock-up 3](../assets/images/chapter-4/mockups/WebApplicationMU3.jpg)
+
+![Mock-up 4](../assets/images/chapter-4/mockups/WebApplicationMU4.jpg)
+
+![Mock-up 5](../assets/images/chapter-4/mockups/WebApplicationMU5.jpg)
+
+![Mock-up 6](../assets/images/chapter-4/mockups/WebApplicationMU6.jpg)
 
 #### 4.4.4. Web Applications User Flow Diagrams.
 
