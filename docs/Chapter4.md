@@ -245,11 +245,11 @@ Las futuras Web Applications sí requieren búsqueda y filtros, ya que el volume
 
 Estos sistemas de búsqueda mantienen el mismo comportamiento en todos los módulos: los filtros aplicados nunca modifican los datos subyacentes y pueden restablecerse en cualquier momento mediante un control de tipo *Clear filters*; cuando una búsqueda no devuelve resultados, el sistema distingue entre la ausencia real de registros, por ejemplo ninguna expedición activa en ese momento, y la falta de coincidencias con los filtros aplicados, para que el Operations Administrator o el Field Guide no interpreten ese vacío como una falla del sistema. No existe una búsqueda global entre módulos, ya que entidades relacionadas como Route y Expedition Group deben mantenerse en contextos separados para evitar resultados ambiguos, y cada elemento devuelto por una búsqueda expone directamente su acción más frecuente, como abrir una alerta desde el propio resultado, para reducir pasos en escenarios donde el tiempo de respuesta incide en la seguridad del turista.
 
-### 4.3. Landing Page UI Design.
+## 4.3. Landing Page UI Design.
 
 La Landing Page de **VitalTrek** presenta la propuesta de valor, funcionamiento, beneficios, planes y medios de contacto para agencias y turistas de aventura. Su diseño aplica las Style Guidelines y la Information Architecture definidas, utilizando una interfaz responsive, accesible y disponible en inglés y español. Los call-to-action permiten consultar los planes, conocer el proceso de seguridad y solicitar una demostración.
 
-#### 4.3.1. Landing Page Wireframe.
+### 4.3.1. Landing Page Wireframe.
 El wireframe establece la estructura, jerarquía y distribución inicial del contenido de la Landing Page de VitalTrek. La navegación sigue una secuencia vertical que permite conocer la propuesta de valor, comprender el problema, revisar el funcionamiento de la solución, comparar planes y solicitar una demostración.
 
 ![Wireframe general de la Landing Page](../assets/images/chapter-4/wireframes/Wireframe-VitalRek.png)
@@ -296,7 +296,7 @@ La sección de privacidad combina principios de tratamiento de datos con una rep
 
 La parte final contiene las tarjetas del equipo, un componente de preguntas frecuentes, el CTA de demostración y el footer con navegación e información legal.
 
-#### 4.3.2. Landing Page Mock-up.
+### 4.3.2. Landing Page Mock-up.
 El mock-up de la Landing Page aplica la identidad visual de VitalTrek mediante tonos verdes, fondos claros, tipografía de alto contraste y acentos amarillos para los call-to-action. Su contenido sigue una secuencia que presenta el problema, explica la solución, diferencia los segmentos objetivo y conduce al visitante hacia la solicitud de una demostración.
 
 ![Mock-up general de la Landing Page](../assets/images/chapter-4/mockups/landinPage-VitalRek.png)
@@ -359,11 +359,11 @@ Los planes se presentan mediante tarjetas comparables que muestran precio, alcan
 
 La sección final presenta a Nexum Devs, resuelve dudas mediante un componente de preguntas frecuentes y cierra con un CTA para solicitar una demostración. El footer proporciona acceso a navegación, información legal y cambio de idioma.
 
-### 4.4. Web Applications UX/UI Design.
+## 4.4. Web Applications UX/UI Design.
 
 Los wireframes y mockups aquí presentados muestran la estructura inicial de las vistas principales, priorizando la jerarquía visual, la simplicidad de navegación, la accesibilidad, la escalabilidad futura y la claridad en la presentación de información crítica como rutas, paraderos, notificaciones y configuraciones del usuario.
 
-#### 4.4.1. Web Applications Wireframes.
+### 4.4.1. Web Applications Wireframes.
 
 La sección de wireframes presenta la estructura base de las interfaces web operativas de VitalTrek, orientadas a la supervisión de rutas, el control de expediciones, la asignación de personal y la respuesta ante incidentes. Estas pantallas priorizan la legibilidad, la rapidez operativa y la toma de decisiones en contexto, especialmente cuando el personal trabaja en condiciones de cobertura limitada o con alta carga de riesgo.
 
@@ -407,9 +407,9 @@ El último wireframe concentra el estado operativo global con una perspectiva m�
 
 ![Wireframe 6](../assets/images/chapter-4/wireframes/WebApplicationW6.jpg)
 
-#### 4.4.2. Web Applications Wireflow Diagrams.
+### 4.4.2. Web Applications Wireflow Diagrams.
 
-#### 4.4.3. Web Applications Mock-ups.
+### 4.4.3. Web Applications Mock-ups.
 Los mock-ups representan la evolución visual de los wireframes anteriores, aplicando la identidad gráfica de VitalTrek y refinando la jerarquía de información para que cada pantalla se perciba como una herramienta operativa clara, profesional y confiable. Aquí se incorporan componentes visuales más definidos, estados de riesgo, etiquetas funcionales y un sistema de navegación que facilita la lectura rápida de información crítica.
 
 
@@ -453,9 +453,9 @@ El mock-up final muestra una consola de control para alertas, incidentes y resol
 
 ![Mock-up 6](../assets/images/chapter-4/mockups/WebApplicationMU6.jpg)
 
-#### 4.4.4. Web Applications User Flow Diagrams.
+### 4.4.4. Web Applications User Flow Diagrams.
 
-### 4.5. Web Applications Prototyping.
+## 4.5. Web Applications Prototyping.
 
 ### 4.6.1. Design-Level Event Storming
 
@@ -613,7 +613,7 @@ Esta vista establece el límite de responsabilidad de VitalTrek. La plataforma a
 #### Diagrama de contexto
 
 ![Diagrama de contexto](../assets/images/chapter-4/c4/context_diagram.png)
-
+ 
 
 ### 4.6.3. Software Architecture Container Diagrams
 
