@@ -260,9 +260,25 @@ El trabajo colaborativo del Sprint 1 se realizó mediante GitHub, Jira/Trello y 
 | Integrante                       | Actividad realizada     | Evidencia                 |
 | -------------------------------- | ----------------------- | ------------------------- |
 | Cayanchi Avila, Milenko Rubén    | [Describir aporte real] | [Commit, tarea o captura] |
-| León Naupari, Jorge Mateo        | [Describir aporte real] | [Commit, tarea o captura] |
+| León Naupari, Jorge Mateo        | Modelado del Ubiquitous Language, User Task Matrix, diagramas C4 de contexto y contenedores, Design-Level Event Storming (4.6.1) y, en el Landing Page, meta tags de SEO, skip link de accesibilidad e i18n asociado. | 16 commits en report y 6 en landing-page; PRs #13, #15, #20 y #24 (report) y PR #2 (landing-page). Figuras 5.9, 5.10 y 5.11. |
 | Mendoza Blanco, Ariel Roberto    | [Describir aporte real] | [Commit, tarea o captura] |
 | Rodriguez Rojas, Miler Alexander | [Describir aporte real] | [Commit, tarea o captura] |
 | Herrera Enriquez, Diego Fernando | [Describir aporte real] | [Commit, tarea o captura] |
 
 La colaboración debe reflejarse de forma coherente en el Sprint Backlog, los commits, la matriz de líderes y colaboradores, y el reporte de participación individual.
+
+**Evidencia individual - León Naupari, Jorge Mateo (mateool10)**
+
+Los siguientes registros corresponden a la participación verificable del integrante en los repositorios del equipo durante el Sprint 1.
+
+![Commits de mateool10 en el repositorio report](../assets/images/chapter-5/5218-commits-mateo-report.jpg)
+
+*Figura 5.9. Historial de commits de mateool10 en el repositorio report.*
+
+![Commits de mateool10 en el repositorio landing-page](../assets/images/chapter-5/5218-commits-mateo-landing.jpg)
+
+*Figura 5.10. Historial de commits de mateool10 en el repositorio landing-page (rama main).*
+
+![Pull requests creados por mateool10](../assets/images/chapter-5/5218-pull-requests-mateo.jpg)
+
+*Figura 5.11. Pull requests creados y fusionados por mateool10 en el repositorio report.*
