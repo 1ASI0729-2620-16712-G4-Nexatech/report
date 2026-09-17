@@ -43,13 +43,13 @@
 
 ## Registro de Versiones del Informe
 
-| Versión | Fecha      | Autores                         | Descripción de modificación                                                     |
-|---------|------------|---------------------------------|---------------------------------------------------------------------------------|
-| 1.0     | 30/08/2026 | Milenko Rubén Cayanchi Avila    | Redacción Antecedentes y problemática (1.2.1) y Segmentos Objetivo (1.3)        |
-| 1.0     | 30/08/2026 | Jorge Mateo León Naupari        | Descripción de la Startup () y  (1.1.2)                                         |
-| 1.1     | 30/08/2026 | Mendoza Blanco Ariel Roberto    | Analizis y Desarrollo de Lean UX Hypothesis Statements (1.2.2.3 )               |
-| 1.2     | 6/08/2026  | Mendoza Blanco Ariel Roberto    | Desarrollo te la entrevista N°4; Segmento 2 (2.2.2)                             |
-| 1.2     | 6/08/2026  | Diego Fernando Herrera Enriquez | Análisis de la entrevista N°1; Segmento 1 y entrevista N°2; Segmento 2 (2.2.2)  |
+| Versión | Fecha      | Autores                         | Descripción de modificación                                                        |
+| ------- | ---------- | ------------------------------- | ---------------------------------------------------------------------------------- |
+| 1.0     | 30/08/2026 | Milenko Rubén Cayanchi Avila    | Redacción Antecedentes y problemática (1.2.1) y Segmentos Objetivo (1.3)           |
+| 1.0     | 30/08/2026 | Jorge Mateo León Naupari        | Descripción de la Startup (1.1.1) y perfiles de integrantes del equipo (1.1.2)     |
+| 1.1     | 30/08/2026 | Mendoza Blanco Ariel Roberto    | Análisis y desarrollo de Lean UX Hypothesis Statements (1.2.2.3)                   |
+| 1.2     | 6/08/2026  | Mendoza Blanco Ariel Roberto    | Desarrollo de la entrevista N.° 4; Segmento 2 (2.2.2)                              |
+| 1.2     | 6/08/2026  | Diego Fernando Herrera Enriquez | Análisis de la entrevista N.° 1; Segmento 1 y entrevista N.° 2; Segmento 2 (2.2.2) |
 
 ## Contenido
 
@@ -71,12 +71,47 @@
     - [2.1.2 Estrategias y tácticas frente a competidores](docs/Chapter2.md#212-estrategias-y-tácticas-frente-a-competidores)
   - [2.2 Entrevistas](docs/Chapter2.md#22-entrevistas)
     - [2.2.1 Diseño de entrevistas](docs/Chapter2.md#221-diseño-de-entrevistas)
-    - [2.2.2 Registro de entrevistas]()
-    - [2.2.3 Análisis de entrevistas]()
-  - [2.3 Needfinding]()
-    - [2.3.1 User Personas]()
-    - [2.3.2 User Task Matrix]()
-    - [2.3.3 User Journey Mapping]()
-    - [2.3.4 Empathy Mapping]()
-  - [2.4 Big Picture EventStorming]()
-  - [2.5 Ubiquitous Language]()
+    - [2.2.2 Registro de entrevistas](docs/Chapter2.md#222-registro-de-entrevistas)
+    - [2.2.3 Análisis de entrevistas](docs/Chapter2.md#223-análisis-de-entrevistas)
+  - [2.3 Needfinding](docs/Chapter2.md#23-needfinding)
+    - [2.3.1 User Personas](docs/Chapter2.md#231-user-personas)
+    - [2.3.2 User Task Matrix](docs/Chapter2.md#232-user-task-matrix)
+    - [2.3.3 User Journey Mapping](docs/Chapter2.md#233-user-journey-mapping)
+    - [2.3.4 Empathy Mapping](docs/Chapter2.md#234-empathy-mapping)
+- [2.4 Big Picture EventStorming](docs/Chapter2.md#24-big-picture-eventstorming)
+- [2.5 Ubiquitous Language](docs/Chapter2.md#25-ubiquitous-language)
+
+- [Capítulo III: Requirements Specification](docs/Chapter3.md)
+  - [3.1 User Stories](docs/Chapter3.md#31-user-stories)
+  - [3.2 Impact Mapping](docs/Chapter3.md#32-impact-mapping)
+  - [3.3 Product Backlog](docs/Chapter3.md#33-product-backlog)
+
+- [Capítulo IV: Product Design](docs/Chapter4.md)
+  - [4.1 Style Guidelines](docs/Chapter4.md#41-style-guidelines)
+  - [4.2 Information Architecture](docs/Chapter4.md#42-information-architecture)
+  - [4.3 Landing Page UI Design](docs/Chapter4.md#43-landing-page-ui-design)
+  - [4.4 Web Applications UX/UI Design](docs/Chapter4.md#44-web-applications-uxui-design)
+  - [4.5 Web Applications Prototyping](docs/Chapter4.md#45-web-applications-prototyping)
+  - [4.6.1 Design-Level Event Storming](docs/Chapter4.md#461-design-level-event-storming)
+  - [4.6.2 Software Architecture Context Diagram](docs/Chapter4.md#462-software-architecture-context-diagram)
+  - [4.6.3 Software Architecture Container Diagrams](docs/Chapter4.md#463-software-architecture-container-diagrams)
+  - [4.6.4 Software Architecture Components Diagrams](docs/Chapter4.md#464-software-architecture-components-diagrams)
+  - [4.7 Software Object-Oriented Design](docs/Chapter4.md#47-software-object-oriented-design)
+  - [4.8 Database Design](docs/Chapter4.md#48-database-design)
+
+- [Capítulo V: Product Implementation, Validation & Deployment](docs/Chapter5.md)
+  - [5.1 Software Configuration Management](docs/Chapter5.md#51-software-configuration-management)
+    - [5.1.1 Software Development Environment Configuration](docs/Chapter5.md#511-software-development-environment-configuration)
+    - [5.1.2 Source Code Management](docs/Chapter5.md#512-source-code-management)
+    - [5.1.3 Source Code Style Guide & Conventions](docs/Chapter5.md#513-source-code-style-guide--conventions)
+    - [5.1.4 Software Deployment Configuration](docs/Chapter5.md#514-software-deployment-configuration)
+  - [5.2 Landing Page, Services & Applications Implementation](docs/Chapter5.md#52-landing-page-services--applications-implementation)
+    - [5.2.1 Sprint 1](docs/Chapter5.md#521-sprint-1)
+      - [5.2.1.1 Sprint Planning 1](docs/Chapter5.md#5211-sprint-planning-1)
+      - [5.2.1.2 Aspect Leaders and Collaborators](docs/Chapter5.md#5212-aspect-leaders-and-collaborators)
+      - [5.2.1.3 Sprint Backlog 1](docs/Chapter5.md#5213-sprint-backlog-1)
+      - [5.2.1.4 Development Evidence for Sprint Review](docs/Chapter5.md#5214-development-evidence-for-sprint-review)
+      - [5.2.1.5 Execution Evidence for Sprint Review](docs/Chapter5.md#5215-execution-evidence-for-sprint-review)
+      - [5.2.1.6 Services Documentation Evidence for Sprint Review](docs/Chapter5.md#5216-services-documentation-evidence-for-sprint-review)
+      - [5.2.1.7 Software Deployment Evidence for Sprint Review](docs/Chapter5.md#5217-software-deployment-evidence-for-sprint-review)
+      - [5.2.1.8 Team Collaboration Insights during Sprint](docs/Chapter5.md#5218-team-collaboration-insights-during-sprint)
