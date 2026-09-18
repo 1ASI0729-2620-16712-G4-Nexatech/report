@@ -457,6 +457,17 @@ El mock-up final muestra una consola de control para alertas, incidentes y resol
 
 ## 4.5. Web Applications Prototyping.
 
+<div align="center">
+
+| Evidencia                                                                                     |
+|-----------------------------------------------------------------------------------------------|
+| ![Prototyping](../assets/images/chapter-4/Prototyping.png)                                    |
+| Enlace al video del prototipo.                                                                |
+| https://upcedupe-my.sharepoint.com/:v:/g/personal/u202319027_upc_edu_pe/IQBPX-HTdjq5RZA-_4hpkDmjAfmUC3SX8J8LOkmJygN2T1I?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=b2y6xM |
+
+</div>
+
+
 ## 4.6. Domain-Driven Software Architecture
 
 ### 4.6.1. Design-Level Event Storming
