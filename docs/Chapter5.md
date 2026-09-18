@@ -185,6 +185,11 @@ Durante el Sprint 1 se implementaron los componentes correspondientes al Landing
 
 | Repositorio                                                                     | Rama   | Commit ID | Mensaje del commit                | Fecha      | User Story relacionada |
 | ------------------------------------------------------------------------------- | ------ | --------- | --------------------------------- | ---------- | ---------------------- |
+| [Landing Page](https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page) | `feature/landing-seo-a11y` | `2cebb2f` | `docs(readme): fix brand asset file extensions` | 2026-09-17 | US01–US06              |
+| [Landing Page](https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page) | `feature/landing-seo-a11y` | `d216d5e` | `feat(a11y): add skip to main content link` | 2026-09-17 | US01–US06              |
+| [Landing Page](https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page) | `feature/landing-seo-a11y` | `9252476` | `feat(seo): complete meta tags defined in report 4.2.3` | 2026-09-17 | US01–US06              |
+| [Landing Page](https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page) | `feature/landing-seo-a11y` | `b296ddc` | `feat(i18n): add skip link translation keys` | 2026-09-17 | US01–US06              |
+| [Landing Page](https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page) | `feature/landing-seo-a11y` | `36b333b` | `style(a11y): add skip link styles` | 2026-09-17 | US01–US06              |
 | [Landing Page](https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page) | `main` | `11ac9e2` | `chore(team): fix Team Member`    | 2026-09-17 | US04                   |
 | [Landing Page](https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page) | `main` | `645afa1` | `chore(team): add Team Member`    | 2026-09-17 | US04                   |
 | [Landing Page](https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page) | `main` | `9a91594` | `2da version landing page`        | 2026-09-12 | US01–US06              |
