@@ -191,7 +191,7 @@ Los estados de las entidades operativas se etiquetan siguiendo el mismo vocabula
 | `title`                               | `VitalTrek \| Safer adventure tours beyond signal`                                                                                            |
 | `meta name="description"`             | `VitalTrek helps adventure tour operators monitor expeditions, synchronize offline telemetry at checkpoints, and act on early safety alerts.` |
 | `meta name="keywords"`                | `adventure tourism safety, trekking monitoring, offline telemetry, checkpoint synchronization, tour operator, Peru`                           |
-| `meta name="author"`                  | `NexaTech`                                                                                                                                  |
+| `meta name="author"`                  | `NexaTech`                                                                                                                                    |
 | `meta name="robots"`                  | `index, follow`                                                                                                                               |
 | `link rel="canonical"`                | `https://landing-page-phi-one-54.vercel.app/`                                                                                                 |
 | `meta property="og:title"`            | `VitalTrek \| Safer adventure tours beyond signal`                                                                                            |
@@ -208,12 +208,12 @@ La imagen usada en `og:image` debe incluir el logo de VitalTrek y un fondo de mo
 
 Estas vistas son privadas y no deben indexarse, por lo que comparten `meta name="robots" content="noindex, nofollow"` y `meta name="author" content="NexaTech"`, variando solo el `title` y la `description` según la vista:
 
-| Vista                                     | `title`                          | `meta name="description"`                                                                              |
-| ----------------------------------------- | -------------------------------- | ------------------------------------------------------------------------------------------------------ |
-| Login                                     | `Sign in — VitalTrek`            | `Sign in to your VitalTrek account to manage tours, monitor expeditions and respond to safety alerts.` |
+| Vista                                     | `title`                          | `meta name="description"`                                                                                |
+| ----------------------------------------- | -------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| Login                                     | `Sign in — VitalTrek`            | `Sign in to your VitalTrek account to manage tours, monitor expeditions and respond to safety alerts.`   |
 | Operations Dashboard — Active expeditions | `Active expeditions — VitalTrek` | `Monitor active Expedition Groups, their last checkpoint and current risk status after synchronization.` |
-| Operations Dashboard — Alerts             | `Alerts — VitalTrek`             | `Review prioritized Early Warning Alerts and respond before a risk becomes an emergency.`              |
-| Field Guide Workspace — Current tour      | `Current tour — VitalTrek`       | `Access your assigned Expedition Group, manifest and offline route notes for the active tour.`         |
+| Operations Dashboard — Alerts             | `Alerts — VitalTrek`             | `Review prioritized Early Warning Alerts and respond before a risk becomes an emergency.`                |
+| Field Guide Workspace — Current tour      | `Current tour — VitalTrek`       | `Access your assigned Expedition Group, manifest and offline route notes for the active tour.`           |
 
 ### 4.2.4. Searching Systems
 
@@ -455,14 +455,15 @@ El mock-up final muestra una consola de control para alertas, incidentes y resol
 
 ### 4.4.4. Web Applications User Flow Diagrams.
 
+![Web App User Flow Diagrams](../assets/images/chapter-4/userflow.png)
 ## 4.5. Web Applications Prototyping.
 
 <div align="center">
 
-| Evidencia                                                                                     |
-|-----------------------------------------------------------------------------------------------|
-| ![Prototyping](../assets/images/chapter-4/Prototyping.png)                                    |
-| Enlace al video del prototipo.                                                                |
+| Evidencia                                                                                                                                                                                                                                                                                                                    |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ![Prototyping](../assets/images/chapter-4/Prototyping.png)                                                                                                                                                                                                                                                                   |
+| Enlace al video del prototipo.                                                                                                                                                                                                                                                                                               |
 | https://upcedupe-my.sharepoint.com/:v:/g/personal/u202319027_upc_edu_pe/IQBPX-HTdjq5RZA-_4hpkDmjAfmUC3SX8J8LOkmJygN2T1I?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=b2y6xM |
 
 </div>
