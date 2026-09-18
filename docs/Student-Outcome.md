@@ -1,0 +1,14 @@
+# Student Outcome
+
+El curso contribuye al cumplimiento del Student Outcome ABET:
+
+**ABET – EAC - Student Outcome 5**
+
+**Criterio:** La capacidad de funcionar efectivamente en un equipo cuyos miembros juntos proporcionan liderazgo, crean un entorno de colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen objetivos.
+
+En el siguiente cuadro se describen las acciones realizadas y las conclusiones del grupo que sustentan el logro del ABET – EAC - Student Outcome 5.
+
+| Criterio específico | Acciones realizadas | Conclusiones |
+| --- | --- | --- |
+| Trabaja en equipo para proporcionar liderazgo en forma conjunta. | **Cayanchi Avila, Milenko Rubén (U202312566) — AV1:** Lideró la especificación de User Stories y Product Backlog, y aportó los diagramas de arquitectura y base de datos.<br><br>**León Naupari, Jorge Mateo (U202422549) — AV1:** Lideró la definición del Ubiquitous Language, User Task Matrix y diagramas C4 de contexto, contenedores y componentes.<br><br>**Mendoza Blanco, Ariel Roberto (U202419667) — AV1:** Lideró el registro de entrevistas y los User Journey Maps, conectando hallazgos de usuarios con los artefactos de requisitos.<br><br>**Herrera Enriquez, Diego Fernando (U202319027) — AV1:** Lideró las Style Guidelines y los wireframes y mock-ups de la Landing Page y Web Applications.<br><br>**Rodriguez Rojas, Miler Alexander (U20241A827) — AV1:** Lideró el Impact Mapping y la integración de evidencias de colaboración, versiones y Chapter V. | **AV1:** El liderazgo se distribuyó por artefactos y aspectos técnicos. Cada integrante asumió responsabilidad sobre entregables trazables mediante commits, revisiones e integración en la rama develop. |
+| Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos. | **Cayanchi Avila, Milenko Rubén (U202312566) — AV1:** Participó en la planificación del Sprint 1 y en la integración de requisitos y diseño.<br><br>**León Naupari, Jorge Mateo (U202422549) — AV1:** Colaboró en la definición de tareas de accesibilidad, i18n y documentación técnica.<br><br>**Mendoza Blanco, Ariel Roberto (U202419667) — AV1:** Aportó evidencia de entrevistas y colaboró en el análisis de necesidades del usuario.<br><br>**Herrera Enriquez, Diego Fernando (U202319027) — AV1:** Convirtió decisiones de diseño en wireframes y mock-ups para revisión del equipo.<br><br>**Rodriguez Rojas, Miler Alexander (U20241A827) — AV1:** Consolidó la planificación, las evidencias de Sprint y la documentación de colaboración. | **AV1:** El equipo definió el objetivo de publicar el primer Landing Page, distribuyó tareas en el Sprint Backlog y mantuvo coordinación mediante GitHub, Jira, herramientas de diseño y reuniones virtuales. La evidencia debe mantenerse alineada entre el backlog, los commits, los Pull Requests y el informe. |
