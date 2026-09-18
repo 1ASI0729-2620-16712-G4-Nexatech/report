@@ -2,10 +2,13 @@
   <img src="assets/images/introduction/logo.png" alt="Logo de la Universidad Peruana de Ciencias Aplicadas"/>  
   <h2>Informe de Trabajo Final</h2>
   <p><strong>Universidad:</strong> Universidad Peruana de Ciencias Aplicadas</p>
-  <p><strong>Ciclo:</strong> 2026-2</p>
-  <p><strong>Curso:</strong> 1ASI0730-2610- Aplicaciones Web</p>
-  <p><strong>Sección:</strong> 12206</p>
+  <p><strong>Carrera:</strong> Ingeniería de Software</p>
+  <p><strong>Ciclo:</strong> 202620</p>
+  <p><strong>Curso:</strong> 1ASI0730 — Aplicaciones Web</p>
+  <p><strong>NRC:</strong> 16712</p>
   <p><strong>Profesor:</strong> Sánchez Seña, Alberto Wilmer</p>
+  <p><strong>Startup:</strong> NexaTech</p>
+  <p><strong>Producto:</strong> VitalTrek</p>
 </div>
 
 <h2 align="center">Relación de Integrantes:</h2>
@@ -39,17 +42,26 @@
   </table>
 </div>
 
-<p align="center"><strong>Mes y Año:</strong> Octubre 2026</p>
+<p align="center"><strong>Mes y Año:</strong> Septiembre 2026</p>
 
 ## Registro de Versiones del Informe
 
-| Versión | Fecha      | Autores                         | Descripción de modificación                                                        |
-| ------- | ---------- | ------------------------------- | ---------------------------------------------------------------------------------- |
-| 1.0     | 30/08/2026 | Milenko Rubén Cayanchi Avila    | Redacción Antecedentes y problemática (1.2.1) y Segmentos Objetivo (1.3)           |
-| 1.0     | 30/08/2026 | Jorge Mateo León Naupari        | Descripción de la Startup (1.1.1) y perfiles de integrantes del equipo (1.1.2)     |
-| 1.1     | 30/08/2026 | Mendoza Blanco Ariel Roberto    | Análisis y desarrollo de Lean UX Hypothesis Statements (1.2.2.3)                   |
-| 1.2     | 6/08/2026  | Mendoza Blanco Ariel Roberto    | Desarrollo de la entrevista N.° 4; Segmento 2 (2.2.2)                              |
-| 1.2     | 6/08/2026  | Diego Fernando Herrera Enriquez | Análisis de la entrevista N.° 1; Segmento 1 y entrevista N.° 2; Segmento 2 (2.2.2) |
+[Ver registro de versiones](docs/Registro-de-versiones.md)
+
+## Project Report Collaboration Insights
+
+[Ver evidencias de colaboración](docs/report-collaboration-insight.md)
+
+## Student Outcome
+
+[Ver Student Outcome ABET – EAC 5](docs/Student-Outcome.md)
+
+## Secciones de cierre
+
+- [Introducción](docs/Introduccion.md)
+- [Conclusiones](docs/Conclusiones.md)
+- [Bibliografía](docs/Bibliografia.md)
+- [Anexos](docs/Anexos.md)
 
 ## Contenido
 
@@ -92,10 +104,11 @@
   - [4.3 Landing Page UI Design](docs/Chapter4.md#43-landing-page-ui-design)
   - [4.4 Web Applications UX/UI Design](docs/Chapter4.md#44-web-applications-uxui-design)
   - [4.5 Web Applications Prototyping](docs/Chapter4.md#45-web-applications-prototyping)
-  - [4.6.1 Design-Level Event Storming](docs/Chapter4.md#461-design-level-event-storming)
-  - [4.6.2 Software Architecture Context Diagram](docs/Chapter4.md#462-software-architecture-context-diagram)
-  - [4.6.3 Software Architecture Container Diagrams](docs/Chapter4.md#463-software-architecture-container-diagrams)
-  - [4.6.4 Software Architecture Components Diagrams](docs/Chapter4.md#464-software-architecture-components-diagrams)
+  - [4.6 Domain-Driven Software Architecture](docs/Chapter4.md#46-domain-driven-software-architecture)
+    - [4.6.1 Design-Level Event Storming](docs/Chapter4.md#461-design-level-event-storming)
+    - [4.6.2 Software Architecture Context Diagram](docs/Chapter4.md#462-software-architecture-context-diagram)
+    - [4.6.3 Software Architecture Container Diagrams](docs/Chapter4.md#463-software-architecture-container-diagrams)
+    - [4.6.4 Software Architecture Components Diagrams](docs/Chapter4.md#464-software-architecture-components-diagrams)
   - [4.7 Software Object-Oriented Design](docs/Chapter4.md#47-software-object-oriented-design)
   - [4.8 Database Design](docs/Chapter4.md#48-database-design)
 

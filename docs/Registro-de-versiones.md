@@ -8,3 +8,4 @@
 |   1.3   | 13/09/2026 |  Cayanchi Avila, Milenko Rubén   | Desarrollo de los capítulos IV y capítulo V           |
 |   1.4   | 13/09/2026 | Rodriguez Rojas, Miler Alexander | Desarrollo de los capítulos IV y capítulo V           |
 |   1.5   | 17/09/2026 | Herrera Enriquez, Diego Fernando | Desarrollo del capítulo V                             |
+|   1.6   | 18/09/2026 | Equipo NexaTech                    | Correcciones de auditoría AV1: consistencia, enlaces, estructura y evidencias. |

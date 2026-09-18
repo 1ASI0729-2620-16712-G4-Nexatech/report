@@ -191,7 +191,7 @@ Los estados de las entidades operativas se etiquetan siguiendo el mismo vocabula
 | `title`                               | `VitalTrek \| Safer adventure tours beyond signal`                                                                                            |
 | `meta name="description"`             | `VitalTrek helps adventure tour operators monitor expeditions, synchronize offline telemetry at checkpoints, and act on early safety alerts.` |
 | `meta name="keywords"`                | `adventure tourism safety, trekking monitoring, offline telemetry, checkpoint synchronization, tour operator, Peru`                           |
-| `meta name="author"`                  | `Nexum Devs`                                                                                                                                  |
+| `meta name="author"`                  | `NexaTech`                                                                                                                                  |
 | `meta name="robots"`                  | `index, follow`                                                                                                                               |
 | `link rel="canonical"`                | `https://landing-page-phi-one-54.vercel.app/`                                                                                                 |
 | `meta property="og:title"`            | `VitalTrek \| Safer adventure tours beyond signal`                                                                                            |
@@ -206,16 +206,31 @@ La imagen usada en `og:image` debe incluir el logo de VitalTrek y un fondo de mo
 
 **Web Applications (Operations Dashboard y Field Guide Workspace)**
 
-Estas vistas son privadas y no deben indexarse, por lo que comparten `meta name="robots" content="noindex, nofollow"` y `meta name="author" content="Nexum Devs"`, variando solo el `title` y la `description` según la vista:
+Estas vistas son privadas y no deben indexarse, por lo que comparten `meta name="robots" content="noindex, nofollow"` y `meta name="author" content="NexaTech"`, variando solo el `title` y la `description` según la vista:
 
 | Vista                                     | `title`                          | `meta name="description"`                                                                              |
 | ----------------------------------------- | -------------------------------- | ------------------------------------------------------------------------------------------------------ |
 | Login                                     | `Sign in — VitalTrek`            | `Sign in to your VitalTrek account to manage tours, monitor expeditions and respond to safety alerts.` |
-| Operations Dashboard — Active expeditions | `Active expeditions — VitalTrek` | `Monitor active Expedition Groups, their last checkpoint and current risk status in real time.`        |
+| Operations Dashboard — Active expeditions | `Active expeditions — VitalTrek` | `Monitor active Expedition Groups, their last checkpoint and current risk status after synchronization.` |
 | Operations Dashboard — Alerts             | `Alerts — VitalTrek`             | `Review prioritized Early Warning Alerts and respond before a risk becomes an emergency.`              |
 | Field Guide Workspace — Current tour      | `Current tour — VitalTrek`       | `Access your assigned Expedition Group, manifest and offline route notes for the active tour.`         |
 
-### 4.2.4. Navigation Systems
+### 4.2.4. Searching Systems
+
+El Landing Page no incorpora un buscador global, dado que su contenido es breve, secuencial y ya es accesible mediante la navegación por anclas descrita en el punto anterior; incorporar búsqueda en esta etapa añadiría complejidad sin un beneficio proporcional para el visitante.
+
+Las futuras Web Applications sí requieren búsqueda y filtros, ya que el volumen de expediciones, alertas y rutas que un Operations Administrator o un Field Guide deben supervisar crece de forma considerable en temporada alta.
+
+| Módulo                 | Búsqueda / filtros                                                                                                                    | Resultado esperado                                                                                                                                   |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Active expeditions     | Texto libre por nombre de Expedition Group; filtros por Route, Field Guide asignado y estado (en ruta, retrasado, con alerta activa). | Lista de grupos coincidentes con su último checkpoint, tramo actual y nivel de riesgo, ordenada por prioridad de atención.                           |
+| Alerts                 | Filtros por prioridad, tipo (Delay, Anomaly, Route Deviation), estado (activa o revisada) y Expedition Group.                         | Cola de Early Warning Alerts ordenada por criticidad y recencia, con la causa y el protocolo recomendado visibles sin abrir el detalle.              |
+| Routes and checkpoints | Texto libre por nombre de Route; filtros por dificultad y estado (en uso o archivada).                                                | Rutas coincidentes con su número de Checkpoints y duración estimada.                                                                                 |
+| Reports                | Filtros por rango de fechas, Route y Expedition Group.                                                                                | Listado de Tour Summary disponibles para revisión operativa, con acceso directo al detalle del recorrido, los checkpoints y los eventos registrados. |
+
+Estos sistemas de búsqueda mantienen el mismo comportamiento en todos los módulos: los filtros aplicados nunca modifican los datos subyacentes y pueden restablecerse en cualquier momento mediante un control de tipo *Clear filters*; cuando una búsqueda no devuelve resultados, el sistema distingue entre la ausencia real de registros y la falta de coincidencias con los filtros aplicados.
+
+### 4.2.5. Navigation Systems
 
 VitalTrek combina navegación global, local, contextual y de utilidad, manteniendo en desktop y en móvil el mismo orden y las mismas opciones, tal como especifica el 4.1.
 
@@ -229,21 +244,6 @@ VitalTrek combina navegación global, local, contextual y de utilidad, mantenien
 El recorrido del visitante en el Landing Page sigue la progresión Home, How it works, For operators o Safety según el segmento que lo motive, Plans, Team, Contact / Request a demo y footer, coherente con la organización jerárquica descrita en el punto anterior.
 
 Para las siguientes iteraciones, el Operations Administrator recorrerá el Operations Dashboard iniciando sesión y revisando primero las expediciones activas, para luego configurar rutas y checkpoints (US07 a US10), crear y asignar Expedition Groups (US11, US13), evaluar el riesgo y revisar las Early Warning Alerts (US24 a US26), declarar una emergencia y notificar a los contactos correspondientes cuando sea necesario (US28, US29), y finalmente consultar el Tour Summary de los tours cerrados (US32). El Field Guide, por su parte, recorrerá el Field Guide Workspace desde el tour que tiene asignado, registrando el manifiesto y activando los wearables del grupo (US12, US15, US16), iniciando el Adventure Tour (US17), consultando las Route Notes sin conexión durante un Coverage Gap (US19), registrando el check-in y sincronizando la telemetría en cada checkpoint (US21, US22), confirmando incidentes y coordinando una evacuación si el caso lo requiere (US27, US30), y cerrando el tour al finalizar el recorrido (US31). Este recorrido por rol queda definido como especificación de diseño para el desarrollo de ambas aplicaciones, ya que en AV1 solo se implementa el Landing Page. En todos los casos la navegación conserva un enlace de salto al contenido principal, estados de foco visibles y compatibilidad completa con teclado y lector de pantalla, según la accesibilidad general ya definida en el 4.1.
-
-### 4.2.5. Searching Systems
-
-El Landing Page no incorpora un buscador global, dado que su contenido es breve, secuencial y ya es accesible mediante la navegación por anclas descrita en el punto anterior; incorporar búsqueda en esta etapa añadiría complejidad sin un beneficio proporcional para el visitante.
-
-Las futuras Web Applications sí requieren búsqueda y filtros, ya que el volumen de expediciones, alertas y rutas que un Operations Administrator o un Field Guide deben supervisar crece de forma considerable en temporada alta.
-
-| Módulo                 | Búsqueda / filtros                                                                                                                    | Resultado esperado                                                                                                                                   |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Active expeditions     | Texto libre por nombre de Expedition Group; filtros por Route, Field Guide asignado y estado (en ruta, retrasado, con alerta activa). | Lista de grupos coincidentes con su último checkpoint, tramo actual y nivel de riesgo, ordenada por prioridad de atención.                           |
-| Alerts                 | Filtros por prioridad, tipo (Delay, Anomaly, Route Deviation), estado (activa o revisada) y Expedition Group.                         | Cola de Early Warning Alerts ordenada por criticidad y recencia, con la causa y el protocolo recomendado visibles sin abrir el detalle.              |
-| Routes and checkpoints | Texto libre por nombre de Route; filtros por dificultad y estado (en uso o archivada).                                                | Rutas coincidentes con su número de Checkpoints y duración estimada.                                                                                 |
-| Reports                | Filtros por rango de fechas, Route y Expedition Group.                                                                                | Listado de Tour Summary disponibles para revisión operativa, con acceso directo al detalle del recorrido, los checkpoints y los eventos registrados. |
-
-Estos sistemas de búsqueda mantienen el mismo comportamiento en todos los módulos: los filtros aplicados nunca modifican los datos subyacentes y pueden restablecerse en cualquier momento mediante un control de tipo *Clear filters*; cuando una búsqueda no devuelve resultados, el sistema distingue entre la ausencia real de registros, por ejemplo ninguna expedición activa en ese momento, y la falta de coincidencias con los filtros aplicados, para que el Operations Administrator o el Field Guide no interpreten ese vacío como una falla del sistema. No existe una búsqueda global entre módulos, ya que entidades relacionadas como Route y Expedition Group deben mantenerse en contextos separados para evitar resultados ambiguos, y cada elemento devuelto por una búsqueda expone directamente su acción más frecuente, como abrir una alerta desde el propio resultado, para reducir pasos en escenarios donde el tiempo de respuesta incide en la seguridad del turista.
 
 ## 4.3. Landing Page UI Design.
 
@@ -357,11 +357,11 @@ Los planes se presentan mediante tarjetas comparables que muestran precio, alcan
 
 *Figura 4.13. Equipo, preguntas frecuentes y cierre de la Landing Page.*
 
-La sección final presenta a Nexum Devs, resuelve dudas mediante un componente de preguntas frecuentes y cierra con un CTA para solicitar una demostración. El footer proporciona acceso a navegación, información legal y cambio de idioma.
+La sección final presenta a NexaTech, resuelve dudas mediante un componente de preguntas frecuentes y cierra con un CTA para solicitar una demostración. El footer proporciona acceso a navegación, información legal y cambio de idioma.
 
 ## 4.4. Web Applications UX/UI Design.
 
-Los wireframes y mockups aquí presentados muestran la estructura inicial de las vistas principales, priorizando la jerarquía visual, la simplicidad de navegación, la accesibilidad, la escalabilidad futura y la claridad en la presentación de información crítica como rutas, paraderos, notificaciones y configuraciones del usuario.
+Los wireframes y mockups aquí presentados muestran la estructura inicial de las vistas principales, priorizando la jerarquía visual, la simplicidad de navegación, la accesibilidad, la escalabilidad futura y la claridad en la presentación de información crítica como rutas, checkpoints, notificaciones y configuraciones del usuario.
 
 ### 4.4.1. Web Applications Wireframes.
 
@@ -431,7 +431,7 @@ Este mock-up enfatiza la respuesta ante una emergencia. La pantalla muestra una 
 
 **Mock-up 3 - Seguimiento activo de la flota**
 
-En esta vista se presenta un mapa operativo y un listado de expediciones activas. La interfaz combina indicadores de estado, nivel de riesgo, tiempos estimados y datos de sincronización en tiempo real para cada grupo. La parte izquierda muestra la colección de expediciones, mientras que el panel derecho ofrece una vista consolidada de un tour específico con mapa, métricas de salud, checkpoints y condiciones del entorno. Es una pantalla orientada a la supervisión continua y la gestión de riesgo en campo.
+En esta vista se presenta un mapa operativo y un listado de expediciones activas. La interfaz combina indicadores de estado, nivel de riesgo, tiempos estimados y datos de la última sincronización para cada grupo. La parte izquierda muestra la colección de expediciones, mientras que el panel derecho ofrece una vista consolidada de un tour específico con mapa, métricas de salud, checkpoints y condiciones del entorno. Es una pantalla orientada a la supervisión por checkpoints y la gestión de riesgo en campo.
 
 ![Mock-up 3](../assets/images/chapter-4/mockups/WebApplicationMU3.jpg)
 
@@ -456,6 +456,8 @@ El mock-up final muestra una consola de control para alertas, incidentes y resol
 ### 4.4.4. Web Applications User Flow Diagrams.
 
 ## 4.5. Web Applications Prototyping.
+
+## 4.6. Domain-Driven Software Architecture
 
 ### 4.6.1. Design-Level Event Storming
 
@@ -817,7 +819,7 @@ Un incidente pertenece a un grupo de expedición. Puede derivarse de una alerta 
 
 La tabla `notifications` permite guardar comunicaciones enviadas por correo, push o SMS. Una notificación se relaciona con una alerta o con un incidente. Esta exclusividad debe validarse en la capa de aplicación: una notificación no debería quedar sin origen ni relacionarse a ambos al mismo tiempo. La tabla `rescue_coordinations` no modela una cuenta interna de rescate porque las entidades de rescate son externas a VitalTrek; únicamente registra la coordinación realizada ante un incidente.
 
-## Relaciones principales y cardinalidades
+### 4.8.2. Relaciones principales y cardinalidades
 
 | Relación                                   |    Cardinalidad | Regla de negocio representada                                                                                                |
 | ------------------------------------------ | --------------: | ---------------------------------------------------------------------------------------------------------------------------- |

@@ -25,6 +25,16 @@ El trabajo se desarrolló mediante commits continuos en el repositorio de la org
 
 ## Github Collaboration Insights
 
+Las siguientes capturas evidencian la actividad de colaboración y los commits registrados durante el Sprint 1. La distribución individual se detalla también en la sección 5.2.1.8 del informe.
+
+![GitHub Insights del Sprint 1](../assets/images/chapter-5/github-insights.png)
+
+*Figura 1. Actividad de colaboración registrada en GitHub durante el Sprint 1.*
+
+![Participación mediante commits](../assets/images/chapter-5/team-commits.png)
+
+*Figura 2. Participación del equipo mediante commits durante el Sprint 1.*
+
 Github también presenta un timeline de las ramas principales y los procesos de merge a los que se han sometido. Todas las ramas se crearon tomando en cuenta el diseño de GitFlow para una buena organización cuando se usa un software de control de versiones.
 
 Los integrantes son:
