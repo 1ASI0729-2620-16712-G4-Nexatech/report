@@ -84,92 +84,66 @@ Actualmente, las agencias de turismo y los guías dependen principalmente de tel
 
 #### 1.2.2.2. Lean UX Assumptions
 
-*Assumptions Worksheet*
-
-*Business Assumptions*
-
-* *Creo que mis clientes tienen la necesidad de* mantener visibilidad sobre la ubicación y el estado de sus grupos durante tours en zonas remotas, reduciendo la incertidumbre y mejorando los tiempos de respuesta ante posibles incidentes, sin depender de una conexión celular continua.
-
-* *Estas necesidades pueden resolverse con* VitalTrek, una plataforma web integrada con una capa IoT simulada para el alcance del proyecto, donde los dispositivos de los turistas registran telemetría y la sincronizan mediante checkpoints Bluetooth, permitiendo a las agencias visualizar el estado de sus grupos y recibir alertas ante retrasos o posibles anomalías.
-
-* *Mis clientes iniciales son:*
-
-  * *Segmento B2B:* Agencias y operadores de turismo de aventura, principalmente MYPEs, que gestionan rutas de trekking y montañismo en zonas de baja o nula conectividad y constituyen el principal segmento comprador.
-  * *Segmento B2C:* Turistas de aventura nacionales y extranjeros que realizan rutas remotas y utilizan las funciones de seguridad, navegación offline e información contextual proporcionadas por la plataforma.
-
-* *El principal valor que un cliente quiere obtener de mi servicio es* mejorar la supervisión operativa y la seguridad preventiva durante el tour, permitiendo a la agencia conocer periódicamente el estado de sus grupos y actuar oportunamente ante retrasos o posibles anomalías, aun cuando no exista cobertura celular continua.
-
-* *También pueden obtener estos beneficios adicionales:*
-
-  * Para las agencias: reducción de incertidumbre operativa, mejor organización de rutas y mayor capacidad de respuesta ante incidentes.
-  * Para los guías: recepción de alertas sobre el estado de los grupos y apoyo para tomar decisiones durante el recorrido.
-  * Para los turistas: acceso a información contextual de la ruta, herramientas de navegación offline y un resumen digital de su recorrido.
-
-* *Adquiriré la mayoría de mis clientes a través de* venta directa B2B a agencias y operadores de turismo de aventura, demostraciones del producto, pilotos con empresas del sector y contacto directo con organizaciones ubicadas en destinos como Cusco, Áncash, Arequipa y Puno.
-
-* *Ganaré dinero mediante* un modelo SaaS basado en una suscripción mensual o anual por el uso de la plataforma, según el volumen de turistas o grupos gestionados. La gestión de suscripciones y pagos podrá contemplar una pasarela como MercadoPago. La infraestructura IoT física queda fuera del alcance del MVP académico, ya que su funcionamiento será simulado.
-
-* *Mi principal competencia en el mercado será* el uso de sistemas de comunicación por radio (VHF/UHF), la coordinación mediante aplicaciones de mensajería cuando existe cobertura y los procesos manuales de seguimiento realizados por los guías. También existen soluciones de comunicación o navegación satelital que cubren necesidades específicas, pero no necesariamente integran en un mismo flujo la gestión operativa de la agencia con la detección de retrasos y anomalías mediante checkpoints.
-
-* *Superaremos a la competencia debido a* nuestro enfoque integrado de supervisión operativa: VitalTrek permite configurar rutas y checkpoints, recibir telemetría, evaluar retrasos y posibles anomalías mediante reglas y centralizar las alertas en un dashboard para la agencia y el guía, manteniendo además herramientas de consulta offline para el turista.
-
-* *El mayor riesgo de mi producto es* que la frecuencia de sincronización entre checkpoints no sea suficiente para detectar oportunamente una situación crítica o que las reglas utilizadas para identificar retrasos y anomalías generen alertas incorrectas o falsas alarmas.
-
-* *Lo resolveremos mediante* una arquitectura que priorice la transmisión de datos relevantes en ráfagas cortas, reglas configurables según la ruta y ventanas de tiempo esperadas, así como pruebas tempranas del MVP para medir la latencia, la confiabilidad de la sincronización y la utilidad de las alertas.
-
-* *Otras suposiciones que, si se demuestran falsas, harán que nuestro negocio fracase:*
-
-  * Que las agencias y operadores de turismo estén dispuestos a utilizar una plataforma digital para supervisar sus grupos durante los recorridos.
-  * Que los guías consideren útiles y accionables las alertas y puedan actuar sobre ellas durante la operación.
-  * Que los turistas estén dispuestos a utilizar el dispositivo o wearable proporcionado por la agencia y consultar las herramientas offline.
-  * Que las agencias perciban suficiente valor en la solución como para convertir el uso piloto en una suscripción pagada.
-
-*User Assumptions*
-
-* *¿Quién es el usuario?*
-
-  * El administrador u operador (B2B): responsable de configurar las rutas y checkpoints y supervisar los grupos desde el dashboard.
-  * El guía de campo: responsable de recibir alertas y actuar ante retrasos o posibles anomalías durante el recorrido.
-  * El turista (B2C): persona que lleva el dispositivo o wearable y consulta la información disponible offline durante la ruta.
-
-* *¿Dónde encaja nuestro producto en su vida?* En la fase de ejecución operativa del turismo. Para el administrador, funciona como una herramienta de configuración y centro de supervisión; para el guía, como un mecanismo de recepción de alertas en campo; y para el turista, como una herramienta de consulta, navegación y apoyo durante el recorrido.
-
-* *¿Qué problemas soluciona nuestro producto?*
-
-  * La pérdida de visibilidad de las agencias sobre sus grupos al ingresar en zonas sin cobertura celular.
-  * La dificultad para detectar oportunamente retrasos o posibles anomalías durante el recorrido.
-  * La falta de un mecanismo centralizado para comunicar alertas relevantes al personal responsable.
-  * La inseguridad del turista durante tramos sin conectividad y la dificultad para consultar información de la ruta sin conexión.
-
-* *¿Cuándo y cómo se utiliza nuestro producto?*
-
-  * En la configuración: el administrador define la ruta, establece checkpoints y configura las ventanas de tiempo esperadas.
-  * En campo: el dispositivo del turista, simulado para el alcance del proyecto, registra posición y signos vitales. Al pasar por un checkpoint, la información disponible se sincroniza en ráfaga con la API.
-  * En monitoreo: la agencia visualiza el estado de sus grupos desde el dashboard y recibe alertas cuando el motor de reglas identifica un retraso o una posible anomalía.
-  * Durante la atención: el guía recibe la alerta y puede actuar en el terreno.
-  * Al finalizar: el sistema genera un resumen simple del recorrido realizado.
-
-* *¿Qué características son importantes?* Tolerancia a fallos de conectividad (offline-first), configuración de rutas y checkpoints, registro e ingesta de telemetría, evaluación automática de retrasos y posibles anomalías mediante reglas, alertas visibles en el dashboard, notificaciones al guía, consulta offline de información de la ruta y gestión de suscripciones para el cliente B2B.
-
-* *¿Cómo debe verse y comportarse nuestro producto?* Debe presentar un diseño minimalista, profesional y funcional, con interfaces claras y de alto contraste para facilitar la lectura durante la operación. El dashboard debe priorizar el estado de los grupos, las alertas y la información de los checkpoints, mientras que el panel del turista debe presentar de forma sencilla la información de la ruta disponible offline.
-
-*Feature Assumptions*
-
-- Creemos que nuestros clientes necesitan una plataforma que permita configurar rutas y checkpoints esperados y supervisar periódicamente el progreso de los grupos sin depender de una conexión celular continua.
-- Estas necesidades se pueden resolver con una arquitectura que reciba telemetría del dispositivo del turista, simulado para el proyecto, y la sincronice en ráfagas mediante checkpoints Bluetooth hacia una API RESTful.
-- El valor principal que un cliente quiere de nuestro servicio es la capacidad de detectar automáticamente retrasos y posibles anomalías y visualizarlos como alertas en un dashboard centralizado para que el personal responsable pueda actuar oportunamente.
-- El cliente también puede obtener estos beneficios adicionales: generación automática de un resumen simple del recorrido, consulta de información contextual de la ruta sin conexión y configuración de notas operativas sobre puntos críticos o condiciones del terreno por parte de la agencia o guía responsable de la ruta.
-- Creemos que un módulo de gestión de suscripciones integrado con MercadoPago permitirá a las agencias activar y renovar su plan sin fricciones administrativas, reduciendo la dependencia de procesos manuales de cobro.
-- Otra suposición es que los guías considerarán accionables las alertas generadas por el sistema y podrán utilizarlas durante la operación. Si esto resulta falso, la capacidad de VitalTrek para mejorar la respuesta ante incidentes se verá afectada.
-
-*Business Outcomes*
-
-- Reducción del 40% en el tiempo promedio de detección de retrasos o posibles anomalías durante los primeros seis meses de uso en campo.
-- Registro exitoso del paso de al menos el 95% de los turistas por los checkpoints configurados, manteniendo una pérdida de datos inferior al 5% durante las pruebas del sistema.
-- Reducción del 40% en el tiempo promedio requerido por las agencias para identificar y gestionar incidencias relacionadas con retrasos o anomalías durante los recorridos.
-- Conversión de al menos el 25% de las agencias que participen en un piloto gratuito a una suscripción anual pagada durante los primeros tres meses posteriores al piloto.
-- Al menos el 85% de los turistas encuestados calificará como "Alta" o "Muy Alta" su percepción de seguridad y utilidad de las herramientas offline durante el recorrido.
-
+#### *Business Assumptions*
+ 
+| ID  | Creencia                                                                                                                                                              |
+| --- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| BA1 | Creemos que las agencias de turismo de aventura reconocen la pérdida de visibilidad en ruta como un riesgo operativo real y no como una condición inevitable del negocio. |
+| BA2 | Creemos que las MYPEs del sector tienen capacidad y disposición de pago para un servicio SaaS mensual o anual escalado por volumen de grupos gestionados.               |
+| BA3 | Creemos que el canal de adquisición más eficiente es la venta directa B2B con demostración y piloto, antes que la captación digital masiva.                             |
+| BA4 | Creemos que nuestra competencia real no son las soluciones satelitales, sino el proceso manual actual: radio, WhatsApp y la confianza en el criterio del guía.          |
+| BA5 | Creemos que nuestro diferencial defendible es integrar en un mismo flujo la configuración de la ruta, la evidencia de avance y la alerta, y no resolver solo una parte. |
+| BA6 | Creemos que el mayor riesgo del negocio es que la frecuencia de verificación sea demasiado baja para detectar una situación crítica a tiempo.                           |
+| BA7 | Creemos que una tasa alta de falsas alarmas destruiría la confianza del guía en el sistema y lo llevaría a ignorarlo.                                                   |
+ 
+#### *Business Outcome Assumptions*
+ 
+| ID   | Creencia (cambio de comportamiento medible)                                                                                              |
+| ---- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| BOA1 | Creemos que las agencias del piloto consultarán el estado de sus grupos al menos una vez por tramo en el 90% de los tours operados.        |
+| BOA2 | Creemos que el tiempo que tarda una agencia en enterarse de un retraso relevante se reducirá en 40% frente a su línea base.                |
+| BOA3 | Creemos que al menos el 70% de las alertas recibidas por un guía derivará en una acción registrada en el sistema.                          |
+| BOA4 | Creemos que al menos el 25% de las agencias del piloto gratuito renovará como suscripción pagada en los tres meses siguientes.             |
+| BOA5 | Creemos que al menos el 85% de los turistas encuestados calificará su percepción de seguridad como "Alta" o "Muy Alta".                    |
+| BOA6 | Creemos que al menos el 60% de los turistas abrirá la información de ruta al menos una vez durante el recorrido.                           |
+ 
+#### *User Assumptions*
+ 
+| ID  | Creencia                                                                                                                                             |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| UA1 | Creemos que el comprador y el usuario principal es el administrador u operador de la agencia, que configura la ruta y supervisa desde la base.         |
+| UA2 | Creemos que el guía de campo es un usuario distinto, con necesidades distintas: decide en el terreno, con poco tiempo y bajo condiciones adversas.     |
+| UA3 | Creemos que el turista es un usuario pasivo respecto del monitoreo y activo respecto de la consulta de información de ruta.                            |
+| UA4 | Creemos que el turista aceptará portar un dispositivo entregado por la agencia si se le explica con claridad qué se registra y quién puede verlo.      |
+| UA5 | Creemos que el producto se usa en la fase de ejecución del tour, no en la de reserva ni en la de promoción.                                            |
+| UA6 | Creemos que el administrador tiene un nivel de adopción digital bajo o medio, por lo que la interfaz debe ser legible sin entrenamiento previo.        |
+ 
+#### *User Outcome and Benefit Assumptions*
+ 
+| ID    | Creencia                                                                                                                                         |
+| ----- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| UOBA1 | Creemos que el administrador quiere poder responder "¿dónde está mi grupo y está bien?" en cualquier momento, sin llamar a nadie.                  |
+| UOBA2 | Creemos que el administrador quiere saber si un retraso es normal o si debe activar un protocolo, y hoy no tiene forma de distinguirlo.            |
+| UOBA3 | Creemos que el guía quiere llegar al siguiente punto sabiendo a quién revisar primero, en lugar de evaluar a todo el grupo por igual.              |
+| UOBA4 | Creemos que el guía quiere recibir pocas alertas y que todas sean accionables, porque una alerta irrelevante le cuesta atención en terreno.        |
+| UOBA5 | Creemos que el turista quiere sentir que alguien sabe dónde está aunque él no tenga señal.                                                         |
+| UOBA6 | Creemos que el turista quiere orientarse y entender el terreno sin depender de datos móviles.                                                      |
+| UOBA7 | Creemos que el turista quiere conservar un registro de lo que recorrió una vez terminado el tour.                                                  |
+ 
+#### *Feature Assumptions*
+ 
+| ID  | Creencia                                                                                                                                                                        |
+| --- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| FA1 | Creemos que configurar la ruta con sus puntos de control y ventanas de tiempo esperadas le dará al administrador una referencia contra la cual comparar el avance real.           |
+| FA2 | Creemos que sincronizar la telemetría acumulada en ráfaga al pasar por un punto de control permitirá conservar trazabilidad sin conectividad continua.                            |
+| FA3 | Creemos que un motor de reglas que compare el paso real contra la ventana esperada detectará retrasos antes de que el guía los reporte.                                           |
+| FA4 | Creemos que un dashboard centralizado con el estado de los grupos y alertas priorizadas permitirá al administrador decidir sin consultar varias fuentes.                          |
+| FA5 | Creemos que notificar al guía solo las alertas accionables mantendrá su confianza en el sistema y evitará que lo ignore.                                                          |
+| FA6 | Creemos que las notas de ruta consultables sin conexión, cargadas por la agencia responsable, darán al turista orientación confiable en los tramos aislados.                      |
+| FA7 | Creemos que un resumen automático del recorrido al cierre del tour reforzará la percepción de valor del turista y servirá de insumo de mejora para la agencia.                    |
+| FA8 | Creemos que un módulo de suscripción con pasarela de pagos permitirá a la agencia activar y renovar su plan sin gestión manual de cobros.                                         |
+ 
+---
 
 #### 1.2.2.3. Lean UX Hypothesis Statement
 
