@@ -72,7 +72,15 @@ Actualmente, las agencias de turismo y los guías dependen principalmente de tel
 
 #### 1.2.2.1. Lean UX Problem Statements
 
-
+**El estado actual** de la operación y la seguridad preventiva en el turismo de aventura en el Perú se ha centrado principalmente en dos segmentos: las agencias y operadores (MYPEs) que operan rutas de trekking y montañismo en Cusco, Áncash, Arequipa y Puno, y los turistas nacionales y extranjeros que las recorren. Sus principales dolores son la pérdida total de visibilidad sobre el grupo al ingresar en zonas sin cobertura celular, la imposibilidad de distinguir un retraso normal de un incidente real, y la incertidumbre del turista en los tramos donde queda incomunicado. Sus flujos de trabajo actuales se apoyan en radios VHF/UHF, coordinación por WhatsApp y llamadas cuando hay señal, conteos y reportes verbales del guía, y espera pasiva de la agencia hasta que el grupo vuelve a un punto con cobertura.
+ 
+**Lo que los productos y servicios existentes no resuelven** es que ninguna alternativa disponible conserva trazabilidad del grupo durante los tramos sin conectividad: o cubren únicamente la comunicación puntual ante una emergencia ya declarada, o requieren cobertura continua para operar. El resultado es que la agencia solo se entera de un problema cuando alguien logra comunicarlo, es decir, después de que el problema ya escaló.
+ 
+**Nuestro producto, VitalTrek, abordará este vacío** convirtiendo el recorrido en una secuencia de puntos de verificación a lo largo de la ruta, de modo que la agencia reciba evidencia periódica y comparable del avance y del estado del grupo sin depender de conectividad continua, y pueda distinguir de forma temprana un retraso esperado de una situación que exige intervención.
+ 
+**Nuestro foco inicial** serán las agencias y operadores de turismo de aventura (MYPEs) que operan rutas de trekking de varios días en Cusco y Áncash.
+ 
+**Sabremos que tenemos éxito cuando observemos** que las agencias del piloto consultan el estado de sus grupos al menos una vez por tramo en el 90% de los tours operados; que el tiempo que tarda una agencia en enterarse de un retraso relevante se reduce en 40% frente a su línea base actual; que al menos el 70% de las alertas recibidas por un guía deriva en una acción registrada; que al menos el 25% de las agencias del piloto renueva de forma pagada tras el periodo gratuito; y que al menos el 85% de los turistas encuestados califica como "Alta" o "Muy Alta" su percepción de seguridad durante el recorrido.
 
 #### 1.2.2.2. Lean UX Assumptions
 
