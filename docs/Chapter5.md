@@ -116,7 +116,12 @@ Esta sección documenta la implementación, validación y despliegue de los prod
 
 ### 5.2.1. Sprint 1
 
-El Sprint 1 tiene como objetivo implementar y publicar la primera versión del Landing Page de VitalTrek. El alcance comprende las User Stories US01 a US06, relacionadas con la navegación principal, la propuesta de valor, los planes, la información del equipo, el formulario de contacto y el cambio de idioma. La estimación total del Sprint es de 14 Story Points.
+El Sprint 1 tiene como objetivo implementar y publicar la primera versión del Landing Page de VitalTrek. El alcance comprende las User Stories US01 a US06 y US33, relacionadas con la navegación, la propuesta de valor, los planes, la información del equipo, la solicitud de información, el cambio de idioma y la publicación de los términos de servicio y la política de privacidad; y las Technical Stories TS01 a TS04, que habilitan la estructura técnica, la adaptación a distintos dispositivos, la internacionalización con accesibilidad y el despliegue. La estimación total del Sprint es de 30 Story Points.
+
+| Campo | Valor corregido |
+| --- | --- |
+| Sprint Velocity | 30 Story Points |
+| Total de Story Points | 30 |
 
 #### 5.2.1.1. Sprint Planning 1
 
@@ -152,27 +157,63 @@ La siguiente matriz organiza el liderazgo y la colaboración del equipo durante 
 
 #### 5.2.1.3. Sprint Backlog 1
 
-El Sprint Backlog contiene las seis User Stories del Landing Page seleccionadas desde el Product Backlog. Las tareas se descomponen en actividades de estructura HTML, estilos responsive, contenido, internacionalización, accesibilidad, validación y despliegue.
-
-**Evidencia del board**
-
+El Sprint Backlog 1 agrupa las siete User Stories de la Landing Page y las cuatro Technical Stories que la habilitan, seleccionadas desde el Product Backlog de la sección 3.3. La descomposición produjo veintiún Work-items, estimados individualmente entre 4 y 8 horas, con un total de 105 horas. Las tareas se repartieron según la matriz de líderes y colaboradores de la sección 5.2.1.2: cada integrante asume las tareas del aspecto que lidera y colabora en los aspectos restantes.
+ 
+**Evidencia del Board del Sprint**
+ 
 ![Product Backlog de VitalTrek en Jira](../assets/images/chapter-3/product-backlog-jira.png)
-
-*Figura 5.1. Sprint Backlog del Sprint 1.*
-
+ 
+*Figura 5.1. Board del Sprint 1 en Jira.*
+ 
 **Enlace público del board Jira:** [Ver Product Backlog](https://milenkorvu.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog)
-
-| User Story | Tarea | Descripción                                                           | Estimación (horas) | Responsable                      | Estado |
-| ---------- | ----- | --------------------------------------------------------------------- | -----------------: | -------------------------------- | ------ |
-| US01       | LP-01 | Implementar header, navegación y enlaces a las secciones principales. |                  4 | Cayanchi Avila, Milenko Rubén    | Done   |
-| US02       | LP-02 | Implementar Hero, propuesta de valor y beneficios principales.        |                  6 | León Naupari, Jorge Mateo        | Done   |
-| US03       | LP-03 | Implementar sección de planes y características.                      |                  5 | Rodriguez Rojas, Miler Alexander | Done   |
-| US04       | LP-04 | Implementar sección de equipo y perfiles de NexaTech.                 |                  4 | Herrera Enriquez, Diego Fernando | Done   |
-| US05       | LP-05 | Implementar formulario de contacto y validaciones básicas.            |                  5 | Mendoza Blanco, Ariel Roberto    | Done   |
-| US06       | LP-06 | Implementar cambio de idioma entre en-US y es-419.                    |                  6 | Mendoza Blanco, Ariel Roberto    | Done   |
-| US01–US06  | LP-07 | Aplicar responsive design para desktop, tablet y mobile.              |                  8 | León Naupari, Jorge Mateo        | Done   |
-| US01–US06  | LP-08 | Validar navegación, accesibilidad y enlaces del Landing Page.         |                  4 | Herrera Enriquez, Diego Fernando | Done   |
-| US01–US06  | LP-09 | Configurar y verificar el despliegue público.                         |                  2 | Rodriguez Rojas, Miler Alexander | Done   |
+ 
+| Sprint # | Story Id | Story Title | Task Id | Task Title | Task Description | Estimation (Hours) | Assigned To | Status |
+| --- | --- | --- | --- | --- | --- | ---: | --- | --- |
+| Sprint 1 | US01 | Navegación principal | T-01 | Estructura del header y de las secciones principales | Construir el encabezado y el esqueleto de las secciones del sitio con elementos semánticos, de modo que cada sección sea alcanzable desde la navegación. | 5 | Cayanchi Avila, Milenko Rubén | Done |
+| Sprint 1 | US01 | Navegación principal | T-02 | Navegación para pantallas reducidas | Implementar el comportamiento de la navegación por debajo de 768 px conservando las mismas opciones que la vista de escritorio. | 4 | Herrera Enriquez, Diego Fernando | Done |
+| Sprint 1 | US02 | Propuesta de valor | T-03 | Sección inicial con problema, solución y beneficios | Maquetar la sección inicial que presenta el problema de las zonas sin cobertura, la solución por checkpoints y los beneficios principales. | 6 | Cayanchi Avila, Milenko Rubén | Done |
+| Sprint 1 | US02 | Propuesta de valor | T-04 | Contenido de beneficios por segmento | Redactar e integrar el contenido que diferencia los beneficios para agencias y para turistas, a partir de los insights del capítulo II. | 4 | Mendoza Blanco, Ariel Roberto | Done |
+| Sprint 1 | US03 | Consulta de planes y precios | T-05 | Sección comparativa de planes | Construir la presentación de los planes con su precio, alcance y características, de forma que puedan compararse entre sí. | 5 | Rodriguez Rojas, Miler Alexander | Done |
+| Sprint 1 | US03 | Consulta de planes y precios | T-06 | Continuidad desde el plan hacia el contacto | Enlazar cada plan con el formulario de contacto de modo que el plan de interés quede identificado en la solicitud. | 4 | Rodriguez Rojas, Miler Alexander | Done |
+| Sprint 1 | US04 | Información del equipo | T-07 | Sección de equipo con los perfiles de NexaTech | Construir la sección de equipo con el nombre, el rol y la descripción de cada integrante, y sus fotografías. | 5 | Mendoza Blanco, Ariel Roberto | Done |
+| Sprint 1 | US05 | Solicitud de información o demostración | T-08 | Formulario de contacto y estructura de campos | Construir el formulario con los campos requeridos para registrar una solicitud de información o demostración. | 5 | Mendoza Blanco, Ariel Roberto | Done |
+| Sprint 1 | US05 | Solicitud de información o demostración | T-09 | Validación de campos obligatorios y formato de correo | Implementar la validación que impide el envío con campos obligatorios vacíos o con correo de formato inválido, e informa qué corregir. | 4 | Herrera Enriquez, Diego Fernando | Done |
+| Sprint 1 | US06 | Consulta del contenido en el idioma del visitante | T-10 | Mecanismo de cambio de idioma y diccionario de claves | Implementar la función que recorre las cadenas marcadas y las sustituye por el bloque de idioma seleccionado. | 6 | León Naupari, Jorge Mateo | Done |
+| Sprint 1 | US06 | Consulta del contenido en el idioma del visitante | T-11 | Persistencia de la preferencia de idioma | Conservar el idioma seleccionado entre visitas y actualizar el idioma declarado del documento al cambiarlo. | 4 | Mendoza Blanco, Ariel Roberto | Done |
+| Sprint 1 | US33 | Consulta del tratamiento de datos personales | T-12 | Páginas de términos de servicio y política de privacidad | Construir ambas páginas con las categorías de datos registrados, su finalidad, el plazo de conservación y los derechos del titular. | 6 | León Naupari, Jorge Mateo | Done |
+| Sprint 1 | US33 | Consulta del tratamiento de datos personales | T-13 | Contenido legal bilingüe y acceso desde el pie de página | Traducir el contenido legal a ambos idiomas y habilitar su acceso desde el pie de página de todas las vistas. | 5 | León Naupari, Jorge Mateo | Done |
+| Sprint 1 | TS01 | Estructura técnica del Landing Page | T-14 | Estructura de directorios, tokens de estilo y README | Separar marcado, estilos y scripts en directorios propios, centralizar color y tipografía como variables, y documentar la estructura y la ejecución local. | 6 | Cayanchi Avila, Milenko Rubén | Done |
+| Sprint 1 | TS02 | Adaptación del Landing Page a distintos dispositivos | T-15 | Adaptación a los anchos de referencia | Ajustar la presentación en 360, 768, 1024 y 1440 px verificando que no se produzca desplazamiento horizontal ni recorte de texto. | 8 | Herrera Enriquez, Diego Fernando | Done |
+| Sprint 1 | TS02 | Adaptación del Landing Page a distintos dispositivos | T-16 | Áreas táctiles y escala tipográfica móvil | Verificar el área mínima de los controles interactivos y aplicar la escala tipográfica móvil por debajo de 768 px. | 4 | Herrera Enriquez, Diego Fernando | Done |
+| Sprint 1 | TS03 | Internacionalización y accesibilidad del Landing Page | T-17 | Acceso al contenido principal, elementos semánticos y orden de tabulación | Incorporar el acceso directo al contenido principal como primer elemento enfocable, aplicar los elementos semánticos de referencia y verificar el orden de tabulación. | 6 | León Naupari, Jorge Mateo | Done |
+| Sprint 1 | TS03 | Internacionalización y accesibilidad del Landing Page | T-18 | Verificación de contraste y textos alternativos | Comprobar que el contraste cumple WCAG 2.1 AA y que las imágenes informativas declaran texto alternativo descriptivo. | 5 | Rodriguez Rojas, Miler Alexander | Done |
+| Sprint 1 | TS03 | Internacionalización y accesibilidad del Landing Page | T-19 | Paridad de claves entre los bloques de idioma | Verificar que ambos bloques de idioma contienen el mismo conjunto de claves y corregir las ausencias detectadas. | 4 | Mendoza Blanco, Ariel Roberto | Done |
+| Sprint 1 | TS04 | Validación y despliegue del Landing Page | T-20 | Metadatos de identificación e indexación | Declarar en cada página el título, la descripción, la URL canónica, las alternativas de idioma y los metadatos de previsualización social. | 5 | León Naupari, Jorge Mateo | Done |
+| Sprint 1 | TS04 | Validación y despliegue del Landing Page | T-21 | Validación del marcado, de los enlaces y despliegue | Ejecutar la validación del W3C, comprobar que ningún enlace interno responde 404 y publicar la versión aprobada desde la rama estable. | 4 | Rodriguez Rojas, Miler Alexander | Done |
+ 
+**Resumen del Sprint Backlog 1**
+ 
+| Concepto | Valor |
+| --- | ---: |
+| User Stories y Technical Stories asignadas | 11 |
+| Work-items resultantes de la descomposición | 21 |
+| Estimación mínima de una task | 4 horas |
+| Estimación máxima de una task | 8 horas |
+| Total de horas estimadas | 105 |
+| Sum of Story Points | 30 |
+ 
+**Distribución de la carga por integrante**
+ 
+| Integrante | Tasks | Horas |
+| --- | ---: | ---: |
+| León Naupari, Jorge Mateo | 5 | 28 |
+| Mendoza Blanco, Ariel Roberto | 5 | 22 |
+| Herrera Enriquez, Diego Fernando | 4 | 20 |
+| Rodriguez Rojas, Miler Alexander | 4 | 18 |
+| Cayanchi Avila, Milenko Rubén | 3 | 17 |
+| **Total** | **21** | **105** |
+ 
+---
 
 #### 5.2.1.4. Development Evidence for Sprint Review
 
