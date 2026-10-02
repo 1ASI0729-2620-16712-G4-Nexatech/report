@@ -231,6 +231,6 @@ El Product Backlog de VitalTrek fue gestionado en Jira Software, donde las histo
 **Enlace al Product Backlog en Jira:**
 [Ver Product Backlog](https://milenkorvu.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog)
  
-El Sprint 1 agrupa las historias US01–US06, US33 y TS01–TS04, con una suma de 32 Story Points. Las 32 historias restantes permanecen en el backlog para las siguientes iteraciones.
+El Sprint 1 agrupa las historias US01–US06, US33 y TS01–TS04, con una suma de 30 Story Points. Las 32 historias restantes permanecen en el backlog para las siguientes iteraciones.
  
 ---
