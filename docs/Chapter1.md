@@ -32,21 +32,47 @@ Muchas de estas actividades se desarrollan en áreas alejadas de centros urbanos
 
 Actualmente, las agencias de turismo y los guías dependen principalmente de teléfonos móviles y aplicaciones convencionales de comunicación y geolocalización para coordinar recorridos y mantener contacto con los grupos. Sin embargo, estas herramientas presentan limitaciones en zonas sin señal, generando dificultades para el monitoreo continuo de los turistas y la atención oportuna ante situaciones de emergencia. Esta problemática evidencia la necesidad de implementar soluciones tecnológicas adaptadas al contexto geográfico y operativo del turismo de aventura en el país.
 
-| Pregunta      | Formulación                   | Respuesta                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| ------------- | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Who?**      | ¿Quiénes son los afectados?   | Las agencias de turismo de aventura, los guías turísticos y los turistas nacionales e internacionales que realizan expediciones en zonas remotas del Perú, donde la limitada cobertura móvil dificulta el monitoreo y la comunicación durante el recorrido.                                                                                                                                                                |
-| **What?**     | ¿Cuál es el problema?         | La falta de un sistema de alertas tempranas basado en el monitoreo periódico de ubicación y signos vitales limita la capacidad de respuesta ante emergencias y reduce la seguridad de los turistas durante actividades de aventura en zonas sin cobertura de red.                                                                                                                                                          |
-| **Where?**    | ¿Dónde ocurre?                | El problema se presenta en rutas de turismo de aventura ubicadas en zonas remotas del Perú, especialmente en circuitos de trekking de los Andes, selva alta y áreas naturales con geografía compleja y cobertura móvil limitada o inexistente.                                                                                                                                                                             |
-| **When?**     | ¿Cuándo se hace más evidente? | Durante el desarrollo de las expediciones, principalmente en situaciones de separación de grupos, cambios climáticos bruscos, recorridos de alta dificultad o ante emergencias médicas como fatiga extrema, deshidratación o mal de altura.                                                                                                                                                                                |
-| **Why?**      | ¿Por qué ocurre?              | Debido a que las herramientas de comunicación y geolocalización utilizadas actualmente dependen de conexión móvil o internet para funcionar correctamente. En zonas remotas del Perú, la cobertura es limitada o inexistente, lo que genera pérdida de comunicación y dificultades para detectar oportunamente anomalías durante el recorrido.                                                                             |
-| **How?**      | ¿Cómo se manifiesta?          | Se manifiesta mediante pérdida de comunicación entre integrantes del grupo, dificultades para ubicar turistas de forma oportuna, retrasos en la atención de emergencias y dependencia de aplicaciones móviles que dejan de funcionar correctamente en zonas sin cobertura.                                                                                                                                                 |
-| **How Much?** | ¿Cuánta es la magnitud?       | El crecimiento sostenido del turismo de aventura en el Perú ha incrementado la cantidad de expediciones realizadas en zonas de difícil acceso. Sin embargo, gran parte de estas áreas presenta limitaciones de conectividad, lo que incrementa los riesgos de accidentes, extravíos y retrasos en la respuesta ante emergencias, afectando tanto la seguridad de los turistas como la capacidad operativa de las agencias. |
+### Objetivos del proyecto
+ 
+| ID  | Objetivo                                                                                                                                              |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------|
+| O1  | Permitir que una agencia conserve trazabilidad verificable del avance de sus grupos durante tramos sin cobertura celular.                             |
+| O2  | Reducir el tiempo que transcurre entre que ocurre un retraso o una anomalía y el momento en que la agencia se entera.                                 |
+| O3  | Dar al guía de campo información suficiente para decidir si un retraso requiere intervención o es parte de la variabilidad normal del recorrido.      |
+| O4  | Entregar al turista información de ruta consultable sin conexión durante el recorrido.                                                                |
+| O5  | Validar la disposición de las agencias MYPE a pagar por el servicio mediante un piloto medible.                                                       |
+ 
+### Restricciones y alcance
+ 
+| ID  | Restricción                                                                                                                                                                         |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| R1  | La capa IoT (wearables y unidades de checkpoint) se **simula** para el alcance académico del proyecto. No se fabrica ni se integra hardware físico.                                 |
+| R2  | No existe conectividad continua en ruta. Toda sincronización es **asíncrona** y ocurre únicamente en los puntos de control definidos.                                               |
+| R3  | El producto **no es un servicio de emergencia ni un dispositivo médico**. No reemplaza comunicadores satelitales, balizas, guías capacitados ni protocolos de rescate.              |
+| R4  | El alcance cubre la **operación del tour**, no la reserva ni la comercialización de paquetes turísticos.                                                                            |
+| R5  | Las notas de ruta son cargadas por la agencia o el guía responsable de esa ruta. No es contenido abierto aportado por cualquier usuario.                                            |
+| R6  | El tratamiento de datos de ubicación y signos vitales está sujeto a la Ley N.° 29733 de Protección de Datos Personales, lo que exige consentimiento previo, expreso e informado.    |
+| R7  | El idioma por defecto de todos los productos es inglés, con soporte para español latinoamericano (en_US / es_419).                                                                  |
+ 
+### Trazabilidad entre 5W+2H y el Problem Statement
+ 
+| Pregunta 5W+2H | Hallazgo                                                                  | Dónde aparece en el Problem Statement        |
+| -------------- | ------------------------------------------------------------------------- |  ------------------------------------------- |
+| Who            | Agencias MYPE, guías y turistas de aventura                               | *customer segments* e *initial segment*      |
+| What           | Ausencia de alertas tempranas basadas en monitoreo periódico              | *gap*                                        |
+| Where          | Rutas de trekking en Cusco, Áncash, Arequipa y Puno                       | *domain* e *initial segment*                 |
+| When           | Durante la ejecución del recorrido, ante separación de grupos o urgencias | *pain points*                                |
+| Why            | Las herramientas actuales requieren conexión continua para funcionar      | *gap*                                        |
+| How            | Pérdida de comunicación, demora en ubicar turistas, respuesta tardía      | *pain points* y *workflows*                  |
+| How Much       | Crecimiento sostenido de expediciones en zonas de difícil acceso          | sustento del *domain* y de la oportunidad    |
+ 
+---
 
 ### 1.2.2. Lean UX Process
 
 #### 1.2.2.1. Lean UX Problem Statements
 
-El estado actual de la gestión operativa turística y la seguridad preventiva en el turismo de aventura se ha apoyado principalmente en radios VHF/UHF y reportes manuales sin trazabilidad automatizada, atendiendo a agencias y operadores (MYPEs) y turistas en rutas de trekking y montañismo de Cusco, Áncash, Arequipa y Puno, quienes pierden visibilidad operativa y capacidad de comunicación al ingresar a zonas con cobertura celular intermitente o nula. Lo que los productos y servicios existentes no abordan es la falta de un mecanismo de supervisión centralizado y automatizado capaz de capturar telemetría fisiológica y de ubicación de forma offline y sincronizarla de manera periódica sin requerir conectividad celular continua. Nuestro producto, VitalTrek, abordará este vacío mediante una plataforma web integrada a un ecosistema IoT simulado que captura datos de posición y signos vitales en wearables de los turistas, los sincroniza en ráfagas al pasar por checkpoints Bluetooth y procesa la información mediante un motor de reglas para alertar a las agencias y guías, ofreciendo simultáneamente herramientas de consulta offline para el turista. Nuestro foco inicial serán las agencias y operadores de turismo de aventura (MYPEs) que gestionan rutas remotas en el Perú. Sabremos que tenemos éxito cuando observemos una reducción del 40% en el tiempo promedio de detección de retrasos o anomalías, una tasa de registro del 95% en los checkpoints configurados, la conversión de al menos el 25% de agencias piloto a suscripciones anuales pagadas y una percepción de seguridad del 85% en los turistas encuestados.
+
 
 #### 1.2.2.2. Lean UX Assumptions
 
