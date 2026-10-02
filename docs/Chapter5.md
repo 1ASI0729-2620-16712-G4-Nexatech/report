@@ -1,114 +1,205 @@
 # Capítulo V: Product Implementation, Validation & Deployment
 
 ## 5.1. Software Configuration Management
-
-Esta sección establece las herramientas, configuraciones y convenciones utilizadas para mantener la consistencia del proyecto VitalTrek durante el Sprint 1. Se documentan el entorno de desarrollo, el control de versiones, las reglas de estilo y la configuración de despliegue del Landing Page. Estas decisiones permiten coordinar el trabajo del equipo, mantener trazabilidad sobre los cambios y asegurar que la solución pueda ejecutarse y publicarse de forma consistente.
-
+ 
+Esta sección establece las herramientas, convenciones y configuraciones que el equipo utiliza para mantener la consistencia del proyecto VitalTrek a lo largo de su ciclo de vida. Se documentan el entorno de desarrollo, el esquema de control de versiones con GitFlow, las convenciones de codificación y la configuración de despliegue de cada producto. Estas decisiones permiten coordinar el trabajo de los cinco integrantes, mantener trazabilidad sobre cada cambio y reproducir el entorno en cualquier equipo.
+ 
 ### 5.1.1. Software Development Environment Configuration
-
-La siguiente tabla presenta las herramientas utilizadas por el equipo durante el desarrollo del Sprint 1 y la elaboración de los artefactos correspondientes a AV1.
-
-| Producto           | Actividad                | Propósito                                                            | Referencia                                           |
-| ------------------ | ------------------------ | -------------------------------------------------------------------- | ---------------------------------------------------- |
-| Jira Software      | Project Management       | Gestionar el Product Backlog, Sprint Backlog, tareas y Story Points. | [Jira](https://www.atlassian.com/software/jira)      |
-| GitHub             | Source Code Management   | Almacenar el código, aplicar GitFlow y registrar commits.            | [GitHub](https://github.com/)                        |
-| Figma              | UX/UI Design             | Elaborar wireframes, mock-ups y prototipos.                          | [Figma](https://www.figma.com/)                      |
-| UXPressia          | Requirements / UX Design | Elaborar User Personas, Journey Maps, Empathy Maps e Impact Maps.    | [UXPressia](https://uxpressia.com/)                  |
-| Miro               | Domain Modeling          | Elaborar el Big Picture y Design-Level EventStorming.                | [Miro](https://miro.com/)                            |
-| Visual Studio Code | Software Development     | Desarrollar el Landing Page con HTML5, CSS3 y JavaScript.            | [Visual Studio Code](https://code.visualstudio.com/) |
-| Vercel             | Software Deployment      | Desplegar y publicar la primera versión del Landing Page.            | [Vercel](https://vercel.com/)                        |
-| Markdown           | Software Documentation   | Redactar el informe del proyecto y organizar sus capítulos.          | [Markdown Guide](https://www.markdownguide.org/)     |
-
+ 
+La siguiente tabla especifica los productos de software que el equipo utiliza, agrupados por tipo de actividad del ciclo de vida. Para los productos basados en modelos SaaS se indica la ruta de referencia; para los que se ejecutan en el computador de cada integrante se indica la ruta de descarga.
+ 
+| Actividad | Producto | Propósito de uso en el proyecto | Tipo | Ruta de referencia o descarga |
+| --- | --- | --- | --- | --- |
+| Project Management | Jira Software | Gestionar el Product Backlog, los Sprint Backlogs, las Engineering Tasks y las estimaciones en Story Points y horas. | SaaS | https://www.atlassian.com/software/jira |
+| Project Management | Discord | Coordinar las ceremonias del Sprint y la comunicación diaria del equipo. | SaaS / aplicación de escritorio | https://discord.com/download |
+| Requirements Management | UXPressia | Elaborar las fichas de User Persona, los Journey Maps, los Empathy Maps y el Impact Map. | SaaS | https://uxpressia.com/ |
+| Requirements Management | Miro | Elaborar el Big Picture EventStorming y el Design-Level EventStorming. | SaaS | https://miro.com/ |
+| Product UX/UI Design | Figma | Elaborar los wireframes, mock-ups y prototipos del Landing Page y de las Web Applications. | SaaS | https://www.figma.com/ |
+| Software Development | Git | Controlar las versiones del código fuente en el computador de cada integrante y aplicar el flujo de ramas de GitFlow. | Instalación local | https://git-scm.com/downloads |
+| Software Development | GitHub | Alojar los repositorios de la organización del equipo, gestionar los Pull Requests y registrar la colaboración. | SaaS | https://github.com/ |
+| Software Development | Visual Studio Code | Editar el código del Landing Page y la documentación en Markdown. | Instalación local | https://code.visualstudio.com/download |
+| Software Development | Google Chrome | Verificar la navegación, el comportamiento responsive y la accesibilidad del Landing Page mediante sus herramientas de desarrollo. | Instalación local | https://www.google.com/chrome/ |
+| Software Development | Vue.js | Construir las Frontend Web Applications. Planificado para Sprints posteriores. | Instalación local (vía npm) | https://vuejs.org/ |
+| Software Development | .NET SDK y C# | Construir el RESTful Web Services. Planificado para Sprints posteriores. | Instalación local | https://dotnet.microsoft.com/download |
+| Software Development | PostgreSQL | Persistir la información operativa y de seguridad de las expediciones. Planificado para Sprints posteriores. | Instalación local | https://www.postgresql.org/download/ |
+| Software Deployment | Vercel | Desplegar y publicar el Landing Page a partir del repositorio de GitHub. | SaaS | https://vercel.com/ |
+| Software Documentation | Markdown | Redactar el informe del proyecto y los archivos README de cada repositorio. | Formato abierto | https://www.markdownguide.org/ |
+| Software Documentation | dbdiagram.io | Elaborar el Database Diagram de la sección 4.8. | SaaS | https://dbdiagram.io/ |
+| Software Documentation | PlantUML | Elaborar los Class Diagrams de la sección 4.7. | Instalación local / SaaS | https://plantuml.com/download |
+| Software Documentation | Microsoft PowerPoint | Elaborar la presentación de exposición de cada entrega. | Instalación local | https://www.microsoft.com/microsoft-365/powerpoint |
+| Software Documentation | Microsoft Stream | Publicar los videos de exposición y de navegación del producto. | SaaS | https://www.microsoft.com/microsoft-365/microsoft-stream |
+ 
 ### 5.1.2. Source Code Management
+ 
+El código fuente de VitalTrek se administra con **Git** como sistema de control de versiones y **GitHub** como plataforma de alojamiento y colaboración. Cada producto de la solución mantiene su propio repositorio dentro de la organización del equipo, de modo que sus ciclos de vida y despliegues sean independientes.
+ 
+| Producto | Repositorio | Rama por defecto | Estado en AV1 |
+| --- | --- | --- | --- |
+| Project Report | https://github.com/1ASI0729-2620-16712-G4-Nexatech/report | `develop` | En elaboración |
+| Landing Page | https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page | `main` | Implementado y desplegado |
+| Frontend Web Applications | https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications | `develop` | Repositorio creado, implementación planificada |
+| RESTful Web Services | https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-services | `develop` | Repositorio creado, implementación planificada |
+ 
+En el caso del RESTful Web Services, el repositorio incluye tanto el proyecto como los archivos de pruebas unitarias y de integración, conforme a lo indicado en el enunciado del trabajo final.
+ 
+> **Acción necesaria:** crea ahora los repositorios `web-applications` y `web-services` en la organización, aunque solo contengan un `README.md` con el alcance planificado. Toma cinco minutos y convierte un "URL pendiente" en una URL verificable, que es lo que el criterio evalúa.
+ 
+#### GitFlow como Workflow de branching y colaboración
+ 
+El equipo aplica **GitFlow**, según el modelo descrito por Vincent Driessen en *A successful Git branching model*. El repositorio mantiene dos ramas de larga duración y tres tipos de ramas de apoyo.
+ 
+**Ramas de larga duración**
+ 
+| Rama | Propósito | Quién integra en ella |
+| --- | --- | --- |
+| `main` | Contiene únicamente versiones estables y publicadas. Cada integración en esta rama corresponde a una Release etiquetada. | Solo mediante Pull Request desde `release/*` o `hotfix/*`. |
+| `develop` | Integra el trabajo aprobado de todas las funcionalidades en curso. Es la base desde la que nacen las ramas de funcionalidad. | Solo mediante Pull Request desde `feature/*`. |
+ 
+**Ramas de apoyo y sus convenciones de nombre**
+ 
+| Tipo | Convención de nombre | Nace de | Se integra en | Ejemplo real del proyecto |
+| --- | --- | --- | --- | --- |
+| Feature | `feature/<ámbito>-<descripción-breve>` en inglés y `kebab-case` | `develop` | `develop` | `feature/landing-seo-a11y` |
+| Release | `release/vMAJOR.MINOR.PATCH` | `develop` | `main` y `develop` | `release/v1.0.0` |
+| Hotfix | `hotfix/vMAJOR.MINOR.PATCH-<descripción-breve>` | `main` | `main` y `develop` | `hotfix/v1.0.1-contact-form-validation` |
+ 
+Reglas aplicables a los nombres de rama:
+ 
+1. Se escriben íntegramente en inglés y en minúsculas, con palabras separadas por guion.
+2. El ámbito identifica el producto o el capítulo afectado: `landing`, `webapp`, `api`, `chapter-3`.
+3. No se usan espacios, caracteres acentuados ni mayúsculas.
+4. Una rama de funcionalidad corresponde a una sola User Story o Technical Story, y se elimina una vez integrada.
 
-El código fuente de VitalTrek se administra mediante Git y GitHub. Cada producto mantiene su propio repositorio para separar responsabilidades y facilitar el trabajo colaborativo. Para controlar la evolución del proyecto se utiliza GitFlow, Conventional Commits y Semantic Versioning.
-
-| Producto                  | Repositorio                                                     | Estado en AV1             |
-| ------------------------- | --------------------------------------------------------------- | ------------------------- |
-| Landing Page              | https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page | Implementado y desplegado |
-| Frontend Web Applications | URL pendiente                                                   | Planificado               |
-| RESTful Web Services      | URL pendiente                                                   | Planificado               |
-
-#### GitFlow Workflow
-
-El flujo de trabajo utiliza las siguientes ramas:
-
-- `main`: versión estable y publicada.
-- `develop`: integración de cambios aprobados.
-- `feature/*`: desarrollo de funcionalidades.
-- `release/*`: preparación de una versión.
-- `hotfix/*`: corrección urgente sobre `main`.
-
-Durante el Sprint 1 se utilizaron ramas `feature/*`. La evidencia de cada rama, commit y Pull Request se registra en la sección 5.2.1.4.
-
+**Flujo de trabajo**
+ 
+![Gitflow_AV01](../assets/images/chapter-5/gitflow_av01.png)
+ 
+*Figura 5.0. Flujo de ramas aplicado en los repositorios de VitalTrek.*
+ 
+**Política de Pull Requests**
+ 
+1. Toda integración a `develop` y a `main` se realiza mediante Pull Request; no se permite empujar directamente a ninguna de las dos.
+2. Cada Pull Request indica en su descripción la User Story o Technical Story que resuelve y los criterios de aceptación cubiertos.
+3. Un Pull Request requiere la revisión y aprobación de al menos un integrante distinto de su autor.
+4. La rama de funcionalidad se elimina después de la integración.
+#### Semantic Versioning
+ 
+Las Releases se nombran según **Semantic Versioning 2.0.0**, con el formato `vMAJOR.MINOR.PATCH`:
+ 
+| Componente | Se incrementa cuando | Ejemplo |
+| --- | --- | --- |
+| `MAJOR` | Se introduce un cambio incompatible con la versión anterior. | `v2.0.0` |
+| `MINOR` | Se agrega funcionalidad manteniendo la compatibilidad. | `v1.1.0` |
+| `PATCH` | Se corrige un defecto sin agregar funcionalidad. | `v1.0.1` |
+ 
+La versión publicada al cierre del Sprint 1 es **`v1.0.0`**, correspondiente a la primera versión funcional y desplegada del Landing Page. Cada Release se etiqueta en `main` con su número de versión.
+ 
+#### Conventional Commits
+ 
+Los mensajes de commit siguen la especificación **Conventional Commits 1.0.0**, con la estructura:
+ 
+```
+<tipo>(<alcance>): <descripción en imperativo y en inglés>
+ 
+[cuerpo opcional]
+```
+ 
+| Tipo | Se usa para |
+| --- | --- |
+| `feat` | Agregar una funcionalidad nueva. |
+| `fix` | Corregir un defecto. |
+| `docs` | Cambios que solo afectan documentación. |
+| `style` | Cambios de formato que no alteran el comportamiento. |
+| `refactor` | Reestructurar código sin cambiar su comportamiento externo. |
+| `test` | Agregar o corregir pruebas. |
+| `chore` | Tareas de mantenimiento, configuración o dependencias. |
+ 
+Ejemplos tomados del repositorio del proyecto:
+ 
+```
+feat(a11y): add skip to main content link
+feat(seo): complete meta tags defined in report 4.2.3
+docs(chapter5): add Jorge Mateo Leon commits to development evidence
+style(a11y): add skip link styles
+```
+ 
+> **Nota sobre la adopción de las convenciones.** El equipo adoptó formalmente Conventional Commits y la convención de nombres de rama a partir del 7 de septiembre de 2026. Los commits y ramas anteriores a esa fecha, registrados en la sección 5.2.1.4, no siguen la convención, dado que corresponden al período de configuración inicial del repositorio. No se reescribió el historial para preservar la trazabilidad de los aportes individuales. A partir de esa fecha, la convención se verifica durante la revisión de cada Pull Request.
+ 
 ### 5.1.3. Source Code Style Guide & Conventions
-
-El equipo utiliza convenciones comunes para mantener un código legible, consistente y fácil de mantener. Todos los nombres de archivos, variables, funciones, clases, identificadores HTML y componentes se redactan en inglés.
-
-| Tecnología | Convenciones principales                                                                                                                           |
-| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| HTML5      | Elementos semánticos, etiquetas en minúscula, atributos entre comillas dobles y textos alternativos en imágenes.                                   |
-| CSS3       | Clases e identificadores en `kebab-case`, variables CSS centralizadas y diseño mobile-first.                                                       |
-| JavaScript | Variables y funciones en `camelCase`, constantes en `UPPER_SNAKE_CASE`, uso de `const` y `let`, y funciones con responsabilidades específicas.     |
-| Markdown   | Encabezados jerárquicos, enlaces relativos, imágenes con texto alternativo y tablas con formato consistente.                                       |
-| Vue.js     | Componentes en `PascalCase`, propiedades y eventos con nombres descriptivos. Aplicación planificada para entregas posteriores.                     |
-| C#         | Clases, métodos y propiedades en `PascalCase`; parámetros y variables locales en `camelCase`. Aplicación planificada para el RESTful Web Services. |
-
-Ejemplos:
-
+ 
+El equipo adopta guías de estilo estándar para cada lenguaje de la solución. Todos los identificadores, nombres de archivo, clases, funciones y comentarios se redactan en inglés, conforme a lo indicado en el enunciado del trabajo final.
+ 
+| Tecnología | Convenciones adoptadas | Referencia |
+| --- | --- | --- |
+| HTML5 | Elementos semánticos, etiquetas y atributos en minúscula, atributos entre comillas dobles, texto alternativo en toda imagen informativa, indentación de dos espacios. | [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html) · [W3Schools HTML Style Guide](https://www.w3schools.com/html/html5_syntax.asp) |
+| CSS3 | Clases e identificadores en `kebab-case`, variables centralizadas en `tokens.css`, enfoque mobile-first, una declaración por línea. | [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html) |
+| JavaScript | Variables y funciones en `camelCase`, constantes en `UPPER_SNAKE_CASE`, uso de `const` y `let` en lugar de `var`, funciones con una sola responsabilidad, punto y coma obligatorio. | [Google JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html) · [MDN JavaScript Guidelines](https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Code_style_guide/JavaScript) |
+| Vue.js | Componentes en `PascalCase` con nombre de varias palabras, props en `camelCase` dentro del script y en `kebab-case` en la plantilla, un componente por archivo. Planificado para Sprints posteriores. | [Vue Style Guide](https://vuejs.org/style-guide/) |
+| C# | Clases, métodos y propiedades en `PascalCase`; parámetros y variables locales en `camelCase`; interfaces con prefijo `I`. Planificado para el RESTful Web Services. | [C# Coding Conventions](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions) · [ASP.NET Core Engineering Guidelines](https://github.com/dotnet/aspnetcore/wiki/Engineering-guidelines) |
+| Gherkin | Un escenario por comportamiento, redacción en tiempo presente y tercera persona, sin referencias a elementos de interfaz. | [Gherkin Reference](https://cucumber.io/docs/gherkin/reference/) |
+| Markdown | Encabezados jerárquicos sin saltar niveles, enlaces relativos entre capítulos, imágenes con texto alternativo, tablas con formato consistente. | [Markdown Guide](https://www.markdownguide.org/basic-syntax/) |
+ 
+Ejemplos aplicados en el Landing Page:
+ 
 ```html
-<section class="safety-features">
-  <h2 id="safety-title">Checkpoint synchronization</h2>
+<section class="safety-features" aria-labelledby="safety-title">
+  <h2 id="safety-title" data-i18n="safetyTitle">Checkpoint synchronization</h2>
 </section>
 ```
-
+ 
 ```css
 :root {
   --forest-green: #0f3d2e;
   --safety-amber: #f2a93b;
 }
-
+ 
 .request-demo-button {
   background-color: var(--safety-amber);
 }
 ```
-
+ 
 ```javascript
 const DEFAULT_LOCALE = 'en-US';
-
-function toggleLanguage(selectedLocale) {
+ 
+function setLanguage(selectedLocale) {
   document.documentElement.lang = selectedLocale;
+  localStorage.setItem('vitaltrek-language', selectedLocale);
 }
 ```
-
+ 
 ### 5.1.4. Software Deployment Configuration
-
-La primera versión desplegada de VitalTrek corresponde al Landing Page desarrollado con HTML5, CSS3 y JavaScript. La publicación se realiza desde GitHub hacia Vercel, permitiendo disponer de una versión accesible para la revisión de AV1.
-
-| Producto                  | Plataforma | Rama      | Estado      |
-| ------------------------- | ---------- | --------- | ----------- |
-| Landing Page              | Vercel     | `main`    | Desplegado  |
-| Frontend Web Applications | Pendiente  | Pendiente | Planificado |
-| RESTful Web Services      | Pendiente  | Pendiente | Planificado |
-
+ 
+El despliegue de cada producto parte de su repositorio de código fuente. Para AV1 el único producto desplegado es el Landing Page, publicado en Vercel a partir del repositorio de GitHub.
+ 
+| Producto | Plataforma | Rama de despliegue | Estado |
+| --- | --- | --- | --- |
+| Landing Page | Vercel | `main` | Desplegado |
+| Frontend Web Applications | Vercel | `main` | Planificado |
+| RESTful Web Services | Azure App Service | `main` | Planificado |
+ 
 #### Configuración del Landing Page
-
-- Repositorio: https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page
-- Plataforma: https://landing-page-mrca1.vercel.app/
-- Rama desplegada: `main`
-- Framework: Static HTML/CSS/JavaScript
-- Build command: No aplica
-- Output directory: Directorio raíz del repositorio
-- Variables de entorno: No requeridas
-
-#### Proceso de despliegue
-
-1. Se actualiza el código en la rama `develop`.
-2. Se validan los cambios del Landing Page.
-3. Se integra la versión aprobada en `main`.
-4. Vercel detecta el cambio en el repositorio.
-5. Se ejecuta el despliegue automático.
-6. Se verifica la navegación, el diseño responsive, los enlaces y los call-to-action.
+ 
+| Parámetro | Valor |
+| --- | --- |
+| Repositorio | https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page |
+| Plataforma | Vercel |
+| Production Branch | `main` |
+| Framework preset | Other (HTML, CSS y JavaScript estáticos) |
+| Build command | No aplica |
+| Output directory | Directorio raíz del repositorio |
+| Variables de entorno | No requeridas |
+| URL pública de producción | https://landing-page-mrca1.vercel.app/ |
+| Versión desplegada | `v1.0.0` |
+ 
+#### Pasos para lograr el despliegue desde el repositorio
+ 
+1. El integrante desarrolla la funcionalidad en su rama `feature/*` y abre un Pull Request hacia `develop`.
+2. Otro integrante revisa el Pull Request y verifica que se cumplan los criterios de aceptación de la historia correspondiente.
+3. Aprobado el Pull Request, la rama se integra en `develop` y se elimina.
+4. Al cerrar el Sprint se crea la rama `release/vX.Y.Z` desde `develop`, donde se ejecutan las validaciones finales: marcado W3C, enlaces internos, comportamiento responsive, cambio de idioma y accesibilidad por teclado.
+5. La rama de Release se integra en `main` mediante Pull Request y se etiqueta con su número de versión.
+6. Vercel detecta el cambio en la Production Branch y ejecuta el despliegue automático.
+7. Se verifica la URL pública de producción y se registra la evidencia en la sección 5.2.X.7 del Sprint correspondiente.
 
 ## 5.2. Landing Page, Services & Applications Implementation
 
