@@ -523,7 +523,7 @@ Los términos se presentan en **inglés** (idioma establecido para todos los pro
 
 | Término (inglés)      | Equivalente (español)  | Definición                                                                                                                                                                                 |
 | --------------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Subscription Plan** | Plan de suscripción    | Modalidad de contratación mensual o anual mediante la cual una agencia accede al servicio, diferenciada según el volumen de grupos o turistas gestionados.                                 |
+| **Subscription Plan** | Plan de suscripción    | Hipótesis comercial posterior al MVP: modalidad mensual o anual mediante la cual una agencia podría acceder al servicio según el volumen de grupos o turistas gestionados.                 |
 | **Pilot**             | Piloto                 | Periodo de uso gratuito y acotado del servicio otorgado a una agencia con el fin de validar su utilidad operativa antes de una contratación pagada.                                        |
 | **Booking**           | Reserva                | Compromiso de un turista de participar en un tour en una fecha determinada. Se considera parte del contexto del negocio de la agencia, pero está fuera del alcance funcional de VitalTrek. |
 | **Tourist Manifest**  | Manifiesto de turistas | Relación oficial de los turistas que integran un grupo de expedición, con sus datos de contacto de emergencia y observaciones de salud relevantes.                                         |
