@@ -9,3 +9,4 @@
 |   1.4   | 13/09/2026 | Rodriguez Rojas, Miler Alexander | Desarrollo de los capítulos IV y capítulo V           |
 |   1.5   | 17/09/2026 | Herrera Enriquez, Diego Fernando | Desarrollo del capítulo V                             |
 |   1.6   | 18/09/2026 | Equipo NexaTech                    | Correcciones de auditoría AV1: consistencia, enlaces, estructura y evidencias. |
+|   1.7   | 03/10/2026 | Equipo NexaTech                    | Ajustes de roles, flujo frontend, priorización del backlog y delimitación de pagos post MVP. |

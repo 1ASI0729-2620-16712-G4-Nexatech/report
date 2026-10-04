@@ -37,112 +37,137 @@ A continuación se presenta el cuadro Competitive Analysis Landscape, en el cual
 ## 2.2. Entrevistas
  
 ### 2.2.1. Diseño de Entrevistas
- 
-Las entrevistas constituyen la principal técnica de investigación cualitativa para la validación del problema y la propuesta de valor de VitalTrek. El objetivo es comprender en profundidad las necesidades, frustraciones, comportamientos actuales y expectativas de los dos segmentos de usuario identificados: los **dueños o responsables de agencias de turismo de aventura** y los **turistas de aventura**.
- 
+
+Las entrevistas constituyen la principal técnica de investigación cualitativa para comprender el problema que viven los dos segmentos objetivo de VitalTrek: los **dueños o responsables de agencias de turismo de aventura** y los **turistas de aventura**.
+
+El enfoque es de descubrimiento, no de validación. Siguiendo la práctica de Needfinding, la guía indaga en **episodios concretos ya vividos** por el entrevistado, en lo que hizo y en lo que le costó, y evita preguntar por escenarios hipotéticos, por su intención de uso o por funcionalidades deseadas. El objetivo es obtener evidencia de comportamiento, no opiniones sobre una solución que todavía no existe.
+
+### Objetivos Generales del Proceso de Entrevistas
+
+1. Reconstruir cómo opera hoy una agencia de turismo de aventura durante un recorrido, identificando las herramientas que usa, los momentos en que pierde información y lo que hace cuando eso ocurre.
+2. Documentar episodios reales de retraso, incidente o emergencia: cómo se enteró la agencia, cuánto tiempo pasó y qué decisiones tomó.
+3. Entender la experiencia del turista durante el recorrido, especialmente en los tramos sin conectividad, y qué hizo ante la incertidumbre.
+4. Identificar las consecuencias concretas que el problema ya ha generado en ambos segmentos: tiempo perdido, costos asumidos, reclamos, decisiones postergadas.
+5. Recoger las características objetivas y subjetivas de los entrevistados que servirán de base para la construcción de los User Persona.
+
+### Principios metodológicos aplicados a la formulación
+
+- Se pregunta por **el pasado**, no por el futuro: "cuénteme de la última vez que…" en lugar de "¿usaría usted…?".
+- **No se menciona el producto ni ninguna funcionalidad** durante el cuerpo de la entrevista.
+- Se evitan las preguntas **cerradas y las que sugieren la respuesta**.
+- Se pide **el episodio concreto** antes que la generalización: primero el caso, después el patrón.
+- Se profundiza con **repreguntas neutras**: "¿y qué pasó después?", "¿cómo se enteró?", "¿cuánto tiempo pasó?", "¿qué hizo en ese momento?".
+
 ---
-#### Objetivos Generales del Proceso de Entrevistas
- 
-1. Validar la existencia y criticidad del problema de monitoreo y seguridad en tours de aventura en zonas remotas del Perú.
-2. Comprender cómo gestionan actualmente sus operaciones las agencias de turismo de aventura, identificando herramientas utilizadas, brechas y puntos de dolor.
-3. Explorar la disposición de las agencias a adoptar una solución tecnológica integrada y su sensibilidad al precio.
-4. Entender la experiencia del turista durante el tour: qué información desearía tener, qué situaciones de riesgo ha vivido y qué herramientas digitales ya usa.
-5. Identificar funcionalidades prioritarias y posibles fricciones en la adopción del producto desde la perspectiva de ambos segmentos.
----
- 
-#### Segmento 1: Dueños o Responsables de Agencias de Turismo de Aventura
- 
+
+### Segmento 1: Dueños o Responsables de Agencias de Turismo de Aventura
+
 **Perfil del entrevistado:** propietarios, directores de operaciones o guías principales de agencias que operen rutas de trekking, montañismo, expediciones o turismo de naturaleza en zonas remotas del Perú. Preferiblemente agencias medianas o pequeñas con operaciones activas en sierra, selva alta o circuitos andinos.
- 
----
- 
-**Preguntas de apertura y contexto**
- 
+
+**Apertura y contexto**
+
 1. ¿Podría contarme brevemente cómo funciona su agencia? ¿Qué tipo de tours opera y en qué zonas del país?
-2. ¿Cuántos guías y turistas maneja típicamente en una temporada alta? ¿Cuántos grupos simultáneos puede llegar a tener activos?
-**Preguntas sobre gestión operativa actual**
- 
-3. ¿Cómo realiza actualmente el seguimiento de sus grupos de turistas cuando están en campo? ¿Qué herramientas o medios utiliza (radio, celular, reportes manuales, apps)?
-4. ¿Con qué frecuencia sus guías o grupos se quedan sin señal durante el recorrido? ¿Cómo manejan esa situación actualmente?
-5. ¿Cómo coordina internamente a su equipo (guías, base de operaciones, contactos de emergencia) durante el desarrollo de un tour?
-6. ¿Lleva algún registro de los recorridos realizados, incidentes ocurridos o datos de los turistas durante el tour? ¿De qué forma?
-**Preguntas sobre seguridad y gestión de emergencias**
- 
-7. ¿Ha vivido alguna situación de emergencia o incidente grave durante algún tour? ¿Cómo fue la respuesta? ¿Qué falló o qué hubiera necesitado tener disponible en ese momento?
-8. ¿Cómo determina si un turista está en una condición de riesgo (fatiga extrema, mal de altura, extravío) cuando no está físicamente con el guía?
-9. ¿Qué protocolos de seguridad tiene establecidos actualmente? ¿Los considera suficientes?
-10. ¿Ha recibido alguna vez una queja, reclamo o acción legal relacionada con un incidente de seguridad? ¿Cómo afectó eso a su operación?
-**Preguntas sobre tecnología y adopción**
- 
-11. ¿Utiliza actualmente alguna herramienta digital o software para gestionar sus operaciones (reservas, logística, comunicación con guías)? ¿Cuál es su experiencia con ella?
-12. ¿Ha intentado implementar alguna solución tecnológica para el monitoreo en campo? ¿Qué resultó y qué no?
-13. ¿Qué barreras considera que existen para que agencias como la suya adopten soluciones tecnológicas de monitoreo?
-**Preguntas sobre disposición y expectativas**
- 
-14. Si existiera una plataforma que le permitiera ver periódicamente, a través de puntos de control, la ubicación y estado de todos sus grupos activos desde un panel centralizado, ¿qué tan valiosa sería para usted? ¿Qué condiciones necesitaría para adoptarla?
-15. ¿Estaría dispuesto a pagar una suscripción mensual por una solución así? ¿Qué rango de precio consideraría razonable?
-16. ¿Qué funcionalidades consideraría indispensables y cuáles serían un plus? ¿Qué debería tener sí o sí desde el primer día?
-**Preguntas demográficas y de perfil**
- 
-17. ¿Cuál es su edad y en qué distrito o ciudad opera su agencia?
-18. ¿Cuántos años de experiencia tiene en el sector turístico?
-19. ¿Qué dispositivo usa principalmente para gestionar su negocio (celular, laptop, tablet)?
-20. ¿Qué canales digitales usa más para comunicarse con su equipo o clientes (WhatsApp, Instagram, Facebook, correo)?
-21. ¿Sigue a alguna marca, asociación gremial (AATC, DIRCETUR) o referente del sector turístico que influya en sus decisiones?
+2. ¿Cuántos guías y turistas maneja típicamente en temporada alta? ¿Cuántos grupos simultáneos puede llegar a tener activos?
+3. Cuénteme cómo fue el último tour que despachó, desde que el grupo sale hasta que vuelve. ¿Qué hace usted en cada momento?
+
+**Operación y seguimiento actual**
+
+4. ¿Cómo hace seguimiento de sus grupos cuando están en campo? ¿Qué medios usa?
+5. En el último tour, ¿cuántas veces supo dónde estaba el grupo y cómo lo supo en cada una?
+6. ¿Cuánto tiempo seguido llega a estar sin noticias de un grupo? ¿Qué hace durante ese tiempo?
+7. ¿Cómo coordina internamente con guías, base de operaciones y contactos de emergencia durante un tour?
+8. ¿Lleva algún registro de recorridos, incidentes o datos de los turistas? Muéstreme cómo lo hace.
+
+**Episodios reales de retraso o incidente**
+
+9. Cuénteme del último tour en el que un grupo se retrasó más de lo previsto. ¿Cómo se enteró? ¿Cuánto tiempo pasó entre que ocurrió y que usted lo supo?
+10. En ese momento, ¿cómo decidió si era un retraso normal o algo serio? ¿En qué se basó?
+11. ¿Qué hizo exactamente a partir de ahí? ¿A quién llamó, en qué orden?
+12. ¿Ha vivido alguna emergencia o incidente grave durante un tour? Cuénteme qué pasó y cómo respondieron.
+13. En ese episodio, ¿qué información le hubiera servido tener y no tenía?
+14. ¿Le ha pasado activar una respuesta que después resultó innecesaria? ¿Qué costó esa decisión?
+
+**Herramientas e intentos previos**
+
+15. ¿Usa alguna herramienta digital para gestionar su operación? ¿Cómo le ha ido con ella?
+16. ¿Alguna vez intentó implementar algo para monitorear a sus grupos en campo? ¿Qué pasó con eso?
+17. ¿Cuánto gasta hoy en comunicación durante los tours (radios, telefonía, servicios satelitales)? ¿Qué decidió no comprar y por qué?
+
+**Consecuencias del problema**
+
+18. ¿Ha recibido quejas, reclamos o acciones legales relacionadas con un incidente de seguridad? ¿Cómo afectó a su operación?
+19. ¿Algún cliente le ha preguntado cómo garantiza la seguridad del grupo? ¿Qué le respondió?
+
+**Perfil del entrevistado**
+
+20. ¿Cuál es su edad y en qué distrito o ciudad opera su agencia?
+21. ¿Cuántos años de experiencia tiene en el sector turístico?
+22. ¿Qué dispositivo usa principalmente para gestionar su negocio?
+23. ¿Qué canales digitales usa más para comunicarse con su equipo o clientes?
+24. ¿Sigue a alguna asociación gremial o referente del sector que influya en sus decisiones?
+
 ---
- 
-#### Segmento 2: Turistas de Aventura
- 
-**Perfil del entrevistado:** personas que hayan realizado al menos una actividad de turismo de aventura en el Perú en los últimos dos años (trekking, montañismo, expedición en selva o ruta de naturaleza en zonas remotas), ya sean nacionales o extranjeros residentes en el país.
- 
----
- 
-**Preguntas de apertura y contexto**
- 
+
+### Segmento 2: Turistas de Aventura
+
+**Perfil del entrevistado:** personas que hayan realizado al menos una actividad de turismo de aventura en el Perú en los últimos dos años (trekking, montañismo, expedición en selva o ruta de naturaleza en zonas remotas), nacionales o extranjeros residentes en el país.
+
+**Apertura y contexto**
+
 1. ¿Podría contarme sobre la última actividad de aventura que realizó en el Perú? ¿A dónde fue, qué ruta hizo y con quién?
-2. ¿Con qué frecuencia realiza este tipo de actividades? ¿Suele contratar agencias o prefiere organizar sus propias expediciones?
-**Preguntas sobre seguridad y experiencias previas**
- 
-3. Durante ese recorrido, ¿hubo momentos en los que se sintió inseguro o sin saber bien dónde estaba o cómo pedir ayuda? ¿Puede contarme ese momento?
-4. ¿Alguna vez ha vivido o presenciado una emergencia o incidente durante un tour de aventura? ¿Cómo respondió la agencia o el guía?
-5. ¿Siente que las agencias con las que ha viajado tienen mecanismos adecuados para garantizar su seguridad en caso de emergencia? ¿Por qué?
-6. ¿Le preocupa la falta de conectividad o la dificultad para pedir ayuda cuando está en zonas remotas? ¿Cómo lo maneja actualmente?
-**Preguntas sobre herramientas y tecnología usada**
- 
-7. ¿Qué aplicaciones o dispositivos utiliza durante sus actividades de aventura? (GPS, mapas offline, reloj deportivo, etc.) ¿Cuál es su experiencia con ellas?
-8. ¿Comparte su ubicación con alguien (familiar, contacto de emergencia) durante el recorrido? ¿Cómo lo hace?
-9. ¿Ha usado alguna aplicación que le permita ver su recorrido, registrar datos de salud (ritmo cardíaco, altitud) o documentar su experiencia durante el tour?
-**Preguntas sobre expectativas e información durante el tour**
- 
-10. Durante un tour, ¿qué información le gustaría tener disponible en todo momento? (su posición en el mapa, distancia recorrida, signos vitales, clima, información sobre el lugar, etc.)
-11. ¿Le resultaría útil poder ver en su teléfono información contextual del recorrido, como datos históricos del lugar, puntos de interés o alertas de riesgo específicas de la ruta?
-12. ¿Cómo le gustaría registrar su experiencia durante el tour? ¿Fotos georreferenciadas, registros automáticos, notas de voz?
-**Preguntas sobre confianza y adopción**
- 
-13. Si la agencia que contrató le ofreciera un dispositivo wearable que monitoree su ubicación y signos vitales durante el tour, ¿lo usaría? ¿Qué preguntas o dudas tendría al respecto?
-14. ¿Tiene alguna preocupación sobre la privacidad de sus datos si una agencia monitorea su ubicación y salud periódicamente durante el recorrido?
-15. ¿Cuánto influiría en su decisión de contratar una agencia el hecho de que esta cuente con tecnología de monitoreo por checkpoints y protocolos de emergencia avanzados?
-**Preguntas demográficas y de perfil**
- 
-16. ¿Cuál es su edad y en qué distrito o ciudad reside?
-17. ¿Cuál es su estado civil y con quién suele viajar (pareja, familia, grupo, solo)?
-18. ¿A qué se dedica actualmente (ocupación)?
-19. ¿Qué dispositivo usa principalmente durante sus viajes (smartphone, reloj deportivo, GPS dedicado)?
-20. ¿Qué canales digitales usa más para planear o compartir sus viajes (Instagram, blogs, foros, YouTube)?
-21. ¿Sigue a alguna marca, influencer de viajes o comunidad de senderismo que influya en sus decisiones?
+2. ¿Con qué frecuencia realiza este tipo de actividades? ¿Suele contratar agencias o se organiza por su cuenta?
+3. Cuénteme cómo se preparó para ese viaje. ¿Qué llevó, qué descargó, qué averiguó antes de salir?
+
+**El recorrido y la pérdida de conectividad**
+
+4. En ese recorrido, ¿en qué momento se quedó sin señal? ¿Qué hizo cuando se dio cuenta?
+5. Cuénteme de algún momento en que no supo bien dónde estaba o cómo pedir ayuda. ¿Qué pasó?
+6. ¿Avisó a alguien antes de entrar a la zona sin cobertura? ¿Qué le dijo y por qué medio?
+7. Mientras estuvo sin señal, ¿pensó en su familia o en alguien que lo esperaba? ¿Qué pensó exactamente?
+8. ¿Qué hizo al recuperar la señal? ¿Qué fue lo primero?
+
+**Incidentes y respuesta**
+
+9. ¿Vivió o presenció alguna emergencia o incidente durante un tour de aventura? ¿Cómo respondió la agencia o el guía?
+10. ¿Alguna vez se sintió mal físicamente durante un recorrido (altura, fatiga, deshidratación)? ¿Qué hizo? ¿Alguien se dio cuenta?
+11. ¿Alguna vez se separó del grupo o se quedó atrás? Cuénteme qué pasó.
+
+**Herramientas que ya usa**
+
+12. ¿Qué aplicaciones o dispositivos llevó en ese recorrido? Muéstreme cuáles tiene instalados.
+13. ¿Cómo las usó durante la ruta? ¿En qué momentos sacó el teléfono?
+14. ¿Dónde falló alguna de esas herramientas? Cuénteme ese momento.
+15. ¿Cómo manejó la batería durante el recorrido?
+16. ¿Compartió su ubicación con alguien? ¿Cómo lo hizo y hasta dónde funcionó?
+
+**Decisión de contratación**
+
+17. ¿Cómo eligió la agencia con la que fue? ¿Qué comparó?
+18. ¿Preguntó algo sobre seguridad antes de contratar? ¿Qué le respondieron?
+19. ¿Qué le contaron sobre el manejo de sus datos personales en algún viaje? ¿Qué le pareció?
+
+**Perfil del entrevistado**
+
+20. ¿Cuál es su edad y en qué distrito o ciudad reside?
+21. ¿Cuál es su estado civil y con quién suele viajar?
+22. ¿A qué se dedica actualmente?
+23. ¿Qué dispositivo usa principalmente durante sus viajes?
+24. ¿Qué canales digitales usa más para planear o compartir sus viajes?
+25. ¿Sigue a alguna marca, influencer de viajes o comunidad de senderismo que influya en sus decisiones?
+
 ---
- 
-#### Consideraciones Metodológicas
- 
-**Cantidad de entrevistas:** mínimo 3 y máximo 5 entrevistas por segmento (total: entre 6 y 10 entrevistas) para alcanzar saturación temática en una etapa de descubrimiento.
- 
-**Registro:** Las entrevistas deben ser grabadas con consentimiento del entrevistado para su posterior análisis. Se recomienda el uso de una guía de toma de notas que permita capturar citas textuales relevantes.
- 
-**Análisis:** Los resultados serán procesados mediante agrupamiento de respuestas por temática, identificando patrones comunes, necesidades no cubiertas y citas representativas para validar o refutar las hipótesis de problema y solución.
- 
-**Ética:** Antes de cada entrevista se informará al participante sobre el propósito de la investigación, la confidencialidad de sus respuestas y su derecho a retirarse en cualquier momento. No se recopilará información personal identificable más allá de la necesaria para el reclutamiento.
- 
----
+
+### Consideraciones Metodológicas
+
+**Cantidad de entrevistas:** mínimo 3 y máximo 5 por segmento (entre 6 y 10 en total) para alcanzar saturación temática en una etapa de descubrimiento.
+
+**Registro:** las entrevistas se graban en video con consentimiento previo del entrevistado. Se complementa con una guía de toma de notas que captura citas textuales relevantes.
+
+**Conducción:** la guía es semiestructurada. El entrevistador no menciona el producto ni ninguna funcionalidad durante el cuerpo de la entrevista, y profundiza mediante repreguntas neutras sobre episodios ya relatados.
+
+**Análisis:** las respuestas se agrupan por temática identificando patrones comunes, necesidades no cubiertas y citas representativas. De cada entrevista se extraen las características objetivas (edad, rol, ubicación, herramientas, frecuencia de uso) y subjetivas (motivaciones, frustraciones, preocupaciones) que alimentan la construcción de los User Persona.
+
+**Ética:** antes de cada entrevista se informa al participante sobre el propósito de la investigación, la confidencialidad de sus respuestas y su derecho a retirarse en cualquier momento. No se recopila información personal identificable más allá de la necesaria para el reclutamiento.
 
 ### 2.2.2. Registro de Entrevistas
 En esta sección presentamos los registros de las entrevistas que hicimos para cada segmento objetivo de nuestra aplicación.
@@ -498,7 +523,7 @@ Los términos se presentan en **inglés** (idioma establecido para todos los pro
 
 | Término (inglés)      | Equivalente (español)  | Definición                                                                                                                                                                                 |
 | --------------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Subscription Plan** | Plan de suscripción    | Modalidad de contratación mensual o anual mediante la cual una agencia accede al servicio, diferenciada según el volumen de grupos o turistas gestionados.                                 |
+| **Subscription Plan** | Plan de suscripción    | Hipótesis comercial posterior al MVP: modalidad mensual o anual mediante la cual una agencia podría acceder al servicio según el volumen de grupos o turistas gestionados.                 |
 | **Pilot**             | Piloto                 | Periodo de uso gratuito y acotado del servicio otorgado a una agencia con el fin de validar su utilidad operativa antes de una contratación pagada.                                        |
 | **Booking**           | Reserva                | Compromiso de un turista de participar en un tour en una fecha determinada. Se considera parte del contexto del negocio de la agencia, pero está fuera del alcance funcional de VitalTrek. |
 | **Tourist Manifest**  | Manifiesto de turistas | Relación oficial de los turistas que integran un grupo de expedición, con sus datos de contacto de emergencia y observaciones de salud relevantes.                                         |
