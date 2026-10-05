@@ -743,13 +743,9 @@ La Web Application del Sprint 2 se encuentra desplegada para su revisión. El de
 | Producto | VitalTrek Web Applications — frontend TB1 |
 | Plataforma de despliegue | Vercel |
 | Repositorio | https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications |
-| Rama desplegada | `[Confirmar rama de despliegue]` |
 | Build command | `npm run build` |
 | Output directory | `dist` |
 | Variable de entorno de producción | `VITE_VITALTREK_API_URL` debe apuntar a una Fake API accesible desde el despliegue; la URL local `localhost` solo aplica al desarrollo. |
-| URL pública del frontend | `https://[URL-PUBLICA-DEL-FRONTEND-PENDIENTE]` |
-| URL pública de la Fake API | `[Pendiente; confirmar si se desplegó junto con el frontend o en un servicio separado.]` |
-
 
 #### 5.2.2.8. Team Collaboration Insights during Sprint
 
