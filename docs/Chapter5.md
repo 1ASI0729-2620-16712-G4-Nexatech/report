@@ -764,3 +764,11 @@ El equipo colaboró sobre el repositorio [web-applications](https://github.com/1
 | Herrera Enriquez, Diego Fernando (`DerDFHE`) | Corrección de la vista de selección de rol para mejorar su visualización. | Commit [`2c66861`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/2c66861a26154775d1e1336fd3e13b7ef9bedf82), integrado en `develop`. |
 
 El historial consultado muestra `develop` actualizado hasta el commit `2c66861`. El PR #8 y la rama `feature/webapp-workspace-layout-fix` se mantienen como trabajo pendiente de integración; no se contabilizan como parte de la versión integrada hasta que se complete su revisión y merge. Los commits del Sprint Backlog son una distribución de tareas planificada y no deben interpretarse como autoría individual de código cuando el historial de GitHub registra a otro integrante.
+
+![Commits de colaboración en web-applications durante TB1](../assets/images/chapter-5/ColabInsights21.png)
+
+*Figura 5.17. Historial de commits del repositorio web-applications durante TB1.*
+
+![GitHub Insights de web-applications durante TB1](../assets/images/chapter-5/ColabInsights22.png)
+
+*Figura 5.18. GitHub Insights del repositorio web-applications para el período del 28 de septiembre al 5 de octubre de 2026.*

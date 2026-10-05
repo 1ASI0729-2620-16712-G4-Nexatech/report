@@ -67,3 +67,15 @@ Se explican las ramas más prominentes:
 - **develop**: Es representada por el color morado. Se trata de la rama principal para el proceso del desarrollo del proyecto.
 - **feature/**: cambios específicos del documento o de endpoints implementados.
 - **hotfix/**: correcciones puntuales realizadas sobre errores críticos encontrados durante la integración o despliegue.
+
+### Evidencia de colaboración en TB1
+
+Las siguientes capturas corresponden a la actividad del repositorio `web-applications` registrada durante TB1. La primera muestra commits recientes de los integrantes y la segunda resume los indicadores de colaboración del repositorio entre el 28 de septiembre y el 5 de octubre de 2026.
+
+![Commits de colaboración en web-applications durante TB1](../assets/images/chapter-5/ColabInsights21.png)
+
+*Figura 3. Historial de commits del repositorio web-applications durante TB1.*
+
+![GitHub Insights de web-applications durante TB1](../assets/images/chapter-5/ColabInsights22.png)
+
+*Figura 4. GitHub Insights del repositorio web-applications para el período del 28 de septiembre al 5 de octubre de 2026.*
