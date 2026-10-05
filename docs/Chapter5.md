@@ -203,7 +203,7 @@ El despliegue de cada producto parte de su repositorio de código fuente. Para A
 
 ## 5.2. Landing Page, Services & Applications Implementation
 
-Esta sección documenta la implementación, validación y despliegue de los productos incluidos en la solución VitalTrek. Para AV1, el alcance se concentra en la primera versión funcional y desplegada del Landing Page, desarrollado con HTML5, CSS3 y JavaScript. Las Web Applications y el RESTful Web Services quedan planificados para los siguientes Sprints.
+Esta sección documenta la implementación, validación y despliegue de los productos incluidos en la solución VitalTrek. Para AV1, el alcance se concentra en la primera versión funcional y desplegada del Landing Page, desarrollado con HTML5, CSS3 y JavaScript. En TB1, el Sprint 2 amplía el producto con las Web Applications frontend para configurar expediciones y consultar su progreso mediante una Fake API y datos simulados. El RESTful Web Services productivo, la persistencia real y la integración con dispositivos permanecen fuera del alcance de esta entrega.
 
 ### 5.2.1. Sprint 1
 
@@ -226,13 +226,13 @@ La reunión de planificación permitió definir el objetivo, alcance, responsabi
 | Ubicación             | Discord — reunión virtual                                                                                                                                   |
 | Preparado por         | Rodriguez Rojas, Miler Alexander                                                                                                                            |
 | Participantes         | Cayanchi Avila, Milenko Rubén; León Naupari, Jorge Mateo; Mendoza Blanco, Ariel Roberto; Rodriguez Rojas, Miler Alexander; Herrera Enriquez, Diego Fernando |
-| Sprint Goal           | Implementar y desplegar la primera versión funcional del Landing Page de VitalTrek.                                                                         |
+| Sprint Goal           | Publicar una Landing Page bilingüe y responsive de VitalTrek para visitantes de agencias y turistas.                                                          |
 | Sprint Velocity       | 14 Story Points                                                                                                                                             |
 | Total de Story Points | 14                                                                                                                                                          |
 
 **Sprint Goal**
 
-Nuestro enfoque está en comunicar la propuesta de valor de VitalTrek mediante un Landing Page responsive con navegación, información del producto, planes, equipo, contacto y soporte bilingüe. Consideramos que esto permitirá a los visitantes comprender la solución y solicitar una demostración. El cumplimiento se confirmará cuando el Landing Page esté publicado y sus User Stories principales puedan ser recorridas correctamente.
+Nuestro enfoque está en publicar una Landing Page bilingüe y responsive que comunique la propuesta de valor de VitalTrek. Creemos que esto permitirá a los visitantes de agencias y turistas comprender la solución y solicitar información o una demostración. Esto se confirmará cuando el sitio esté desplegado y sus flujos principales puedan recorrerse correctamente en ambos idiomas.
 
 #### 5.2.1.2. Aspect Leaders and Collaborators
 
@@ -549,3 +549,19 @@ Los siguientes registros corresponden a la participación verificable del integr
 ![Pull requests creados por mateool10](../assets/images/chapter-5/5218-pull-requests-mateo.jpg)
 
 *Figura 5.11. Pull requests creados y fusionados por mateool10 en el repositorio report.*
+
+### 5.2.2. Sprint 2
+
+El Sprint 2 entrega la primera versión de las **Web Applications frontend** de VitalTrek para TB1. El alcance combina la configuración de rutas y expediciones dentro del bounded context `expedition-setup` con la consulta del progreso simulado en `field-tracking`. Se completaron US07, US08, US09, US11, US13, US12 y US20, con un total de **28 Story Points**, conforme al Product Backlog de la sección 3.3.
+
+La aplicación está construida con Vue 3 y Vite; utiliza Pinia, Vue Router, Axios, PrimeVue y vue-i18n para el estado, navegación, componentes, consumo HTTP e internacionalización. json-server@0.17.4 proporciona los datos de prueba. Las capas `domain`, `application`, `infrastructure` y `presentation` separan las entidades, casos de uso/estado, acceso y mapeo de datos, e interfaz. El alcance no incluye autenticación real, backend productivo, persistencia real, Bluetooth, GPS, wearables, telemetría ni alertas reales.
+
+| Campo | Valor |
+| --- | --- |
+| Sprint Goal | Completar el flujo frontend de preparación de expediciones y consulta de progreso estimado para Operations Administrators y Field Guides. |
+| Historias incluidas | US07, US08, US09, US11, US13, US12 y US20 |
+| Total de historias | 7 User Stories |
+| Sprint Velocity / Total de Story Points | 28 Story Points |
+| Contextos de dominio | `expedition-setup` y `field-tracking` |
+| Resultado | Web Application frontend implementada; Fake API y telemetría de prueba. |
+
