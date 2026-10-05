@@ -744,6 +744,7 @@ La Web Application del Sprint 2 se encuentra desplegada para su revisión. El de
 | Plataforma de despliegue | Vercel |
 | Repositorio | https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications |
 | Build command | `npm run build` |
+|Vercel link| https://landing-page-mrca1.vercel.app/|
 | Output directory | `dist` |
 | Variable de entorno de producción | `VITE_VITALTREK_API_URL` debe apuntar a una Fake API accesible desde el despliegue; la URL local `localhost` solo aplica al desarrollo. |
 
