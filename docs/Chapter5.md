@@ -717,10 +717,6 @@ Las siguientes capturas documentan las vistas de la aplicación observadas duran
 
 *Figura 5.16. Selector de espacio de trabajo en inglés.*
 
-**Evidencia de ejecución**
-
-- Video de recorrido de la Web Application: [Pendiente de insertar el enlace de Microsoft Stream.]
-- Registro o evidencia del build de producción: [Pendiente de adjuntar.]
 
 #### 5.2.2.6. Services Documentation Evidence for Sprint Review
 
@@ -754,11 +750,6 @@ La Web Application del Sprint 2 se encuentra desplegada para su revisión. El de
 | URL pública del frontend | `https://[URL-PUBLICA-DEL-FRONTEND-PENDIENTE]` |
 | URL pública de la Fake API | `[Pendiente; confirmar si se desplegó junto con el frontend o en un servicio separado.]` |
 
-**Evidencia del despliegue**
-
-- Captura de la configuración del proyecto en Vercel: [Pendiente de insertar.]
-- Captura del despliegue exitoso y versión publicada: [Pendiente de insertar.]
-- URL pública real: reemplazar el marcador de la tabla antes de la entrega.
 
 #### 5.2.2.8. Team Collaboration Insights during Sprint
 
@@ -773,9 +764,3 @@ El equipo colaboró sobre el repositorio [web-applications](https://github.com/1
 | Herrera Enriquez, Diego Fernando (`DerDFHE`) | Corrección de la vista de selección de rol para mejorar su visualización. | Commit [`2c66861`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/2c66861a26154775d1e1336fd3e13b7ef9bedf82), integrado en `develop`. |
 
 El historial consultado muestra `develop` actualizado hasta el commit `2c66861`. El PR #8 y la rama `feature/webapp-workspace-layout-fix` se mantienen como trabajo pendiente de integración; no se contabilizan como parte de la versión integrada hasta que se complete su revisión y merge. Los commits del Sprint Backlog son una distribución de tareas planificada y no deben interpretarse como autoría individual de código cuando el historial de GitHub registra a otro integrante.
-
-**Evidencia visual colaborativa por completar**
-
-- Captura de GitHub Insights del repositorio `web-applications`: [Pendiente de insertar.]
-- Captura del historial de commits y Pull Requests del equipo: [Pendiente de insertar.]
-- Incorporar la captura o el enlace del PR #8 después de su revisión y registrar su resultado final.
