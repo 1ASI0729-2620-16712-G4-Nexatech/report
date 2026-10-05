@@ -624,3 +624,27 @@ El Sprint Backlog 2 comprende las siete User Stories seleccionadas para TB1. La 
 
 El Sprint se planificó con el orden de dependencias **US07 → US08 → US09 → US11 → US13 → US12 → US20**. Las tareas asociadas a estas historias se implementaron siguiendo la arquitectura acordada para TB1. No se incluyen horas por tarea en esta tabla porque el detalle de estimaciones horarias debe coincidir con el Sprint Backlog publicado en Jira.
 
+#### 5.2.2.4. Development Evidence for Sprint Review
+
+La evidencia de desarrollo del Sprint 2 se encuentra en el repositorio [web-applications](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications). Los commits y Pull Requests de US07–US09 están integrados en `develop`. Las referencias de US11, US13, US12 y US20 identifican sus ramas y commits de trabajo; deben actualizarse con el enlace del Pull Request y el commit de merge cuando se integren en `develop`.
+
+| User Story | Rama | Commit de referencia | Evidencia de integración |
+| --- | --- | --- | --- |
+| US07 — Configuración de rutas | `feature/webapp-route-configuration` | [`77e6fda`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/77e6fda005b45ac9347db60c9d6781675cb9313a) | [PR #4](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/4), integrado en `develop`. |
+| US08 — Definición de checkpoints | `feature/webapp-checkpoints` | [`29b84cc`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/29b84cca5935d0fcf8f9f20fc999c770368a6541) | [PR #5](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/5), integrado en `develop`. |
+| US09 — Ventanas de tiempo esperadas | `feature/webapp-expected-time-windows` | [`f0af953`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/f0af953046fc8ceefbca4bd305598fedea35648c) | [PR #6](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/6), integrado en `develop`. |
+| US11 — Creación del grupo de expedición | `feature/webapp-expedition-group-creation` | [`601e2c5`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/601e2c50134562edb3b724e3bfa84cb0b382ba59) | Pull Request / merge: pendiente de registrar. |
+| US13 — Asignación del guía | `feature/webapp-field-guide-assignment` | [`c35c01b`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/c35c01b15e02ac9c54a204b031d6b3b8e0fedc5c) | Pull Request / merge: pendiente de registrar. |
+| US12 — Registro del manifiesto | `feature/webapp-tourist-manifest` | [`71bbcaca`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/71bbcaca4648445471ce6b81c3f0431925fac282) | Pull Request / merge: pendiente de registrar. |
+| US20 — Seguimiento del progreso | `feature/webapp-group-progress-dashboard` | [`cef703d`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/cef703d1c403cd0ff50717a9f5bebd45b2bfdad1) | Pull Request / merge: pendiente de registrar. |
+
+**Evidencia visual del desarrollo**
+
+Adjuntar capturas de la aplicación desplegada o ejecutada en local que muestren, como mínimo, la lista y el formulario de rutas, la configuración de checkpoints y ventanas de tiempo, la creación/asignación de grupos, el manifiesto y el dashboard de progreso. Las capturas deben corresponder a la versión presentada en el Sprint Review.
+
+- Captura de configuración de rutas y checkpoints: [Pendiente de insertar.]
+- Captura de ventanas de tiempo esperadas: [Pendiente de insertar.]
+- Captura de creación del grupo y asignación del guía: [Pendiente de insertar.]
+- Captura del Tourist Manifest: [Pendiente de insertar.]
+- Captura del Group Progress Dashboard: [Pendiente de insertar.]
+
