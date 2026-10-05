@@ -601,3 +601,26 @@ Milenko Rubén Cayanchi Avila fue el líder general del Sprint. La siguiente mat
 
 La autoría de los cambios de código que se pueden verificar en el repositorio se consigna en la sección 5.2.2.4. La matriz describe las responsabilidades de trabajo del Sprint y no sustituye la evidencia de commits, Pull Requests o validaciones individuales.
 
+#### 5.2.2.3. Sprint Backlog 2
+
+El Sprint Backlog 2 comprende las siete User Stories seleccionadas para TB1. La tabla conserva las estimaciones del Product Backlog de la sección 3.3 y resume el resultado funcional de cada historia. La descomposición granular en tareas, horas y responsables corresponde al registro de Jira y debe adjuntarse como evidencia del board.
+
+**Evidencia del Board del Sprint**
+
+**Enlace al board Jira:** [Ver Product Backlog](https://milenkorvu.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog)
+
+**Captura del Sprint Backlog 2:** [Pendiente de insertar la captura del board Jira con tareas, estimaciones y estados.]
+
+| Sprint # | Story ID | Story Title | Bounded Context | Trabajo incluido en el Sprint | Estimation (Story Points) | Status |
+| --- | --- | --- | --- | --- | ---: | --- |
+| Sprint 2 | US07 | Configuración de rutas | `expedition-setup` | Registrar rutas con datos geográficos y operativos, validar campos y nombres duplicados, y guardar la Route inicialmente como `draft`. | 5 | Done |
+| Sprint 2 | US08 | Definición de checkpoints | `expedition-setup` | Asociar checkpoints a una Route, mantener el orden de la secuencia, impedir órdenes duplicados y habilitar la ruta solo después de registrar al menos un checkpoint. | 5 | Done |
+| Sprint 2 | US09 | Ventanas de tiempo esperadas | `expedition-setup` | Configurar ventanas por tramo, validar límites mínimo/máximo, evitar duplicados e identificar tramos pendientes. | 3 | Done |
+| Sprint 2 | US11 | Creación del grupo de expedición | `expedition-setup` | Crear un Expedition Group asociado a una Route habilitada, registrar fecha y capacidad, y rechazar fechas pasadas. | 3 | Done |
+| Sprint 2 | US13 | Asignación del guía | `expedition-setup` | Asignar un Field Guide mock al grupo, informar cruces de asignación y requerir confirmación explícita cuando corresponda. | 2 | Done |
+| Sprint 2 | US12 | Registro del manifiesto | `expedition-setup` | Registrar participantes, rechazar documentos duplicados y evitar exceder la capacidad máxima del grupo. | 5 | Done |
+| Sprint 2 | US20 | Seguimiento del progreso | `field-tracking` | Mostrar tramo actual, último checkpoint, progreso estimado y antigüedad de los datos; informar cuando el tour aún no está activo. | 5 | Done |
+|  |  |  |  | **Total** | **28** |  |
+
+El Sprint se planificó con el orden de dependencias **US07 → US08 → US09 → US11 → US13 → US12 → US20**. Las tareas asociadas a estas historias se implementaron siguiendo la arquitectura acordada para TB1. No se incluyen horas por tarea en esta tabla porque el detalle de estimaciones horarias debe coincidir con el Sprint Backlog publicado en Jira.
+
