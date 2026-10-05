@@ -587,14 +587,14 @@ Nuestro enfoque está en completar el flujo frontend para configurar rutas y gru
 
 #### 5.2.2.2. Aspect Leaders and Collaborators
 
-Milenko Rubén Cayanchi Avila fue el líder general del Sprint. La siguiente matriz registra las áreas de trabajo y la participación colaborativa comunicada por el equipo. Los commits identifican a los autores de cambios versionados; las actividades de revisión, pruebas y documentación deben respaldarse con la evidencia del Sprint Review.
+Milenko Rubén Cayanchi Avila coordinó el trabajo general del Sprint. La matriz resume el liderazgo por aspecto a partir de los cambios de código y Pull Requests consultados en GitHub al 2026-10-05. La autoría de commits y el estado de integración se detallan en la sección 5.2.2.4.
 
-| Integrante | Usuario de GitHub | Coordinación general | Configuración de rutas y checkpoints | Grupos, guías y manifiestos | Seguimiento, pruebas e integración |
+| Integrante | Usuario de GitHub | Coordinación | Rutas, checkpoints y ventanas | Grupos, guías, manifiesto y progreso | Espacios de trabajo, navegación e idioma |
 | --- | --- | --- | --- | --- | --- |
-| Cayanchi Avila, Milenko Rubén | `MaxghZZ` | L | L | C | C |
+| Cayanchi Avila, Milenko Rubén | `MaxghZZ` | L | L | C | L |
 | León Naupari, Jorge Mateo | `mateool10` | C | C | C | C |
-| Mendoza Blanco, Ariel Roberto | `Trepequiper` | C | C | C | C |
-| Rodriguez Rojas, Miler Alexander | `Miler2003` | C | C | L | L |
+| Mendoza Blanco, Ariel Roberto | `Trepequiper` | C | C | C | L |
+| Rodriguez Rojas, Miler Alexander | `Miler2003` | C | C | L | C |
 | Herrera Enriquez, Diego Fernando | `DerDFHE` | C | C | C | C |
 
 **Leyenda:** L = líder del aspecto; C = colaborador.
@@ -605,9 +605,6 @@ La autoría de los cambios de código que se pueden verificar en el repositorio 
 
 El Sprint Backlog 2 comprende las siete User Stories seleccionadas para TB1. La tabla conserva las estimaciones del Product Backlog de la sección 3.3 y resume el resultado funcional de cada historia. La descomposición granular en tareas, horas y responsables corresponde al registro de Jira y debe adjuntarse como evidencia del board.
 
-**Evidencia del Board del Sprint:** [Ver Product Backlog en Jira](https://milenkorvu.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog)
-
-**Captura del Sprint Backlog 2:** [Pendiente de insertar la captura del board Jira con tareas, estimaciones y estados.]
 
 | Sprint # | Story Id | Story Title | Task Id | Task Title | Task Description | Estimation (Hours) | Assigned To | Status |
 | --- | --- | --- | --- | --- | --- | ---: | --- | --- |
@@ -665,20 +662,22 @@ La evidencia de desarrollo del Sprint 2 se encuentra en el repositorio [web-appl
 | US07 — Configuración de rutas | `feature/webapp-route-configuration` | [`77e6fda`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/77e6fda005b45ac9347db60c9d6781675cb9313a) | [PR #4](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/4), integrado en `develop`. |
 | US08 — Definición de checkpoints | `feature/webapp-checkpoints` | [`29b84cc`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/29b84cca5935d0fcf8f9f20fc999c770368a6541) | [PR #5](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/5), integrado en `develop`. |
 | US09 — Ventanas de tiempo esperadas | `feature/webapp-expected-time-windows` | [`f0af953`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/f0af953046fc8ceefbca4bd305598fedea35648c) | [PR #6](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/6), integrado en `develop`. |
-| US11 — Creación del grupo de expedición | `feature/webapp-expedition-group-creation` | [`601e2c5`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/601e2c50134562edb3b724e3bfa84cb0b382ba59) | Pull Request / merge: pendiente de registrar. |
-| US13 — Asignación del guía | `feature/webapp-field-guide-assignment` | [`c35c01b`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/c35c01b15e02ac9c54a204b031d6b3b8e0fedc5c) | Pull Request / merge: pendiente de registrar. |
-| US12 — Registro del manifiesto | `feature/webapp-tourist-manifest` | [`71bbcaca`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/71bbcaca4648445471ce6b81c3f0431925fac282) | Pull Request / merge: pendiente de registrar. |
-| US20 — Seguimiento del progreso | `feature/webapp-group-progress-dashboard` | [`cef703d`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/cef703d1c403cd0ff50717a9f5bebd45b2bfdad1) | Pull Request / merge: pendiente de registrar. |
+| US11 — Creación del grupo de expedición | `feature/webapp-expedition-group-creation` | [`e1cb43a`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/e1cb43a792ddb626779e2d27d33acc15ed81cdea) | [PR #7](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/7), integrado en `develop`. |
+| US13 — Asignación del guía | `feature/webapp-field-guide-assignment` | [`21aedcd`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/21aedcd63b2b18f91487b86a2fce768c38644c8a) | [PR #7](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/7), integrado en `develop`. |
+| US12 — Registro del manifiesto | `feature/webapp-tourist-manifest` | [`71bbcaca`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/71bbcaca4648445471ce6b81c3f0431925fac282) | [PR #7](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/7), integrado en `develop`. |
+| US20 — Seguimiento del progreso | `feature/webapp-group-progress-dashboard` | [`cef703d`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/cef703d1c403cd0ff50717a9f5bebd45b2bfdad1) | [PR #7](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/7), integrado en `develop`. |
 
-**Evidencia visual del desarrollo**
+El PR #7 agrupó la creación de Expedition Groups, la asignación de Field Guides, el Tourist Manifest y el Group Progress Dashboard. Fue integrado en `develop` el 2026-10-05 y contiene 37 commits con cambios en 22 archivos. Sus commits de funcionalidad fueron realizados principalmente por `Miler2003`; el PR fue creado e integrado por `MaxghZZ`.
 
-Adjuntar capturas de la aplicación desplegada o ejecutada en local que muestren, como mínimo, la lista y el formulario de rutas, la configuración de checkpoints y ventanas de tiempo, la creación/asignación de grupos, el manifiesto y el dashboard de progreso. Las capturas deben corresponder a la versión presentada en el Sprint Review.
+**Cambios colaborativos complementarios del frontend**
 
-- Captura de configuración de rutas y checkpoints: [Pendiente de insertar.]
-- Captura de ventanas de tiempo esperadas: [Pendiente de insertar.]
-- Captura de creación del grupo y asignación del guía: [Pendiente de insertar.]
-- Captura del Tourist Manifest: [Pendiente de insertar.]
-- Captura del Group Progress Dashboard: [Pendiente de insertar.]
+| Cambio | Autor / rama | Commit | Estado en GitHub |
+| --- | --- | --- | --- |
+| Espacios de trabajo por rol y vistas de Operations Administrator y Field Guide | `MaxghZZ` / `field-guide-views` | [`207f528`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/207f52815862f5dc284f9400c26e97d9fed70025) | Disponible en `develop`; commit directo sin PR asociado en el historial consultado. |
+| Corrección de visualización del selector de rol | `DerDFHE` / `develop` | [`2c66861`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/2c66861a26154775d1e1336fd3e13b7ef9bedf82) | Integrado en `develop` el 2026-10-05. |
+| Cambio del selector de idioma a botones ES/EN con etiquetas accesibles y documentación | `Trepequiper` / `feature/button-update` | [`bc74c80`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/bc74c80b990714031109cd7c9c01a537a6f39083) | [PR #9](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/9), 5 commits integrados en `develop` el 2026-10-05. |
+| Ajuste de marca en la barra lateral del espacio de trabajo | `mateool10` / `feature/webapp-sidebar-brand` | [`91ebc19`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/91ebc19b067eeb642804865f893534a555ed8016) | [PR #8](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/8) abierto; no integrado al momento de la consulta. |
+| Ajuste de layout para pasar el espacio de trabajo desde la metadata de ruta | `mateool10` / `feature/webapp-workspace-layout-fix` | [`c3a1ae6`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/c3a1ae61e7e53875dd213ec8b020cfd5d4ea47b0) | Rama disponible; no se encontró un PR asociado ni integración en `develop`. |
 
 #### 5.2.2.5. Execution Evidence for Sprint Review
 
@@ -694,10 +693,33 @@ La validación funcional del Sprint 2 cubre los escenarios principales de las Us
 | US12 | Registrar participantes, repetir un documento de identidad y superar la capacidad del grupo. | El manifiesto se actualiza; el documento duplicado y el participante que excede la capacidad se rechazan. |
 | US20 | Consultar un tour activo con datos de seguimiento, uno sin sincronización reciente y uno no iniciado. | Se muestran último checkpoint, tramo y progreso estimado; se indica la antigüedad de la información y que es una estimación; un tour no iniciado informa que el seguimiento se habilita al comenzar. |
 
+**Capturas de ejecución**
+
+Las siguientes capturas documentan las vistas de la aplicación observadas durante la ejecución. Exec1 y Exec2 muestran estados de carga y un mensaje de error, por lo que se presentan como evidencia del estado de interfaz y no como confirmación de que esos escenarios concluyeron exitosamente.
+
+![Exec1: vista de seguimiento de progreso mientras se cargan las rutas](../assets/images/chapter-5/Exec1.png)
+
+*Figura 5.12. Vista de seguimiento de progreso durante la carga de rutas.*
+
+![Exec2: listado de rutas durante la carga, con mensaje de error visible](../assets/images/chapter-5/Exec2.png)
+
+*Figura 5.13. Listado de rutas en estado de carga y mensaje de error de creación.*
+
+![Exec3: selección de espacio de trabajo y rol en español](../assets/images/chapter-5/Exec3.png)
+
+*Figura 5.14. Selección de espacio de trabajo para Operations Administrator o Field Guide.*
+
+![Exec4: formulario para registrar una nueva ruta](../assets/images/chapter-5/Exec4.png)
+
+*Figura 5.15. Formulario de configuración de una nueva Route.*
+
+![Exec5: selección de espacio de trabajo y rol en inglés](../assets/images/chapter-5/Exec5.png)
+
+*Figura 5.16. Selector de espacio de trabajo en inglés.*
+
 **Evidencia de ejecución**
 
 - Video de recorrido de la Web Application: [Pendiente de insertar el enlace de Microsoft Stream.]
-- Capturas de los escenarios ejecutados: [Pendiente de insertar en 5.2.2.4.]
 - Registro o evidencia del build de producción: [Pendiente de adjuntar.]
 
 #### 5.2.2.6. Services Documentation Evidence for Sprint Review
@@ -740,20 +762,20 @@ La Web Application del Sprint 2 se encuentra desplegada para su revisión. El de
 
 #### 5.2.2.8. Team Collaboration Insights during Sprint
 
-El equipo trabajó sobre el repositorio `web-applications` mediante ramas de funcionalidad, integración en `develop` y revisión por Pull Request. La colaboración incluyó planificación, implementación, revisión de criterios de aceptación, pruebas de los flujos y preparación de evidencias. Los PR #4, #5 y #6 documentan la integración en `develop` de US07, US08 y US09. Para US11, US13, US12 y US20 se deben incorporar las referencias de Pull Request y merge una vez registradas.
+El equipo colaboró sobre el repositorio [web-applications](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications), utilizando `develop` como rama de integración, ramas de funcionalidad y Pull Requests. Los PR #4, #5 y #6 integraron US07, US08 y US09; el PR #7 integró US11, US13, US12 y US20. Después se incorporaron mejoras transversales de selección de espacio de trabajo y cambio de idioma mediante cambios de varios integrantes. El estado de cada contribución se reporta según la rama y el PR visibles en GitHub al 2026-10-05.
 
-| Integrante | Actividad del Sprint 2 | Evidencia disponible |
+| Integrante | Contribución comprobable en TB1 | Evidencia de GitHub |
 | --- | --- | --- |
-| Cayanchi Avila, Milenko Rubén | Liderazgo general; implementación e integración de la configuración de rutas, checkpoints y ventanas de tiempo; coordinación del Sprint. | PR #4, #5 y #6; commits de las ramas `feature/webapp-route-configuration`, `feature/webapp-checkpoints` y `feature/webapp-expected-time-windows`. |
-| León Naupari, Jorge Mateo | Colaboración en revisión funcional, consistencia con requisitos y validación de flujos de usuario. | [Adjuntar commits, revisión de PR o evidencia de pruebas del integrante.] |
-| Mendoza Blanco, Ariel Roberto | Colaboración en revisión de reglas del dominio, datos de prueba y escenarios de preparación de expediciones. | [Adjuntar commits, revisión de PR o evidencia de pruebas del integrante.] |
-| Rodriguez Rojas, Miler Alexander | Colaboración en la implementación de grupos, guías, manifiesto y seguimiento de progreso; apoyo en integración. | Commits en las ramas `feature/webapp-expedition-group-creation`, `feature/webapp-field-guide-assignment`, `feature/webapp-tourist-manifest` y `feature/webapp-group-progress-dashboard`. |
-| Herrera Enriquez, Diego Fernando | Colaboración en revisión de interfaz, comportamiento responsive y comprobación de los flujos del Sprint. | [Adjuntar commits, revisión de PR o evidencia de pruebas del integrante.] |
+| Cayanchi Avila, Milenko Rubén (`MaxghZZ`) | Liderazgo general; configuración de rutas, checkpoints y ventanas de tiempo; incorporación de los espacios de trabajo según rol y de las vistas para Operations Administrator y Field Guide. | PR #4, #5 y #6; commit [`207f528`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/207f52815862f5dc284f9400c26e97d9fed70025). |
+| León Naupari, Jorge Mateo (`mateool10`) | Ajustes de marca y layout para la selección de espacio de trabajo y la barra lateral. | Commit [`c3a1ae6`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/c3a1ae61e7e53875dd213ec8b020cfd5d4ea47b0) en `feature/webapp-workspace-layout-fix`; PR #8 con commit [`91ebc19`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/91ebc19b067eeb642804865f893534a555ed8016) sigue abierto y no integrado. |
+| Mendoza Blanco, Ariel Roberto (`Trepequiper`) | Actualización del selector de idioma ES/EN a botones, incluyendo etiquetas accesibles y documentación del componente. | [PR #9](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/9), 5 commits; [`bc74c80`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/bc74c80b990714031109cd7c9c01a537a6f39083). |
+| Rodriguez Rojas, Miler Alexander (`Miler2003`) | Implementación de la creación de grupos, asignación de guías, registro del manifiesto y dashboard de progreso estimado mediante Fake API y datos simulados. | 37 commits integrados mediante [PR #7](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/7); commits representativos [`e1cb43a`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/e1cb43a792ddb626779e2d27d33acc15ed81cdea), [`21aedcd`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/21aedcd63b2b18f91487b86a2fce768c38644c8a), [`71bbcaca`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/71bbcaca4648445471ce6b81c3f0431925fac282) y [`cef703d`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/cef703d1c403cd0ff50717a9f5bebd45b2bfdad1). |
+| Herrera Enriquez, Diego Fernando (`DerDFHE`) | Corrección de la vista de selección de rol para mejorar su visualización. | Commit [`2c66861`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/2c66861a26154775d1e1336fd3e13b7ef9bedf82), integrado en `develop`. |
 
-**Evidencia colaborativa por completar**
+El historial consultado muestra `develop` actualizado hasta el commit `2c66861`. El PR #8 y la rama `feature/webapp-workspace-layout-fix` se mantienen como trabajo pendiente de integración; no se contabilizan como parte de la versión integrada hasta que se complete su revisión y merge. Los commits del Sprint Backlog son una distribución de tareas planificada y no deben interpretarse como autoría individual de código cuando el historial de GitHub registra a otro integrante.
 
-- Captura de GitHub Insights correspondiente al Sprint 2: [Pendiente de insertar.]
+**Evidencia visual colaborativa por completar**
+
+- Captura de GitHub Insights del repositorio `web-applications`: [Pendiente de insertar.]
 - Captura del historial de commits y Pull Requests del equipo: [Pendiente de insertar.]
-- Completar las evidencias individuales de revisión, pruebas y documentación y enlazar los PR de US11, US13, US12 y US20.
-
-La evidencia final del Sprint debe mantener consistencia entre las historias y estados de Jira, los commits, las revisiones de Pull Request, las pruebas de aceptación, las capturas de la aplicación y el despliegue publicado.
+- Incorporar la captura o el enlace del PR #8 después de su revisión y registrar su resultado final.
