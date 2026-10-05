@@ -684,3 +684,25 @@ El Sprint 2 no implementa el RESTful Web Services productivo. Para habilitar el 
 
 La ruta `/api/v1/*` se resuelve mediante `server/routes.json`. La URL configurada en `.env.development` utiliza `http://localhost:3000/api/v1` y es solo para desarrollo local; no debe presentarse como endpoint público. Los manifiestos y el progreso se persisten únicamente en el archivo JSON atendido por json-server. La Fake API no garantiza integridad ni unicidad en servidor y no representa un backend productivo.
 
+#### 5.2.2.7. Software Deployment Evidence for Sprint Review
+
+La Web Application del Sprint 2 se encuentra desplegada para su revisión. El despliegue corresponde al frontend de TB1 y consume datos simulados; debe mantenerse explícito que la Fake API no es un servicio productivo. Sustituir los valores de URL pendientes por los enlaces reales antes de cerrar la versión del informe.
+
+| Elemento | Información |
+| --- | --- |
+| Producto | VitalTrek Web Applications — frontend TB1 |
+| Plataforma de despliegue | Vercel |
+| Repositorio | https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications |
+| Rama desplegada | `[Confirmar rama de despliegue]` |
+| Build command | `npm run build` |
+| Output directory | `dist` |
+| Variable de entorno de producción | `VITE_VITALTREK_API_URL` debe apuntar a una Fake API accesible desde el despliegue; la URL local `localhost` solo aplica al desarrollo. |
+| URL pública del frontend | `https://[URL-PUBLICA-DEL-FRONTEND-PENDIENTE]` |
+| URL pública de la Fake API | `[Pendiente; confirmar si se desplegó junto con el frontend o en un servicio separado.]` |
+
+**Evidencia del despliegue**
+
+- Captura de la configuración del proyecto en Vercel: [Pendiente de insertar.]
+- Captura del despliegue exitoso y versión publicada: [Pendiente de insertar.]
+- URL pública real: reemplazar el marcador de la tabla antes de la entrega.
+
