@@ -706,3 +706,22 @@ La Web Application del Sprint 2 se encuentra desplegada para su revisión. El de
 - Captura del despliegue exitoso y versión publicada: [Pendiente de insertar.]
 - URL pública real: reemplazar el marcador de la tabla antes de la entrega.
 
+#### 5.2.2.8. Team Collaboration Insights during Sprint
+
+El equipo trabajó sobre el repositorio `web-applications` mediante ramas de funcionalidad, integración en `develop` y revisión por Pull Request. La colaboración incluyó planificación, implementación, revisión de criterios de aceptación, pruebas de los flujos y preparación de evidencias. Los PR #4, #5 y #6 documentan la integración en `develop` de US07, US08 y US09. Para US11, US13, US12 y US20 se deben incorporar las referencias de Pull Request y merge una vez registradas.
+
+| Integrante | Actividad del Sprint 2 | Evidencia disponible |
+| --- | --- | --- |
+| Cayanchi Avila, Milenko Rubén | Liderazgo general; implementación e integración de la configuración de rutas, checkpoints y ventanas de tiempo; coordinación del Sprint. | PR #4, #5 y #6; commits de las ramas `feature/webapp-route-configuration`, `feature/webapp-checkpoints` y `feature/webapp-expected-time-windows`. |
+| León Naupari, Jorge Mateo | Colaboración en revisión funcional, consistencia con requisitos y validación de flujos de usuario. | [Adjuntar commits, revisión de PR o evidencia de pruebas del integrante.] |
+| Mendoza Blanco, Ariel Roberto | Colaboración en revisión de reglas del dominio, datos de prueba y escenarios de preparación de expediciones. | [Adjuntar commits, revisión de PR o evidencia de pruebas del integrante.] |
+| Rodriguez Rojas, Miler Alexander | Colaboración en la implementación de grupos, guías, manifiesto y seguimiento de progreso; apoyo en integración. | Commits en las ramas `feature/webapp-expedition-group-creation`, `feature/webapp-field-guide-assignment`, `feature/webapp-tourist-manifest` y `feature/webapp-group-progress-dashboard`. |
+| Herrera Enriquez, Diego Fernando | Colaboración en revisión de interfaz, comportamiento responsive y comprobación de los flujos del Sprint. | [Adjuntar commits, revisión de PR o evidencia de pruebas del integrante.] |
+
+**Evidencia colaborativa por completar**
+
+- Captura de GitHub Insights correspondiente al Sprint 2: [Pendiente de insertar.]
+- Captura del historial de commits y Pull Requests del equipo: [Pendiente de insertar.]
+- Completar las evidencias individuales de revisión, pruebas y documentación y enlazar los PR de US11, US13, US12 y US20.
+
+La evidencia final del Sprint debe mantener consistencia entre las historias y estados de Jira, los commits, las revisiones de Pull Request, las pruebas de aceptación, las capturas de la aplicación y el despliegue publicado.
