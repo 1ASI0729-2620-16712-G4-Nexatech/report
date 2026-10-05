@@ -251,7 +251,7 @@ La siguiente matriz organiza el liderazgo y la colaboración del equipo durante 
 El Sprint Backlog 1 agrupa las siete User Stories de la Landing Page y las cuatro Technical Stories que la habilitan, seleccionadas desde el Product Backlog de la sección 3.3. La descomposición produjo veintiún Work-items, estimados individualmente entre 4 y 8 horas, con un total de 105 horas. Las tareas se repartieron según la matriz de líderes y colaboradores de la sección 5.2.1.2: cada integrante asume las tareas del aspecto que lidera y colabora en los aspectos restantes.
  
 **Evidencia del Board del Sprint**
- 
+
 ![Product Backlog de VitalTrek en Jira](../assets/images/chapter-3/product-backlog-jira.png)
  
 *Figura 5.1. Board del Sprint 1 en Jira.*
@@ -605,24 +605,56 @@ La autoría de los cambios de código que se pueden verificar en el repositorio 
 
 El Sprint Backlog 2 comprende las siete User Stories seleccionadas para TB1. La tabla conserva las estimaciones del Product Backlog de la sección 3.3 y resume el resultado funcional de cada historia. La descomposición granular en tareas, horas y responsables corresponde al registro de Jira y debe adjuntarse como evidencia del board.
 
-**Evidencia del Board del Sprint**
-
-**Enlace al board Jira:** [Ver Product Backlog](https://milenkorvu.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog)
+**Evidencia del Board del Sprint:** [Ver Product Backlog en Jira](https://milenkorvu.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog)
 
 **Captura del Sprint Backlog 2:** [Pendiente de insertar la captura del board Jira con tareas, estimaciones y estados.]
 
-| Sprint # | Story ID | Story Title | Bounded Context | Trabajo incluido en el Sprint | Estimation (Story Points) | Status |
-| --- | --- | --- | --- | --- | ---: | --- |
-| Sprint 2 | US07 | Configuración de rutas | `expedition-setup` | Registrar rutas con datos geográficos y operativos, validar campos y nombres duplicados, y guardar la Route inicialmente como `draft`. | 5 | Done |
-| Sprint 2 | US08 | Definición de checkpoints | `expedition-setup` | Asociar checkpoints a una Route, mantener el orden de la secuencia, impedir órdenes duplicados y habilitar la ruta solo después de registrar al menos un checkpoint. | 5 | Done |
-| Sprint 2 | US09 | Ventanas de tiempo esperadas | `expedition-setup` | Configurar ventanas por tramo, validar límites mínimo/máximo, evitar duplicados e identificar tramos pendientes. | 3 | Done |
-| Sprint 2 | US11 | Creación del grupo de expedición | `expedition-setup` | Crear un Expedition Group asociado a una Route habilitada, registrar fecha y capacidad, y rechazar fechas pasadas. | 3 | Done |
-| Sprint 2 | US13 | Asignación del guía | `expedition-setup` | Asignar un Field Guide mock al grupo, informar cruces de asignación y requerir confirmación explícita cuando corresponda. | 2 | Done |
-| Sprint 2 | US12 | Registro del manifiesto | `expedition-setup` | Registrar participantes, rechazar documentos duplicados y evitar exceder la capacidad máxima del grupo. | 5 | Done |
-| Sprint 2 | US20 | Seguimiento del progreso | `field-tracking` | Mostrar tramo actual, último checkpoint, progreso estimado y antigüedad de los datos; informar cuando el tour aún no está activo. | 5 | Done |
-|  |  |  |  | **Total** | **28** |  |
+| Sprint # | Story Id | Story Title | Task Id | Task Title | Task Description | Estimation (Hours) | Assigned To | Status |
+| --- | --- | --- | --- | --- | --- | ---: | --- | --- |
+| Sprint 2 | US07 | Configuración de rutas | T-22 | Definición del modelo de Route y estado inicial | Implementar la entidad Route con los atributos geográficos y operativos de la historia, e inicializar cada ruta nueva en estado `draft`. | 5 | Cayanchi Avila, Milenko Rubén | Done |
+| Sprint 2 | US07 | Configuración de rutas | T-23 | Formulario y listado de rutas | Construir las vistas para consultar las rutas existentes y registrar nombre, origen, destino, distancia, desnivel, dificultad y duración. | 6 | Herrera Enriquez, Diego Fernando | Done |
+| Sprint 2 | US07 | Configuración de rutas | T-24 | Persistencia y validación de rutas | Integrar assembler, Fake API y store para crear rutas; validar campos obligatorios y nombres duplicados, y presentar los mensajes de error localizados. | 5 | Cayanchi Avila, Milenko Rubén | Done |
+| Sprint 2 | US08 | Definición de checkpoints | T-25 | Modelo y asociación de Checkpoint | Implementar la entidad Checkpoint y asociarla a una Route mediante su identificador, ubicación y posición en la secuencia. | 5 | Cayanchi Avila, Milenko Rubén | Done |
+| Sprint 2 | US08 | Definición de checkpoints | T-26 | Vista de configuración de checkpoints | Construir la vista para consultar los checkpoints de una ruta seleccionada y registrar nuevos puntos con su ubicación y orden. | 6 | Herrera Enriquez, Diego Fernando | Done |
+| Sprint 2 | US08 | Definición de checkpoints | T-27 | Validación de secuencia y habilitación de ruta | Integrar la persistencia y las reglas del store para rechazar órdenes repetidos e impedir que una ruta sin checkpoints pase de `draft` a `enabled`. | 5 | Cayanchi Avila, Milenko Rubén | Done |
+| Sprint 2 | US09 | Ventanas de tiempo esperadas | T-28 | Modelo y mapeo de Expected Time Window | Implementar la entidad y el assembler de ExpectedTimeWindow con ruta, checkpoints de inicio y fin, y límites mínimo y máximo en minutos. | 5 | Mendoza Blanco, Ariel Roberto | Done |
+| Sprint 2 | US09 | Ventanas de tiempo esperadas | T-29 | Identificación y configuración de tramos | Construir la vista para ordenar los checkpoints, generar los tramos consecutivos y permitir configurar la ventana esperada de cada uno. | 6 | Rodriguez Rojas, Miler Alexander | Done |
+| Sprint 2 | US09 | Ventanas de tiempo esperadas | T-30 | Reglas de validación de ventanas | Integrar Fake API y store para rechazar máximos menores o iguales a los mínimos, evitar ventanas duplicadas e identificar tramos pendientes de configuración. | 5 | Cayanchi Avila, Milenko Rubén | Done |
+| Sprint 2 | US11 | Creación del grupo de expedición | T-31 | Modelo y recursos de Expedition Group | Implementar la entidad del grupo y agregar a la Fake API los datos necesarios para relacionarlo con una ruta habilitada, fecha de salida y capacidad máxima. | 6 | Rodriguez Rojas, Miler Alexander | Done |
+| Sprint 2 | US11 | Creación del grupo de expedición | T-32 | Vista de creación y consulta de grupos | Construir el flujo para consultar grupos asociados a una ruta y registrar un nuevo grupo desde la gestión de rutas. | 6 | Herrera Enriquez, Diego Fernando | Done |
+| Sprint 2 | US11 | Creación del grupo de expedición | T-33 | Validaciones y localización de grupos | Integrar la creación en el store y validar la ruta habilitada, la fecha no pasada y los datos obligatorios; agregar mensajes en español e inglés. | 5 | Mendoza Blanco, Ariel Roberto | Done |
+| Sprint 2 | US13 | Asignación del guía | T-34 | Recurso y consulta de Field Guides | Incorporar guías de prueba a la Fake API y mapearlos a entidades de dominio consultables desde el contexto de configuración de expediciones. | 5 | León Naupari, Jorge Mateo | Done |
+| Sprint 2 | US13 | Asignación del guía | T-35 | Asignación y control de cruce de fechas | Implementar la asignación de un guía al grupo, informar si ya tiene otro tour en la misma fecha y solicitar confirmación explícita ante el cruce. | 6 | Rodriguez Rojas, Miler Alexander | Done |
+| Sprint 2 | US12 | Registro del manifiesto | T-36 | Modelo y endpoint de Manifest Entries | Implementar el modelo de entrada del manifiesto y conectar su consulta y registro con el recurso de prueba asociado al Expedition Group. | 5 | Mendoza Blanco, Ariel Roberto | Done |
+| Sprint 2 | US12 | Registro del manifiesto | T-37 | Vista de registro del Tourist Manifest | Construir la vista del Field Guide para consultar los participantes del grupo y registrar turistas con los datos requeridos. | 6 | Herrera Enriquez, Diego Fernando | Done |
+| Sprint 2 | US12 | Registro del manifiesto | T-38 | Validación de identidad y capacidad del grupo | Rechazar documentos de identidad duplicados y nuevos participantes que excedan la capacidad máxima; mostrar errores localizados. | 5 | León Naupari, Jorge Mateo | Done |
+| Sprint 2 | US20 | Seguimiento del progreso | T-39 | Modelo y fuente de datos de seguimiento | Crear la estructura del bounded context `field-tracking` y mapear datos simulados de grupo, checkpoint, tramo, progreso, estado y sincronización. | 6 | León Naupari, Jorge Mateo | Done |
+| Sprint 2 | US20 | Seguimiento del progreso | T-40 | Dashboard de progreso del grupo | Construir la vista para presentar el tramo actual, último checkpoint confirmado y porcentaje de progreso estimado del grupo. | 6 | Rodriguez Rojas, Miler Alexander | Done |
+| Sprint 2 | US20 | Seguimiento del progreso | T-41 | Estados de seguimiento y mensajes bilingües | Presentar la antigüedad de la última sincronización y aclarar que el progreso es estimado; informar cuando el tour todavía no está activo. | 5 | Mendoza Blanco, Ariel Roberto | Done |
 
-El Sprint se planificó con el orden de dependencias **US07 → US08 → US09 → US11 → US13 → US12 → US20**. Las tareas asociadas a estas historias se implementaron siguiendo la arquitectura acordada para TB1. No se incluyen horas por tarea en esta tabla porque el detalle de estimaciones horarias debe coincidir con el Sprint Backlog publicado en Jira.
+**Resumen del Sprint Backlog 2**
+
+| Concepto | Valor |
+| --- | ---: |
+| User Stories asignadas | 7 |
+| Work-items resultantes de la descomposición | 20 |
+| Estimación mínima de una task | 5 horas |
+| Estimación máxima de una task | 6 horas |
+| Total de horas estimadas | 109 |
+| Sum of Story Points | 28 |
+
+**Distribución de la carga por integrante**
+
+| Integrante | Tasks | Horas |
+| --- | ---: | ---: |
+| Cayanchi Avila, Milenko Rubén | 5 | 25 |
+| León Naupari, Jorge Mateo | 3 | 16 |
+| Mendoza Blanco, Ariel Roberto | 4 | 20 |
+| Rodriguez Rojas, Miler Alexander | 4 | 24 |
+| Herrera Enriquez, Diego Fernando | 4 | 24 |
+| **Total** | **20** | **109** |
+
+El Sprint se planificó con el orden de dependencias **US07 → US08 → US09 → US11 → US13 → US12 → US20**. La asignación de tareas es una distribución de trabajo propuesta para completar el registro del Sprint Backlog; debe contrastarse con Jira y ajustarse si el board o la evidencia individual muestran responsables o estimaciones diferentes.
 
 #### 5.2.2.4. Development Evidence for Sprint Review
 
