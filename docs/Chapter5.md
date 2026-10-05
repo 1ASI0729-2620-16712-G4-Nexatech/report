@@ -648,3 +648,23 @@ Adjuntar capturas de la aplicación desplegada o ejecutada en local que muestren
 - Captura del Tourist Manifest: [Pendiente de insertar.]
 - Captura del Group Progress Dashboard: [Pendiente de insertar.]
 
+#### 5.2.2.5. Execution Evidence for Sprint Review
+
+La validación funcional del Sprint 2 cubre los escenarios principales de las User Stories implementadas. La telemetría y los datos de seguimiento utilizados en US20 son simulados; la aplicación no sustituye sistemas de comunicación o respuesta de emergencia.
+
+| User Story | Escenario de validación | Resultado esperado |
+| --- | --- | --- |
+| US07 | Registrar una Route válida y probar un nombre duplicado o campos obligatorios incompletos. | La ruta se crea en estado `draft`; los datos inválidos o duplicados se rechazan y se informa el problema. |
+| US08 | Registrar checkpoints con órdenes únicos; intentar duplicar un orden y habilitar una ruta sin checkpoints. | Se asocian los checkpoints a la ruta; se rechaza el orden duplicado y no se habilita la ruta vacía. Con al menos un checkpoint, la ruta puede habilitarse. |
+| US09 | Guardar una ventana válida, invertir los límites mínimo/máximo y consultar tramos sin configuración. | Se guarda la ventana válida, se rechazan límites inconsistentes y se identifican los tramos pendientes. |
+| US11 | Crear un Expedition Group para una ruta habilitada y probar una fecha anterior a la actual. | El grupo se asocia a la ruta; una fecha pasada se rechaza. |
+| US13 | Asignar un guía disponible, seleccionar uno con cruce de fecha y comprobar el requisito de responsable. | La asignación se registra; el cruce requiere confirmación y el sistema identifica un grupo sin guía. |
+| US12 | Registrar participantes, repetir un documento de identidad y superar la capacidad del grupo. | El manifiesto se actualiza; el documento duplicado y el participante que excede la capacidad se rechazan. |
+| US20 | Consultar un tour activo con datos de seguimiento, uno sin sincronización reciente y uno no iniciado. | Se muestran último checkpoint, tramo y progreso estimado; se indica la antigüedad de la información y que es una estimación; un tour no iniciado informa que el seguimiento se habilita al comenzar. |
+
+**Evidencia de ejecución**
+
+- Video de recorrido de la Web Application: [Pendiente de insertar el enlace de Microsoft Stream.]
+- Capturas de los escenarios ejecutados: [Pendiente de insertar en 5.2.2.4.]
+- Registro o evidencia del build de producción: [Pendiente de adjuntar.]
+
