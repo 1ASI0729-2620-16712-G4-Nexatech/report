@@ -565,3 +565,23 @@ La aplicación está construida con Vue 3 y Vite; utiliza Pinia, Vue Router, Axi
 | Contextos de dominio | `expedition-setup` y `field-tracking` |
 | Resultado | Web Application frontend implementada; Fake API y telemetría de prueba. |
 
+#### 5.2.2.1. Sprint Planning 2
+
+La planificación del Sprint 2 definió como objetivo completar el flujo de preparación de una expedición —desde la configuración de la Route hasta el registro del Tourist Manifest— y agregar la consulta del progreso estimado del grupo. Las historias se seleccionaron del Product Backlog y se ordenaron según sus dependencias: primero la configuración de rutas, checkpoints y ventanas; luego la creación del grupo, la asignación del guía y el manifiesto; finalmente, el dashboard de seguimiento.
+
+| Campo | Información |
+| --- | --- |
+| Sprint | Sprint 2 — TB1 |
+| Fecha | 2026-10-04 |
+| Hora | 20:00 |
+| Ubicación | Discord — reunión virtual |
+| Preparado por | Cayanchi Avila, Milenko Rubén |
+| Participantes | Cayanchi Avila, Milenko Rubén; León Naupari, Jorge Mateo; Mendoza Blanco, Ariel Roberto; Rodriguez Rojas, Miler Alexander; Herrera Enriquez, Diego Fernando |
+| Sprint Goal | Completar el flujo frontend de preparación de expediciones y consulta de progreso estimado para Operations Administrators y Field Guides. |
+| Sprint Velocity | 28 Story Points |
+| Total de Story Points | 28 |
+
+**Sprint Goal**
+
+Nuestro enfoque está en completar el flujo frontend para configurar rutas y grupos de expedición, registrar el Tourist Manifest y consultar el progreso estimado con datos simulados. Creemos que esto permitirá a los Operations Administrators preparar tours y a los Field Guides registrar a sus participantes mediante una aplicación coherente con el proceso operativo. Esto se confirmará cuando los usuarios puedan recorrer y validar los escenarios de US07, US08, US09, US11, US13, US12 y US20 en el frontend desplegado con Fake API; la validación no implica backend productivo ni telemetría real.
+
