@@ -585,3 +585,19 @@ La planificación del Sprint 2 definió como objetivo completar el flujo de prep
 
 Nuestro enfoque está en completar el flujo frontend para configurar rutas y grupos de expedición, registrar el Tourist Manifest y consultar el progreso estimado con datos simulados. Creemos que esto permitirá a los Operations Administrators preparar tours y a los Field Guides registrar a sus participantes mediante una aplicación coherente con el proceso operativo. Esto se confirmará cuando los usuarios puedan recorrer y validar los escenarios de US07, US08, US09, US11, US13, US12 y US20 en el frontend desplegado con Fake API; la validación no implica backend productivo ni telemetría real.
 
+#### 5.2.2.2. Aspect Leaders and Collaborators
+
+Milenko Rubén Cayanchi Avila fue el líder general del Sprint. La siguiente matriz registra las áreas de trabajo y la participación colaborativa comunicada por el equipo. Los commits identifican a los autores de cambios versionados; las actividades de revisión, pruebas y documentación deben respaldarse con la evidencia del Sprint Review.
+
+| Integrante | Usuario de GitHub | Coordinación general | Configuración de rutas y checkpoints | Grupos, guías y manifiestos | Seguimiento, pruebas e integración |
+| --- | --- | --- | --- | --- | --- |
+| Cayanchi Avila, Milenko Rubén | `MaxghZZ` | L | L | C | C |
+| León Naupari, Jorge Mateo | `mateool10` | C | C | C | C |
+| Mendoza Blanco, Ariel Roberto | `Trepequiper` | C | C | C | C |
+| Rodriguez Rojas, Miler Alexander | `Miler2003` | C | C | L | L |
+| Herrera Enriquez, Diego Fernando | `DerDFHE` | C | C | C | C |
+
+**Leyenda:** L = líder del aspecto; C = colaborador.
+
+La autoría de los cambios de código que se pueden verificar en el repositorio se consigna en la sección 5.2.2.4. La matriz describe las responsabilidades de trabajo del Sprint y no sustituye la evidencia de commits, Pull Requests o validaciones individuales.
+
