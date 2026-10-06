@@ -23,6 +23,22 @@ El trabajo se desarrolló mediante commits continuos en el repositorio de la org
 
 ---
 
+## TB1 — Colaboración en Web Applications
+
+Durante TB1, el equipo extendió el repositorio de [Web Applications](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications) con una aplicación frontend Vue y Fake API. Las ramas `feature/*` se integraron en `develop` mediante Pull Requests para las historias funcionales principales. La consulta se realizó el 5 de octubre de 2026; las ramas y PRs que aún estaban abiertos se identifican como trabajo pendiente y no como entregables integrados.
+
+| Integrante | Aporte visible en GitHub | Referencia y estado |
+| --- | --- | --- |
+| Cayanchi Avila, Milenko Rubén (`MaxghZZ`) | Liderazgo general; configuración de rutas, checkpoints y ventanas de tiempo; incorporación de espacios de trabajo por rol. | PRs [#4](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/4), [#5](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/5), [#6](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/6) integrados; commit [`207f528`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/207f52815862f5dc284f9400c26e97d9fed70025) en `develop`. |
+| Rodriguez Rojas, Miler Alexander (`Miler2003`) | Desarrollo de creación de grupos, asignación de guías, Tourist Manifest y Group Progress Dashboard con datos de prueba. | PR [#7](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/7) integrado en `develop`, con 37 commits en 22 archivos. |
+| Mendoza Blanco, Ariel Roberto (`Trepequiper`) | Actualización del selector ES/EN a botones, con mejoras de accesibilidad y documentación. | PR [#9](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/9), 5 commits, integrado en `develop`. |
+| Herrera Enriquez, Diego Fernando (`DerDFHE`) | Corrección de visualización de la selección de rol. | Commit [`2c66861`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/2c66861a26154775d1e1336fd3e13b7ef9bedf82) integrado en `develop`. |
+| León Naupari, Jorge Mateo (`mateool10`) | Ajustes de la marca y el layout del espacio de trabajo. | PR [#8](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/8) abierto; sus cambios no estaban integrados al consultar GitHub. La rama `feature/webapp-workspace-layout-fix` tampoco tenía PR asociado visible. |
+
+Los PRs #4–#7 contienen las integraciones principales de las funcionalidades TB1. Los PRs #8 y #9 corresponden a mejoras transversales de interfaz posteriores a la implementación funcional: #9 ya fue integrado y #8 permanecía en revisión. Esta distinción conserva la trazabilidad entre código publicado, cambios pendientes y la distribución estimada de tareas del Sprint Backlog.
+
+---
+
 ## Github Collaboration Insights
 
 Las siguientes capturas evidencian la actividad de colaboración y los commits registrados durante el Sprint 1. La distribución individual se detalla también en la sección 5.2.1.8 del informe.
@@ -51,3 +67,15 @@ Se explican las ramas más prominentes:
 - **develop**: Es representada por el color morado. Se trata de la rama principal para el proceso del desarrollo del proyecto.
 - **feature/**: cambios específicos del documento o de endpoints implementados.
 - **hotfix/**: correcciones puntuales realizadas sobre errores críticos encontrados durante la integración o despliegue.
+
+### Evidencia de colaboración en TB1
+
+Las siguientes capturas corresponden a la actividad del repositorio `web-applications` registrada durante TB1. La primera muestra commits recientes de los integrantes y la segunda resume los indicadores de colaboración del repositorio entre el 28 de septiembre y el 5 de octubre de 2026.
+
+![Commits de colaboración en web-applications durante TB1](../assets/images/chapter-5/ColabInsights21.png)
+
+*Figura 3. Historial de commits del repositorio web-applications durante TB1.*
+
+![GitHub Insights de web-applications durante TB1](../assets/images/chapter-5/ColabInsights22.png)
+
+*Figura 4. GitHub Insights del repositorio web-applications para el período del 28 de septiembre al 5 de octubre de 2026.*

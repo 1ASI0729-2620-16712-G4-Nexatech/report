@@ -174,7 +174,7 @@ Las etiquetas de VitalTrek buscan el mínimo número de palabras posible sin per
 | Operations Dashboard     | `Routes and checkpoints` | `Rutas y puntos de control` | Configurar Route, Checkpoint y Expected Time Window (US07 a US09).           |
 | Operations Dashboard     | `Alerts`                 | `Alertas`                   | Revisar Early Warning Alerts priorizadas (US25, US26).                       |
 | Operations Dashboard     | `Reports`                | `Reportes`                  | Consultar el Tour Summary de tours finalizados (US32).                       |
-| Field Guide Workspace    | `Current tour`           | `Tour actual`               | Ver el Expedition Group y la Route asignados (US11, US13).                   |
+| Field Guide Workspace    | `Current tour`           | `Tour actual`               | Ver el Expedition Group y la Route asignados (US13).                         |
 | Field Guide Workspace    | `Group check-in`         | `Registro del grupo`        | Registrar el Tourist Manifest y activar los wearables (US12, US15, US16).    |
 | Field Guide Workspace    | `Offline route notes`    | `Notas de ruta offline`     | Consultar Route Notes sin conexión (US19).                                   |
 | Field Guide Workspace    | `Alerts and incidents`   | `Alertas e incidentes`      | Confirmar Incidents y coordinar la respuesta (US27, US30).                   |
@@ -408,6 +408,22 @@ El último wireframe concentra el estado operativo global con una perspectiva m�
 ![Wireframe 6](../assets/images/chapter-4/wireframes/WebApplicationW6.jpg)
 
 ### 4.4.2. Web Applications Wireflow Diagrams.
+
+El wireflow de TB1 representa el recorrido del Operations Administrator para preparar una expedición y consultar su estado. La sesión, los datos de sincronización y el nivel de riesgo se simulan en esta primera versión frontend.
+
+```mermaid
+flowchart LR
+    A[Operations Dashboard] --> B[Routes]
+    B --> C[Create Route]
+    C --> D[Add Checkpoints]
+    D --> E[Set Expected Time Windows]
+    E --> F[Create Expedition Group]
+    F --> G[Assign Field Guide]
+    G --> H[Active Expeditions]
+    H --> I[Group Detail: last checkpoint, progress and simulated risk]
+```
+
+*Figura 4.15. Wireflow de la primera versión Frontend Web Applications para TB1.*
 
 ### 4.4.3. Web Applications Mock-ups.
 Los mock-ups representan la evolución visual de los wireframes anteriores, aplicando la identidad gráfica de VitalTrek y refinando la jerarquía de información para que cada pantalla se perciba como una herramienta operativa clara, profesional y confiable. Aquí se incorporan componentes visuales más definidos, estados de riesgo, etiquetas funcionales y un sistema de navegación que facilita la lectura rápida de información crítica.
@@ -645,7 +661,7 @@ La **RESTful API**, desarrollada con ASP.NET Core, Entity Framework Core y C#, c
 
 La **VitalTrek Relational Database**, implementada con PostgreSQL, almacena información de agencias, usuarios, rutas, checkpoints, grupos de expedición, telemetría, alertas, incidentes y notas de ruta. Se utiliza una única tecnología de base de datos para evitar ambigüedad arquitectónica en este diseño inicial.
 
-La API se integra con dos sistemas externos: el Notification Provider, encargado de entregar alertas tempranas y notificaciones de emergencia; y el Map Provider, desde el cual la Tourist Web Application obtiene mapas descargables. El procesamiento de pagos se excluye de esta arquitectura AV1 porque aún no se encuentra definido como una User Story validada ni como una capacidad implementada del producto.
+La API se integra con dos sistemas externos: el Notification Provider, encargado de entregar alertas tempranas y notificaciones de emergencia; y el Map Provider, desde el cual la Tourist Web Application obtiene mapas descargables. El procesamiento de pagos se mantiene fuera del alcance de AV1 y TB1: es una hipótesis comercial posterior al MVP, sin User Story funcional ni capacidad implementada.
 
 #### Diagrama de contenedores
 

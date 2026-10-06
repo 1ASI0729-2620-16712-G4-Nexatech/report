@@ -1,122 +1,218 @@
 # Capítulo V: Product Implementation, Validation & Deployment
 
 ## 5.1. Software Configuration Management
-
-Esta sección establece las herramientas, configuraciones y convenciones utilizadas para mantener la consistencia del proyecto VitalTrek durante el Sprint 1. Se documentan el entorno de desarrollo, el control de versiones, las reglas de estilo y la configuración de despliegue del Landing Page. Estas decisiones permiten coordinar el trabajo del equipo, mantener trazabilidad sobre los cambios y asegurar que la solución pueda ejecutarse y publicarse de forma consistente.
-
+ 
+Esta sección establece las herramientas, convenciones y configuraciones que el equipo utiliza para mantener la consistencia del proyecto VitalTrek a lo largo de su ciclo de vida. Se documentan el entorno de desarrollo, el esquema de control de versiones con GitFlow, las convenciones de codificación y la configuración de despliegue de cada producto. Estas decisiones permiten coordinar el trabajo de los cinco integrantes, mantener trazabilidad sobre cada cambio y reproducir el entorno en cualquier equipo.
+ 
 ### 5.1.1. Software Development Environment Configuration
-
-La siguiente tabla presenta las herramientas utilizadas por el equipo durante el desarrollo del Sprint 1 y la elaboración de los artefactos correspondientes a AV1.
-
-| Producto           | Actividad                | Propósito                                                            | Referencia                                           |
-| ------------------ | ------------------------ | -------------------------------------------------------------------- | ---------------------------------------------------- |
-| Jira Software      | Project Management       | Gestionar el Product Backlog, Sprint Backlog, tareas y Story Points. | [Jira](https://www.atlassian.com/software/jira)      |
-| GitHub             | Source Code Management   | Almacenar el código, aplicar GitFlow y registrar commits.            | [GitHub](https://github.com/)                        |
-| Figma              | UX/UI Design             | Elaborar wireframes, mock-ups y prototipos.                          | [Figma](https://www.figma.com/)                      |
-| UXPressia          | Requirements / UX Design | Elaborar User Personas, Journey Maps, Empathy Maps e Impact Maps.    | [UXPressia](https://uxpressia.com/)                  |
-| Miro               | Domain Modeling          | Elaborar el Big Picture y Design-Level EventStorming.                | [Miro](https://miro.com/)                            |
-| Visual Studio Code | Software Development     | Desarrollar el Landing Page con HTML5, CSS3 y JavaScript.            | [Visual Studio Code](https://code.visualstudio.com/) |
-| Vercel             | Software Deployment      | Desplegar y publicar la primera versión del Landing Page.            | [Vercel](https://vercel.com/)                        |
-| Markdown           | Software Documentation   | Redactar el informe del proyecto y organizar sus capítulos.          | [Markdown Guide](https://www.markdownguide.org/)     |
-
+ 
+La siguiente tabla especifica los productos de software que el equipo utiliza, agrupados por tipo de actividad del ciclo de vida. Para los productos basados en modelos SaaS se indica la ruta de referencia; para los que se ejecutan en el computador de cada integrante se indica la ruta de descarga.
+ 
+| Actividad | Producto | Propósito de uso en el proyecto | Tipo | Ruta de referencia o descarga |
+| --- | --- | --- | --- | --- |
+| Project Management | Jira Software | Gestionar el Product Backlog, los Sprint Backlogs, las Engineering Tasks y las estimaciones en Story Points y horas. | SaaS | https://www.atlassian.com/software/jira |
+| Project Management | Discord | Coordinar las ceremonias del Sprint y la comunicación diaria del equipo. | SaaS / aplicación de escritorio | https://discord.com/download |
+| Requirements Management | UXPressia | Elaborar las fichas de User Persona, los Journey Maps, los Empathy Maps y el Impact Map. | SaaS | https://uxpressia.com/ |
+| Requirements Management | Miro | Elaborar el Big Picture EventStorming y el Design-Level EventStorming. | SaaS | https://miro.com/ |
+| Product UX/UI Design | Figma | Elaborar los wireframes, mock-ups y prototipos del Landing Page y de las Web Applications. | SaaS | https://www.figma.com/ |
+| Software Development | Git | Controlar las versiones del código fuente en el computador de cada integrante y aplicar el flujo de ramas de GitFlow. | Instalación local | https://git-scm.com/downloads |
+| Software Development | GitHub | Alojar los repositorios de la organización del equipo, gestionar los Pull Requests y registrar la colaboración. | SaaS | https://github.com/ |
+| Software Development | Visual Studio Code | Editar el código del Landing Page y la documentación en Markdown. | Instalación local | https://code.visualstudio.com/download |
+| Software Development | Google Chrome | Verificar la navegación, el comportamiento responsive y la accesibilidad del Landing Page mediante sus herramientas de desarrollo. | Instalación local | https://www.google.com/chrome/ |
+| Software Development | Vue.js | Construir las Frontend Web Applications. Planificado para Sprints posteriores. | Instalación local (vía npm) | https://vuejs.org/ |
+| Software Development | .NET SDK y C# | Construir el RESTful Web Services. Planificado para Sprints posteriores. | Instalación local | https://dotnet.microsoft.com/download |
+| Software Development | PostgreSQL | Persistir la información operativa y de seguridad de las expediciones. Planificado para Sprints posteriores. | Instalación local | https://www.postgresql.org/download/ |
+| Software Deployment | Vercel | Desplegar y publicar el Landing Page a partir del repositorio de GitHub. | SaaS | https://vercel.com/ |
+| Software Documentation | Markdown | Redactar el informe del proyecto y los archivos README de cada repositorio. | Formato abierto | https://www.markdownguide.org/ |
+| Software Documentation | dbdiagram.io | Elaborar el Database Diagram de la sección 4.8. | SaaS | https://dbdiagram.io/ |
+| Software Documentation | PlantUML | Elaborar los Class Diagrams de la sección 4.7. | Instalación local / SaaS | https://plantuml.com/download |
+| Software Documentation | Microsoft PowerPoint | Elaborar la presentación de exposición de cada entrega. | Instalación local | https://www.microsoft.com/microsoft-365/powerpoint |
+| Software Documentation | Microsoft Stream | Publicar los videos de exposición y de navegación del producto. | SaaS | https://www.microsoft.com/microsoft-365/microsoft-stream |
+ 
 ### 5.1.2. Source Code Management
+ 
+El código fuente de VitalTrek se administra con **Git** como sistema de control de versiones y **GitHub** como plataforma de alojamiento y colaboración. Cada producto de la solución mantiene su propio repositorio dentro de la organización del equipo, de modo que sus ciclos de vida y despliegues sean independientes.
+ 
+| Producto | Repositorio | Rama por defecto | Estado en AV1 |
+| --- | --- | --- | --- |
+| Project Report | https://github.com/1ASI0729-2620-16712-G4-Nexatech/report | `develop` | En elaboración |
+| Landing Page | https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page | `main` | Implementado y desplegado |
+| Frontend Web Applications | https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications | `develop` | Repositorio creado, implementación planificada |
+| RESTful Web Services | https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-services | `develop` | Repositorio creado, implementación planificada |
+ 
+En el caso del RESTful Web Services, el repositorio incluye tanto el proyecto como los archivos de pruebas unitarias y de integración, conforme a lo indicado en el enunciado del trabajo final.
+ 
+> **Acción necesaria:** crea ahora los repositorios `web-applications` y `web-services` en la organización, aunque solo contengan un `README.md` con el alcance planificado. Toma cinco minutos y convierte un "URL pendiente" en una URL verificable, que es lo que el criterio evalúa.
+ 
+#### GitFlow como Workflow de branching y colaboración
+ 
+El equipo aplica **GitFlow**, según el modelo descrito por Vincent Driessen en *A successful Git branching model*. El repositorio mantiene dos ramas de larga duración y tres tipos de ramas de apoyo.
+ 
+**Ramas de larga duración**
+ 
+| Rama | Propósito | Quién integra en ella |
+| --- | --- | --- |
+| `main` | Contiene únicamente versiones estables y publicadas. Cada integración en esta rama corresponde a una Release etiquetada. | Solo mediante Pull Request desde `release/*` o `hotfix/*`. |
+| `develop` | Integra el trabajo aprobado de todas las funcionalidades en curso. Es la base desde la que nacen las ramas de funcionalidad. | Solo mediante Pull Request desde `feature/*`. |
+ 
+**Ramas de apoyo y sus convenciones de nombre**
+ 
+| Tipo | Convención de nombre | Nace de | Se integra en | Ejemplo real del proyecto |
+| --- | --- | --- | --- | --- |
+| Feature | `feature/<ámbito>-<descripción-breve>` en inglés y `kebab-case` | `develop` | `develop` | `feature/landing-seo-a11y` |
+| Release | `release/vMAJOR.MINOR.PATCH` | `develop` | `main` y `develop` | `release/v1.0.0` |
+| Hotfix | `hotfix/vMAJOR.MINOR.PATCH-<descripción-breve>` | `main` | `main` y `develop` | `hotfix/v1.0.1-contact-form-validation` |
+ 
+Reglas aplicables a los nombres de rama:
+ 
+1. Se escriben íntegramente en inglés y en minúsculas, con palabras separadas por guion.
+2. El ámbito identifica el producto o el capítulo afectado: `landing`, `webapp`, `api`, `chapter-3`.
+3. No se usan espacios, caracteres acentuados ni mayúsculas.
+4. Una rama de funcionalidad corresponde a una sola User Story o Technical Story, y se elimina una vez integrada.
 
-El código fuente de VitalTrek se administra mediante Git y GitHub. Cada producto mantiene su propio repositorio para separar responsabilidades y facilitar el trabajo colaborativo. Para controlar la evolución del proyecto se utiliza GitFlow, Conventional Commits y Semantic Versioning.
-
-| Producto                  | Repositorio                                                     | Estado en AV1             |
-| ------------------------- | --------------------------------------------------------------- | ------------------------- |
-| Landing Page              | https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page | Implementado y desplegado |
-| Frontend Web Applications | URL pendiente                                                   | Planificado               |
-| RESTful Web Services      | URL pendiente                                                   | Planificado               |
-
-#### GitFlow Workflow
-
-El flujo de trabajo utiliza las siguientes ramas:
-
-- `main`: versión estable y publicada.
-- `develop`: integración de cambios aprobados.
-- `feature/*`: desarrollo de funcionalidades.
-- `release/*`: preparación de una versión.
-- `hotfix/*`: corrección urgente sobre `main`.
-
-Durante el Sprint 1 se utilizaron ramas `feature/*`. La evidencia de cada rama, commit y Pull Request se registra en la sección 5.2.1.4.
-
+**Flujo de trabajo**
+ 
+![Gitflow_AV01](../assets/images/chapter-5/gitflow_av01.png)
+ 
+*Figura 5.0. Flujo de ramas aplicado en los repositorios de VitalTrek.*
+ 
+**Política de Pull Requests**
+ 
+1. Toda integración a `develop` y a `main` se realiza mediante Pull Request; no se permite empujar directamente a ninguna de las dos.
+2. Cada Pull Request indica en su descripción la User Story o Technical Story que resuelve y los criterios de aceptación cubiertos.
+3. Un Pull Request requiere la revisión y aprobación de al menos un integrante distinto de su autor.
+4. La rama de funcionalidad se elimina después de la integración.
+#### Semantic Versioning
+ 
+Las Releases se nombran según **Semantic Versioning 2.0.0**, con el formato `vMAJOR.MINOR.PATCH`:
+ 
+| Componente | Se incrementa cuando | Ejemplo |
+| --- | --- | --- |
+| `MAJOR` | Se introduce un cambio incompatible con la versión anterior. | `v2.0.0` |
+| `MINOR` | Se agrega funcionalidad manteniendo la compatibilidad. | `v1.1.0` |
+| `PATCH` | Se corrige un defecto sin agregar funcionalidad. | `v1.0.1` |
+ 
+La versión publicada al cierre del Sprint 1 es **`v1.0.0`**, correspondiente a la primera versión funcional y desplegada del Landing Page. Cada Release se etiqueta en `main` con su número de versión.
+ 
+#### Conventional Commits
+ 
+Los mensajes de commit siguen la especificación **Conventional Commits 1.0.0**, con la estructura:
+ 
+```
+<tipo>(<alcance>): <descripción en imperativo y en inglés>
+ 
+[cuerpo opcional]
+```
+ 
+| Tipo | Se usa para |
+| --- | --- |
+| `feat` | Agregar una funcionalidad nueva. |
+| `fix` | Corregir un defecto. |
+| `docs` | Cambios que solo afectan documentación. |
+| `style` | Cambios de formato que no alteran el comportamiento. |
+| `refactor` | Reestructurar código sin cambiar su comportamiento externo. |
+| `test` | Agregar o corregir pruebas. |
+| `chore` | Tareas de mantenimiento, configuración o dependencias. |
+ 
+Ejemplos tomados del repositorio del proyecto:
+ 
+```
+feat(a11y): add skip to main content link
+feat(seo): complete meta tags defined in report 4.2.3
+docs(chapter5): add Jorge Mateo Leon commits to development evidence
+style(a11y): add skip link styles
+```
+ 
+> **Nota sobre la adopción de las convenciones.** El equipo adoptó formalmente Conventional Commits y la convención de nombres de rama a partir del 7 de septiembre de 2026. Los commits y ramas anteriores a esa fecha, registrados en la sección 5.2.1.4, no siguen la convención, dado que corresponden al período de configuración inicial del repositorio. No se reescribió el historial para preservar la trazabilidad de los aportes individuales. A partir de esa fecha, la convención se verifica durante la revisión de cada Pull Request.
+ 
 ### 5.1.3. Source Code Style Guide & Conventions
-
-El equipo utiliza convenciones comunes para mantener un código legible, consistente y fácil de mantener. Todos los nombres de archivos, variables, funciones, clases, identificadores HTML y componentes se redactan en inglés.
-
-| Tecnología | Convenciones principales                                                                                                                           |
-| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| HTML5      | Elementos semánticos, etiquetas en minúscula, atributos entre comillas dobles y textos alternativos en imágenes.                                   |
-| CSS3       | Clases e identificadores en `kebab-case`, variables CSS centralizadas y diseño mobile-first.                                                       |
-| JavaScript | Variables y funciones en `camelCase`, constantes en `UPPER_SNAKE_CASE`, uso de `const` y `let`, y funciones con responsabilidades específicas.     |
-| Markdown   | Encabezados jerárquicos, enlaces relativos, imágenes con texto alternativo y tablas con formato consistente.                                       |
-| Vue.js     | Componentes en `PascalCase`, propiedades y eventos con nombres descriptivos. Aplicación planificada para entregas posteriores.                     |
-| C#         | Clases, métodos y propiedades en `PascalCase`; parámetros y variables locales en `camelCase`. Aplicación planificada para el RESTful Web Services. |
-
-Ejemplos:
-
+ 
+El equipo adopta guías de estilo estándar para cada lenguaje de la solución. Todos los identificadores, nombres de archivo, clases, funciones y comentarios se redactan en inglés, conforme a lo indicado en el enunciado del trabajo final.
+ 
+| Tecnología | Convenciones adoptadas | Referencia |
+| --- | --- | --- |
+| HTML5 | Elementos semánticos, etiquetas y atributos en minúscula, atributos entre comillas dobles, texto alternativo en toda imagen informativa, indentación de dos espacios. | [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html) · [W3Schools HTML Style Guide](https://www.w3schools.com/html/html5_syntax.asp) |
+| CSS3 | Clases e identificadores en `kebab-case`, variables centralizadas en `tokens.css`, enfoque mobile-first, una declaración por línea. | [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html) |
+| JavaScript | Variables y funciones en `camelCase`, constantes en `UPPER_SNAKE_CASE`, uso de `const` y `let` en lugar de `var`, funciones con una sola responsabilidad, punto y coma obligatorio. | [Google JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html) · [MDN JavaScript Guidelines](https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Code_style_guide/JavaScript) |
+| Vue.js | Componentes en `PascalCase` con nombre de varias palabras, props en `camelCase` dentro del script y en `kebab-case` en la plantilla, un componente por archivo. Planificado para Sprints posteriores. | [Vue Style Guide](https://vuejs.org/style-guide/) |
+| C# | Clases, métodos y propiedades en `PascalCase`; parámetros y variables locales en `camelCase`; interfaces con prefijo `I`. Planificado para el RESTful Web Services. | [C# Coding Conventions](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions) · [ASP.NET Core Engineering Guidelines](https://github.com/dotnet/aspnetcore/wiki/Engineering-guidelines) |
+| Gherkin | Un escenario por comportamiento, redacción en tiempo presente y tercera persona, sin referencias a elementos de interfaz. | [Gherkin Reference](https://cucumber.io/docs/gherkin/reference/) |
+| Markdown | Encabezados jerárquicos sin saltar niveles, enlaces relativos entre capítulos, imágenes con texto alternativo, tablas con formato consistente. | [Markdown Guide](https://www.markdownguide.org/basic-syntax/) |
+ 
+Ejemplos aplicados en el Landing Page:
+ 
 ```html
-<section class="safety-features">
-  <h2 id="safety-title">Checkpoint synchronization</h2>
+<section class="safety-features" aria-labelledby="safety-title">
+  <h2 id="safety-title" data-i18n="safetyTitle">Checkpoint synchronization</h2>
 </section>
 ```
-
+ 
 ```css
 :root {
   --forest-green: #0f3d2e;
   --safety-amber: #f2a93b;
 }
-
+ 
 .request-demo-button {
   background-color: var(--safety-amber);
 }
 ```
-
+ 
 ```javascript
 const DEFAULT_LOCALE = 'en-US';
-
-function toggleLanguage(selectedLocale) {
+ 
+function setLanguage(selectedLocale) {
   document.documentElement.lang = selectedLocale;
+  localStorage.setItem('vitaltrek-language', selectedLocale);
 }
 ```
-
+ 
 ### 5.1.4. Software Deployment Configuration
-
-La primera versión desplegada de VitalTrek corresponde al Landing Page desarrollado con HTML5, CSS3 y JavaScript. La publicación se realiza desde GitHub hacia Vercel, permitiendo disponer de una versión accesible para la revisión de AV1.
-
-| Producto                  | Plataforma | Rama      | Estado      |
-| ------------------------- | ---------- | --------- | ----------- |
-| Landing Page              | Vercel     | `main`    | Desplegado  |
-| Frontend Web Applications | Pendiente  | Pendiente | Planificado |
-| RESTful Web Services      | Pendiente  | Pendiente | Planificado |
-
+ 
+El despliegue de cada producto parte de su repositorio de código fuente. Para AV1 el único producto desplegado es el Landing Page, publicado en Vercel a partir del repositorio de GitHub.
+ 
+| Producto | Plataforma | Rama de despliegue | Estado |
+| --- | --- | --- | --- |
+| Landing Page | Vercel | `main` | Desplegado |
+| Frontend Web Applications | Vercel | `main` | Planificado |
+| RESTful Web Services | Azure App Service | `main` | Planificado |
+ 
 #### Configuración del Landing Page
-
-- Repositorio: https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page
-- Plataforma: https://landing-page-mrca1.vercel.app/
-- Rama desplegada: `main`
-- Framework: Static HTML/CSS/JavaScript
-- Build command: No aplica
-- Output directory: Directorio raíz del repositorio
-- Variables de entorno: No requeridas
-
-#### Proceso de despliegue
-
-1. Se actualiza el código en la rama `develop`.
-2. Se validan los cambios del Landing Page.
-3. Se integra la versión aprobada en `main`.
-4. Vercel detecta el cambio en el repositorio.
-5. Se ejecuta el despliegue automático.
-6. Se verifica la navegación, el diseño responsive, los enlaces y los call-to-action.
+ 
+| Parámetro | Valor |
+| --- | --- |
+| Repositorio | https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page |
+| Plataforma | Vercel |
+| Production Branch | `main` |
+| Framework preset | Other (HTML, CSS y JavaScript estáticos) |
+| Build command | No aplica |
+| Output directory | Directorio raíz del repositorio |
+| Variables de entorno | No requeridas |
+| URL pública de producción | https://landing-page-mrca1.vercel.app/ |
+| Versión desplegada | `v1.0.0` |
+ 
+#### Pasos para lograr el despliegue desde el repositorio
+ 
+1. El integrante desarrolla la funcionalidad en su rama `feature/*` y abre un Pull Request hacia `develop`.
+2. Otro integrante revisa el Pull Request y verifica que se cumplan los criterios de aceptación de la historia correspondiente.
+3. Aprobado el Pull Request, la rama se integra en `develop` y se elimina.
+4. Al cerrar el Sprint se crea la rama `release/vX.Y.Z` desde `develop`, donde se ejecutan las validaciones finales: marcado W3C, enlaces internos, comportamiento responsive, cambio de idioma y accesibilidad por teclado.
+5. La rama de Release se integra en `main` mediante Pull Request y se etiqueta con su número de versión.
+6. Vercel detecta el cambio en la Production Branch y ejecuta el despliegue automático.
+7. Se verifica la URL pública de producción y se registra la evidencia en la sección 5.2.X.7 del Sprint correspondiente.
 
 ## 5.2. Landing Page, Services & Applications Implementation
 
-Esta sección documenta la implementación, validación y despliegue de los productos incluidos en la solución VitalTrek. Para AV1, el alcance se concentra en la primera versión funcional y desplegada del Landing Page, desarrollado con HTML5, CSS3 y JavaScript. Las Web Applications y el RESTful Web Services quedan planificados para los siguientes Sprints.
+Esta sección documenta la implementación, validación y despliegue de los productos incluidos en la solución VitalTrek. Para AV1, el alcance se concentra en la primera versión funcional y desplegada del Landing Page, desarrollado con HTML5, CSS3 y JavaScript. En TB1, el Sprint 2 amplía el producto con las Web Applications frontend para configurar expediciones y consultar su progreso mediante una Fake API y datos simulados. El RESTful Web Services productivo, la persistencia real y la integración con dispositivos permanecen fuera del alcance de esta entrega.
 
 ### 5.2.1. Sprint 1
 
-El Sprint 1 tiene como objetivo implementar y publicar la primera versión del Landing Page de VitalTrek. El alcance comprende las User Stories US01 a US06, relacionadas con la navegación principal, la propuesta de valor, los planes, la información del equipo, el formulario de contacto y el cambio de idioma. La estimación total del Sprint es de 14 Story Points.
+El Sprint 1 tiene como objetivo implementar y publicar la primera versión del Landing Page de VitalTrek. El alcance comprende las User Stories US01 a US06 y US33, relacionadas con la navegación, la propuesta de valor, los planes, la información del equipo, la solicitud de información, el cambio de idioma y la publicación de los términos de servicio y la política de privacidad; y las Technical Stories TS01 a TS04, que habilitan la estructura técnica, la adaptación a distintos dispositivos, la internacionalización con accesibilidad y el despliegue. La estimación total del Sprint es de 30 Story Points.
+
+| Campo | Valor corregido |
+| --- | --- |
+| Sprint Velocity | 30 Story Points |
+| Total de Story Points | 30 |
 
 #### 5.2.1.1. Sprint Planning 1
 
@@ -130,13 +226,13 @@ La reunión de planificación permitió definir el objetivo, alcance, responsabi
 | Ubicación             | Discord — reunión virtual                                                                                                                                   |
 | Preparado por         | Rodriguez Rojas, Miler Alexander                                                                                                                            |
 | Participantes         | Cayanchi Avila, Milenko Rubén; León Naupari, Jorge Mateo; Mendoza Blanco, Ariel Roberto; Rodriguez Rojas, Miler Alexander; Herrera Enriquez, Diego Fernando |
-| Sprint Goal           | Implementar y desplegar la primera versión funcional del Landing Page de VitalTrek.                                                                         |
+| Sprint Goal           | Publicar una Landing Page bilingüe y responsive de VitalTrek para visitantes de agencias y turistas.                                                          |
 | Sprint Velocity       | 14 Story Points                                                                                                                                             |
 | Total de Story Points | 14                                                                                                                                                          |
 
 **Sprint Goal**
 
-Nuestro enfoque está en comunicar la propuesta de valor de VitalTrek mediante un Landing Page responsive con navegación, información del producto, planes, equipo, contacto y soporte bilingüe. Consideramos que esto permitirá a los visitantes comprender la solución y solicitar una demostración. El cumplimiento se confirmará cuando el Landing Page esté publicado y sus User Stories principales puedan ser recorridas correctamente.
+Nuestro enfoque está en publicar una Landing Page bilingüe y responsive que comunique la propuesta de valor de VitalTrek. Creemos que esto permitirá a los visitantes de agencias y turistas comprender la solución y solicitar información o una demostración. Esto se confirmará cuando el sitio esté desplegado y sus flujos principales puedan recorrerse correctamente en ambos idiomas.
 
 #### 5.2.1.2. Aspect Leaders and Collaborators
 
@@ -152,27 +248,63 @@ La siguiente matriz organiza el liderazgo y la colaboración del equipo durante 
 
 #### 5.2.1.3. Sprint Backlog 1
 
-El Sprint Backlog contiene las seis User Stories del Landing Page seleccionadas desde el Product Backlog. Las tareas se descomponen en actividades de estructura HTML, estilos responsive, contenido, internacionalización, accesibilidad, validación y despliegue.
-
-**Evidencia del board**
+El Sprint Backlog 1 agrupa las siete User Stories de la Landing Page y las cuatro Technical Stories que la habilitan, seleccionadas desde el Product Backlog de la sección 3.3. La descomposición produjo veintiún Work-items, estimados individualmente entre 4 y 8 horas, con un total de 105 horas. Las tareas se repartieron según la matriz de líderes y colaboradores de la sección 5.2.1.2: cada integrante asume las tareas del aspecto que lidera y colabora en los aspectos restantes.
+ 
+**Evidencia del Board del Sprint**
 
 ![Product Backlog de VitalTrek en Jira](../assets/images/chapter-3/product-backlog-jira.png)
-
-*Figura 5.1. Sprint Backlog del Sprint 1.*
-
+ 
+*Figura 5.1. Board del Sprint 1 en Jira.*
+ 
 **Enlace público del board Jira:** [Ver Product Backlog](https://milenkorvu.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog)
-
-| User Story | Tarea | Descripción                                                           | Estimación (horas) | Responsable                      | Estado |
-| ---------- | ----- | --------------------------------------------------------------------- | -----------------: | -------------------------------- | ------ |
-| US01       | LP-01 | Implementar header, navegación y enlaces a las secciones principales. |                  4 | Cayanchi Avila, Milenko Rubén    | Done   |
-| US02       | LP-02 | Implementar Hero, propuesta de valor y beneficios principales.        |                  6 | León Naupari, Jorge Mateo        | Done   |
-| US03       | LP-03 | Implementar sección de planes y características.                      |                  5 | Rodriguez Rojas, Miler Alexander | Done   |
-| US04       | LP-04 | Implementar sección de equipo y perfiles de NexaTech.                 |                  4 | Herrera Enriquez, Diego Fernando | Done   |
-| US05       | LP-05 | Implementar formulario de contacto y validaciones básicas.            |                  5 | Mendoza Blanco, Ariel Roberto    | Done   |
-| US06       | LP-06 | Implementar cambio de idioma entre en-US y es-419.                    |                  6 | Mendoza Blanco, Ariel Roberto    | Done   |
-| US01–US06  | LP-07 | Aplicar responsive design para desktop, tablet y mobile.              |                  8 | León Naupari, Jorge Mateo        | Done   |
-| US01–US06  | LP-08 | Validar navegación, accesibilidad y enlaces del Landing Page.         |                  4 | Herrera Enriquez, Diego Fernando | Done   |
-| US01–US06  | LP-09 | Configurar y verificar el despliegue público.                         |                  2 | Rodriguez Rojas, Miler Alexander | Done   |
+ 
+| Sprint # | Story Id | Story Title | Task Id | Task Title | Task Description | Estimation (Hours) | Assigned To | Status |
+| --- | --- | --- | --- | --- | --- | ---: | --- | --- |
+| Sprint 1 | US01 | Navegación principal | T-01 | Estructura del header y de las secciones principales | Construir el encabezado y el esqueleto de las secciones del sitio con elementos semánticos, de modo que cada sección sea alcanzable desde la navegación. | 5 | Cayanchi Avila, Milenko Rubén | Done |
+| Sprint 1 | US01 | Navegación principal | T-02 | Navegación para pantallas reducidas | Implementar el comportamiento de la navegación por debajo de 768 px conservando las mismas opciones que la vista de escritorio. | 4 | Herrera Enriquez, Diego Fernando | Done |
+| Sprint 1 | US02 | Propuesta de valor | T-03 | Sección inicial con problema, solución y beneficios | Maquetar la sección inicial que presenta el problema de las zonas sin cobertura, la solución por checkpoints y los beneficios principales. | 6 | Cayanchi Avila, Milenko Rubén | Done |
+| Sprint 1 | US02 | Propuesta de valor | T-04 | Contenido de beneficios por segmento | Redactar e integrar el contenido que diferencia los beneficios para agencias y para turistas, a partir de los insights del capítulo II. | 4 | Mendoza Blanco, Ariel Roberto | Done |
+| Sprint 1 | US03 | Consulta de planes y precios | T-05 | Sección comparativa de planes | Construir la presentación de los planes con su precio, alcance y características, de forma que puedan compararse entre sí. | 5 | Rodriguez Rojas, Miler Alexander | Done |
+| Sprint 1 | US03 | Consulta de planes y precios | T-06 | Continuidad desde el plan hacia el contacto | Enlazar cada plan con el formulario de contacto de modo que el plan de interés quede identificado en la solicitud. | 4 | Rodriguez Rojas, Miler Alexander | Done |
+| Sprint 1 | US04 | Información del equipo | T-07 | Sección de equipo con los perfiles de NexaTech | Construir la sección de equipo con el nombre, el rol y la descripción de cada integrante, y sus fotografías. | 5 | Mendoza Blanco, Ariel Roberto | Done |
+| Sprint 1 | US05 | Solicitud de información o demostración | T-08 | Formulario de contacto y estructura de campos | Construir el formulario con los campos requeridos para registrar una solicitud de información o demostración. | 5 | Mendoza Blanco, Ariel Roberto | Done |
+| Sprint 1 | US05 | Solicitud de información o demostración | T-09 | Validación de campos obligatorios y formato de correo | Implementar la validación que impide el envío con campos obligatorios vacíos o con correo de formato inválido, e informa qué corregir. | 4 | Herrera Enriquez, Diego Fernando | Done |
+| Sprint 1 | US06 | Consulta del contenido en el idioma del visitante | T-10 | Mecanismo de cambio de idioma y diccionario de claves | Implementar la función que recorre las cadenas marcadas y las sustituye por el bloque de idioma seleccionado. | 6 | León Naupari, Jorge Mateo | Done |
+| Sprint 1 | US06 | Consulta del contenido en el idioma del visitante | T-11 | Persistencia de la preferencia de idioma | Conservar el idioma seleccionado entre visitas y actualizar el idioma declarado del documento al cambiarlo. | 4 | Mendoza Blanco, Ariel Roberto | Done |
+| Sprint 1 | US33 | Consulta del tratamiento de datos personales | T-12 | Páginas de términos de servicio y política de privacidad | Construir ambas páginas con las categorías de datos registrados, su finalidad, el plazo de conservación y los derechos del titular. | 6 | León Naupari, Jorge Mateo | Done |
+| Sprint 1 | US33 | Consulta del tratamiento de datos personales | T-13 | Contenido legal bilingüe y acceso desde el pie de página | Traducir el contenido legal a ambos idiomas y habilitar su acceso desde el pie de página de todas las vistas. | 5 | León Naupari, Jorge Mateo | Done |
+| Sprint 1 | TS01 | Estructura técnica del Landing Page | T-14 | Estructura de directorios, tokens de estilo y README | Separar marcado, estilos y scripts en directorios propios, centralizar color y tipografía como variables, y documentar la estructura y la ejecución local. | 6 | Cayanchi Avila, Milenko Rubén | Done |
+| Sprint 1 | TS02 | Adaptación del Landing Page a distintos dispositivos | T-15 | Adaptación a los anchos de referencia | Ajustar la presentación en 360, 768, 1024 y 1440 px verificando que no se produzca desplazamiento horizontal ni recorte de texto. | 8 | Herrera Enriquez, Diego Fernando | Done |
+| Sprint 1 | TS02 | Adaptación del Landing Page a distintos dispositivos | T-16 | Áreas táctiles y escala tipográfica móvil | Verificar el área mínima de los controles interactivos y aplicar la escala tipográfica móvil por debajo de 768 px. | 4 | Herrera Enriquez, Diego Fernando | Done |
+| Sprint 1 | TS03 | Internacionalización y accesibilidad del Landing Page | T-17 | Acceso al contenido principal, elementos semánticos y orden de tabulación | Incorporar el acceso directo al contenido principal como primer elemento enfocable, aplicar los elementos semánticos de referencia y verificar el orden de tabulación. | 6 | León Naupari, Jorge Mateo | Done |
+| Sprint 1 | TS03 | Internacionalización y accesibilidad del Landing Page | T-18 | Verificación de contraste y textos alternativos | Comprobar que el contraste cumple WCAG 2.1 AA y que las imágenes informativas declaran texto alternativo descriptivo. | 5 | Rodriguez Rojas, Miler Alexander | Done |
+| Sprint 1 | TS03 | Internacionalización y accesibilidad del Landing Page | T-19 | Paridad de claves entre los bloques de idioma | Verificar que ambos bloques de idioma contienen el mismo conjunto de claves y corregir las ausencias detectadas. | 4 | Mendoza Blanco, Ariel Roberto | Done |
+| Sprint 1 | TS04 | Validación y despliegue del Landing Page | T-20 | Metadatos de identificación e indexación | Declarar en cada página el título, la descripción, la URL canónica, las alternativas de idioma y los metadatos de previsualización social. | 5 | León Naupari, Jorge Mateo | Done |
+| Sprint 1 | TS04 | Validación y despliegue del Landing Page | T-21 | Validación del marcado, de los enlaces y despliegue | Ejecutar la validación del W3C, comprobar que ningún enlace interno responde 404 y publicar la versión aprobada desde la rama estable. | 4 | Rodriguez Rojas, Miler Alexander | Done |
+ 
+**Resumen del Sprint Backlog 1**
+ 
+| Concepto | Valor |
+| --- | ---: |
+| User Stories y Technical Stories asignadas | 11 |
+| Work-items resultantes de la descomposición | 21 |
+| Estimación mínima de una task | 4 horas |
+| Estimación máxima de una task | 8 horas |
+| Total de horas estimadas | 105 |
+| Sum of Story Points | 30 |
+ 
+**Distribución de la carga por integrante**
+ 
+| Integrante | Tasks | Horas |
+| --- | ---: | ---: |
+| León Naupari, Jorge Mateo | 5 | 28 |
+| Mendoza Blanco, Ariel Roberto | 5 | 22 |
+| Herrera Enriquez, Diego Fernando | 4 | 20 |
+| Rodriguez Rojas, Miler Alexander | 4 | 18 |
+| Cayanchi Avila, Milenko Rubén | 3 | 17 |
+| **Total** | **21** | **105** |
+ 
+---
 
 #### 5.2.1.4. Development Evidence for Sprint Review
 
@@ -417,3 +549,223 @@ Los siguientes registros corresponden a la participación verificable del integr
 ![Pull requests creados por mateool10](../assets/images/chapter-5/5218-pull-requests-mateo.jpg)
 
 *Figura 5.11. Pull requests creados y fusionados por mateool10 en el repositorio report.*
+
+### 5.2.2. Sprint 2
+
+El Sprint 2 entrega la primera versión de las **Web Applications frontend** de VitalTrek para TB1. El alcance combina la configuración de rutas y expediciones dentro del bounded context `expedition-setup` con la consulta del progreso simulado en `field-tracking`. Se completaron US07, US08, US09, US11, US13, US12 y US20, con un total de **28 Story Points**, conforme al Product Backlog de la sección 3.3.
+
+La aplicación está construida con Vue 3 y Vite; utiliza Pinia, Vue Router, Axios, PrimeVue y vue-i18n para el estado, navegación, componentes, consumo HTTP e internacionalización. json-server@0.17.4 proporciona los datos de prueba. Las capas `domain`, `application`, `infrastructure` y `presentation` separan las entidades, casos de uso/estado, acceso y mapeo de datos, e interfaz. El alcance no incluye autenticación real, backend productivo, persistencia real, Bluetooth, GPS, wearables, telemetría ni alertas reales.
+
+| Campo | Valor |
+| --- | --- |
+| Sprint Goal | Completar el flujo frontend de preparación de expediciones y consulta de progreso estimado para Operations Administrators y Field Guides. |
+| Historias incluidas | US07, US08, US09, US11, US13, US12 y US20 |
+| Total de historias | 7 User Stories |
+| Sprint Velocity / Total de Story Points | 28 Story Points |
+| Contextos de dominio | `expedition-setup` y `field-tracking` |
+| Resultado | Web Application frontend implementada; Fake API y telemetría de prueba. |
+
+#### 5.2.2.1. Sprint Planning 2
+
+La planificación del Sprint 2 definió como objetivo completar el flujo de preparación de una expedición —desde la configuración de la Route hasta el registro del Tourist Manifest— y agregar la consulta del progreso estimado del grupo. Las historias se seleccionaron del Product Backlog y se ordenaron según sus dependencias: primero la configuración de rutas, checkpoints y ventanas; luego la creación del grupo, la asignación del guía y el manifiesto; finalmente, el dashboard de seguimiento.
+
+| Campo | Información |
+| --- | --- |
+| Sprint | Sprint 2 — TB1 |
+| Fecha | 2026-10-04 |
+| Hora | 20:00 |
+| Ubicación | Discord — reunión virtual |
+| Preparado por | Cayanchi Avila, Milenko Rubén |
+| Participantes | Cayanchi Avila, Milenko Rubén; León Naupari, Jorge Mateo; Mendoza Blanco, Ariel Roberto; Rodriguez Rojas, Miler Alexander; Herrera Enriquez, Diego Fernando |
+| Sprint Goal | Completar el flujo frontend de preparación de expediciones y consulta de progreso estimado para Operations Administrators y Field Guides. |
+| Sprint Velocity | 28 Story Points |
+| Total de Story Points | 28 |
+
+**Sprint Goal**
+
+Nuestro enfoque está en completar el flujo frontend para configurar rutas y grupos de expedición, registrar el Tourist Manifest y consultar el progreso estimado con datos simulados. Creemos que esto permitirá a los Operations Administrators preparar tours y a los Field Guides registrar a sus participantes mediante una aplicación coherente con el proceso operativo. Esto se confirmará cuando los usuarios puedan recorrer y validar los escenarios de US07, US08, US09, US11, US13, US12 y US20 en el frontend desplegado con Fake API; la validación no implica backend productivo ni telemetría real.
+
+#### 5.2.2.2. Aspect Leaders and Collaborators
+
+Milenko Rubén Cayanchi Avila coordinó el trabajo general del Sprint. La matriz resume el liderazgo por aspecto a partir de los cambios de código y Pull Requests consultados en GitHub al 2026-10-05. La autoría de commits y el estado de integración se detallan en la sección 5.2.2.4.
+
+| Integrante | Usuario de GitHub | Coordinación | Rutas, checkpoints y ventanas | Grupos, guías, manifiesto y progreso | Espacios de trabajo, navegación e idioma |
+| --- | --- | --- | --- | --- | --- |
+| Cayanchi Avila, Milenko Rubén | `MaxghZZ` | L | L | C | L |
+| León Naupari, Jorge Mateo | `mateool10` | C | C | C | C |
+| Mendoza Blanco, Ariel Roberto | `Trepequiper` | C | C | C | L |
+| Rodriguez Rojas, Miler Alexander | `Miler2003` | C | C | L | C |
+| Herrera Enriquez, Diego Fernando | `DerDFHE` | C | C | C | C |
+
+**Leyenda:** L = líder del aspecto; C = colaborador.
+
+La autoría de los cambios de código que se pueden verificar en el repositorio se consigna en la sección 5.2.2.4. La matriz describe las responsabilidades de trabajo del Sprint y no sustituye la evidencia de commits, Pull Requests o validaciones individuales.
+
+#### 5.2.2.3. Sprint Backlog 2
+
+El Sprint Backlog 2 comprende las siete User Stories seleccionadas para TB1. La tabla conserva las estimaciones del Product Backlog de la sección 3.3 y resume el resultado funcional de cada historia. La descomposición granular en tareas, horas y responsables corresponde al registro de Jira y debe adjuntarse como evidencia del board.
+
+
+| Sprint # | Story Id | Story Title | Task Id | Task Title | Task Description | Estimation (Hours) | Assigned To | Status |
+| --- | --- | --- | --- | --- | --- | ---: | --- | --- |
+| Sprint 2 | US07 | Configuración de rutas | T-22 | Definición del modelo de Route y estado inicial | Implementar la entidad Route con los atributos geográficos y operativos de la historia, e inicializar cada ruta nueva en estado `draft`. | 5 | Cayanchi Avila, Milenko Rubén | Done |
+| Sprint 2 | US07 | Configuración de rutas | T-23 | Formulario y listado de rutas | Construir las vistas para consultar las rutas existentes y registrar nombre, origen, destino, distancia, desnivel, dificultad y duración. | 6 | Herrera Enriquez, Diego Fernando | Done |
+| Sprint 2 | US07 | Configuración de rutas | T-24 | Persistencia y validación de rutas | Integrar assembler, Fake API y store para crear rutas; validar campos obligatorios y nombres duplicados, y presentar los mensajes de error localizados. | 5 | Cayanchi Avila, Milenko Rubén | Done |
+| Sprint 2 | US08 | Definición de checkpoints | T-25 | Modelo y asociación de Checkpoint | Implementar la entidad Checkpoint y asociarla a una Route mediante su identificador, ubicación y posición en la secuencia. | 5 | Cayanchi Avila, Milenko Rubén | Done |
+| Sprint 2 | US08 | Definición de checkpoints | T-26 | Vista de configuración de checkpoints | Construir la vista para consultar los checkpoints de una ruta seleccionada y registrar nuevos puntos con su ubicación y orden. | 6 | Herrera Enriquez, Diego Fernando | Done |
+| Sprint 2 | US08 | Definición de checkpoints | T-27 | Validación de secuencia y habilitación de ruta | Integrar la persistencia y las reglas del store para rechazar órdenes repetidos e impedir que una ruta sin checkpoints pase de `draft` a `enabled`. | 5 | Cayanchi Avila, Milenko Rubén | Done |
+| Sprint 2 | US09 | Ventanas de tiempo esperadas | T-28 | Modelo y mapeo de Expected Time Window | Implementar la entidad y el assembler de ExpectedTimeWindow con ruta, checkpoints de inicio y fin, y límites mínimo y máximo en minutos. | 5 | Mendoza Blanco, Ariel Roberto | Done |
+| Sprint 2 | US09 | Ventanas de tiempo esperadas | T-29 | Identificación y configuración de tramos | Construir la vista para ordenar los checkpoints, generar los tramos consecutivos y permitir configurar la ventana esperada de cada uno. | 6 | Rodriguez Rojas, Miler Alexander | Done |
+| Sprint 2 | US09 | Ventanas de tiempo esperadas | T-30 | Reglas de validación de ventanas | Integrar Fake API y store para rechazar máximos menores o iguales a los mínimos, evitar ventanas duplicadas e identificar tramos pendientes de configuración. | 5 | Cayanchi Avila, Milenko Rubén | Done |
+| Sprint 2 | US11 | Creación del grupo de expedición | T-31 | Modelo y recursos de Expedition Group | Implementar la entidad del grupo y agregar a la Fake API los datos necesarios para relacionarlo con una ruta habilitada, fecha de salida y capacidad máxima. | 6 | Rodriguez Rojas, Miler Alexander | Done |
+| Sprint 2 | US11 | Creación del grupo de expedición | T-32 | Vista de creación y consulta de grupos | Construir el flujo para consultar grupos asociados a una ruta y registrar un nuevo grupo desde la gestión de rutas. | 6 | Herrera Enriquez, Diego Fernando | Done |
+| Sprint 2 | US11 | Creación del grupo de expedición | T-33 | Validaciones y localización de grupos | Integrar la creación en el store y validar la ruta habilitada, la fecha no pasada y los datos obligatorios; agregar mensajes en español e inglés. | 5 | Mendoza Blanco, Ariel Roberto | Done |
+| Sprint 2 | US13 | Asignación del guía | T-34 | Recurso y consulta de Field Guides | Incorporar guías de prueba a la Fake API y mapearlos a entidades de dominio consultables desde el contexto de configuración de expediciones. | 5 | León Naupari, Jorge Mateo | Done |
+| Sprint 2 | US13 | Asignación del guía | T-35 | Asignación y control de cruce de fechas | Implementar la asignación de un guía al grupo, informar si ya tiene otro tour en la misma fecha y solicitar confirmación explícita ante el cruce. | 6 | Rodriguez Rojas, Miler Alexander | Done |
+| Sprint 2 | US12 | Registro del manifiesto | T-36 | Modelo y endpoint de Manifest Entries | Implementar el modelo de entrada del manifiesto y conectar su consulta y registro con el recurso de prueba asociado al Expedition Group. | 5 | Mendoza Blanco, Ariel Roberto | Done |
+| Sprint 2 | US12 | Registro del manifiesto | T-37 | Vista de registro del Tourist Manifest | Construir la vista del Field Guide para consultar los participantes del grupo y registrar turistas con los datos requeridos. | 6 | Herrera Enriquez, Diego Fernando | Done |
+| Sprint 2 | US12 | Registro del manifiesto | T-38 | Validación de identidad y capacidad del grupo | Rechazar documentos de identidad duplicados y nuevos participantes que excedan la capacidad máxima; mostrar errores localizados. | 5 | León Naupari, Jorge Mateo | Done |
+| Sprint 2 | US20 | Seguimiento del progreso | T-39 | Modelo y fuente de datos de seguimiento | Crear la estructura del bounded context `field-tracking` y mapear datos simulados de grupo, checkpoint, tramo, progreso, estado y sincronización. | 6 | León Naupari, Jorge Mateo | Done |
+| Sprint 2 | US20 | Seguimiento del progreso | T-40 | Dashboard de progreso del grupo | Construir la vista para presentar el tramo actual, último checkpoint confirmado y porcentaje de progreso estimado del grupo. | 6 | Rodriguez Rojas, Miler Alexander | Done |
+| Sprint 2 | US20 | Seguimiento del progreso | T-41 | Estados de seguimiento y mensajes bilingües | Presentar la antigüedad de la última sincronización y aclarar que el progreso es estimado; informar cuando el tour todavía no está activo. | 5 | Mendoza Blanco, Ariel Roberto | Done |
+
+**Resumen del Sprint Backlog 2**
+
+| Concepto | Valor |
+| --- | ---: |
+| User Stories asignadas | 7 |
+| Work-items resultantes de la descomposición | 20 |
+| Estimación mínima de una task | 5 horas |
+| Estimación máxima de una task | 6 horas |
+| Total de horas estimadas | 109 |
+| Sum of Story Points | 28 |
+
+**Distribución de la carga por integrante**
+
+| Integrante | Tasks | Horas |
+| --- | ---: | ---: |
+| Cayanchi Avila, Milenko Rubén | 5 | 25 |
+| León Naupari, Jorge Mateo | 3 | 16 |
+| Mendoza Blanco, Ariel Roberto | 4 | 20 |
+| Rodriguez Rojas, Miler Alexander | 4 | 24 |
+| Herrera Enriquez, Diego Fernando | 4 | 24 |
+| **Total** | **20** | **109** |
+
+El Sprint se planificó con el orden de dependencias **US07 → US08 → US09 → US11 → US13 → US12 → US20**. La asignación de tareas es una distribución de trabajo propuesta para completar el registro del Sprint Backlog; debe contrastarse con Jira y ajustarse si el board o la evidencia individual muestran responsables o estimaciones diferentes.
+
+#### 5.2.2.4. Development Evidence for Sprint Review
+
+La evidencia de desarrollo del Sprint 2 se encuentra en el repositorio [web-applications](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications). Los commits y Pull Requests de US07–US09 están integrados en `develop`. Las referencias de US11, US13, US12 y US20 identifican sus ramas y commits de trabajo; deben actualizarse con el enlace del Pull Request y el commit de merge cuando se integren en `develop`.
+
+| User Story | Rama | Commit de referencia | Evidencia de integración |
+| --- | --- | --- | --- |
+| US07 — Configuración de rutas | `feature/webapp-route-configuration` | [`77e6fda`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/77e6fda005b45ac9347db60c9d6781675cb9313a) | [PR #4](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/4), integrado en `develop`. |
+| US08 — Definición de checkpoints | `feature/webapp-checkpoints` | [`29b84cc`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/29b84cca5935d0fcf8f9f20fc999c770368a6541) | [PR #5](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/5), integrado en `develop`. |
+| US09 — Ventanas de tiempo esperadas | `feature/webapp-expected-time-windows` | [`f0af953`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/f0af953046fc8ceefbca4bd305598fedea35648c) | [PR #6](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/6), integrado en `develop`. |
+| US11 — Creación del grupo de expedición | `feature/webapp-expedition-group-creation` | [`e1cb43a`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/e1cb43a792ddb626779e2d27d33acc15ed81cdea) | [PR #7](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/7), integrado en `develop`. |
+| US13 — Asignación del guía | `feature/webapp-field-guide-assignment` | [`21aedcd`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/21aedcd63b2b18f91487b86a2fce768c38644c8a) | [PR #7](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/7), integrado en `develop`. |
+| US12 — Registro del manifiesto | `feature/webapp-tourist-manifest` | [`71bbcaca`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/71bbcaca4648445471ce6b81c3f0431925fac282) | [PR #7](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/7), integrado en `develop`. |
+| US20 — Seguimiento del progreso | `feature/webapp-group-progress-dashboard` | [`cef703d`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/cef703d1c403cd0ff50717a9f5bebd45b2bfdad1) | [PR #7](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/7), integrado en `develop`. |
+
+El PR #7 agrupó la creación de Expedition Groups, la asignación de Field Guides, el Tourist Manifest y el Group Progress Dashboard. Fue integrado en `develop` el 2026-10-05 y contiene 37 commits con cambios en 22 archivos. Sus commits de funcionalidad fueron realizados principalmente por `Miler2003`; el PR fue creado e integrado por `MaxghZZ`.
+
+**Cambios colaborativos complementarios del frontend**
+
+| Cambio | Autor / rama | Commit | Estado en GitHub |
+| --- | --- | --- | --- |
+| Espacios de trabajo por rol y vistas de Operations Administrator y Field Guide | `MaxghZZ` / `field-guide-views` | [`207f528`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/207f52815862f5dc284f9400c26e97d9fed70025) | Disponible en `develop`; commit directo sin PR asociado en el historial consultado. |
+| Corrección de visualización del selector de rol | `DerDFHE` / `develop` | [`2c66861`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/2c66861a26154775d1e1336fd3e13b7ef9bedf82) | Integrado en `develop` el 2026-10-05. |
+| Cambio del selector de idioma a botones ES/EN con etiquetas accesibles y documentación | `Trepequiper` / `feature/button-update` | [`bc74c80`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/bc74c80b990714031109cd7c9c01a537a6f39083) | [PR #9](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/9), 5 commits integrados en `develop` el 2026-10-05. |
+| Ajuste de marca en la barra lateral del espacio de trabajo | `mateool10` / `feature/webapp-sidebar-brand` | [`91ebc19`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/91ebc19b067eeb642804865f893534a555ed8016) | [PR #8](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/8) abierto; no integrado al momento de la consulta. |
+| Ajuste de layout para pasar el espacio de trabajo desde la metadata de ruta | `mateool10` / `feature/webapp-workspace-layout-fix` | [`c3a1ae6`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/c3a1ae61e7e53875dd213ec8b020cfd5d4ea47b0) | Rama disponible; no se encontró un PR asociado ni integración en `develop`. |
+
+#### 5.2.2.5. Execution Evidence for Sprint Review
+
+La validación funcional del Sprint 2 cubre los escenarios principales de las User Stories implementadas. La telemetría y los datos de seguimiento utilizados en US20 son simulados; la aplicación no sustituye sistemas de comunicación o respuesta de emergencia.
+
+| User Story | Escenario de validación | Resultado esperado |
+| --- | --- | --- |
+| US07 | Registrar una Route válida y probar un nombre duplicado o campos obligatorios incompletos. | La ruta se crea en estado `draft`; los datos inválidos o duplicados se rechazan y se informa el problema. |
+| US08 | Registrar checkpoints con órdenes únicos; intentar duplicar un orden y habilitar una ruta sin checkpoints. | Se asocian los checkpoints a la ruta; se rechaza el orden duplicado y no se habilita la ruta vacía. Con al menos un checkpoint, la ruta puede habilitarse. |
+| US09 | Guardar una ventana válida, invertir los límites mínimo/máximo y consultar tramos sin configuración. | Se guarda la ventana válida, se rechazan límites inconsistentes y se identifican los tramos pendientes. |
+| US11 | Crear un Expedition Group para una ruta habilitada y probar una fecha anterior a la actual. | El grupo se asocia a la ruta; una fecha pasada se rechaza. |
+| US13 | Asignar un guía disponible, seleccionar uno con cruce de fecha y comprobar el requisito de responsable. | La asignación se registra; el cruce requiere confirmación y el sistema identifica un grupo sin guía. |
+| US12 | Registrar participantes, repetir un documento de identidad y superar la capacidad del grupo. | El manifiesto se actualiza; el documento duplicado y el participante que excede la capacidad se rechazan. |
+| US20 | Consultar un tour activo con datos de seguimiento, uno sin sincronización reciente y uno no iniciado. | Se muestran último checkpoint, tramo y progreso estimado; se indica la antigüedad de la información y que es una estimación; un tour no iniciado informa que el seguimiento se habilita al comenzar. |
+
+**Capturas de ejecución**
+
+Las siguientes capturas documentan las vistas de la aplicación observadas durante la ejecución. Exec1 y Exec2 muestran estados de carga y un mensaje de error, por lo que se presentan como evidencia del estado de interfaz y no como confirmación de que esos escenarios concluyeron exitosamente.
+
+![Exec1: vista de seguimiento de progreso mientras se cargan las rutas](../assets/images/chapter-5/Exec1.png)
+
+*Figura 5.12. Vista de seguimiento de progreso durante la carga de rutas.*
+
+![Exec2: listado de rutas durante la carga, con mensaje de error visible](../assets/images/chapter-5/Exec2.png)
+
+*Figura 5.13. Listado de rutas en estado de carga y mensaje de error de creación.*
+
+![Exec3: selección de espacio de trabajo y rol en español](../assets/images/chapter-5/Exec3.png)
+
+*Figura 5.14. Selección de espacio de trabajo para Operations Administrator o Field Guide.*
+
+![Exec4: formulario para registrar una nueva ruta](../assets/images/chapter-5/Exec4.png)
+
+*Figura 5.15. Formulario de configuración de una nueva Route.*
+
+![Exec5: selección de espacio de trabajo y rol en inglés](../assets/images/chapter-5/Exec5.png)
+
+*Figura 5.16. Selector de espacio de trabajo en inglés.*
+
+
+#### 5.2.2.6. Services Documentation Evidence for Sprint Review
+
+El Sprint 2 no implementa el RESTful Web Services productivo. Para habilitar el frontend se utiliza una **Fake API** ejecutada con json-server@0.17.4 y recursos JSON de prueba. Los datos de US20 se simulan para presentar el estado de seguimiento. Por ello, no se genera una especificación OpenAPI/Swagger de servicios productivos en esta entrega.
+
+| Recurso de prueba | Endpoint local | Métodos utilizados | Propósito |
+| --- | --- | --- | --- |
+| Routes | `/api/v1/routes` | GET, POST y actualización de estado | Consultar y registrar rutas; habilitar una ruta después de agregar checkpoints. |
+| Checkpoints | `/api/v1/checkpoints` | GET, POST | Consultar y registrar puntos de control asociados a una ruta. |
+| Expected Time Windows | `/api/v1/expected-time-windows` | GET, POST | Consultar y registrar ventanas esperadas entre checkpoints. |
+| Expedition Groups | `/api/v1/expedition-groups` | GET, POST y actualización | Consultar y crear grupos vinculados a una ruta; actualizar su guía asignado. |
+| Field Guides | `/api/v1/field-guides` | GET | Consultar guías mock disponibles para la asignación. |
+| Manifest Entries | `/api/v1/manifest-entries` | GET, POST | Consultar y registrar participantes asociados a un Expedition Group. |
+| Group Progress | `/api/v1/group-progress` | GET | Leer registros simulados de último checkpoint, tramo, progreso, estado y antigüedad de sincronización. |
+
+La ruta `/api/v1/*` se resuelve mediante `server/routes.json`. La URL configurada en `.env.development` utiliza `http://localhost:3000/api/v1` y es solo para desarrollo local; no debe presentarse como endpoint público. Los manifiestos y el progreso se persisten únicamente en el archivo JSON atendido por json-server. La Fake API no garantiza integridad ni unicidad en servidor y no representa un backend productivo.
+
+#### 5.2.2.7. Software Deployment Evidence for Sprint Review
+
+La Web Application del Sprint 2 se encuentra desplegada para su revisión. El despliegue corresponde al frontend de TB1 y consume datos simulados; debe mantenerse explícito que la Fake API no es un servicio productivo. Sustituir los valores de URL pendientes por los enlaces reales antes de cerrar la versión del informe.
+
+| Elemento | Información |
+| --- | --- |
+| Producto | VitalTrek Web Applications — frontend TB1 |
+| Plataforma de despliegue | Vercel |
+| Repositorio | https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications |
+| Build command | `npm run build` |
+|Vercel link| https://landing-page-mrca1.vercel.app/|
+| Output directory | `dist` |
+| Variable de entorno de producción | `VITE_VITALTREK_API_URL` debe apuntar a una Fake API accesible desde el despliegue; la URL local `localhost` solo aplica al desarrollo. |
+
+#### 5.2.2.8. Team Collaboration Insights during Sprint
+
+El equipo colaboró sobre el repositorio [web-applications](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications), utilizando `develop` como rama de integración, ramas de funcionalidad y Pull Requests. Los PR #4, #5 y #6 integraron US07, US08 y US09; el PR #7 integró US11, US13, US12 y US20. Después se incorporaron mejoras transversales de selección de espacio de trabajo y cambio de idioma mediante cambios de varios integrantes. El estado de cada contribución se reporta según la rama y el PR visibles en GitHub al 2026-10-05.
+
+| Integrante | Contribución comprobable en TB1 | Evidencia de GitHub |
+| --- | --- | --- |
+| Cayanchi Avila, Milenko Rubén (`MaxghZZ`) | Liderazgo general; configuración de rutas, checkpoints y ventanas de tiempo; incorporación de los espacios de trabajo según rol y de las vistas para Operations Administrator y Field Guide. | PR #4, #5 y #6; commit [`207f528`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/207f52815862f5dc284f9400c26e97d9fed70025). |
+| León Naupari, Jorge Mateo (`mateool10`) | Ajustes de marca y layout para la selección de espacio de trabajo y la barra lateral. | Commit [`c3a1ae6`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/c3a1ae61e7e53875dd213ec8b020cfd5d4ea47b0) en `feature/webapp-workspace-layout-fix`; PR #8 con commit [`91ebc19`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/91ebc19b067eeb642804865f893534a555ed8016) sigue abierto y no integrado. |
+| Mendoza Blanco, Ariel Roberto (`Trepequiper`) | Actualización del selector de idioma ES/EN a botones, incluyendo etiquetas accesibles y documentación del componente. | [PR #9](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/9), 5 commits; [`bc74c80`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/bc74c80b990714031109cd7c9c01a537a6f39083). |
+| Rodriguez Rojas, Miler Alexander (`Miler2003`) | Implementación de la creación de grupos, asignación de guías, registro del manifiesto y dashboard de progreso estimado mediante Fake API y datos simulados. | 37 commits integrados mediante [PR #7](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/7); commits representativos [`e1cb43a`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/e1cb43a792ddb626779e2d27d33acc15ed81cdea), [`21aedcd`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/21aedcd63b2b18f91487b86a2fce768c38644c8a), [`71bbcaca`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/71bbcaca4648445471ce6b81c3f0431925fac282) y [`cef703d`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/cef703d1c403cd0ff50717a9f5bebd45b2bfdad1). |
+| Herrera Enriquez, Diego Fernando (`DerDFHE`) | Corrección de la vista de selección de rol para mejorar su visualización. | Commit [`2c66861`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/2c66861a26154775d1e1336fd3e13b7ef9bedf82), integrado en `develop`. |
+
+El historial consultado muestra `develop` actualizado hasta el commit `2c66861`. El PR #8 y la rama `feature/webapp-workspace-layout-fix` se mantienen como trabajo pendiente de integración; no se contabilizan como parte de la versión integrada hasta que se complete su revisión y merge. Los commits del Sprint Backlog son una distribución de tareas planificada y no deben interpretarse como autoría individual de código cuando el historial de GitHub registra a otro integrante.
+
+![Commits de colaboración en web-applications durante TB1](../assets/images/chapter-5/ColabInsights21.png)
+
+*Figura 5.17. Historial de commits del repositorio web-applications durante TB1.*
+
+![GitHub Insights de web-applications durante TB1](../assets/images/chapter-5/ColabInsights22.png)
+
+*Figura 5.18. GitHub Insights del repositorio web-applications para el período del 28 de septiembre al 5 de octubre de 2026.*
