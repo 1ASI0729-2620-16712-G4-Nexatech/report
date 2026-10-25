@@ -762,3 +762,166 @@ Al 2026-10-05, el historial mostraba `develop` actualizado hasta el commit `2c66
 ![GitHub Insights de web-applications durante TB1](../assets/images/chapter-5/ColabInsights22.png)
 
 *Figura 5.18. GitHub Insights del repositorio web-applications para el período del 28 de septiembre al 5 de octubre de 2026.*
+
+### 5.2.3. Sprint 3
+
+El Sprint 3 tiene como objetivo implementar y desplegar la primera versión del **RESTful Web Services** de VitalTrek, desarrollado con ASP.NET Core y C# bajo el estilo arquitectónico REST, y documentado con OpenAPI Specification mediante Swagger. El servicio implementa la persistencia en PostgreSQL mediante Entity Framework Core y organiza su código según los bounded contexts definidos en la sección 4.6, aplicando las capas de dominio, aplicación, infraestructura e interfaces. Asimismo, el Sprint incluye una nueva versión del Landing Page y de las Web Applications, que sustituyen progresivamente la Fake API utilizada en el Sprint 2 por el consumo del RESTful API de elaboración interna.
+
+<!-- COMPLETAR: confirmar en un párrafo qué bounded contexts y User Stories cubre el backend en este Sprint. -->
+
+| Campo | Valor |
+| --- | --- |
+| Sprint Goal | <!-- COMPLETAR: Sprint Goal resumido en una línea --> |
+| Historias incluidas | <!-- COMPLETAR: lista de US/TS --> |
+| Total de historias | <!-- COMPLETAR --> |
+| Sprint Velocity / Total de Story Points | <!-- COMPLETAR --> |
+| Contextos de dominio | <!-- COMPLETAR: p. ej. `expedition-setup`, `field-tracking` --> |
+| Resultado | <!-- COMPLETAR: llenar al cierre del Sprint --> |
+
+#### 5.2.3.1. Sprint Planning 3
+
+La reunión de planificación del Sprint 3 se centró en definir el alcance de la primera versión del RESTful Web Services y su integración con las Web Applications. El equipo revisó el incremento del Sprint 2 y la retroalimentación recibida en TB1, seleccionó del Product Backlog las User Stories y Technical Stories con mayor valor para el negocio cuya lógica debía trasladarse al backend, y acordó el Sprint Goal y la Velocity del Sprint.
+
+| **Sprint #** | **Sprint 3** |
+| --- | --- |
+| **Sprint Planning Background** | |
+| Date | <!-- COMPLETAR: YYYY-MM-DD --> |
+| Time | <!-- COMPLETAR: HH:MM AM/PM --> |
+| Location | Reunión virtual en Discord |
+| Prepared By | <!-- COMPLETAR: Apellidos, Nombres --> |
+| Attendees (to planning meeting) | Cayanchi Avila, Milenko Rubén / Herrera Enriquez, Diego Fernando / León Naupari, Jorge Mateo / Mendoza Blanco, Ariel Roberto / Rodriguez Rojas, Miler Alexander |
+| Sprint 2 Review Summary | • Se presentó la primera versión de las Web Applications frontend de VitalTrek, desarrolladas con Vue 3, PrimeVue, Pinia, Vue Router y vue-i18n, desplegadas en Vercel e integradas con una Fake API.<br>• Se completaron las 7 User Stories comprometidas (US07, US08, US09, US11, US13, US12 y US20), equivalentes a 28 Story Points, correspondientes a los bounded contexts `expedition-setup` y `field-tracking`.<br>• La retroalimentación de TB1 señaló como oportunidades de mejora la aplicación parcial de Responsive Web Design en el Landing Page y la ausencia de algunas de sus secciones, la necesidad de evidenciar la participación de todos los integrantes en la implementación, la evidencia de mejora continua entre entregas y la calidad de la comunicación escrita del informe.<br>• En respuesta, el equipo corrigió el informe (versión 1.9 del Registro de Versiones) e incorporó al Sprint 3 las mejoras pendientes del Landing Page. |
+| Sprint 2 Retrospective Summary | <!-- COMPLETAR: 3-4 puntos (aciertos, oportunidades de mejora y acciones para el Sprint 3). Sugerencia de mejora real según TB1: distribuir la implementación para que todos los integrantes tengan commits propios en cada producto. --> |
+| **Sprint Goal & User Stories** | |
+| Sprint 3 Goal | **Our focus is on** <!-- COMPLETAR: outcome -->.<br>**We believe it delivers** <!-- COMPLETAR: impact --> **to** <!-- COMPLETAR: customers -->.<br>**This will be confirmed when** <!-- COMPLETAR: event medible -->. |
+| Sprint 3 Velocity | <!-- COMPLETAR --> Story Points |
+| Sum of Story Points | <!-- COMPLETAR --> Story Points (<!-- COMPLETAR: lista de historias -->) |
+
+#### 5.2.3.2. Aspect Leaders and Collaborators
+
+Para el Sprint 3, el equipo organizó el trabajo en aspectos que corresponden a los bounded contexts implementados en el RESTful Web Services, a la documentación de los servicios, a las pruebas, a la integración con las Web Applications y al despliegue. La Leadership-and-Collaboration Matrix (LACX) indica, para cada aspecto, al integrante que lo lidera (L) y a quienes colaboran en él (C). Esta organización se refleja en la asignación de tasks del Sprint Backlog 3.
+
+| Integrante                       | Usuario de GitHub | Landing Page structure | Responsive UI | i18n y a11y | QA y deployment | Documentación |
+| -------------------------------- | ----------------- | ---------------------- | ------------- | ----------- | --------------- | ------------- |
+| Cayanchi Avila, Milenko Rubén    | `MaxghZZ`         | L                      | C             | C           | C               | L             |
+| León Naupari, Jorge Mateo        | `mateool10`       | C                      | L             | C           | C               | C             |
+| Mendoza Blanco, Ariel Roberto    | `Trepequiper`     | C                      | C             | L           | C               | C             |
+| Rodriguez Rojas, Miler Alexander | `Miler2003`       | C                      | C             | C           | L               | L             |
+| Herrera Enriquez, Diego Fernando | `DerDFHE`         | C                      | C             | C           | C               | C             |
+
+
+**Leyenda:** L = Leader; C = Collaborator.
+
+#### 5.2.3.3. Sprint Backlog 3
+
+El Sprint Backlog 3 se enfoca en la primera versión del RESTful Web Services de VitalTrek y en su integración con las Web Applications. Las User Stories y Technical Stories seleccionadas se descompusieron en tasks estimadas entre 4 y 8 horas, cuyo avance se registró en Jira Software con los estados To-do, In-Process, To-Review y Done.
+
+<!-- COMPLETAR: captura del board del Sprint 3 en Jira -->
+![Board del Sprint 3 en Jira](../assets/images/chapter-5/sprint3-board-jira.png)
+
+*Figura 5.X. Board del Sprint 3 en Jira Software.*
+
+**Enlace público del board:** [Jira — VitalTrek](https://milenkorvu.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog)
+
+| **Sprint #** | **Sprint 3** | | | | | | |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| **User Story Id** | **User Story Title** | **Work-Item / Task Id** | **Title** | **Description** | **Estimation (Hours)** | **Assigned To** | **Status (To-do / In-Process / To-Review / Done)** |
+| <!-- COMPLETAR --> | | | | | | | |
+
+<!-- COMPLETAR: si se mantiene el formato del Sprint 2, agregar debajo el resumen (tasks, horas mínimas y máximas, total de horas) y la distribución de carga por integrante. -->
+
+#### 5.2.3.4. Development Evidence for Sprint Review
+
+En el Sprint 3 se implementó la primera versión del RESTful Web Services de VitalTrek en el repositorio [web-services](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-services), desarrollado con ASP.NET Core y C# en JetBrains Rider. El proyecto aplica los bounded contexts definidos en el diseño de la sección 4.6, implementa la persistencia en PostgreSQL mediante Entity Framework Core e incluye pruebas unitarias y de integración en el mismo repositorio. Asimismo, se registran los cambios realizados en el Landing Page y en las Web Applications durante el Sprint. Todas las contribuciones se integraron siguiendo GitFlow, con feature branches, Pull Requests hacia `develop` y mensajes de commit según Conventional Commits.
+
+<!-- COMPLETAR: resumir en 2-3 frases los principales avances reales. -->
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+| --- | --- | --- | --- | --- | --- |
+| 1ASI0729-2620-16712-G4-Nexatech/web-services | <!-- COMPLETAR --> | | | | |
+| 1ASI0729-2620-16712-G4-Nexatech/web-applications | <!-- COMPLETAR --> | | | | |
+| 1ASI0729-2620-16712-G4-Nexatech/landing-page | <!-- COMPLETAR --> | | | | |
+
+<!-- TIP: lista de commits por repo con:
+git log develop --since=YYYY-MM-DD --pretty=format:"| %h | %s | %b | %ad |" --date=short -->
+
+#### 5.2.3.5. Execution Evidence for Sprint Review
+
+Al cierre del Sprint 3, el RESTful Web Services de VitalTrek expone los recursos necesarios para las funcionalidades seleccionadas, y las Web Applications consumen dichos servicios en lugar de la Fake API. A continuación se presentan capturas de las principales vistas implementadas y de la ejecución de los servicios, junto con el video que ilustra la visualización y navegación logradas en este Sprint.
+
+<!-- COMPLETAR: capturas con datos cargados desde el backend real (no estados de carga ni errores). -->
+
+![<!-- COMPLETAR: descripción -->](../assets/images/chapter-5/sprint3-exec-1.png)
+
+*Figura 5.X. <!-- COMPLETAR -->*
+
+**Video de navegación del Sprint 3:** [upc-pre-202620-1asi0730-16712-nexatech-productnavigation-sprint-3](<!-- COMPLETAR: URL de Microsoft Stream -->)
+
+#### 5.2.3.6. Services Documentation Evidence for Sprint Review
+
+En el Sprint 3 se documentaron con OpenAPI Specification, mediante Swagger, los endpoints implementados en el RESTful Web Services. La documentación se genera a partir del proyecto ASP.NET Core y describe, para cada endpoint, el verbo HTTP, la ruta, los parámetros, el cuerpo de la solicitud y los posibles responses. El idioma por defecto de la interfaz de documentación y de los mensajes del API es inglés.
+
+**Repositorio:** [web-services](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-services)
+**Documentación desplegada (Swagger UI):** <!-- COMPLETAR: URL pública de /swagger -->
+
+| Endpoint | HTTP Verb | Call Syntax | Parameters | Response Example | Response Explanation |
+| --- | --- | --- | --- | --- | --- |
+| <!-- COMPLETAR: p. ej. /api/v1/routes --> | GET | <!-- p. ej. `GET /api/v1/routes` --> | | | |
+| | POST | | | | |
+
+<!-- COMPLETAR: una fila por acción. Incluir códigos de respuesta (200, 201, 400, 404). -->
+
+A continuación se muestran capturas de la interacción con la documentación en Swagger UI usando datos de muestra.
+
+![<!-- COMPLETAR -->](../assets/images/chapter-5/sprint3-swagger-1.png)
+
+*Figura 5.X. <!-- COMPLETAR: endpoint y acción ejecutada con datos de muestra -->*
+
+**Commits relacionados con la documentación de servicios:**
+
+| Commit Id | Commit Message | Committed on (Date) |
+| --- | --- | --- |
+| <!-- COMPLETAR --> | | |
+
+#### 5.2.3.7. Software Deployment Evidence for Sprint Review
+
+En el Sprint 3 se realizó el primer despliegue del RESTful Web Services de VitalTrek y se publicaron nuevas versiones del Landing Page y de las Web Applications. Las actividades comprendieron la configuración de los recursos en el proveedor cloud para el servicio y la base de datos, la configuración de las variables de entorno con la cadena de conexión y la URL base del API, y la actualización de la variable `VITE_VITALTREK_API_URL` de las Web Applications para consumir el API desplegado. A continuación se describen los pasos realizados y se presentan capturas de cada uno.
+
+| Producto | Plataforma | Repositorio | URL pública |
+| --- | --- | --- | --- |
+| Landing Page | Vercel | [landing-page](https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page) | https://landing-page-mrca1.vercel.app/ |
+| Web Applications | Vercel | [web-applications](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications) | <!-- COMPLETAR --> |
+| RESTful Web Services | <!-- COMPLETAR: Azure App Service u otro --> | [web-services](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-services) | <!-- COMPLETAR --> |
+| Base de datos | <!-- COMPLETAR: servicio de PostgreSQL --> | — | — |
+
+**Pasos del despliegue del RESTful Web Services**
+
+<!-- COMPLETAR: un paso por captura; ajustar al proceso real. -->
+1. Creación del recurso del servicio en <!-- COMPLETAR --> y selección del runtime .NET.
+2. Creación de la base de datos PostgreSQL y configuración de la cadena de conexión como variable de entorno.
+3. Publicación del proyecto desde el repositorio <!-- COMPLETAR: GitHub Actions / publicación desde Rider -->.
+4. Verificación del servicio desplegado mediante Swagger UI.
+
+![<!-- COMPLETAR -->](../assets/images/chapter-5/sprint3-deploy-1.png)
+
+*Figura 5.X. <!-- COMPLETAR -->*
+
+#### 5.2.3.8. Team Collaboration Insights during Sprint
+
+Durante el Sprint 3, el equipo trabajó sobre los repositorios [web-services](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-services), [web-applications](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications) y [landing-page](https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page), aplicando GitFlow: `develop` como rama de integración, feature branches por funcionalidad y Pull Requests revisados por otro integrante antes de su integración. Todos los integrantes participaron en la implementación del RESTful Web Services. A continuación se resume la contribución de cada integrante y se presentan los analíticos de colaboración de GitHub.
+
+| Integrante | Contribución en el Sprint 3 | Evidencia de GitHub |
+| --- | --- | --- |
+| Cayanchi Avila, Milenko Rubén (`MaxghZZ`) | <!-- COMPLETAR --> | <!-- PRs / commits --> |
+| Herrera Enriquez, Diego Fernando (`DerDFHE`) | <!-- COMPLETAR --> | |
+| León Naupari, Jorge Mateo (`mateool10`) | <!-- COMPLETAR --> | |
+| Mendoza Blanco, Ariel Roberto (`Trepequiper`) | <!-- COMPLETAR --> | |
+| Rodriguez Rojas, Miler Alexander (`Miler2003`) | <!-- COMPLETAR --> | |
+
+![Commits del repositorio web-services durante el Sprint 3](../assets/images/chapter-5/sprint3-commits-web-services.png)
+
+*Figura 5.X. Commits del repositorio web-services durante el Sprint 3.*
+
+![GitHub Insights del repositorio web-services durante el Sprint 3](../assets/images/chapter-5/sprint3-insights-web-services.png)
+
+*Figura 5.X. GitHub Insights (Contributors) del repositorio web-services para el periodo del Sprint 3.*
