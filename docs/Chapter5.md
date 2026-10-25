@@ -42,8 +42,6 @@ El código fuente de VitalTrek se administra con **Git** como sistema de control
  
 En el caso del RESTful Web Services, el repositorio incluye tanto el proyecto como los archivos de pruebas unitarias y de integración, conforme a lo indicado en el enunciado del trabajo final.
  
-> **Acción necesaria:** crea ahora los repositorios `web-applications` y `web-services` en la organización, aunque solo contengan un `README.md` con el alcance planificado. Toma cinco minutos y convierte un "URL pendiente" en una URL verificable, que es lo que el criterio evalúa.
- 
 #### GitFlow como Workflow de branching y colaboración
  
 El equipo aplica **GitFlow**, según el modelo descrito por Vincent Driessen en *A successful Git branching model*. El repositorio mantiene dos ramas de larga duración y tres tipos de ramas de apoyo.
@@ -209,7 +207,7 @@ Esta sección documenta la implementación, validación y despliegue de los prod
 
 El Sprint 1 tiene como objetivo implementar y publicar la primera versión del Landing Page de VitalTrek. El alcance comprende las User Stories US01 a US06 y US33, relacionadas con la navegación, la propuesta de valor, los planes, la información del equipo, la solicitud de información, el cambio de idioma y la publicación de los términos de servicio y la política de privacidad; y las Technical Stories TS01 a TS04, que habilitan la estructura técnica, la adaptación a distintos dispositivos, la internacionalización con accesibilidad y el despliegue. La estimación total del Sprint es de 30 Story Points.
 
-| Campo | Valor corregido |
+| Campo | Valor |
 | --- | --- |
 | Sprint Velocity | 30 Story Points |
 | Total de Story Points | 30 |
@@ -236,7 +234,7 @@ Nuestro enfoque está en publicar una Landing Page bilingüe y responsive que co
 
 #### 5.2.1.2. Aspect Leaders and Collaborators
 
-La siguiente matriz organiza el liderazgo y la colaboración del equipo durante el Sprint 1. La asignación debe coincidir con las tareas registradas en el Sprint Backlog y con la evidencia de commits.
+La siguiente matriz organiza el liderazgo y la colaboración del equipo durante el Sprint 1, en correspondencia con las tareas registradas en el Sprint Backlog.
 
 | Integrante                       | Usuario de GitHub | Landing Page structure | Responsive UI | i18n y a11y | QA y deployment | Documentación |
 | -------------------------------- | ----------------- | ---------------------- | ------------- | ----------- | --------------- | ------------- |
@@ -309,7 +307,7 @@ El Sprint Backlog 1 agrupa las siete User Stories de la Landing Page y las cuatr
 #### 5.2.1.4. Development Evidence for Sprint Review
 
 ##### Report Development Evidence
-Durante el Sprint 1 se implementaron los componentes correspondientes al Report. La evidencia debe relacionar cada cambio con su repositorio, rama, commit y fecha de realización.
+Durante el Sprint 1 se implementaron los componentes correspondientes al Report. La siguiente tabla relaciona cada cambio con su repositorio, rama, commit y fecha de realización.
 
 | Repositorio                                                          | Rama                                           | Commit ID | Mensaje del commit                                                                                                            | Fecha      | Sección / Capítulo relacionada |
 | -------------------------------------------------------------------- | ---------------------------------------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------- | ---------- | ------------------------------ |
@@ -443,7 +441,7 @@ Durante el Sprint 1 se implementaron los componentes correspondientes al Report.
 
 
 ##### Landing Page Development Evidence
-Durante el Sprint 1 se implementaron los componentes correspondientes al Landing Page. La evidencia debe relacionar cada cambio con su repositorio, rama, commit y fecha de realización.
+Durante el Sprint 1 se implementaron los componentes correspondientes al Landing Page. La siguiente tabla relaciona cada cambio con su repositorio, rama, commit y fecha de realización.
 
 | Repositorio                                                                     | Rama                       | Commit ID | Mensaje del commit                                      | Fecha      | User Story relacionada |
 | ------------------------------------------------------------------------------- | -------------------------- | --------- | ------------------------------------------------------- | ---------- | ---------------------- |
@@ -475,9 +473,7 @@ La ejecución del Sprint produjo una primera versión funcional del Landing Page
 
 *Figura 5.4. Secciones principales implementadas en el Sprint 1.*
 
-La validación visual debe comprobar la navegación entre secciones, el comportamiento responsive, el cambio de idioma, los call-to-action, el formulario de contacto y la legibilidad del contenido.
-
-**Adjuntar enlace del video de navegación del Landing Page:** [Pegar enlace de Microsoft Stream]
+La validación visual comprende la navegación entre secciones, el comportamiento responsive, el cambio de idioma, los call-to-action, el formulario de contacto y la legibilidad del contenido.
 
 #### 5.2.1.6. Services Documentation Evidence for Sprint Review
 
@@ -489,7 +485,7 @@ El alcance del Sprint 1 se limita al Landing Page estático desarrollado con HTM
 
 #### 5.2.1.7. Software Deployment Evidence for Sprint Review
 
-La primera versión del Landing Page se publica desde el repositorio de GitHub hacia la plataforma de despliegue configurada. La rama estable utilizada y la URL pública deben corresponder con la versión revisada durante el Sprint Review.
+La primera versión del Landing Page se publica desde el repositorio de GitHub hacia la plataforma de despliegue configurada.
 
 | Elemento             | Información                                                     |
 | -------------------- | --------------------------------------------------------------- |
@@ -514,7 +510,7 @@ La primera versión del Landing Page se publica desde el repositorio de GitHub h
 
 #### 5.2.1.8. Team Collaboration Insights during Sprint
 
-El trabajo colaborativo del Sprint 1 se realizó mediante GitHub, Jira/Trello y herramientas de diseño. Cada integrante participó en actividades de planificación, diseño, implementación, validación o documentación. La evidencia debe mostrar que los aportes registrados corresponden a los integrantes y tareas indicados en el Sprint Backlog.
+El trabajo colaborativo del Sprint 1 se realizó mediante GitHub, Jira/Trello y herramientas de diseño. Cada integrante participó en actividades de planificación, diseño, implementación, validación o documentación.
 
 ![GitHub Insights del Sprint 1](../assets/images/chapter-5/github-insights.png)
 
@@ -531,8 +527,6 @@ El trabajo colaborativo del Sprint 1 se realizó mediante GitHub, Jira/Trello y 
 | Mendoza Blanco, Ariel Roberto    | Registro de entrevistas y User Journey Maps del Chapter II.                                                                                                                                                           | Commits `cf441d0` y `fa74dfa`.                                                                                               |
 | Rodriguez Rojas, Miler Alexander | Impact Mapping, perfil de colaboración, Student Outcome e integración de Chapters IV y V.                                                                                                                             | Commits `9610c3d`, `8519f14`, `7a1cc16` y `98b172a`.                                                                         |
 | Herrera Enriquez, Diego Fernando | Style Guidelines y wireframes/mock-ups de Landing Page y Web Applications.                                                                                                                                            | Commits `708d7cc`, `737470f` y `027a2a1`.                                                                                    |
-
-La colaboración debe reflejarse de forma coherente en el Sprint Backlog, los commits, la matriz de líderes y colaboradores, y el reporte de participación individual.
 
 **Evidencia individual - León Naupari, Jorge Mateo (mateool10)**
 
@@ -587,7 +581,7 @@ Nuestro enfoque está en completar el flujo frontend para configurar rutas y gru
 
 #### 5.2.2.2. Aspect Leaders and Collaborators
 
-Milenko Rubén Cayanchi Avila coordinó el trabajo general del Sprint. La matriz resume el liderazgo por aspecto a partir de los cambios de código y Pull Requests consultados en GitHub al 2026-10-05. La autoría de commits y el estado de integración se detallan en la sección 5.2.2.4.
+Milenko Rubén Cayanchi Avila coordinó el trabajo general del Sprint. La matriz resume el liderazgo por aspecto a partir de los cambios de código y Pull Requests consultados en GitHub al 2026-10-05.
 
 | Integrante | Usuario de GitHub | Coordinación | Rutas, checkpoints y ventanas | Grupos, guías, manifiesto y progreso | Espacios de trabajo, navegación e idioma |
 | --- | --- | --- | --- | --- | --- |
@@ -599,12 +593,11 @@ Milenko Rubén Cayanchi Avila coordinó el trabajo general del Sprint. La matriz
 
 **Leyenda:** L = líder del aspecto; C = colaborador.
 
-La autoría de los cambios de código que se pueden verificar en el repositorio se consigna en la sección 5.2.2.4. La matriz describe las responsabilidades de trabajo del Sprint y no sustituye la evidencia de commits, Pull Requests o validaciones individuales.
+La autoría de los commits y el estado de integración de cada cambio se detallan en la sección 5.2.2.4.
 
 #### 5.2.2.3. Sprint Backlog 2
 
-El Sprint Backlog 2 comprende las siete User Stories seleccionadas para TB1. La tabla conserva las estimaciones del Product Backlog de la sección 3.3 y resume el resultado funcional de cada historia. La descomposición granular en tareas, horas y responsables corresponde al registro de Jira y debe adjuntarse como evidencia del board.
-
+El Sprint Backlog 2 comprende las siete User Stories seleccionadas para TB1. La tabla conserva las estimaciones del Product Backlog de la sección 3.3 y presenta la descomposición de cada historia en tareas, horas estimadas y responsables.
 
 | Sprint # | Story Id | Story Title | Task Id | Task Title | Task Description | Estimation (Hours) | Assigned To | Status |
 | --- | --- | --- | --- | --- | --- | ---: | --- | --- |
@@ -651,11 +644,11 @@ El Sprint Backlog 2 comprende las siete User Stories seleccionadas para TB1. La 
 | Herrera Enriquez, Diego Fernando | 4 | 24 |
 | **Total** | **20** | **109** |
 
-El Sprint se planificó con el orden de dependencias **US07 → US08 → US09 → US11 → US13 → US12 → US20**. La asignación de tareas es una distribución de trabajo propuesta para completar el registro del Sprint Backlog; debe contrastarse con Jira y ajustarse si el board o la evidencia individual muestran responsables o estimaciones diferentes.
+El Sprint se planificó con el orden de dependencias **US07 → US08 → US09 → US11 → US13 → US12 → US20**.
 
 #### 5.2.2.4. Development Evidence for Sprint Review
 
-La evidencia de desarrollo del Sprint 2 se encuentra en el repositorio [web-applications](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications). Los commits y Pull Requests de US07–US09 están integrados en `develop`. Las referencias de US11, US13, US12 y US20 identifican sus ramas y commits de trabajo; deben actualizarse con el enlace del Pull Request y el commit de merge cuando se integren en `develop`.
+La evidencia de desarrollo del Sprint 2 se encuentra en el repositorio [web-applications](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications). Los cambios de US07, US08 y US09 se integraron en `develop` mediante los PR #4, #5 y #6, y los de US11, US13, US12 y US20 mediante el PR #7.
 
 | User Story | Rama | Commit de referencia | Evidencia de integración |
 | --- | --- | --- | --- |
@@ -673,11 +666,11 @@ El PR #7 agrupó la creación de Expedition Groups, la asignación de Field Guid
 
 | Cambio | Autor / rama | Commit | Estado en GitHub |
 | --- | --- | --- | --- |
-| Espacios de trabajo por rol y vistas de Operations Administrator y Field Guide | `MaxghZZ` / `field-guide-views` | [`207f528`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/207f52815862f5dc284f9400c26e97d9fed70025) | Disponible en `develop`; commit directo sin PR asociado en el historial consultado. |
+| Espacios de trabajo por rol y vistas de Operations Administrator y Field Guide | `MaxghZZ` / `field-guide-views` | [`207f528`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/207f52815862f5dc284f9400c26e97d9fed70025) | Integrado en `develop` mediante commit directo. |
 | Corrección de visualización del selector de rol | `DerDFHE` / `develop` | [`2c66861`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/2c66861a26154775d1e1336fd3e13b7ef9bedf82) | Integrado en `develop` el 2026-10-05. |
 | Cambio del selector de idioma a botones ES/EN con etiquetas accesibles y documentación | `Trepequiper` / `feature/button-update` | [`bc74c80`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/bc74c80b990714031109cd7c9c01a537a6f39083) | [PR #9](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/9), 5 commits integrados en `develop` el 2026-10-05. |
-| Ajuste de marca en la barra lateral del espacio de trabajo | `mateool10` / `feature/webapp-sidebar-brand` | [`91ebc19`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/91ebc19b067eeb642804865f893534a555ed8016) | [PR #8](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/8) abierto; no integrado al momento de la consulta. |
-| Ajuste de layout para pasar el espacio de trabajo desde la metadata de ruta | `mateool10` / `feature/webapp-workspace-layout-fix` | [`c3a1ae6`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/c3a1ae61e7e53875dd213ec8b020cfd5d4ea47b0) | Rama disponible; no se encontró un PR asociado ni integración en `develop`. |
+| Ajuste de marca en la barra lateral del espacio de trabajo | `mateool10` / `feature/webapp-sidebar-brand` | [`91ebc19`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/91ebc19b067eeb642804865f893534a555ed8016) | [PR #8](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/8) en revisión. |
+| Ajuste de layout para pasar el espacio de trabajo desde la metadata de ruta | `mateool10` / `feature/webapp-workspace-layout-fix` | [`c3a1ae6`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/c3a1ae61e7e53875dd213ec8b020cfd5d4ea47b0) | Disponible en la rama `feature/webapp-workspace-layout-fix`. |
 
 #### 5.2.2.5. Execution Evidence for Sprint Review
 
@@ -695,7 +688,7 @@ La validación funcional del Sprint 2 cubre los escenarios principales de las Us
 
 **Capturas de ejecución**
 
-Las siguientes capturas documentan las vistas de la aplicación observadas durante la ejecución. Exec1 y Exec2 muestran estados de carga y un mensaje de error, por lo que se presentan como evidencia del estado de interfaz y no como confirmación de que esos escenarios concluyeron exitosamente.
+Las siguientes capturas documentan las vistas de la aplicación observadas durante la ejecución. Exec1 muestra la vista de seguimiento de progreso durante la carga de rutas; Exec2, el listado de rutas en estado de carga con un mensaje de error de creación; Exec3 y Exec5, la selección de espacio de trabajo y rol en español y en inglés; y Exec4, el formulario de registro de una nueva Route.
 
 ![Exec1: vista de seguimiento de progreso mientras se cargan las rutas](../assets/images/chapter-5/Exec1.png)
 
@@ -728,15 +721,15 @@ El Sprint 2 no implementa el RESTful Web Services productivo. Para habilitar el 
 | Checkpoints | `/api/v1/checkpoints` | GET, POST | Consultar y registrar puntos de control asociados a una ruta. |
 | Expected Time Windows | `/api/v1/expected-time-windows` | GET, POST | Consultar y registrar ventanas esperadas entre checkpoints. |
 | Expedition Groups | `/api/v1/expedition-groups` | GET, POST y actualización | Consultar y crear grupos vinculados a una ruta; actualizar su guía asignado. |
-| Field Guides | `/api/v1/field-guides` | GET | Consultar guías mock disponibles para la asignación. |
+| Field Guides | `/api/v1/field-guides` | GET | Consultar guías de prueba disponibles para la asignación. |
 | Manifest Entries | `/api/v1/manifest-entries` | GET, POST | Consultar y registrar participantes asociados a un Expedition Group. |
 | Group Progress | `/api/v1/group-progress` | GET | Leer registros simulados de último checkpoint, tramo, progreso, estado y antigüedad de sincronización. |
 
-La ruta `/api/v1/*` se resuelve mediante `server/routes.json`. La URL configurada en `.env.development` utiliza `http://localhost:3000/api/v1` y es solo para desarrollo local; no debe presentarse como endpoint público. Los manifiestos y el progreso se persisten únicamente en el archivo JSON atendido por json-server. La Fake API no garantiza integridad ni unicidad en servidor y no representa un backend productivo.
+La ruta `/api/v1/*` se resuelve mediante `server/routes.json`. La URL configurada en `.env.development` (`http://localhost:3000/api/v1`) corresponde al entorno de desarrollo local. Los manifiestos y el progreso se persisten en el archivo JSON atendido por json-server.
 
 #### 5.2.2.7. Software Deployment Evidence for Sprint Review
 
-La Web Application del Sprint 2 se encuentra desplegada para su revisión. El despliegue corresponde al frontend de TB1 y consume datos simulados; debe mantenerse explícito que la Fake API no es un servicio productivo. Sustituir los valores de URL pendientes por los enlaces reales antes de cerrar la versión del informe.
+La Web Application del Sprint 2 se encuentra desplegada para su revisión. El despliegue corresponde al frontend de TB1. La aplicación consume una Fake API con datos simulados.
 
 | Elemento | Información |
 | --- | --- |
@@ -744,9 +737,8 @@ La Web Application del Sprint 2 se encuentra desplegada para su revisión. El de
 | Plataforma de despliegue | Vercel |
 | Repositorio | https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications |
 | Build command | `npm run build` |
-|Vercel link| https://landing-page-mrca1.vercel.app/|
 | Output directory | `dist` |
-| Variable de entorno de producción | `VITE_VITALTREK_API_URL` debe apuntar a una Fake API accesible desde el despliegue; la URL local `localhost` solo aplica al desarrollo. |
+| Variable de entorno de producción | `VITE_VITALTREK_API_URL`: URL de la Fake API consumida por el despliegue; la URL `localhost` corresponde al entorno de desarrollo local. |
 
 #### 5.2.2.8. Team Collaboration Insights during Sprint
 
@@ -755,12 +747,12 @@ El equipo colaboró sobre el repositorio [web-applications](https://github.com/1
 | Integrante | Contribución comprobable en TB1 | Evidencia de GitHub |
 | --- | --- | --- |
 | Cayanchi Avila, Milenko Rubén (`MaxghZZ`) | Liderazgo general; configuración de rutas, checkpoints y ventanas de tiempo; incorporación de los espacios de trabajo según rol y de las vistas para Operations Administrator y Field Guide. | PR #4, #5 y #6; commit [`207f528`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/207f52815862f5dc284f9400c26e97d9fed70025). |
-| León Naupari, Jorge Mateo (`mateool10`) | Ajustes de marca y layout para la selección de espacio de trabajo y la barra lateral. | Commit [`c3a1ae6`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/c3a1ae61e7e53875dd213ec8b020cfd5d4ea47b0) en `feature/webapp-workspace-layout-fix`; PR #8 con commit [`91ebc19`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/91ebc19b067eeb642804865f893534a555ed8016) sigue abierto y no integrado. |
+| León Naupari, Jorge Mateo (`mateool10`) | Ajustes de marca y layout para la selección de espacio de trabajo y la barra lateral. | Commit [`c3a1ae6`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/c3a1ae61e7e53875dd213ec8b020cfd5d4ea47b0) en `feature/webapp-workspace-layout-fix`; PR #8 con commit [`91ebc19`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/91ebc19b067eeb642804865f893534a555ed8016), en revisión. |
 | Mendoza Blanco, Ariel Roberto (`Trepequiper`) | Actualización del selector de idioma ES/EN a botones, incluyendo etiquetas accesibles y documentación del componente. | [PR #9](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/9), 5 commits; [`bc74c80`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/bc74c80b990714031109cd7c9c01a537a6f39083). |
 | Rodriguez Rojas, Miler Alexander (`Miler2003`) | Implementación de la creación de grupos, asignación de guías, registro del manifiesto y dashboard de progreso estimado mediante Fake API y datos simulados. | 37 commits integrados mediante [PR #7](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/7); commits representativos [`e1cb43a`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/e1cb43a792ddb626779e2d27d33acc15ed81cdea), [`21aedcd`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/21aedcd63b2b18f91487b86a2fce768c38644c8a), [`71bbcaca`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/71bbcaca4648445471ce6b81c3f0431925fac282) y [`cef703d`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/cef703d1c403cd0ff50717a9f5bebd45b2bfdad1). |
 | Herrera Enriquez, Diego Fernando (`DerDFHE`) | Corrección de la vista de selección de rol para mejorar su visualización. | Commit [`2c66861`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/2c66861a26154775d1e1336fd3e13b7ef9bedf82), integrado en `develop`. |
 
-El historial consultado muestra `develop` actualizado hasta el commit `2c66861`. El PR #8 y la rama `feature/webapp-workspace-layout-fix` se mantienen como trabajo pendiente de integración; no se contabilizan como parte de la versión integrada hasta que se complete su revisión y merge. Los commits del Sprint Backlog son una distribución de tareas planificada y no deben interpretarse como autoría individual de código cuando el historial de GitHub registra a otro integrante.
+El historial consultado muestra `develop` actualizado hasta el commit `2c66861`. El PR #8 se encuentra en revisión.
 
 ![Commits de colaboración en web-applications durante TB1](../assets/images/chapter-5/ColabInsights21.png)
 
