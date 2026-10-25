@@ -33,10 +33,11 @@ Los registros incluyen evidencia visual, timing, duración y síntesis en [Capí
 
 <div style="page-break-before: always;"></div>
 
-## Anexo C. Repositorios, tablero y despliegue AV1
+## Anexo C. Repositorios, tablero y despliegue
 
 - Repositorio del informe: [GitHub — report](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report)
 - Repositorio del Landing Page: [GitHub — landing-page](https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page)
+- Repositorio de las Web Applications: [GitHub — web-applications](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications)
 - Despliegue del Landing Page: [VitalTrek en Vercel](https://landing-page-mrca1.vercel.app/)
 - Product Backlog y Sprint Backlog: [Jira](https://milenkorvu.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog)
 - Evidencia de commits, ramas y colaboración: [Project Report Collaboration Insights](report-collaboration-insight.md)
@@ -56,7 +57,7 @@ Los registros incluyen evidencia visual, timing, duración y síntesis en [Capí
 
 <div style="page-break-before: always;"></div>
 
-## Anexo E. Fuentes consultadas en AV1
+## Anexo E. Fuentes consultadas
 
 - Turismo de aventura en el Perú: [MINCETUR](https://www.gob.pe/institucion/mincetur/noticias/563063-se-aprueban-veintidos-modalidades-de-turismo-de-aventura)
 - Cobertura móvil en el Perú: [OSIPTEL](https://www.osiptel.gob.pe/portal-del-usuario/noticias/checa-tu-senal-asi-puedes-verificar-la-cobertura-movil-en-tu-distrito/)
@@ -67,3 +68,5 @@ Los registros incluyen evidencia visual, timing, duración y síntesis en [Capí
 - Mapas offline de AllTrails: [documentación oficial](https://support.alltrails.com/hc/en-us/articles/37200882853140-The-benefits-of-AllTrails-premium-membership)
 
 <div style="page-break-before: always;"></div>
+
+## Anexo F. Videos de Exposiciones

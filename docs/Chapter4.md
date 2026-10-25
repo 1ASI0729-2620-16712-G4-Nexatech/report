@@ -252,7 +252,7 @@ La Landing Page de **VitalTrek** presenta la propuesta de valor, funcionamiento,
 ### 4.3.1. Landing Page Wireframe.
 El wireframe establece la estructura, jerarquía y distribución inicial del contenido de la Landing Page de VitalTrek. La navegación sigue una secuencia vertical que permite conocer la propuesta de valor, comprender el problema, revisar el funcionamiento de la solución, comparar planes y solicitar una demostración.
 
-![Wireframe general de la Landing Page](../assets/images/chapter-4/wireframes/Wireframe-VitalRek.png)
+![Wireframe general de la Landing Page](../assets/images/chapter-4/wireframes/wireframe-vitaltrek.png)
 
 *Figura 4.1. Wireframe desktop de la Landing Page de VitalTrek.*
 
@@ -299,7 +299,7 @@ La parte final contiene las tarjetas del equipo, un componente de preguntas frec
 ### 4.3.2. Landing Page Mock-up.
 El mock-up de la Landing Page aplica la identidad visual de VitalTrek mediante tonos verdes, fondos claros, tipografía de alto contraste y acentos amarillos para los call-to-action. Su contenido sigue una secuencia que presenta el problema, explica la solución, diferencia los segmentos objetivo y conduce al visitante hacia la solicitud de una demostración.
 
-![Mock-up general de la Landing Page](../assets/images/chapter-4/mockups/landinPage-VitalRek.png)
+![Mock-up general de la Landing Page](../assets/images/chapter-4/mockups/landing-page-vitaltrek.png)
 
 *Figura 4.6. Mock-up general de la Landing Page de VitalTrek.*
 
