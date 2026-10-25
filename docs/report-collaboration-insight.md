@@ -34,9 +34,9 @@ Durante TB1, el equipo extendió el repositorio de [Web Applications](https://gi
 | Rodriguez Rojas, Miler Alexander (`Miler2003`) | Desarrollo de creación de grupos, asignación de guías, Tourist Manifest y Group Progress Dashboard con datos de prueba. | PR [#7](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/7) integrado en `develop`, con 37 commits en 22 archivos. |
 | Mendoza Blanco, Ariel Roberto (`Trepequiper`) | Actualización del selector ES/EN a botones, con mejoras de accesibilidad y documentación. | PR [#9](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/9), 5 commits, integrado en `develop`. |
 | Herrera Enriquez, Diego Fernando (`DerDFHE`) | Corrección de visualización de la selección de rol. | Commit [`2c66861`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/2c66861a26154775d1e1336fd3e13b7ef9bedf82) integrado en `develop`. |
-| León Naupari, Jorge Mateo (`mateool10`) | Ajustes de la marca y el layout del espacio de trabajo. | PR [#8](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/8) en revisión; cambios adicionales en la rama `feature/webapp-workspace-layout-fix`. |
+| León Naupari, Jorge Mateo (`mateool10`) | Ajustes de la marca y el layout del espacio de trabajo. | PR [#8](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/8) integrado en `develop`; cambios adicionales en la rama `feature/webapp-workspace-layout-fix`. |
 
-Los PRs #4–#7 contienen las integraciones principales de las funcionalidades TB1. Los PRs #8 y #9 corresponden a mejoras transversales de interfaz posteriores a la implementación funcional: #9 fue integrado en `develop` y #8 se encuentra en revisión.
+Los PRs #4–#7 contienen las integraciones principales de las funcionalidades TB1. Los PRs #8 y #9 corresponden a mejoras transversales de interfaz posteriores a la implementación funcional: ambos fueron integrados en `develop`.
 
 ---
 
