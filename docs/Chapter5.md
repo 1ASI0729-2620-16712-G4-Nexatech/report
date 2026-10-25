@@ -216,21 +216,21 @@ El Sprint 1 tiene como objetivo implementar y publicar la primera versión del L
 
 La reunión de planificación permitió definir el objetivo, alcance, responsabilidades y tareas del primer Sprint. El trabajo se enfocó en entregar un Landing Page responsive, accesible y coherente con los wireframes, mock-ups, Style Guidelines e Information Architecture definidos en el capítulo IV.
 
-| Campo                 | Información                                                                                                                                                 |
-| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Sprint                | Sprint 1                                                                                                                                                    |
-| Fecha                 | 2026-09-05                                                                                                                                                  |
-| Hora                  | 20:00                                                                                                                                                       |
-| Ubicación             | Discord — reunión virtual                                                                                                                                   |
-| Preparado por         | Rodriguez Rojas, Miler Alexander                                                                                                                            |
-| Participantes         | Cayanchi Avila, Milenko Rubén; León Naupari, Jorge Mateo; Mendoza Blanco, Ariel Roberto; Rodriguez Rojas, Miler Alexander; Herrera Enriquez, Diego Fernando |
-| Sprint Goal           | Publicar una Landing Page bilingüe y responsive de VitalTrek para visitantes de agencias y turistas.                                                          |
-| Sprint Velocity       | 14 Story Points                                                                                                                                             |
-| Total de Story Points | 14                                                                                                                                                          |
+| **Sprint #** | **Sprint 1** |
+| --- | --- |
+| **Sprint Planning Background**  |
+| Date | 2026-09-05 |
+| Time | 08:00 PM |
+| Location | Reunión virtual en Discord |
+| Prepared By | Rodriguez Rojas, Miler Alexander |
+| Attendees (to planning meeting) | Cayanchi Avila, Milenko Rubén / Herrera Enriquez, Diego Fernando / León Naupari, Jorge Mateo / Mendoza Blanco, Ariel Roberto / Rodriguez Rojas, Miler Alexander |
+| Sprint 0 Review Summary | No aplica. El Sprint 1 es el primer Sprint del proyecto; no existe un incremento previo que revisar. |
+| Sprint 0 Retrospective Summary | No aplica. El Sprint 1 es el primer Sprint del proyecto; no existe un Sprint previo sobre el cual realizar una retrospectiva. |
+| **Sprint Goal & User Stories**  |
+| Sprint 1 Goal | **Our focus is on** publishing a bilingual and responsive Landing Page that presents the VitalTrek value proposition to adventure tourism agencies and adventure tourists.<br>**We believe it delivers** a clear understanding of the solution and a direct channel to request information or a demo **to** visitors from both target segments.<br>**This will be confirmed when** the Landing Page is deployed on a public URL and visitors can browse all its sections in Spanish and English, and submit an information request from desktop and mobile web browsers. |
+| Sprint 1 Velocity | 30 Story Points |
+| Sum of Story Points | 30 Story Points (US01, US02, US03, US04, US05, US06, US33, TS01, TS02, TS03 y TS04) |
 
-**Sprint Goal**
-
-Nuestro enfoque está en publicar una Landing Page bilingüe y responsive que comunique la propuesta de valor de VitalTrek. Creemos que esto permitirá a los visitantes de agencias y turistas comprender la solución y solicitar información o una demostración. Esto se confirmará cuando el sitio esté desplegado y sus flujos principales puedan recorrerse correctamente en ambos idiomas.
 
 #### 5.2.1.2. Aspect Leaders and Collaborators
 
@@ -563,21 +563,21 @@ La aplicación está construida con Vue 3 y Vite; utiliza Pinia, Vue Router, Axi
 
 La planificación del Sprint 2 definió como objetivo completar el flujo de preparación de una expedición —desde la configuración de la Route hasta el registro del Tourist Manifest— y agregar la consulta del progreso estimado del grupo. Las historias se seleccionaron del Product Backlog y se ordenaron según sus dependencias: primero la configuración de rutas, checkpoints y ventanas; luego la creación del grupo, la asignación del guía y el manifiesto; finalmente, el dashboard de seguimiento.
 
-| Campo | Información |
+| **Sprint #** | **Sprint 2** |
 | --- | --- |
-| Sprint | Sprint 2 — TB1 |
-| Fecha | 2026-10-04 |
-| Hora | 20:00 |
-| Ubicación | Discord — reunión virtual |
-| Preparado por | Cayanchi Avila, Milenko Rubén |
-| Participantes | Cayanchi Avila, Milenko Rubén; León Naupari, Jorge Mateo; Mendoza Blanco, Ariel Roberto; Rodriguez Rojas, Miler Alexander; Herrera Enriquez, Diego Fernando |
-| Sprint Goal | Completar el flujo frontend de preparación de expediciones y consulta de progreso estimado para Operations Administrators y Field Guides. |
-| Sprint Velocity | 28 Story Points |
-| Total de Story Points | 28 |
+| **Sprint Planning Background** | |
+| Date | 2026-10-04 |
+| Time | 08:00 PM |
+| Location | Reunión virtual en Discord |
+| Prepared By | Cayanchi Avila, Milenko Rubén |
+| Attendees (to planning meeting) | Cayanchi Avila, Milenko Rubén / Herrera Enriquez, Diego Fernando / León Naupari, Jorge Mateo / Mendoza Blanco, Ariel Roberto / Rodriguez Rojas, Miler Alexander |
+| Sprint 1 Review Summary | • Se presentó la primera versión del Landing Page de VitalTrek, desplegada en Vercel y entregada en AV1.<br>• Se completaron las 11 historias comprometidas (US01–US06, US33 y TS01–TS04), equivalentes a 30 Story Points: navegación, propuesta de valor, planes, equipo, solicitud de información, cambio de idioma ES/EN y publicación de términos de servicio y política de privacidad.<br>• El Landing Page se adapta a dispositivos desktop y mobile e incorpora internacionalización y atributos de accesibilidad.<br>• A partir de la revisión de AV1, el equipo corrigió la consistencia, los enlaces, la estructura y las evidencias del informe, y ajustó los roles, el flujo del frontend y la priorización del backlog, dejando los pagos fuera del MVP (versiones 1.6 y 1.7 del Registro de Versiones). |
+| Sprint 1 Retrospective Summary | • **Aciertos:** el Sprint se desarrolló según lo planificado; todos los integrantes cumplieron sus tareas dentro del plazo y el incremento se entregó completo.<br>• **Aciertos:** la comunicación por Discord y la división del trabajo por secciones del Landing Page permitieron avanzar en paralelo sin bloqueos.<br>• **Oportunidad de mejora:** la integración del trabajo se concentró al final del Sprint, lo que dificultó revisar los cambios con anticipación.<br>• **Acciones para el Sprint 2:** descomponer cada User Story en tasks de 4 a 8 horas registradas en Jira, desarrollar cada funcionalidad en su propia feature branch e integrarla en `develop` mediante Pull Requests revisados. |
+| **Sprint Goal & User Stories** | |
+| Sprint 2 Goal | **Our focus is on** enabling the preparation of a complete expedition (route, checkpoints, expected time windows, expedition group, field guide assignment and tourist manifest) and the consultation of the estimated progress of a group.<br>**We believe it delivers** faster and more organized tour preparation **to** Operations Administrators, and a reliable way to register participants and follow the group progress **to** Field Guides.<br>**This will be confirmed when** an Operations Administrator can configure a route with its checkpoints and expected time windows, create an expedition group and assign a field guide, a Field Guide can register the tourist manifest, and both can view the estimated progress of the group in the deployed Web Application, in Spanish and English. |
+| Sprint 2 Velocity | 28 Story Points |
+| Sum of Story Points | 28 Story Points (US07, US08, US09, US11, US13, US12 y US20) |
 
-**Sprint Goal**
-
-Nuestro enfoque está en completar el flujo frontend para configurar rutas y grupos de expedición, registrar el Tourist Manifest y consultar el progreso estimado con datos simulados. Creemos que esto permitirá a los Operations Administrators preparar tours y a los Field Guides registrar a sus participantes mediante una aplicación coherente con el proceso operativo. Esto se confirmará cuando los usuarios puedan recorrer y validar los escenarios de US07, US08, US09, US11, US13, US12 y US20 en el frontend desplegado con Fake API; la validación no implica backend productivo ni telemetría real.
 
 #### 5.2.2.2. Aspect Leaders and Collaborators
 
