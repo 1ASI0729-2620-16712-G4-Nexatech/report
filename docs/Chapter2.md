@@ -33,6 +33,7 @@ A continuación se presenta el cuadro Competitive Analysis Landscape, en el cual
 | Análisis SWOT       | Oportunidades                                          | Crecimiento sostenido del turismo de aventura en el Perú con 14.1 millones de visitas a sitios turísticos en 2025 y aumento del 33.2 por ciento respecto a 2024. Alta demanda de soluciones de seguridad por parte de turistas y agencias. Bajo nivel de digitalización del sector permite posicionarse como referente. | Expansión hacia mercados latinoamericanos donde su presencia es limitada. Demanda creciente de digitalización en operadores turísticos.                                                                    | Expansión hacia mercados emergentes de turismo de aventura como Sudamérica y Asia. Integración futura con dispositivos satelitales o IoT podría ampliar su propuesta de valor.                                                                | Incorporación de funcionalidades para agencias podría ampliar su mercado. Crecimiento del turismo experiencial a nivel global.                                                                             |
 | Análisis SWOT       | Amenazas                                               | Llegada de competidores internacionales con mayor capital al mercado peruano. Adopción masiva de tecnologías satelitales como Starlink Direct to Cell que reduzcan la barrera de la conectividad. Competencia con plataformas globales con mayor presupuesto de marketing.                                              | Aparición de competidores locales con propuestas adaptadas culturalmente. Posible canibalización por parte de plataformas como Bokun o FareHarbor en mercados emergentes.                                  | Competidores con soluciones más completas que integren hardware propio. Saturación del mercado norteamericano de software para turismo.                                                                                                       | Competidores especializados en navegación offline regional con mejor cobertura local. Apps de mapas gratuitos como Google Maps incorporando funciones similares.                                           |
 
+### 2.1.2. Estrategias y tácticas frente a competidores
 
 ## 2.2. Entrevistas
  
@@ -431,7 +432,7 @@ Escenario As-Is: Supervisión operativa de un grupo de 12 turistas en la ruta Sa
 
 **User Journey Map 2: Sebastian Rojas (Segmento 2 — Turista de Aventura)**
 
-User Persona vinculada: Sebastian Rojas (Marco), 45 años, arquitecto independiente de Madrid, España. 
+User Persona vinculada: Sebastian Rojas, 45 años, arquitecto independiente de Madrid, España. 
  
 Escenario As-Is: Realización del trekking autoguiado/asistido en la ruta Salkantay, experimentando síntomas de mal de montaña en tramos aislados. 
 
