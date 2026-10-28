@@ -1168,3 +1168,28 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
 
 <!-- COMPLETAR: repetir el bloque por cada problema de la tabla resumen -->
 
+## 5.4. Video About-the-Product
+
+El Video About-the-Product presenta VitalTrek a los visitantes del Landing Page que desean conocer el modelo de negocio y las características principales de la solución, así como a los usuarios de las Web Applications que desean conocer cómo realizar las tareas soportadas por el producto. El video resume el problema de supervisión de grupos en zonas sin cobertura, la propuesta de valor de VitalTrek para agencias y turistas, y muestra escenas de interacción con el Landing Page y la Web Application. Incluye al menos una opinión de un participante de cada segmento objetivo obtenida en las entrevistas de validación. El tono es serio, cercano y sereno, consistente con el tono de comunicación definido en las Style Guidelines de la sección 4.1.1.
+
+| Elemento | Información |
+| --- | --- |
+| Nombre del video | upc-pre-202620-1asi0730-16712-nexatech-about-the-product-sprint-3 |
+| Duración | <!-- COMPLETAR: mm:ss (entre 1 y 3 minutos) --> |
+| Microsoft Stream | [Ver video](<!-- COMPLETAR -->) |
+| YouTube (incrustado en el Landing Page) | [Ver video](<!-- COMPLETAR -->) |
+
+![Captura del Video About-the-Product](../assets/images/chapter-5/about-the-product.png)
+<!-- COMPLETAR: captura representativa -->
+
+*Figura 5.X. Video About-the-Product de VitalTrek.*
+
+**Secuencia de contenido**
+
+| Inicio (hh:mm:ss) | Sección | Contenido |
+| --- | --- | --- |
+| | Problema | Situación de las agencias y turistas cuando un grupo pierde la cobertura durante el recorrido. |
+|  | Propuesta de valor | Presentación de VitalTrek: supervisión por checkpoints, telemetría offline y alertas. |
+|  | Producto | Escenas de interacción con el Landing Page y la Web Application. |
+|  | Testimonios | Opinión de un participante de cada segmento obtenida en las entrevistas de validación. |
+|  | Call-To-Action | Invitación a solicitar una demostración o acceder a la aplicación. |
