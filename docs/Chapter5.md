@@ -925,3 +925,271 @@ Durante el Sprint 3, el equipo trabajó sobre los repositorios [web-services](ht
 ![GitHub Insights del repositorio web-services durante el Sprint 3](../assets/images/chapter-5/sprint3-insights-web-services.png)
 
 *Figura 5.X. GitHub Insights (Contributors) del repositorio web-services para el periodo del Sprint 3.*
+
+## 5.3. Validation Interviews
+
+En esta sección se registran y explican las entrevistas de validación realizadas con representantes de los dos segmentos objetivo de VitalTrek: los **dueños o responsables de agencias de turismo de aventura** y los **turistas de aventura**. A diferencia de las entrevistas de las entrevistas anteriores, que tuvieron un enfoque de descubrimiento, estas sesiones tienen un enfoque de **validación**: los participantes interactúan con el Landing Page y con las Web Applications desplegadas, realizan tareas concretas y manifiestan sus observaciones. Los resultados se evalúan según heurísticas de usabilidad, diseño inclusivo y arquitectura de información, con el formato indicado para el proyecto.
+
+### 5.3.1. Diseño de Entrevistas
+
+Las sesiones de validación buscan comprobar si la solución implementada resuelve los problemas identificados en el Needfinding y si los usuarios pueden completar los flujos principales sin ayuda. Para ello, cada participante recibe un conjunto de tareas sobre los productos desplegados y el entrevistador observa su comportamiento, registra las dificultades y, al finalizar, recoge sus apreciaciones.
+
+### Objetivos Generales del Proceso de Validación
+
+1. Verificar que los visitantes de cada segmento comprendan la propuesta de valor de VitalTrek a partir del Landing Page y encuentren la información y los Call-To-Action dirigidos a su segmento.
+2. Comprobar que los usuarios puedan completar los user flows principales de las Web Applications definidos en la sección 4.4.4, sin asistencia del entrevistador.
+3. Identificar problemas de usabilidad, diseño inclusivo y arquitectura de información, y clasificarlos según su severidad.
+4. Contrastar los Lean UX Hypothesis Statements y los assumptions de la sección 1.2.2 con el comportamiento real observado en los usuarios.
+5. Recoger testimonios de los participantes que sustenten la propuesta de valor y que puedan incluirse en el Video About-the-Product.
+
+### Principios aplicados a la conducción de las sesiones
+
+- Se pide al participante **pensar en voz alta** (think-aloud) mientras realiza cada tarea.
+- El entrevistador **no explica la interfaz ni indica dónde hacer clic**; solo lee la tarea y observa.
+- Las tareas se formulan como **objetivos del usuario**, no como instrucciones de interfaz: "registre a los participantes de su grupo" en lugar de "haga clic en el botón Manifiesto".
+- Ante una dificultad, se repregunta de forma neutra: "¿qué esperaba encontrar?", "¿qué haría ahora?".
+- Las preguntas de opinión se realizan **al finalizar todas las tareas**, para no influir en el comportamiento observado.
+
+---
+
+### Segmento 1: Dueños o Responsables de Agencias de Turismo de Aventura
+
+**Perfil del participante:** propietarios, jefes de operaciones o guías principales de agencias de turismo de aventura que operen rutas en zonas con conectividad limitada.
+
+**Elementos incluidos en la sesión:** Landing Page y Web Application (espacios de trabajo de Operations Administrator y Field Guide).
+
+**Tareas en el Landing Page**
+
+1. Identifique qué problema resuelve VitalTrek para una agencia como la suya.
+2. Encuentre los planes disponibles para agencias y su precio.
+3. Cambie el idioma del sitio a inglés y luego regrese a español.
+4. Solicite información o una demostración del producto.
+5. Acceda a la aplicación desde la sección dirigida a agencias.
+
+**Tareas en la Web Application (user flows de la sección 4.4.4)**
+
+6. Registre una nueva ruta con sus datos principales.
+7. Agregue los checkpoints de la ruta en el orden del recorrido.
+8. Defina el tiempo esperado para cada tramo entre checkpoints.
+9. Cree un grupo de expedición para esa ruta y asígnele un guía.
+10. Como guía, registre a los participantes del grupo.
+11. Consulte el progreso estimado de un grupo que se encuentra en ruta.
+
+<!-- COMPLETAR: ajustar las tareas 6-11 a las funcionalidades realmente desplegadas al momento de la validación. -->
+
+**Preguntas posteriores a las tareas**
+
+1. ¿Qué tarea le resultó más difícil? ¿Por qué?
+2. ¿Hubo algún momento en que no supo qué hacer a continuación?
+3. ¿Qué información esperaba ver sobre sus grupos que no encontró?
+4. ¿Cómo se compara esta forma de preparar un tour con la forma en que lo hace hoy?
+5. ¿Qué cambiaría o agregaría para usarlo en su operación?
+6. ¿Recomendaría VitalTrek a otra agencia? ¿Por qué?
+
+---
+
+### Segmento 2: Turistas de Aventura
+
+**Perfil del participante:** personas que practican trekking, caminatas o rutas de montaña y que contratan agencias para recorridos de mayor dificultad, duración o riesgo, preferentemente en zonas sin cobertura móvil.
+
+**Elementos incluidos en la sesión:** Landing Page y Web Application.
+
+**Tareas en el Landing Page**
+
+1. Identifique cómo VitalTrek protege a un turista durante un recorrido sin señal.
+2. Encuentre qué beneficios ofrece VitalTrek a los turistas.
+3. Consulte cómo se tratan sus datos personales y de salud.
+4. Cambie el idioma del sitio a inglés y luego regrese a español.
+5. Acceda a la aplicación desde la sección dirigida a turistas.
+
+**Tareas en la Web Application**
+
+<!-- COMPLETAR: tareas del turista según lo implementado (p. ej. US14 Registro de contacto de emergencia). Si no hay vistas para turistas, indicarlo y validar solo el Landing Page con este segmento. -->
+
+**Preguntas posteriores a las tareas**
+
+1. ¿Qué tarea le resultó más difícil? ¿Por qué?
+2. ¿Entendió qué datos suyos registra VitalTrek y para qué los usa?
+3. ¿Se sentiría más tranquilo si la agencia con la que viaja utilizara VitalTrek? ¿Por qué?
+4. ¿Qué información esperaba encontrar que no encontró?
+5. ¿Recomendaría a una agencia que utilice VitalTrek?
+
+---
+
+### Consideraciones de las Sesiones de Validación
+
+**Cantidad de entrevistas:** mínimo 3 y máximo 5 por segmento, conforme al enunciado del proyecto.
+
+**Entorno:** las sesiones se realizan sobre las versiones desplegadas del Landing Page y de las Web Applications, en desktop o mobile web browser según el dispositivo habitual del participante. Se registra el dispositivo y el navegador utilizados.
+
+**Registro:** las sesiones se graban en video con consentimiento previo del participante, incluyendo la pantalla y la voz. Las grabaciones se consolidan en un único video de validación.
+
+**Evaluación:** los problemas observados se clasifican según la escala de severidad y las heurísticas de usabilidad, diseño inclusivo y arquitectura de información de la sección 5.3.3.
+
+**Ética:** antes de cada sesión se informa al participante sobre el propósito de la validación, la confidencialidad de sus respuestas y su derecho a retirarse en cualquier momento. Los datos utilizados en las tareas son ficticios.
+
+### 5.3.2. Registro de Entrevistas
+
+En esta sección se presentan los registros de las entrevistas de validación realizadas para cada segmento objetivo. Todas las sesiones se consolidan en el video [upc-pre-202620-1asi0730-16712-nexatech-validation-sprint-3](<!-- COMPLETAR: URL de Microsoft Stream -->).
+
+![Captura del video de validación](../assets/images/chapter-5/validation-video.png)
+<!-- COMPLETAR: captura representativa del video -->
+
+#### Segmento 1: Dueños o Responsables de Agencias de Turismo de Aventura
+
+| **Entrevista #1** | |
+| --- | --- |
+| **Nombre** | <!-- COMPLETAR --> |
+| **Apellidos** | <!-- COMPLETAR --> |
+| **Edad** | <!-- COMPLETAR --> |
+| **Distrito** | <!-- COMPLETAR --> |
+| **Rol** | <!-- COMPLETAR --> |
+| **Dispositivo y navegador** | <!-- COMPLETAR --> |
+| **Evidencias** | ![Entrevista de validación 1 del segmento 1](../assets/images/chapter-5/validation/Validacion1Segmento1.png) |
+| **Link** | [Ver Video](<!-- COMPLETAR -->) |
+| **Timing donde inicia la entrevista** | <!-- COMPLETAR: mm:ss min --> |
+| **Duración de la entrevista** | <!-- COMPLETAR: mm:ss min --> |
+| **Resumen** | <!-- COMPLETAR: qué tareas completó sin ayuda, en cuáles tuvo dificultades y por qué, qué comentó al finalizar y cuál fue su apreciación general --> |
+
+<!-- COMPLETAR: repetir la tabla para las entrevistas #2 y #3 (hasta #5) -->
+
+#### Segmento 2: Turistas de Aventura
+
+| **Entrevista #1** | |
+| --- | --- |
+| **Nombre** | <!-- COMPLETAR --> |
+| **Apellidos** | <!-- COMPLETAR --> |
+| **Edad** | <!-- COMPLETAR --> |
+| **Distrito** | <!-- COMPLETAR --> |
+| **Rol** | Turista de aventura |
+| **Dispositivo y navegador** | <!-- COMPLETAR --> |
+| **Evidencias** | ![Entrevista de validación 1 del segmento 2](../assets/images/chapter-5/validation/Validacion1Segmento2.png) |
+| **Link** | [Ver Video](<!-- COMPLETAR -->) |
+| **Timing donde inicia la entrevista** | <!-- COMPLETAR --> |
+| **Duración de la entrevista** | <!-- COMPLETAR --> |
+| **Resumen** | <!-- COMPLETAR --> |
+
+<!-- COMPLETAR: repetir la tabla para las entrevistas #2 y #3 (hasta #5) -->
+
+#### Resultados de las tareas por segmento
+
+Para cada segmento se consolida cuántos participantes completaron cada tarea sin ayuda, siguiendo el mismo criterio de la sección 2.2.3.
+
+| Tarea | Segmento 1: completada sin ayuda | Segmento 2: completada sin ayuda | Observación principal |
+| --- | --- | --- | --- |
+| <!-- COMPLETAR: p. ej. Solicitar información desde el Landing Page --> | <!-- X de 3 (%) --> | <!-- X de 3 (%) --> | <!-- COMPLETAR --> |
+
+<!-- COMPLETAR: 2-3 párrafos que contrasten los resultados con los problemas de la sección 2.2.3 y con las Hypothesis Statements de la sección 1.2.2.3: qué se confirmó, qué no y qué se debe cambiar. -->
+
+> Los porcentajes corresponden a la muestra de participantes de las sesiones de validación y no representan a todas las agencias o turistas del Perú.
+
+### 5.3.3. Evaluaciones según heurísticas
+
+En esta sección se evalúan las sesiones de validación según heurísticas de usabilidad, diseño inclusivo y arquitectura de información, con el formato UX Heuristics & Principles Evaluation indicado para el proyecto. Cada problema se registra con su severidad, la heurística o principio que viola y una recomendación de corrección, que se incorpora al Product Backlog para los siguientes Sprints.
+
+Las heurísticas aplicadas son:
+
+- **Usability:** las 10 heurísticas de usabilidad de Jakob Nielsen.
+- **Inclusive Design:** los Inclusive Design Principles (proporciona experiencias comparables, considera la situación, sé consistente, da el control, ofrece opciones, prioriza el contenido y agrega valor).
+- **Information Architecture:** las heurísticas de arquitectura de información de Abby Covert (findable, accessible, clear, communicative, useful, credible, controllable, valuable, learnable y delightful).
+
+**UX Heuristics & Principles Evaluation**
+**Usability – Inclusive Design – Information Architecture**
+
+| | |
+| --- | --- |
+| **CARRERA** | Ingeniería de Software |
+| **CURSO** | Aplicaciones Web |
+| **SECCIÓN** | 16712 |
+| **PROFESORES** | Sánchez Seña, Alberto Wilmer |
+| **AUDITOR** | NexaTech |
+| **CLIENTE(S)** | <!-- COMPLETAR: nombres de los participantes de las sesiones --> |
+
+**SITE o APP A EVALUAR:** VitalTrek: Landing Page y Web Applications.
+
+**TAREAS A EVALUAR:**
+
+El alcance de esta evaluación incluye la revisión de la usabilidad de las siguientes tareas:
+
+1. Consulta de la propuesta de valor y de los planes en el Landing Page.
+2. Cambio de idioma en el Landing Page y en la Web Application.
+3. Solicitud de información o demostración desde el Landing Page.
+4. Acceso a la Web Application desde los Call-To-Action de cada segmento.
+5. Registro de una ruta con sus checkpoints y ventanas de tiempo esperadas.
+6. Creación de un grupo de expedición y asignación de un guía.
+7. Registro del manifiesto de turistas.
+8. Consulta del progreso estimado de un grupo.
+
+<!-- COMPLETAR: ajustar a las tareas realmente evaluadas (agregar las del turista si las hay). -->
+
+No están incluidas en esta versión de la evaluación las siguientes tareas:
+
+1. Asignación y activación de wearables.
+2. Captura offline y sincronización de telemetría en checkpoints.
+3. Evaluación de riesgo y generación de alertas.
+4. Gestión de incidentes, emergencias y evacuaciones.
+5. Cierre del tour y generación del Tour Summary.
+
+<!-- COMPLETAR: quitar de esta lista lo que sí se haya implementado y evaluado. -->
+
+**ESCALA DE SEVERIDAD:**
+
+Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
+
+| Nivel | Descripción |
+| :---: | --- |
+| 1 | Problema superficial: puede ser fácilmente superado por el usuario u ocurre con muy poca frecuencia. No necesita ser arreglado a no ser que exista disponibilidad de tiempo. |
+| 2 | Problema menor: puede ocurrir un poco más frecuentemente o es un poco más difícil de superar para el usuario. Se le debería asignar una prioridad baja para resolverlo de cara al siguiente release. |
+| 3 | Problema mayor: ocurre frecuentemente o los usuarios no son capaces de resolverlo. Es importante que sea corregido y se le debe asignar una prioridad alta. |
+| 4 | Problema muy grave: un error de gran impacto que impide al usuario continuar con el uso de la herramienta. Es imperativo que sea corregido antes del lanzamiento. |
+
+**TABLA RESUMEN:**
+
+| # | Problema | Escala de severidad | Heurística/Principio violada(o) |
+| :---: | --- | :---: | --- |
+| 1 | <!-- COMPLETAR --> | <!-- 1-4 --> | <!-- p. ej. Usability: Visibilidad del estado del sistema --> |
+
+**DESCRIPCIÓN DE PROBLEMAS:**
+
+**PROBLEMA #1:** <!-- COMPLETAR: título del problema -->
+
+**Severidad:** <!-- COMPLETAR -->
+**Heurística violada:** <!-- COMPLETAR -->
+
+**Problema:**
+
+<!-- COMPLETAR: qué ocurrió, en qué tarea, cuántos participantes lo experimentaron -->
+
+![<!-- COMPLETAR -->](../assets/images/chapter-5/validation/problema1.png)
+
+**Recomendación:**
+
+<!-- COMPLETAR: corrección propuesta y User Story o task del Product Backlog donde se registra -->
+
+<!-- COMPLETAR: repetir el bloque por cada problema de la tabla resumen -->
+
+## 5.4. Video About-the-Product
+
+El Video About-the-Product presenta VitalTrek a los visitantes del Landing Page que desean conocer el modelo de negocio y las características principales de la solución, así como a los usuarios de las Web Applications que desean conocer cómo realizar las tareas soportadas por el producto. El video resume el problema de supervisión de grupos en zonas sin cobertura, la propuesta de valor de VitalTrek para agencias y turistas, y muestra escenas de interacción con el Landing Page y la Web Application. Incluye al menos una opinión de un participante de cada segmento objetivo obtenida en las entrevistas de validación. El tono es serio, cercano y sereno, consistente con el tono de comunicación definido en las Style Guidelines de la sección 4.1.1.
+
+| Elemento | Información |
+| --- | --- |
+| Nombre del video | upc-pre-202620-1asi0730-16712-nexatech-about-the-product-sprint-3 |
+| Duración | <!-- COMPLETAR: mm:ss (entre 1 y 3 minutos) --> |
+| Microsoft Stream | [Ver video](<!-- COMPLETAR -->) |
+| YouTube (incrustado en el Landing Page) | [Ver video](<!-- COMPLETAR -->) |
+
+![Captura del Video About-the-Product](../assets/images/chapter-5/about-the-product.png)
+<!-- COMPLETAR: captura representativa -->
+
+*Figura 5.X. Video About-the-Product de VitalTrek.*
+
+**Secuencia de contenido**
+
+| Inicio (hh:mm:ss) | Sección | Contenido |
+| --- | --- | --- |
+| | Problema | Situación de las agencias y turistas cuando un grupo pierde la cobertura durante el recorrido. |
+|  | Propuesta de valor | Presentación de VitalTrek: supervisión por checkpoints, telemetría offline y alertas. |
+|  | Producto | Escenas de interacción con el Landing Page y la Web Application. |
+|  | Testimonios | Opinión de un participante de cada segmento obtenida en las entrevistas de validación. |
+|  | Call-To-Action | Invitación a solicitar una demostración o acceder a la aplicación. |
