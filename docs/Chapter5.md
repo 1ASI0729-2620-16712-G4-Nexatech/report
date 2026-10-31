@@ -21,9 +21,14 @@ La siguiente tabla especifica los productos de software que el equipo utiliza, a
 | Software Development | Google Chrome | Verificar la navegación, el comportamiento responsive y la accesibilidad del Landing Page y de las Web Applications mediante sus herramientas de desarrollo. | Instalación local | https://www.google.com/chrome/ |
 | Software Development | Vue.js | Construir las Frontend Web Applications con Vue 3 y Vite, junto con Pinia, Vue Router, Axios, PrimeVue y vue-i18n. Implementado en el Sprint 2 (TB1). | Instalación local (vía npm) | https://vuejs.org/ |
 | Software Development | json-server | Ejecutar la Fake API con recursos JSON de prueba que consumen las Web Applications. Implementado en el Sprint 2 (TB1). | Instalación local (vía npm) | https://github.com/typicode/json-server |
-| Software Development | .NET SDK y C# | Construir el RESTful Web Services. Planificado para Sprints posteriores. | Instalación local | https://dotnet.microsoft.com/download |
-| Software Development | PostgreSQL | Persistir la información operativa y de seguridad de las expediciones. Planificado para Sprints posteriores. | Instalación local | https://www.postgresql.org/download/ |
+| Software Development | JetBrains Rider | Editar, compilar y depurar el RESTful Web Services en C#. Utilizado desde el Sprint 3 (AV2). | Instalación local | https://www.jetbrains.com/rider/download/ |
+| Software Development | .NET SDK 10 y C# | Construir el RESTful Web Services con ASP.NET Core y Entity Framework Core. Implementado en el Sprint 3 (AV2). | Instalación local | https://dotnet.microsoft.com/download |
+| Software Development | MySQL Server y MySQL Workbench | Persistir localmente la información del RESTful Web Services y revisar las tablas generadas por las migraciones de Entity Framework Core. Implementado en el Sprint 3 (AV2). | Instalación local | https://dev.mysql.com/downloads/ |
 | Software Deployment | Vercel | Desplegar y publicar el Landing Page y las Web Applications a partir de sus repositorios de GitHub. | SaaS | https://vercel.com/ |
+| Software Deployment | Docker | Empaquetar el RESTful Web Services en una imagen de contenedor a partir del `Dockerfile` del repositorio. La imagen se construye en Render. | Archivo de configuración en el repositorio | https://www.docker.com/ |
+| Software Deployment | Render | Desplegar el RESTful Web Services como Web Service basado en Docker a partir de la rama `main`. | SaaS | https://render.com/ |
+| Software Deployment | Aiven for MySQL | Alojar la base de datos MySQL administrada que utiliza el RESTful Web Services desplegado. | SaaS | https://aiven.io/mysql |
+| Software Documentation | Scalar (OpenAPI) | Publicar y probar la documentación OpenAPI de los endpoints del RESTful Web Services. Implementado en el Sprint 3 (AV2). | Paquete NuGet del proyecto | https://scalar.com/ |
 | Software Documentation | Markdown | Redactar el informe del proyecto y los archivos README de cada repositorio. | Formato abierto | https://www.markdownguide.org/ |
 | Software Documentation | dbdiagram.io | Elaborar el Database Diagram de la sección 4.8. | SaaS | https://dbdiagram.io/ |
 | Software Documentation | PlantUML | Elaborar los Class Diagrams de la sección 4.7. | Instalación local / SaaS | https://plantuml.com/download |
@@ -34,14 +39,14 @@ La siguiente tabla especifica los productos de software que el equipo utiliza, a
  
 El código fuente de VitalTrek se administra con **Git** como sistema de control de versiones y **GitHub** como plataforma de alojamiento y colaboración. Cada producto de la solución mantiene su propio repositorio dentro de la organización del equipo, de modo que sus ciclos de vida y despliegues sean independientes.
  
-| Producto | Repositorio | Rama por defecto | Estado en TB1 |
+| Producto | Repositorio | Rama por defecto | Estado en AV2 |
 | --- | --- | --- | --- |
 | Project Report | https://github.com/1ASI0729-2620-16712-G4-Nexatech/report | `develop` | En elaboración |
 | Landing Page | https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page | `main` | Implementado y desplegado |
-| Frontend Web Applications | https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications | `develop` | Implementado y desplegado (frontend con Fake API) |
-| RESTful Web Services | https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-services | `develop` | Repositorio creado, implementación planificada |
+| Frontend Web Applications | https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications | `develop` | Implementado y desplegado (`v1.1.0`); consume el RESTful Web Services en IAM y Expedition Setup |
+| RESTful Web Services | https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend | `develop` | Implementado y desplegado (`v1.0.0`) |
  
-En el caso del RESTful Web Services, el repositorio incluye tanto el proyecto como los archivos de pruebas unitarias y de integración, conforme a lo indicado en el enunciado del trabajo final.
+En el caso del RESTful Web Services, el repositorio contiene la solución `VitalTrek.Platform.sln` con el proyecto `VitalTrek.API`, organizado por bounded contexts, junto con sus migraciones de base de datos y el `Dockerfile` utilizado para el despliegue.
  
 #### GitFlow como Workflow de branching y colaboración
  
@@ -168,13 +173,13 @@ function setLanguage(selectedLocale) {
  
 ### 5.1.4. Software Deployment Configuration
  
-El despliegue de cada producto parte de su repositorio de código fuente. En AV1 se desplegó el Landing Page y en TB1 se desplegaron las Web Applications; ambos productos se publican en Vercel a partir de sus repositorios de GitHub.
+El despliegue de cada producto parte de su repositorio de código fuente. En AV1 se desplegó el Landing Page y en TB1 se desplegaron las Web Applications, ambos en Vercel a partir de sus repositorios de GitHub. En AV2 se desplegó el RESTful Web Services en Render como contenedor Docker, conectado a una base de datos MySQL administrada en Aiven.
  
 | Producto | Plataforma | Rama de despliegue | Estado |
 | --- | --- | --- | --- |
-| Landing Page | Vercel | `main` | Desplegado |
-| Frontend Web Applications | Vercel | `main` | Desplegado |
-| RESTful Web Services | Azure App Service | `main` | Planificado |
+| Landing Page | Vercel | `main` | Desplegado (`v1.1.0`) |
+| Frontend Web Applications | Vercel | `main` | Desplegado (`v1.1.0`) |
+| RESTful Web Services | Render (Docker) y Aiven for MySQL | `main` | Desplegado (`v1.0.0`) |
  
 #### Configuración del Landing Page
  
@@ -188,7 +193,7 @@ El despliegue de cada producto parte de su repositorio de código fuente. En AV1
 | Output directory | Directorio raíz del repositorio |
 | Variables de entorno | No requeridas |
 | URL pública de producción | https://landing-page-mrca1.vercel.app/ |
-| Versión desplegada | `v1.0.0` |
+| Versión desplegada | `v1.1.0` (Sprint 3); `v1.0.0` en el Sprint 1 |
  
 #### Pasos para lograr el despliegue desde el repositorio
  
@@ -199,6 +204,61 @@ El despliegue de cada producto parte de su repositorio de código fuente. En AV1
 5. La rama de Release se integra en `main` mediante Pull Request y se etiqueta con su número de versión.
 6. Vercel detecta el cambio en la Production Branch y ejecuta el despliegue automático.
 7. Se verifica la URL pública de producción y se registra la evidencia en la sección 5.2.X.7 del Sprint correspondiente.
+
+#### Configuración de las Web Applications
+
+| Parámetro | Valor |
+| --- | --- |
+| Repositorio | https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications |
+| Plataforma | Vercel |
+| Production Branch | `main` |
+| Framework preset | Vite |
+| Build command | `npm run build` |
+| Output directory | `dist` |
+| Rewrites | `vercel.json` redirige todas las rutas a `index.html` para la navegación de la SPA |
+| Variable `VITE_VITALTREK_API_URL` | `https://vitaltrek-api.onrender.com/api/v1`, URL base del RESTful Web Services |
+| Variable `VITE_SIMULATED_OPERATIONS` | `false` (definida en `.env.production`); los contextos aún no implementados en el API muestran que estarán disponibles en un próximo sprint |
+| URL pública de producción | https://web-applications-vert.vercel.app/ |
+| Versión desplegada | `v1.1.0` |
+
+#### Configuración del RESTful Web Services
+
+| Parámetro | Valor |
+| --- | --- |
+| Repositorio | https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend |
+| Plataforma del servicio | Render, Web Service en plan Free |
+| Runtime | Docker: `Dockerfile` en la raíz del repositorio, con imágenes oficiales del SDK y del runtime de ASP.NET Core 10 |
+| Production Branch | `main` |
+| Región | Singapore (Southeast Asia) |
+| Puerto | Variable `PORT` inyectada por Render; 8080 por defecto |
+| Base de datos | Aiven for MySQL 8.4, plan Free, conexión cifrada (`SslMode=Required`) |
+| Configuración de producción | `appsettings.Production.json`, cuya cadena de conexión y clave de firma se completan con variables de entorno al iniciar la aplicación |
+| Migraciones | Se aplican automáticamente al iniciar la aplicación mediante Entity Framework Core |
+| Documentación | Scalar en `/scalar` y especificación OpenAPI en `/openapi/v1.json` |
+| URL pública de producción | https://vitaltrek-api.onrender.com |
+| Versión desplegada | `v1.0.0` |
+
+Las variables de entorno se registran únicamente en Render y no se versionan en el repositorio:
+
+| Variable | Propósito |
+| --- | --- |
+| `ASPNETCORE_ENVIRONMENT` | Valor `Production`; carga `appsettings.Production.json`. |
+| `ASPNETCORE_FORWARDEDHEADERS_ENABLED` | Valor `true`; permite reconocer el esquema HTTPS detrás del proxy de Render. |
+| `DATABASE_URL` | Host del servicio MySQL en Aiven. |
+| `DATABASE_PORT` | Puerto del servicio MySQL en Aiven. |
+| `DATABASE_USER` | Usuario de la base de datos. |
+| `DATABASE_PASSWORD` | Contraseña de la base de datos. |
+| `DATABASE_SCHEMA` | Base de datos utilizada (`defaultdb`). |
+| `TOKEN_SECRET` | Clave de firma de los tokens JWT (HS256). |
+
+#### Pasos para lograr el despliegue del RESTful Web Services desde el repositorio
+
+1. El integrante desarrolla la funcionalidad en su rama `feature/*` y abre un Pull Request hacia `develop`.
+2. Al cerrar el Sprint se crea la rama `release/vX.Y.Z` desde `develop`, donde se incorporan los ajustes de configuración de producción.
+3. La rama de Release se integra en `main` y en `develop` mediante Pull Requests, y `main` se etiqueta con su número de versión.
+4. Render detecta el cambio en la Production Branch, construye la imagen Docker y reinicia el servicio.
+5. Al iniciar, la aplicación aplica las migraciones pendientes sobre la base de datos de Aiven y carga los datos de demostración si la base de datos está vacía.
+6. Se verifica la documentación en `/scalar` ejecutando el inicio de sesión y una consulta autenticada, y se registra la evidencia en la sección 5.2.X.7 del Sprint correspondiente.
 
 ## 5.2. Landing Page, Services & Applications Implementation
 
@@ -237,578 +297,13 @@ La reunión de planificación permitió definir el objetivo, alcance, responsabi
 
 La siguiente matriz organiza el liderazgo y la colaboración del equipo durante el Sprint 1, en correspondencia con las tareas registradas en el Sprint Backlog.
 
-| Integrante                       | Usuario de GitHub | Landing Page structure | Responsive UI | i18n y a11y | QA y deployment | Documentación |
-| -------------------------------- | ----------------- | ---------------------- | ------------- | ----------- | --------------- | ------------- |
-| Cayanchi Avila, Milenko Rubén    | `MaxghZZ`         | L                      | C             | C           | C               | L             |
-| León Naupari, Jorge Mateo        | `mateool10`       | C                      | L             | C           | C               | C             |
-| Mendoza Blanco, Ariel Roberto    | `Trepequiper`     | C                      | C             | L           | C               | C             |
-| Rodriguez Rojas, Miler Alexander | `Miler2003`       | C                      | C             | C           | L               | L             |
-| Herrera Enriquez, Diego Fernando | `DerDFHE`         | C                      | C             | C           | C               | C             |
-
-#### 5.2.1.3. Sprint Backlog 1
-
-El Sprint Backlog 1 agrupa las siete User Stories de la Landing Page y las cuatro Technical Stories que la habilitan, seleccionadas desde el Product Backlog de la sección 3.3. La descomposición produjo veintiún Work-items, estimados individualmente entre 4 y 8 horas, con un total de 105 horas. Las tareas se repartieron según la matriz de líderes y colaboradores de la sección 5.2.1.2: cada integrante asume las tareas del aspecto que lidera y colabora en los aspectos restantes.
- 
-**Evidencia del Board del Sprint**
-
-![Product Backlog de VitalTrek en Jira](../assets/images/chapter-3/product-backlog-jira.png)
- 
-*Figura 5.1. Board del Sprint 1 en Jira.*
- 
-**Enlace público del board Jira:** [Ver Product Backlog](https://milenkorvu.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog)
- 
-| Sprint # | Story Id | Story Title | Task Id | Task Title | Task Description | Estimation (Hours) | Assigned To | Status |
-| --- | --- | --- | --- | --- | --- | ---: | --- | --- |
-| Sprint 1 | US01 | Navegación principal | T-01 | Estructura del header y de las secciones principales | Construir el encabezado y el esqueleto de las secciones del sitio con elementos semánticos, de modo que cada sección sea alcanzable desde la navegación. | 5 | Cayanchi Avila, Milenko Rubén | Done |
-| Sprint 1 | US01 | Navegación principal | T-02 | Navegación para pantallas reducidas | Implementar el comportamiento de la navegación por debajo de 768 px conservando las mismas opciones que la vista de escritorio. | 4 | Herrera Enriquez, Diego Fernando | Done |
-| Sprint 1 | US02 | Propuesta de valor | T-03 | Sección inicial con problema, solución y beneficios | Maquetar la sección inicial que presenta el problema de las zonas sin cobertura, la solución por checkpoints y los beneficios principales. | 6 | Cayanchi Avila, Milenko Rubén | Done |
-| Sprint 1 | US02 | Propuesta de valor | T-04 | Contenido de beneficios por segmento | Redactar e integrar el contenido que diferencia los beneficios para agencias y para turistas, a partir de los insights del capítulo II. | 4 | Mendoza Blanco, Ariel Roberto | Done |
-| Sprint 1 | US03 | Consulta de planes y precios | T-05 | Sección comparativa de planes | Construir la presentación de los planes con su precio, alcance y características, de forma que puedan compararse entre sí. | 5 | Rodriguez Rojas, Miler Alexander | Done |
-| Sprint 1 | US03 | Consulta de planes y precios | T-06 | Continuidad desde el plan hacia el contacto | Enlazar cada plan con el formulario de contacto de modo que el plan de interés quede identificado en la solicitud. | 4 | Rodriguez Rojas, Miler Alexander | Done |
-| Sprint 1 | US04 | Información del equipo | T-07 | Sección de equipo con los perfiles de NexaTech | Construir la sección de equipo con el nombre, el rol y la descripción de cada integrante, y sus fotografías. | 5 | Mendoza Blanco, Ariel Roberto | Done |
-| Sprint 1 | US05 | Solicitud de información o demostración | T-08 | Formulario de contacto y estructura de campos | Construir el formulario con los campos requeridos para registrar una solicitud de información o demostración. | 5 | Mendoza Blanco, Ariel Roberto | Done |
-| Sprint 1 | US05 | Solicitud de información o demostración | T-09 | Validación de campos obligatorios y formato de correo | Implementar la validación que impide el envío con campos obligatorios vacíos o con correo de formato inválido, e informa qué corregir. | 4 | Herrera Enriquez, Diego Fernando | Done |
-| Sprint 1 | US06 | Consulta del contenido en el idioma del visitante | T-10 | Mecanismo de cambio de idioma y diccionario de claves | Implementar la función que recorre las cadenas marcadas y las sustituye por el bloque de idioma seleccionado. | 6 | León Naupari, Jorge Mateo | Done |
-| Sprint 1 | US06 | Consulta del contenido en el idioma del visitante | T-11 | Persistencia de la preferencia de idioma | Conservar el idioma seleccionado entre visitas y actualizar el idioma declarado del documento al cambiarlo. | 4 | Mendoza Blanco, Ariel Roberto | Done |
-| Sprint 1 | US33 | Consulta del tratamiento de datos personales | T-12 | Páginas de términos de servicio y política de privacidad | Construir ambas páginas con las categorías de datos registrados, su finalidad, el plazo de conservación y los derechos del titular. | 6 | León Naupari, Jorge Mateo | Done |
-| Sprint 1 | US33 | Consulta del tratamiento de datos personales | T-13 | Contenido legal bilingüe y acceso desde el pie de página | Traducir el contenido legal a ambos idiomas y habilitar su acceso desde el pie de página de todas las vistas. | 5 | León Naupari, Jorge Mateo | Done |
-| Sprint 1 | TS01 | Estructura técnica del Landing Page | T-14 | Estructura de directorios, tokens de estilo y README | Separar marcado, estilos y scripts en directorios propios, centralizar color y tipografía como variables, y documentar la estructura y la ejecución local. | 6 | Cayanchi Avila, Milenko Rubén | Done |
-| Sprint 1 | TS02 | Adaptación del Landing Page a distintos dispositivos | T-15 | Adaptación a los anchos de referencia | Ajustar la presentación en 360, 768, 1024 y 1440 px verificando que no se produzca desplazamiento horizontal ni recorte de texto. | 8 | Herrera Enriquez, Diego Fernando | Done |
-| Sprint 1 | TS02 | Adaptación del Landing Page a distintos dispositivos | T-16 | Áreas táctiles y escala tipográfica móvil | Verificar el área mínima de los controles interactivos y aplicar la escala tipográfica móvil por debajo de 768 px. | 4 | Herrera Enriquez, Diego Fernando | Done |
-| Sprint 1 | TS03 | Internacionalización y accesibilidad del Landing Page | T-17 | Acceso al contenido principal, elementos semánticos y orden de tabulación | Incorporar el acceso directo al contenido principal como primer elemento enfocable, aplicar los elementos semánticos de referencia y verificar el orden de tabulación. | 6 | León Naupari, Jorge Mateo | Done |
-| Sprint 1 | TS03 | Internacionalización y accesibilidad del Landing Page | T-18 | Verificación de contraste y textos alternativos | Comprobar que el contraste cumple WCAG 2.1 AA y que las imágenes informativas declaran texto alternativo descriptivo. | 5 | Rodriguez Rojas, Miler Alexander | Done |
-| Sprint 1 | TS03 | Internacionalización y accesibilidad del Landing Page | T-19 | Paridad de claves entre los bloques de idioma | Verificar que ambos bloques de idioma contienen el mismo conjunto de claves y corregir las ausencias detectadas. | 4 | Mendoza Blanco, Ariel Roberto | Done |
-| Sprint 1 | TS04 | Validación y despliegue del Landing Page | T-20 | Metadatos de identificación e indexación | Declarar en cada página el título, la descripción, la URL canónica, las alternativas de idioma y los metadatos de previsualización social. | 5 | León Naupari, Jorge Mateo | Done |
-| Sprint 1 | TS04 | Validación y despliegue del Landing Page | T-21 | Validación del marcado, de los enlaces y despliegue | Ejecutar la validación del W3C, comprobar que ningún enlace interno responde 404 y publicar la versión aprobada desde la rama estable. | 4 | Rodriguez Rojas, Miler Alexander | Done |
- 
-**Resumen del Sprint Backlog 1**
- 
-| Concepto | Valor |
-| --- | ---: |
-| User Stories y Technical Stories asignadas | 11 |
-| Work-items resultantes de la descomposición | 21 |
-| Estimación mínima de una task | 4 horas |
-| Estimación máxima de una task | 8 horas |
-| Total de horas estimadas | 105 |
-| Sum of Story Points | 30 |
- 
-**Distribución de la carga por integrante**
- 
-| Integrante | Tasks | Horas |
-| --- | ---: | ---: |
-| León Naupari, Jorge Mateo | 5 | 28 |
-| Mendoza Blanco, Ariel Roberto | 5 | 22 |
-| Herrera Enriquez, Diego Fernando | 4 | 20 |
-| Rodriguez Rojas, Miler Alexander | 4 | 18 |
-| Cayanchi Avila, Milenko Rubén | 3 | 17 |
-| **Total** | **21** | **105** |
- 
----
-
-#### 5.2.1.4. Development Evidence for Sprint Review
-
-##### Report Development Evidence
-Durante el Sprint 1 se implementaron los componentes correspondientes al Report. La siguiente tabla relaciona cada cambio con su repositorio, rama, commit y fecha de realización.
-
-| Repositorio                                                          | Rama                                           | Commit ID | Mensaje del commit                                                                                                            | Fecha      | Sección / Capítulo relacionada |
-| -------------------------------------------------------------------- | ---------------------------------------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------- | ---------- | ------------------------------ |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `dd2827f` | `Merge pull request #29 from 1ASI0729-2620-16712-G4-Nexatech/feature/chapter-5-development-evidence`                          | 2026-09-17 | Capítulo 5                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-5-development-evidence`       | `f410575` | `docs(chapter5): add Jorge Mateo Leon commits to 5.2.1.4 development evidence`                                                | 2026-09-17 | Capítulo 5                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `842b4a3` | `Merge pull request #28 from 1ASI0729-2620-16712-G4-Nexatech/feature/chapter-5-collaboration-insights`                        | 2026-09-17 | Capítulo 5                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-5-collaboration-insights`     | `e9ae4cc` | `docs(chapter5): complete 5.2.1.8 collaboration insights for Jorge Mateo Leon`                                                | 2026-09-17 | Capítulo 5                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-5-collaboration-insights`     | `410f207` | `docs(chapter5): add collaboration evidence screenshots`                                                                      | 2026-09-17 | Capítulo 5                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `398d3e2` | `docs(chapter3): add epics table.`                                                                                            | 2026-09-17 | Capítulo 3                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `ed4bec2` | `docs(chapter3): update user stories:`                                                                                        | 2026-09-17 | Capítulo 3                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `main`                                         | `374dd07` | `chore: update readme.`                                                                                                       | 2026-09-17 | Documentación                  |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `main`                                         | `bfee799` | `chore: update readme.`                                                                                                       | 2026-09-17 | Documentación                  |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-5`                            | `8b648e3` | `docs(chapter5): add chapter 5.`                                                                                              | 2026-09-17 | Capítulo 5                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-5`                            | `abfcbf3` | `docs(chapter5): add chapter 5.`                                                                                              | 2026-09-17 | Capítulo 5                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `a5a3931` | `Merge branch 'feature/documentation-profile' into develop`                                                                   | 2026-09-16 | Documentación                  |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/documentation-profile`                | `8519f14` | `docs: add Student Outcome section with communication criteria and actions`                                                   | 2026-09-16 | Documentación                  |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/documentation-profile`                | `2856a3e` | `docs: add collaboration insights for project report`                                                                         | 2026-09-16 | Documentación                  |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/documentation-profile`                | `7a1cc16` | `docs: add version history for project report`                                                                                | 2026-09-16 | Documentación                  |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `2196ad8` | `docs(chapter4): update section headings for consistency and clarity`                                                         | 2026-09-16 | Capítulo 4                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/documentation-profile`                | `a460900` | `docs: add cover page for final project report`                                                                               | 2026-09-16 | Documentación                  |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-4-wireframes`                 | `027a2a1` | `docs(chapter4): add login wireframes and mockups.`                                                                           | 2026-09-15 | Capítulo 4                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-4-wireframes`                 | `737470f` | `docs(chapter4): add wireframes and mockups descriptions.`                                                                    | 2026-09-15 | Capítulo 4                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-4-wireframes`                 | `0f63dd3` | `docs(chapter4): add wireframes and mockups web.`                                                                             | 2026-09-15 | Capítulo 4                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-4-wireframes`                 | `0bd53a1` | `docs(chapter4): add assets`                                                                                                  | 2026-09-15 | Capítulo 4                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-4-wireframes`                 | `f7a00a6` | `docs(chapter4): add wireframes and mockups web.`                                                                             | 2026-09-14 | Capítulo 4                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-4-wireframes`                 | `4f39ddb` | `docs(chapter4): add wireframes and mockups web.`                                                                             | 2026-09-14 | Capítulo 4                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter4-architecture`                | `b5ec32a` | `docs(chapter4): add class diagrams.`                                                                                         | 2026-09-13 | Capítulo 4                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `06a7842` | `Merge pull request #24 from 1ASI0729-2620-16712-G4-Nexatech/feature/chapter-4-event-storming`                                | 2026-09-13 | Capítulo 4                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-4-event-storming`             | `5525c8b` | `docs(chapter4): add 4.6.1 design-level event storming`                                                                       | 2026-09-13 | Capítulo 4                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-4-event-storming`             | `cdf9343` | `docs(chapter4): add event storming board screenshots`                                                                        | 2026-09-13 | Capítulo 4                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `a114277` | `Merge remote-tracking branch 'origin/develop' into develop`                                                                  | 2026-09-13 | Documentación                  |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-4-database`                   | `ba5ba04` | `docs(chapter4): add database diagram`                                                                                        | 2026-09-13 | Capítulo 4                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-4-database`                   | `50d57b4` | `docs(chapter4): add database diagram`                                                                                        | 2026-09-13 | Capítulo 4                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter4-architecture`                | `dabdd80` | `docs(chapter4): add software achitecture diagrams.`                                                                          | 2026-09-13 | Capítulo 4                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter4-architecture`                | `2384479` | `docs(chapter4): add software achitecture diagrams.`                                                                          | 2026-09-13 | Capítulo 4                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `df04fcb` | `Merge pull request #20 from 1ASI0729-2620-16712-G4-Nexatech/feature/chapter4-architecture`                                   | 2026-09-12 | Capítulo 4                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter4-architecture`                | `792c63c` | `docs(chapter4): add sections 4.6.2 context and 4.6.3 container diagrams`                                                     | 2026-09-12 | Capítulo 4                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `727277d` | `Merge branch 'feature/chapter-4-information-architecture' into develop`                                                      | 2026-09-10 | Capítulo 4                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-4-information-architecture`   | `d798a57` | `docs(chapter4): add section on information architecture and organization systems`                                            | 2026-09-10 | Capítulo 4                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-4-style-guidelines`           | `ba24361` | `Feature/chapter 4 style guidelines`                                                                                          | 2026-09-10 | Capítulo 4                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-4-style-guidelines`           | `708d7cc` | `docs(chapter4): add chapter 4.1 Style Guidelines`                                                                            | 2026-09-10 | Capítulo 4                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-4-style-guidelines`           | `4f0a81d` | `docs(chapter4): add chapter 4`                                                                                               | 2026-09-10 | Capítulo 4                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-3-product-backlog`            | `14fc8b5` | `docs: add point 3.3 product backlog`                                                                                         | 2026-09-09 | Capítulo 3                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-3-product-backlog`            | `de00def` | `docs: add point 3.3 product backlog`                                                                                         | 2026-09-09 | Capítulo 3                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `3f61ff8` | `Merge branch 'feature/chapter3-impact-mapping' into develop`                                                                 | 2026-09-09 | Capítulo 3                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter3-impact-mapping`              | `4744c54` | `docs(chapter3): add impact mapping diagram`                                                                                  | 2026-09-09 | Capítulo 3                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter3-impact-mapping`              | `9610c3d` | `docs(chapter3): add impact mapping section with user personas and business goals`                                            | 2026-09-09 | Capítulo 3                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `256b027` | `docs(chapter2): update section headings and improve structure for clarity`                                                   | 2026-09-09 | Capítulo 2                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-3-user-stories`               | `82de5d3` | `docs: add chapter 3.1 user stories`                                                                                          | 2026-09-08 | Capítulo 3                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-3-user-stories`               | `85f00c5` | `docs: add chapter 3.1 user stories`                                                                                          | 2026-09-08 | Capítulo 3                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-3-event-storming`             | `d5e5cc2` | `docs: update event storming`                                                                                                 | 2026-09-08 | Capítulo 3                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-3-user-journey`               | `fa74dfa` | `docs: add user journey maping`                                                                                               | 2026-09-08 | Capítulo 3                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-3-event-storming`             | `796d8a7` | `docs: add event storming point`                                                                                              | 2026-09-08 | Capítulo 3                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-3-event-storming`             | `4c1ac88` | `docs: add event storming point`                                                                                              | 2026-09-08 | Capítulo 3                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-3-event-storming`             | `c4e1e45` | `docs: add event storming image`                                                                                              | 2026-09-08 | Capítulo 3                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `d335beb` | `Merge branch 'feature/chapter-2-graficos-entrevistas' into develop`                                                          | 2026-09-08 | Capítulo 2                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-2-graficos-entrevistas`       | `7cf074a` | `docs(chapter2): add graphical representations for agency and tourist data`                                                   | 2026-09-08 | Capítulo 2                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-2-graficos-entrevistas`       | `2b36dfb` | `docs(chapter2): update interview analysis and add visual data representation`                                                | 2026-09-08 | Capítulo 2                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `2ff9f6e` | `Merge pull request #15 from Vitalrek-Project/feature/chapter2-user-task-matrix`                                              | 2026-09-07 | Capítulo 2                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter2-user-task-matrix`            | `fd23036` | `docs(chapter2): agregar seccion 2.3.2 User Task Matrix`                                                                      | 2026-09-07 | Capítulo 2                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-2-user-segments`              | `bde7426` | `docs: add users by object segment`                                                                                           | 2026-09-07 | Capítulo 2                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-2-user-segments`              | `0681347` | `docs: add users by object segment`                                                                                           | 2026-09-07 | Capítulo 2                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `495d242` | `docs: update document points`                                                                                                | 2026-09-07 | Documentación                  |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `ae2b8db` | `Merge pull request #13 from Vitalrek-Project/feature/chapter2-ubiquitous-language-v2`                                        | 2026-09-07 | Capítulo 2                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter2-ubiquitous-language-v2`      | `50ff348` | `docs(chapter2): agregar seccion 2.5 Ubiquitous Language`                                                                     | 2026-09-07 | Capítulo 2                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-1`                            | `66a2a15` | `docs(chapter1): add member photo and description`                                                                            | 2026-09-07 | Capítulo 1                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `main`                                         | `beb1ee5` | `docs(readme): fix team`                                                                                                      | 2026-09-07 | Documentación                  |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `9896b41` | `Merge branch 'feature/chapter-2-analissi-entrevistas' into develop`                                                          | 2026-09-07 | Capítulo 2                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-2-analissi-entrevistas`       | `d192aa5` | `docs(chapter2): refine interview analysis for adventure tourism stakeholders`                                                | 2026-09-07 | Capítulo 2                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-2-analissi-entrevistas`       | `37ad77b` | `docs(chapter2): add interview analysis for adventure tourism stakeholders`                                                   | 2026-09-07 | Capítulo 2                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `56c6462` | `Merge branch 'feature/chapter2-entrevistas' into develop`                                                                    | 2026-09-07 | Capítulo 2                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter2-entrevistas`                 | `22767b7` | `Merge branch 'develop' of https://github.com/Vitalrek-Project/VitalRek-Documents into feature/chapter2-entrevistas`          | 2026-09-07 | Capítulo 2                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter2-entrevistas`                 | `0f7cf2c` | `docs(chapter2): add interview segment images to assets`                                                                      | 2026-09-07 | Capítulo 2                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter2-entrevista-segmento1`        | `f237d53` | `docs(chapter2): update interview details with extended summaries and additional records`                                     | 2026-09-07 | Capítulo 2                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `296689b` | `Merge branch 'feature/chapter2-entrevista-segmento1' into develop`                                                           | 2026-09-07 | Capítulo 2                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter2-entrevista-segmento1`        | `30aa8c0` | `Merge branch 'develop' of https://github.com/Vitalrek-Project/VitalRek-Documents into feature/chapter2-entrevista-segmento1` | 2026-09-07 | Capítulo 2                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter2-entrevista-segmento1`        | `7d17d15` | `docs(chapter2): update interview records and add project configuration files`                                                | 2026-09-07 | Capítulo 2                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `56474a5` | `Merge branch 'feature/chapter-2-analisis-entrevistas' into develop`                                                          | 2026-09-07 | Capítulo 2                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-2-analisis-entrevistas`       | `98bda71` | `docs(chapter2): add analysis of interviews with adventure tourism stakeholders`                                              | 2026-09-07 | Capítulo 2                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-2-entrevista-miler-rodriguez` | `cf441d0` | `docs: add second interview`                                                                                                  | 2026-09-06 | Capítulo 2                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-2-entrevista-miler-rodriguez` | `64c6608` | `docs: add second interview`                                                                                                  | 2026-09-06 | Capítulo 2                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `a3efb26` | `Merge branch 'feature/chapter-2-entrevista-miler-rodriguez' into develop`                                                    | 2026-09-06 | Capítulo 2                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-2-entrevista-miler-rodriguez` | `fbc3b37` | `docs(chapter2): add details for second interview with Celeste Rodriguez`                                                     | 2026-09-06 | Capítulo 2                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-2-entrevista-miler-rodriguez` | `cbbcf3e` | `docs: add image for third interview segment 1 into assets file`                                                              | 2026-09-06 | Capítulo 2                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-2-entrevista-miler-rodriguez` | `7ca0097` | `docs(chapter2): add evidence for third interview with Miler Rodriguez`                                                       | 2026-09-06 | Capítulo 2                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-2-entrevista-miler-rodriguez` | `c8f57f4` | `docs(chapter2): add second interview details for Celeste Rodriguez`                                                          | 2026-09-06 | Capítulo 2                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter2-entrevista-segmento1`        | `defbc42` | `docs(chapter2): agregar registro entrevista 2 segmento 1`                                                                    | 2026-09-06 | Capítulo 2                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter2-entrevista-segmento1`        | `f959752` | `docs(chapter2): agregar registro entrevista 2 segmento 1`                                                                    | 2026-09-06 | Capítulo 2                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter2-entrevista-segmento1`        | `193f12a` | `evidencia entrevista 2 segmento 1`                                                                                           | 2026-09-06 | Capítulo 2                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `d3ee05a` | `Merge branch 'feature/chapter2-entrevistas' into develop`                                                                    | 2026-09-06 | Capítulo 2                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter2-entrevistas`                 | `b413637` | `docs(chapter2): add interviews`                                                                                              | 2026-09-06 | Capítulo 2                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter2-entrevistas`                 | `0132a61` | `docs: add interviews`                                                                                                        | 2026-09-06 | Capítulo 2                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter2-entrevistas`                 | `30cbdac` | `docs: add interviews`                                                                                                        | 2026-09-06 | Capítulo 2                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `main`                                         | `cc46ed5` | `docs: update readme`                                                                                                         | 2026-09-04 | Documentación                  |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-2-interview-design`           | `fe22b36` | `docs: add interview design section (2.2.1) to Chapter2.md`                                                                   | 2026-09-04 | Capítulo 2                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-2-interview-design`           | `af48411` | `docs: add interview design section (2.2.1) to Chapter2.md`                                                                   | 2026-09-04 | Capítulo 2                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-2-competitor-analysis`        | `686c807` | `docs: add competitor analysis section (2.1) to Chapter2.md`                                                                  | 2026-09-04 | Capítulo 2                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-2-competitor-analysis`        | `d7620ad` | `docs: add competitor analysis section (2.1) to Chapter2.md`                                                                  | 2026-09-04 | Capítulo 2                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `18f0e58` | `docs: update lean ux assumption.`                                                                                            | 2026-09-01 | Capítulo 1                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `d4bca68` | `docs: update lean ux assumption.`                                                                                            | 2026-09-01 | Capítulo 1                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `b3e69c0` | `docs: update problem statement.`                                                                                             | 2026-09-01 | Capítulo 1                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `eb6ccb8` | `docs: update problem statement.`                                                                                             | 2026-09-01 | Capítulo 1                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `3620c5f` | `Merge branch 'feature/chapter1-solution-profile' into develop`                                                               | 2026-09-01 | Capítulo 1                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `897a35a` | `docs(chapter1): fix 1.2.2.3 Lean UX Hypothesis Statement`                                                                    | 2026-09-01 | Capítulo 1                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `7f28d62` | `docs: update Jorge's photo filename in Chapter1 and adjust image path`                                                       | 2026-09-01 | Capítulo 1                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `3e34365` | `docs: update team profiles and add Lean UX Canvas details`                                                                   | 2026-09-01 | Capítulo 1                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `4a20f6f` | `fix: resolve merge conflict in Chapter1`                                                                                     | 2026-09-01 | Capítulo 1                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `1dedf24` | `docs: update team member profiles; add Ariel's photo and description`                                                        | 2026-09-01 | Capítulo 1                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `37a9c73` | `docs: add Ariel's photo to assets`                                                                                           | 2026-09-01 | Capítulo 1                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `7cd5d4a` | `docs: refine team member profiles; update Miler's photo and descriptions`                                                    | 2026-09-01 | Capítulo 1                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `bed538d` | `docs: update team member profiles; include Lean UX Canvas image`                                                             | 2026-09-01 | Capítulo 1                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `23a15be` | `docs: add Miler's photo to assets`                                                                                           | 2026-09-01 | Capítulo 1                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `2476747` | `docs: add image of lean ux canvas into assets file`                                                                          | 2026-09-01 | Capítulo 1                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `49fcc4d` | `docs: add Lean UX Canvas section with detailed descriptions and structured content`                                          | 2026-09-01 | Capítulo 1                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `0be047c` | `docs: add team profile (Ariel) and Lean UX hypothesis statements (1.2.2.3. Lean UX Hypothesis Statement)`                    | 2026-08-30 | Capítulo 1                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `23c2fdd` | `docs: add team profile (Ariel) and Lean UX hypothesis statements (1.2.2.3)`                                                  | 2026-08-30 | Capítulo 1                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `a5d158f` | `Update Chapter1.md`                                                                                                          | 2026-08-30 | Capítulo 1                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `790af9c` | `Add files via upload`                                                                                                        | 2026-08-30 | Capítulo 1                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `main`                                         | `9cfa9d6` | `Update README.md`                                                                                                            | 2026-08-30 | Documentación                  |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `main`                                         | `95b583a` | `Update README.md`                                                                                                            | 2026-08-30 | Documentación                  |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `main`                                         | `9ae61f6` | `docs: update the data in the README file.`                                                                                   | 2026-08-30 | Documentación                  |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `86f8263` | `docs: update section 1.3 - align target segments with checkpoint-based monitoring language`                                  | 2026-08-30 | Capítulo 1                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `58fbaee` | `docs: add section 1.3 - align target segments with checkpoint-based monitoring language.`                                    | 2026-08-30 | Capítulo 1                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `d05545e` | `docs: add section 1.2.1 fix real time monitoring language to checkpoint-based alerts.`                                       | 2026-08-30 | Capítulo 1                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `9ef7345` | `docs: add section 1.2.1 fix real time monitoring language to checkpoint-based alerts.`                                       | 2026-08-30 | Capítulo 1                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `main`                                         | `afe4cdb` | `add structure base od readme.`                                                                                               | 2026-08-30 | Documentación                  |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `main`                                         | `1d4261c` | `add structure base od readme.`                                                                                               | 2026-08-30 | Documentación                  |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `87f7b69` | `feat: create first chapter file`                                                                                             | 2026-08-30 | Capítulo 1                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `a10b6e0` | `feat: create first chapter file`                                                                                             | 2026-08-30 | Capítulo 1                     |
-| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `main`                                         | `6b44ca3` | `Initial commit`                                                                                                              | 2026-08-29 | Configuración inicial          |
-
-
-##### Landing Page Development Evidence
-Durante el Sprint 1 se implementaron los componentes correspondientes al Landing Page. La siguiente tabla relaciona cada cambio con su repositorio, rama, commit y fecha de realización.
-
-| Repositorio                                                                     | Rama                       | Commit ID | Mensaje del commit                                      | Fecha      | User Story relacionada |
-| ------------------------------------------------------------------------------- | -------------------------- | --------- | ------------------------------------------------------- | ---------- | ---------------------- |
-| [Landing Page](https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page) | `feature/landing-seo-a11y` | `2cebb2f` | `docs(readme): fix brand asset file extensions`         | 2026-09-17 | US01–US06              |
-| [Landing Page](https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page) | `feature/landing-seo-a11y` | `d216d5e` | `feat(a11y): add skip to main content link`             | 2026-09-17 | US01–US06              |
-| [Landing Page](https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page) | `feature/landing-seo-a11y` | `9252476` | `feat(seo): complete meta tags defined in report 4.2.3` | 2026-09-17 | US01–US06              |
-| [Landing Page](https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page) | `feature/landing-seo-a11y` | `b296ddc` | `feat(i18n): add skip link translation keys`            | 2026-09-17 | US01–US06              |
-| [Landing Page](https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page) | `feature/landing-seo-a11y` | `36b333b` | `style(a11y): add skip link styles`                     | 2026-09-17 | US01–US06              |
-| [Landing Page](https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page) | `main`                     | `11ac9e2` | `chore(team): fix Team Member`                          | 2026-09-17 | US04                   |
-| [Landing Page](https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page) | `main`                     | `645afa1` | `chore(team): add Team Member`                          | 2026-09-17 | US04                   |
-| [Landing Page](https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page) | `main`                     | `9a91594` | `2da version landing page`                              | 2026-09-12 | US01–US06              |
-| [Landing Page](https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page) | `main`                     | `117ad46` | `docs: add project documentation`                       | 2026-09-08 | Documentación          |
-| [Landing Page](https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page) | `main`                     | `935e346` | `docs: add project documentation`                       | 2026-09-08 | Documentación          |
-| [Landing Page](https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page) | `main`                     | `869b9db` | `Initial commit`                                        | 2026-08-30 | Configuración inicial  |
-
-![Commits del Sprint 1](../assets/images/chapter-5/development-commits.png)
-
-*Figura 5.2. Commits relacionados con la implementación del Landing Page durante el Sprint 1.*
-
-#### 5.2.1.5. Execution Evidence for Sprint Review
-
-La ejecución del Sprint produjo una primera versión funcional del Landing Page. La página presenta la propuesta de valor de VitalTrek, explica el problema de monitoreo en rutas remotas, muestra el funcionamiento por checkpoints, diferencia los beneficios para operadores y turistas, presenta las funcionalidades, planes, equipo, preguntas frecuentes y formulario de contacto.
-
-![Landing Page desktop](../assets/images/chapter-4/mockups/hero-metrics.png)
-
-*Figura 5.3. Vista desktop del Landing Page implementado.*
-
-![Secciones principales del Landing Page](../assets/images/chapter-5/landing-page-sections.png)
-
-*Figura 5.4. Secciones principales implementadas en el Sprint 1.*
-
-La validación visual comprende la navegación entre secciones, el comportamiento responsive, el cambio de idioma, los call-to-action, el formulario de contacto y la legibilidad del contenido.
-
-#### 5.2.1.6. Services Documentation Evidence for Sprint Review
-
-El alcance del Sprint 1 se limita al Landing Page estático desarrollado con HTML5, CSS3 y JavaScript. No se implementaron endpoints RESTful ni una API en este Sprint; por ello, la documentación OpenAPI y Swagger no aplican a esta entrega. La implementación de Web Services se planifica para una entrega posterior.
-
-| Producto             | Endpoint              | Método HTTP | Estado      |
-| -------------------- | --------------------- | ----------- | ----------- |
-| RESTful Web Services | No aplica en Sprint 1 | No aplica   | Planificado |
-
-#### 5.2.1.7. Software Deployment Evidence for Sprint Review
-
-La primera versión del Landing Page se publica desde el repositorio de GitHub hacia la plataforma de despliegue configurada.
-
-| Elemento             | Información                                                     |
-| -------------------- | --------------------------------------------------------------- |
-| Producto             | Landing Page                                                    |
-| Plataforma           | Vercel                                                          |
-| Repositorio          | https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page |
-| Rama desplegada      | main                                                            |
-| Build command        | No aplica para HTML5, CSS3 y JavaScript estático                |
-| Output directory     | Directorio raíz del repositorio                                 |
-| Variables de entorno | No requeridas                                                   |
-| URL pública          | https://landing-page-mrca1.vercel.app/                          |
-
-![Configuración del despliegue](../assets/images/chapter-5/deployment-configuration.png)
-
-*Figura 5.5. Configuración del proyecto en la plataforma de despliegue.*
-
-![Despliegue exitoso](../assets/images/chapter-5/deployment-success.png)
-
-*Figura 5.6. Despliegue exitoso de la primera versión del Landing Page.*
-
-**Landing Page desplegado:** [https://landing-page-mrca1.vercel.app/](https://landing-page-mrca1.vercel.app/)
-
-#### 5.2.1.8. Team Collaboration Insights during Sprint
-
-El trabajo colaborativo del Sprint 1 se realizó mediante GitHub, Jira/Trello y herramientas de diseño. Cada integrante participó en actividades de planificación, diseño, implementación, validación o documentación.
-
-![GitHub Insights del Sprint 1](../assets/images/chapter-5/github-insights.png)
-
-*Figura 5.7. Analítica de colaboración del repositorio durante el Sprint 1.*
-
-![Participación mediante commits](../assets/images/chapter-5/team-commits.png)
-
-*Figura 5.8. Participación de los integrantes mediante commits.*
-
-| Integrante                       | Actividad realizada                                                                                                                                                                                                   | Evidencia                                                                                                                    |
-| -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| Cayanchi Avila, Milenko Rubén    | Especificación de User Stories y Product Backlog; diagramas de arquitectura y base de datos.                                                                                                                          | Commits `ed4bec2`, `398d3e2`, `dabdd80` y `ba5ba04`.                                                                         |
-| León Naupari, Jorge Mateo        | Modelado del Ubiquitous Language, User Task Matrix, diagramas C4 de contexto y contenedores, Design-Level Event Storming (4.6.1) y, en el Landing Page, meta tags de SEO, skip link de accesibilidad e i18n asociado. | 16 commits en report y 6 en landing-page; PRs #13, #15, #20 y #24 (report) y PR #2 (landing-page). Figuras 5.9, 5.10 y 5.11. |
-| Mendoza Blanco, Ariel Roberto    | Registro de entrevistas y User Journey Maps del Chapter II.                                                                                                                                                           | Commits `cf441d0` y `fa74dfa`.                                                                                               |
-| Rodriguez Rojas, Miler Alexander | Impact Mapping, perfil de colaboración, Student Outcome e integración de Chapters IV y V.                                                                                                                             | Commits `9610c3d`, `8519f14`, `7a1cc16` y `98b172a`.                                                                         |
-| Herrera Enriquez, Diego Fernando | Style Guidelines y wireframes/mock-ups de Landing Page y Web Applications.                                                                                                                                            | Commits `708d7cc`, `737470f` y `027a2a1`.                                                                                    |
-
-**Evidencia individual - León Naupari, Jorge Mateo (mateool10)**
-
-Los siguientes registros corresponden a la participación verificable del integrante en los repositorios del equipo durante el Sprint 1.
-
-![Commits de mateool10 en el repositorio report](../assets/images/chapter-5/5218-commits-mateo-report.jpg)
-
-*Figura 5.9. Historial de commits de mateool10 en el repositorio report.*
-
-![Commits de mateool10 en el repositorio landing-page](../assets/images/chapter-5/5218-commits-mateo-landing.jpg)
-
-*Figura 5.10. Historial de commits de mateool10 en el repositorio landing-page (rama main).*
-
-![Pull requests creados por mateool10](../assets/images/chapter-5/5218-pull-requests-mateo.jpg)
-
-*Figura 5.11. Pull requests creados y fusionados por mateool10 en el repositorio report.*
-
-### 5.2.2. Sprint 2
-
-El Sprint 2 entrega la primera versión de las **Web Applications frontend** de VitalTrek para TB1. El alcance combina la configuración de rutas y expediciones dentro del bounded context `expedition-setup` con la consulta del progreso simulado en `field-tracking`. Se completaron US07, US08, US09, US11, US13, US12 y US20, con un total de **28 Story Points**, conforme al Product Backlog de la sección 3.3.
-
-La aplicación está construida con Vue 3 y Vite; utiliza Pinia, Vue Router, Axios, PrimeVue y vue-i18n para el estado, navegación, componentes, consumo HTTP e internacionalización. json-server@0.17.4 proporciona los datos de prueba. Las capas `domain`, `application`, `infrastructure` y `presentation` separan las entidades, casos de uso/estado, acceso y mapeo de datos, e interfaz. El alcance no incluye autenticación real, backend productivo, persistencia real, Bluetooth, GPS, wearables, telemetría ni alertas reales.
-
-| Campo | Valor |
-| --- | --- |
-| Sprint Goal | Completar el flujo frontend de preparación de expediciones y consulta de progreso estimado para Operations Administrators y Field Guides. |
-| Historias incluidas | US07, US08, US09, US11, US13, US12 y US20 |
-| Total de historias | 7 User Stories |
-| Sprint Velocity / Total de Story Points | 28 Story Points |
-| Contextos de dominio | `expedition-setup` y `field-tracking` |
-| Resultado | Web Application frontend implementada; Fake API y telemetría de prueba. |
-
-#### 5.2.2.1. Sprint Planning 2
-
-La planificación del Sprint 2 definió como objetivo completar el flujo de preparación de una expedición —desde la configuración de la Route hasta el registro del Tourist Manifest— y agregar la consulta del progreso estimado del grupo. Las historias se seleccionaron del Product Backlog y se ordenaron según sus dependencias: primero la configuración de rutas, checkpoints y ventanas; luego la creación del grupo, la asignación del guía y el manifiesto; finalmente, el dashboard de seguimiento.
-
-| **Sprint #** | **Sprint 2** |
-| --- | --- |
-| **Sprint Planning Background** | |
-| Date | 2026-10-04 |
-| Time | 08:00 PM |
-| Location | Reunión virtual en Discord |
-| Prepared By | Cayanchi Avila, Milenko Rubén |
-| Attendees (to planning meeting) | Cayanchi Avila, Milenko Rubén / Herrera Enriquez, Diego Fernando / León Naupari, Jorge Mateo / Mendoza Blanco, Ariel Roberto / Rodriguez Rojas, Miler Alexander |
-| Sprint 1 Review Summary | • Se presentó la primera versión del Landing Page de VitalTrek, desplegada en Vercel y entregada en AV1.<br>• Se completaron las 11 historias comprometidas (US01–US06, US33 y TS01–TS04), equivalentes a 30 Story Points: navegación, propuesta de valor, planes, equipo, solicitud de información, cambio de idioma ES/EN y publicación de términos de servicio y política de privacidad.<br>• El Landing Page se adapta a dispositivos desktop y mobile e incorpora internacionalización y atributos de accesibilidad.<br>• A partir de la revisión de AV1, el equipo corrigió la consistencia, los enlaces, la estructura y las evidencias del informe, y ajustó los roles, el flujo del frontend y la priorización del backlog, dejando los pagos fuera del MVP (versiones 1.6 y 1.7 del Registro de Versiones). |
-| Sprint 1 Retrospective Summary | • **Aciertos:** el Sprint se desarrolló según lo planificado; todos los integrantes cumplieron sus tareas dentro del plazo y el incremento se entregó completo.<br>• **Aciertos:** la comunicación por Discord y la división del trabajo por secciones del Landing Page permitieron avanzar en paralelo sin bloqueos.<br>• **Oportunidad de mejora:** la integración del trabajo se concentró al final del Sprint, lo que dificultó revisar los cambios con anticipación.<br>• **Acciones para el Sprint 2:** descomponer cada User Story en tasks de 4 a 8 horas registradas en Jira, desarrollar cada funcionalidad en su propia feature branch e integrarla en `develop` mediante Pull Requests revisados. |
-| **Sprint Goal & User Stories** | |
-| Sprint 2 Goal | **Our focus is on** enabling the preparation of a complete expedition (route, checkpoints, expected time windows, expedition group, field guide assignment and tourist manifest) and the consultation of the estimated progress of a group.<br>**We believe it delivers** faster and more organized tour preparation **to** Operations Administrators, and a reliable way to register participants and follow the group progress **to** Field Guides.<br>**This will be confirmed when** an Operations Administrator can configure a route with its checkpoints and expected time windows, create an expedition group and assign a field guide, a Field Guide can register the tourist manifest, and both can view the estimated progress of the group in the deployed Web Application, in Spanish and English. |
-| Sprint 2 Velocity | 28 Story Points |
-| Sum of Story Points | 28 Story Points (US07, US08, US09, US11, US13, US12 y US20) |
-
-
-#### 5.2.2.2. Aspect Leaders and Collaborators
-
-Milenko Rubén Cayanchi Avila coordinó el trabajo general del Sprint. La matriz resume el liderazgo por aspecto a partir de los cambios de código y Pull Requests consultados en GitHub al 2026-10-05.
-
-| Integrante | Usuario de GitHub | Coordinación | Rutas, checkpoints y ventanas | Grupos, guías, manifiesto y progreso | Espacios de trabajo, navegación e idioma |
-| --- | --- | --- | --- | --- | --- |
-| Cayanchi Avila, Milenko Rubén | `MaxghZZ` | L | L | C | L |
-| León Naupari, Jorge Mateo | `mateool10` | C | C | C | C |
-| Mendoza Blanco, Ariel Roberto | `Trepequiper` | C | C | C | L |
-| Rodriguez Rojas, Miler Alexander | `Miler2003` | C | C | L | C |
-| Herrera Enriquez, Diego Fernando | `DerDFHE` | C | C | C | C |
-
-**Leyenda:** L = líder del aspecto; C = colaborador.
-
-La autoría de los commits y el estado de integración de cada cambio se detallan en la sección 5.2.2.4.
-
-#### 5.2.2.3. Sprint Backlog 2
-
-El Sprint Backlog 2 comprende las siete User Stories seleccionadas para TB1. La tabla conserva las estimaciones del Product Backlog de la sección 3.3 y presenta la descomposición de cada historia en tareas, horas estimadas y responsables.
-
-| Sprint # | Story Id | Story Title | Task Id | Task Title | Task Description | Estimation (Hours) | Assigned To | Status |
-| --- | --- | --- | --- | --- | --- | ---: | --- | --- |
-| Sprint 2 | US07 | Configuración de rutas | T-22 | Definición del modelo de Route y estado inicial | Implementar la entidad Route con los atributos geográficos y operativos de la historia, e inicializar cada ruta nueva en estado `draft`. | 5 | Cayanchi Avila, Milenko Rubén | Done |
-| Sprint 2 | US07 | Configuración de rutas | T-23 | Formulario y listado de rutas | Construir las vistas para consultar las rutas existentes y registrar nombre, origen, destino, distancia, desnivel, dificultad y duración. | 6 | Herrera Enriquez, Diego Fernando | Done |
-| Sprint 2 | US07 | Configuración de rutas | T-24 | Persistencia y validación de rutas | Integrar assembler, Fake API y store para crear rutas; validar campos obligatorios y nombres duplicados, y presentar los mensajes de error localizados. | 5 | Cayanchi Avila, Milenko Rubén | Done |
-| Sprint 2 | US08 | Definición de checkpoints | T-25 | Modelo y asociación de Checkpoint | Implementar la entidad Checkpoint y asociarla a una Route mediante su identificador, ubicación y posición en la secuencia. | 5 | Cayanchi Avila, Milenko Rubén | Done |
-| Sprint 2 | US08 | Definición de checkpoints | T-26 | Vista de configuración de checkpoints | Construir la vista para consultar los checkpoints de una ruta seleccionada y registrar nuevos puntos con su ubicación y orden. | 6 | Herrera Enriquez, Diego Fernando | Done |
-| Sprint 2 | US08 | Definición de checkpoints | T-27 | Validación de secuencia y habilitación de ruta | Integrar la persistencia y las reglas del store para rechazar órdenes repetidos e impedir que una ruta sin checkpoints pase de `draft` a `enabled`. | 5 | Cayanchi Avila, Milenko Rubén | Done |
-| Sprint 2 | US09 | Ventanas de tiempo esperadas | T-28 | Modelo y mapeo de Expected Time Window | Implementar la entidad y el assembler de ExpectedTimeWindow con ruta, checkpoints de inicio y fin, y límites mínimo y máximo en minutos. | 5 | Mendoza Blanco, Ariel Roberto | Done |
-| Sprint 2 | US09 | Ventanas de tiempo esperadas | T-29 | Identificación y configuración de tramos | Construir la vista para ordenar los checkpoints, generar los tramos consecutivos y permitir configurar la ventana esperada de cada uno. | 6 | Rodriguez Rojas, Miler Alexander | Done |
-| Sprint 2 | US09 | Ventanas de tiempo esperadas | T-30 | Reglas de validación de ventanas | Integrar Fake API y store para rechazar máximos menores o iguales a los mínimos, evitar ventanas duplicadas e identificar tramos pendientes de configuración. | 5 | Cayanchi Avila, Milenko Rubén | Done |
-| Sprint 2 | US11 | Creación del grupo de expedición | T-31 | Modelo y recursos de Expedition Group | Implementar la entidad del grupo y agregar a la Fake API los datos necesarios para relacionarlo con una ruta habilitada, fecha de salida y capacidad máxima. | 6 | Rodriguez Rojas, Miler Alexander | Done |
-| Sprint 2 | US11 | Creación del grupo de expedición | T-32 | Vista de creación y consulta de grupos | Construir el flujo para consultar grupos asociados a una ruta y registrar un nuevo grupo desde la gestión de rutas. | 6 | Herrera Enriquez, Diego Fernando | Done |
-| Sprint 2 | US11 | Creación del grupo de expedición | T-33 | Validaciones y localización de grupos | Integrar la creación en el store y validar la ruta habilitada, la fecha no pasada y los datos obligatorios; agregar mensajes en español e inglés. | 5 | Mendoza Blanco, Ariel Roberto | Done |
-| Sprint 2 | US13 | Asignación del guía | T-34 | Recurso y consulta de Field Guides | Incorporar guías de prueba a la Fake API y mapearlos a entidades de dominio consultables desde el contexto de configuración de expediciones. | 5 | León Naupari, Jorge Mateo | Done |
-| Sprint 2 | US13 | Asignación del guía | T-35 | Asignación y control de cruce de fechas | Implementar la asignación de un guía al grupo, informar si ya tiene otro tour en la misma fecha y solicitar confirmación explícita ante el cruce. | 6 | Rodriguez Rojas, Miler Alexander | Done |
-| Sprint 2 | US12 | Registro del manifiesto | T-36 | Modelo y endpoint de Manifest Entries | Implementar el modelo de entrada del manifiesto y conectar su consulta y registro con el recurso de prueba asociado al Expedition Group. | 5 | Mendoza Blanco, Ariel Roberto | Done |
-| Sprint 2 | US12 | Registro del manifiesto | T-37 | Vista de registro del Tourist Manifest | Construir la vista del Field Guide para consultar los participantes del grupo y registrar turistas con los datos requeridos. | 6 | Herrera Enriquez, Diego Fernando | Done |
-| Sprint 2 | US12 | Registro del manifiesto | T-38 | Validación de identidad y capacidad del grupo | Rechazar documentos de identidad duplicados y nuevos participantes que excedan la capacidad máxima; mostrar errores localizados. | 5 | León Naupari, Jorge Mateo | Done |
-| Sprint 2 | US20 | Seguimiento del progreso | T-39 | Modelo y fuente de datos de seguimiento | Crear la estructura del bounded context `field-tracking` y mapear datos simulados de grupo, checkpoint, tramo, progreso, estado y sincronización. | 6 | León Naupari, Jorge Mateo | Done |
-| Sprint 2 | US20 | Seguimiento del progreso | T-40 | Dashboard de progreso del grupo | Construir la vista para presentar el tramo actual, último checkpoint confirmado y porcentaje de progreso estimado del grupo. | 6 | Rodriguez Rojas, Miler Alexander | Done |
-| Sprint 2 | US20 | Seguimiento del progreso | T-41 | Estados de seguimiento y mensajes bilingües | Presentar la antigüedad de la última sincronización y aclarar que el progreso es estimado; informar cuando el tour todavía no está activo. | 5 | Mendoza Blanco, Ariel Roberto | Done |
-
-**Resumen del Sprint Backlog 2**
-
-| Concepto | Valor |
-| --- | ---: |
-| User Stories asignadas | 7 |
-| Work-items resultantes de la descomposición | 20 |
-| Estimación mínima de una task | 5 horas |
-| Estimación máxima de una task | 6 horas |
-| Total de horas estimadas | 109 |
-| Sum of Story Points | 28 |
-
-**Distribución de la carga por integrante**
-
-| Integrante | Tasks | Horas |
-| --- | ---: | ---: |
-| Cayanchi Avila, Milenko Rubén | 5 | 25 |
-| León Naupari, Jorge Mateo | 3 | 16 |
-| Mendoza Blanco, Ariel Roberto | 4 | 20 |
-| Rodriguez Rojas, Miler Alexander | 4 | 24 |
-| Herrera Enriquez, Diego Fernando | 4 | 24 |
-| **Total** | **20** | **109** |
-
-El Sprint se planificó con el orden de dependencias **US07 → US08 → US09 → US11 → US13 → US12 → US20**.
-
-#### 5.2.2.4. Development Evidence for Sprint Review
-
-La evidencia de desarrollo del Sprint 2 se encuentra en el repositorio [web-applications](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications). Los cambios de US07, US08 y US09 se integraron en `develop` mediante los PR #4, #5 y #6, y los de US11, US13, US12 y US20 mediante el PR #7.
-
-| User Story | Rama | Commit de referencia | Evidencia de integración |
-| --- | --- | --- | --- |
-| US07 — Configuración de rutas | `feature/webapp-route-configuration` | [`77e6fda`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/77e6fda005b45ac9347db60c9d6781675cb9313a) | [PR #4](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/4), integrado en `develop`. |
-| US08 — Definición de checkpoints | `feature/webapp-checkpoints` | [`29b84cc`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/29b84cca5935d0fcf8f9f20fc999c770368a6541) | [PR #5](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/5), integrado en `develop`. |
-| US09 — Ventanas de tiempo esperadas | `feature/webapp-expected-time-windows` | [`f0af953`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/f0af953046fc8ceefbca4bd305598fedea35648c) | [PR #6](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/6), integrado en `develop`. |
-| US11 — Creación del grupo de expedición | `feature/webapp-expedition-group-creation` | [`e1cb43a`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/e1cb43a792ddb626779e2d27d33acc15ed81cdea) | [PR #7](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/7), integrado en `develop`. |
-| US13 — Asignación del guía | `feature/webapp-field-guide-assignment` | [`21aedcd`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/21aedcd63b2b18f91487b86a2fce768c38644c8a) | [PR #7](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/7), integrado en `develop`. |
-| US12 — Registro del manifiesto | `feature/webapp-tourist-manifest` | [`71bbcaca`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/71bbcaca4648445471ce6b81c3f0431925fac282) | [PR #7](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/7), integrado en `develop`. |
-| US20 — Seguimiento del progreso | `feature/webapp-group-progress-dashboard` | [`cef703d`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/cef703d1c403cd0ff50717a9f5bebd45b2bfdad1) | [PR #7](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/7), integrado en `develop`. |
-
-El PR #7 agrupó la creación de Expedition Groups, la asignación de Field Guides, el Tourist Manifest y el Group Progress Dashboard. Fue integrado en `develop` el 2026-10-05 y contiene 37 commits con cambios en 22 archivos. Sus commits de funcionalidad fueron realizados principalmente por `Miler2003`; el PR fue creado e integrado por `MaxghZZ`.
-
-**Cambios colaborativos complementarios del frontend**
-
-| Cambio | Autor / rama | Commit | Estado en GitHub |
-| --- | --- | --- | --- |
-| Espacios de trabajo por rol y vistas de Operations Administrator y Field Guide | `MaxghZZ` / `field-guide-views` | [`207f528`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/207f52815862f5dc284f9400c26e97d9fed70025) | Integrado en `develop` mediante commit directo. |
-| Corrección de visualización del selector de rol | `DerDFHE` / `develop` | [`2c66861`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/2c66861a26154775d1e1336fd3e13b7ef9bedf82) | Integrado en `develop` el 2026-10-05. |
-| Cambio del selector de idioma a botones ES/EN con etiquetas accesibles y documentación | `Trepequiper` / `feature/button-update` | [`bc74c80`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/bc74c80b990714031109cd7c9c01a537a6f39083) | [PR #9](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/9), 5 commits integrados en `develop` el 2026-10-05. |
-| Ajuste de marca en la barra lateral del espacio de trabajo | `mateool10` / `feature/webapp-sidebar-brand` | [`91ebc19`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/91ebc19b067eeb642804865f893534a555ed8016) | [PR #8](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/8), integrado en `develop`. |
-| Ajuste de layout para pasar el espacio de trabajo desde la metadata de ruta | `mateool10` / `feature/webapp-workspace-layout-fix` | [`c3a1ae6`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/c3a1ae61e7e53875dd213ec8b020cfd5d4ea47b0) | Disponible en la rama `feature/webapp-workspace-layout-fix`. |
-
-#### 5.2.2.5. Execution Evidence for Sprint Review
-
-La validación funcional del Sprint 2 cubre los escenarios principales de las User Stories implementadas. La telemetría y los datos de seguimiento utilizados en US20 son simulados; la aplicación no sustituye sistemas de comunicación o respuesta de emergencia.
-
-| User Story | Escenario de validación | Resultado esperado |
-| --- | --- | --- |
-| US07 | Registrar una Route válida y probar un nombre duplicado o campos obligatorios incompletos. | La ruta se crea en estado `draft`; los datos inválidos o duplicados se rechazan y se informa el problema. |
-| US08 | Registrar checkpoints con órdenes únicos; intentar duplicar un orden y habilitar una ruta sin checkpoints. | Se asocian los checkpoints a la ruta; se rechaza el orden duplicado y no se habilita la ruta vacía. Con al menos un checkpoint, la ruta puede habilitarse. |
-| US09 | Guardar una ventana válida, invertir los límites mínimo/máximo y consultar tramos sin configuración. | Se guarda la ventana válida, se rechazan límites inconsistentes y se identifican los tramos pendientes. |
-| US11 | Crear un Expedition Group para una ruta habilitada y probar una fecha anterior a la actual. | El grupo se asocia a la ruta; una fecha pasada se rechaza. |
-| US13 | Asignar un guía disponible, seleccionar uno con cruce de fecha y comprobar el requisito de responsable. | La asignación se registra; el cruce requiere confirmación y el sistema identifica un grupo sin guía. |
-| US12 | Registrar participantes, repetir un documento de identidad y superar la capacidad del grupo. | El manifiesto se actualiza; el documento duplicado y el participante que excede la capacidad se rechazan. |
-| US20 | Consultar un tour activo con datos de seguimiento, uno sin sincronización reciente y uno no iniciado. | Se muestran último checkpoint, tramo y progreso estimado; se indica la antigüedad de la información y que es una estimación; un tour no iniciado informa que el seguimiento se habilita al comenzar. |
-
-**Capturas de ejecución**
-
-Las siguientes capturas documentan las vistas de la aplicación observadas durante la ejecución. Exec1 muestra la vista de seguimiento de progreso durante la carga de rutas; Exec2, el listado de rutas en estado de carga con un mensaje de error de creación; Exec3 y Exec5, la selección de espacio de trabajo y rol en español y en inglés; y Exec4, el formulario de registro de una nueva Route.
-
-![Exec1: vista de seguimiento de progreso mientras se cargan las rutas](../assets/images/chapter-5/Exec1.png)
-
-*Figura 5.12. Vista de seguimiento de progreso durante la carga de rutas.*
-
-![Exec2: listado de rutas durante la carga, con mensaje de error visible](../assets/images/chapter-5/Exec2.png)
-
-*Figura 5.13. Listado de rutas en estado de carga y mensaje de error de creación.*
-
-![Exec3: selección de espacio de trabajo y rol en español](../assets/images/chapter-5/Exec3.png)
-
-*Figura 5.14. Selección de espacio de trabajo para Operations Administrator o Field Guide.*
-
-![Exec4: formulario para registrar una nueva ruta](../assets/images/chapter-5/Exec4.png)
-
-*Figura 5.15. Formulario de configuración de una nueva Route.*
-
-![Exec5: selección de espacio de trabajo y rol en inglés](../assets/images/chapter-5/Exec5.png)
-
-*Figura 5.16. Selector de espacio de trabajo en inglés.*
-
-
-#### 5.2.2.6. Services Documentation Evidence for Sprint Review
-
-El Sprint 2 no implementa el RESTful Web Services productivo. Para habilitar el frontend se utiliza una **Fake API** ejecutada con json-server@0.17.4 y recursos JSON de prueba. Los datos de US20 se simulan para presentar el estado de seguimiento. Por ello, no se genera una especificación OpenAPI/Swagger de servicios productivos en esta entrega.
-
-| Recurso de prueba | Endpoint local | Métodos utilizados | Propósito |
-| --- | --- | --- | --- |
-| Routes | `/api/v1/routes` | GET, POST y actualización de estado | Consultar y registrar rutas; habilitar una ruta después de agregar checkpoints. |
-| Checkpoints | `/api/v1/checkpoints` | GET, POST | Consultar y registrar puntos de control asociados a una ruta. |
-| Expected Time Windows | `/api/v1/expected-time-windows` | GET, POST | Consultar y registrar ventanas esperadas entre checkpoints. |
-| Expedition Groups | `/api/v1/expedition-groups` | GET, POST y actualización | Consultar y crear grupos vinculados a una ruta; actualizar su guía asignado. |
-| Field Guides | `/api/v1/field-guides` | GET | Consultar guías de prueba disponibles para la asignación. |
-| Manifest Entries | `/api/v1/manifest-entries` | GET, POST | Consultar y registrar participantes asociados a un Expedition Group. |
-| Group Progress | `/api/v1/group-progress` | GET | Leer registros simulados de último checkpoint, tramo, progreso, estado y antigüedad de sincronización. |
-
-La ruta `/api/v1/*` se resuelve mediante `server/routes.json`. La URL configurada en `.env.development` (`http://localhost:3000/api/v1`) corresponde al entorno de desarrollo local. Los manifiestos y el progreso se persisten en el archivo JSON atendido por json-server.
-
-#### 5.2.2.7. Software Deployment Evidence for Sprint Review
-
-La Web Application del Sprint 2 se encuentra desplegada para su revisión. El despliegue corresponde al frontend de TB1. La aplicación consume una Fake API con datos simulados.
-
-| Elemento | Información |
-| --- | --- |
-| Producto | VitalTrek Web Applications — frontend TB1 |
-| Plataforma de despliegue | Vercel |
-| Repositorio | https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications |
-| Build command | `npm run build` |
-| Output directory | `dist` |
-| Variable de entorno de producción | `VITE_VITALTREK_API_URL`: URL de la Fake API consumida por el despliegue; la URL `localhost` corresponde al entorno de desarrollo local. |
-
-#### 5.2.2.8. Team Collaboration Insights during Sprint
-
-El equipo colaboró sobre el repositorio [web-applications](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications), utilizando `develop` como rama de integración, ramas de funcionalidad y Pull Requests. Los PR #4, #5 y #6 integraron US07, US08 y US09; el PR #7 integró US11, US13, US12 y US20. Después se incorporaron mejoras transversales de selección de espacio de trabajo y cambio de idioma mediante cambios de varios integrantes. El estado de cada contribución se reporta según la rama y el PR visibles en GitHub al 2026-10-05.
-
-| Integrante | Contribución comprobable en TB1 | Evidencia de GitHub |
-| --- | --- | --- |
-| Cayanchi Avila, Milenko Rubén (`MaxghZZ`) | Liderazgo general; configuración de rutas, checkpoints y ventanas de tiempo; incorporación de los espacios de trabajo según rol y de las vistas para Operations Administrator y Field Guide. | PR #4, #5 y #6; commit [`207f528`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/207f52815862f5dc284f9400c26e97d9fed70025). |
-| León Naupari, Jorge Mateo (`mateool10`) | Ajustes de marca y layout para la selección de espacio de trabajo y la barra lateral. | Commit [`c3a1ae6`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/c3a1ae61e7e53875dd213ec8b020cfd5d4ea47b0) en `feature/webapp-workspace-layout-fix`; [PR #8](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/8) con commit [`91ebc19`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/91ebc19b067eeb642804865f893534a555ed8016), integrado en `develop`. |
-| Mendoza Blanco, Ariel Roberto (`Trepequiper`) | Actualización del selector de idioma ES/EN a botones, incluyendo etiquetas accesibles y documentación del componente. | [PR #9](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/9), 5 commits; [`bc74c80`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/bc74c80b990714031109cd7c9c01a537a6f39083). |
-| Rodriguez Rojas, Miler Alexander (`Miler2003`) | Implementación de la creación de grupos, asignación de guías, registro del manifiesto y dashboard de progreso estimado mediante Fake API y datos simulados. | 37 commits integrados mediante [PR #7](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/7); commits representativos [`e1cb43a`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/e1cb43a792ddb626779e2d27d33acc15ed81cdea), [`21aedcd`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/21aedcd63b2b18f91487b86a2fce768c38644c8a), [`71bbcaca`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/71bbcaca4648445471ce6b81c3f0431925fac282) y [`cef703d`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/cef703d1c403cd0ff50717a9f5bebd45b2bfdad1). |
-| Herrera Enriquez, Diego Fernando (`DerDFHE`) | Corrección de la vista de selección de rol para mejorar su visualización. | Commit [`2c66861`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/2c66861a26154775d1e1336fd3e13b7ef9bedf82), integrado en `develop`. |
-
-Al 2026-10-05, el historial mostraba `develop` actualizado hasta el commit `2c66861`. Posteriormente, el PR #8 fue integrado en `develop`.
-
-![Commits de colaboración en web-applications durante TB1](../assets/images/chapter-5/ColabInsights21.png)
-
-*Figura 5.17. Historial de commits del repositorio web-applications durante TB1.*
-
-![GitHub Insights de web-applications durante TB1](../assets/images/chapter-5/ColabInsights22.png)
-
-*Figura 5.18. GitHub Insights del repositorio web-applications para el período del 28 de septiembre al 5 de octubre de 2026.*
-
-### 5.2.3. Sprint 3
-
-El Sprint 3 tiene como objetivo implementar y desplegar la primera versión del **RESTful Web Services** de VitalTrek, desarrollado con ASP.NET Core y C# bajo el estilo arquitectónico REST, y documentado con OpenAPI Specification mediante Swagger. El servicio implementa la persistencia en PostgreSQL mediante Entity Framework Core y organiza su código según los bounded contexts definidos en la sección 4.6, aplicando las capas de dominio, aplicación, infraestructura e interfaces. Asimismo, el Sprint incluye una nueva versión del Landing Page y de las Web Applications, que sustituyen progresivamente la Fake API utilizada en el Sprint 2 por el consumo del RESTful API de elaboración interna.
-
-<!-- COMPLETAR: confirmar en un párrafo qué bounded contexts y User Stories cubre el backend en este Sprint. -->
-
-| Campo | Valor |
-| --- | --- |
-| Sprint Goal | <!-- COMPLETAR: Sprint Goal resumido en una línea --> |
-| Historias incluidas | <!-- COMPLETAR: lista de US/TS --> |
-| Total de historias | <!-- COMPLETAR --> |
-| Sprint Velocity / Total de Story Points | <!-- COMPLETAR --> |
-| Contextos de dominio | <!-- COMPLETAR: p. ej. `expedition-setup`, `field-tracking` --> |
-| Resultado | <!-- COMPLETAR: llenar al cierre del Sprint --> |
-
-#### 5.2.3.1. Sprint Planning 3
-
-La reunión de planificación del Sprint 3 se centró en definir el alcance de la primera versión del RESTful Web Services y su integración con las Web Applications. El equipo revisó el incremento del Sprint 2 y la retroalimentación recibida en TB1, seleccionó del Product Backlog las User Stories y Technical Stories con mayor valor para el negocio cuya lógica debía trasladarse al backend, y acordó el Sprint Goal y la Velocity del Sprint.
-
-| **Sprint #** | **Sprint 3** |
-| --- | --- |
-| **Sprint Planning Background** | |
-| Date | <!-- COMPLETAR: YYYY-MM-DD --> |
-| Time | <!-- COMPLETAR: HH:MM AM/PM --> |
-| Location | Reunión virtual en Discord |
-| Prepared By | <!-- COMPLETAR: Apellidos, Nombres --> |
-| Attendees (to planning meeting) | Cayanchi Avila, Milenko Rubén / Herrera Enriquez, Diego Fernando / León Naupari, Jorge Mateo / Mendoza Blanco, Ariel Roberto / Rodriguez Rojas, Miler Alexander |
-| Sprint 2 Review Summary | • Se presentó la primera versión de las Web Applications frontend de VitalTrek, desarrolladas con Vue 3, PrimeVue, Pinia, Vue Router y vue-i18n, desplegadas en Vercel e integradas con una Fake API.<br>• Se completaron las 7 User Stories comprometidas (US07, US08, US09, US11, US13, US12 y US20), equivalentes a 28 Story Points, correspondientes a los bounded contexts `expedition-setup` y `field-tracking`.<br>• La retroalimentación de TB1 señaló como oportunidades de mejora la aplicación parcial de Responsive Web Design en el Landing Page y la ausencia de algunas de sus secciones, la necesidad de evidenciar la participación de todos los integrantes en la implementación, la evidencia de mejora continua entre entregas y la calidad de la comunicación escrita del informe.<br>• En respuesta, el equipo corrigió el informe (versión 1.9 del Registro de Versiones) e incorporó al Sprint 3 las mejoras pendientes del Landing Page. |
-| Sprint 2 Retrospective Summary | <!-- COMPLETAR: 3-4 puntos (aciertos, oportunidades de mejora y acciones para el Sprint 3). Sugerencia de mejora real según TB1: distribuir la implementación para que todos los integrantes tengan commits propios en cada producto. --> |
-| **Sprint Goal & User Stories** | |
-| Sprint 3 Goal | **Our focus is on** <!-- COMPLETAR: outcome -->.<br>**We believe it delivers** <!-- COMPLETAR: impact --> **to** <!-- COMPLETAR: customers -->.<br>**This will be confirmed when** <!-- COMPLETAR: event medible -->. |
-| Sprint 3 Velocity | <!-- COMPLETAR --> Story Points |
-| Sum of Story Points | <!-- COMPLETAR --> Story Points (<!-- COMPLETAR: lista de historias -->) |
-
-#### 5.2.3.2. Aspect Leaders and Collaborators
-
-Para el Sprint 3, el equipo organizó el trabajo en aspectos que corresponden a los bounded contexts implementados en el RESTful Web Services, a la documentación de los servicios, a las pruebas, a la integración con las Web Applications y al despliegue. La Leadership-and-Collaboration Matrix (LACX) indica, para cada aspecto, al integrante que lo lidera (L) y a quienes colaboran en él (C). Esta organización se refleja en la asignación de tasks del Sprint Backlog 3.
-
-| Integrante                       | Usuario de GitHub | Landing Page structure | Responsive UI | i18n y a11y | QA y deployment | Documentación |
-| -------------------------------- | ----------------- | ---------------------- | ------------- | ----------- | --------------- | ------------- |
-| Cayanchi Avila, Milenko Rubén    | `MaxghZZ`         | L                      | C             | C           | C               | L             |
-| León Naupari, Jorge Mateo        | `mateool10`       | C                      | L             | C           | C               | C             |
-| Mendoza Blanco, Ariel Roberto    | `Trepequiper`     | C                      | C             | L           | C               | C             |
-| Rodriguez Rojas, Miler Alexander | `Miler2003`       | C                      | C             | C           | L               | L             |
-| Herrera Enriquez, Diego Fernando | `DerDFHE`         | C                      | C             | C           | C               | C             |
-
+| Integrante | Usuario de GitHub | IAM y seguridad | Expedition Setup API | Persistencia y OpenAPI | Integración de Web Applications | Landing Page y despliegue |
+| --- | --- | --- | --- | --- | --- | --- |
+| Cayanchi Avila, Milenko Rubén | `MaxghZZ` | L | C | C | C | C |
+| León Naupari, Jorge Mateo | `mateool10` | C | L | C | C | C |
+| Rodriguez Rojas, Miler Alexander | `Miler2003` | C | C | L | C | C |
+| Mendoza Blanco, Ariel Roberto | `Trepequiper` | C | C | C | L | C |
+| Herrera Enriquez, Diego Fernando | `DerDFHE` | C | C | C | C | L |
 
 **Leyenda:** L = Leader; C = Collaborator.
 
@@ -816,99 +311,295 @@ Para el Sprint 3, el equipo organizó el trabajo en aspectos que corresponden a 
 
 El Sprint Backlog 3 se enfoca en la primera versión del RESTful Web Services de VitalTrek y en su integración con las Web Applications. Las User Stories y Technical Stories seleccionadas se descompusieron en tasks estimadas entre 4 y 8 horas, cuyo avance se registró en Jira Software con los estados To-do, In-Process, To-Review y Done.
 
-<!-- COMPLETAR: captura del board del Sprint 3 en Jira -->
 ![Board del Sprint 3 en Jira](../assets/images/chapter-5/sprint3-board-jira.png)
 
-*Figura 5.X. Board del Sprint 3 en Jira Software.*
+*Figura 5.X. Board del Sprint 3 en Jira Software con las 13 historias (57 Story Points) en estado Finalizado.*
 
 **Enlace público del board:** [Jira — VitalTrek](https://milenkorvu.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog)
 
 | **Sprint #** | **Sprint 3** | | | | | | |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | **User Story Id** | **User Story Title** | **Work-Item / Task Id** | **Title** | **Description** | **Estimation (Hours)** | **Assigned To** | **Status (To-do / In-Process / To-Review / Done)** |
-| <!-- COMPLETAR --> | | | | | | | |
+| TS07 | Persistencia y migraciones | T-42 | Infraestructura compartida y contexto de datos | Configurar el Shared kernel, el DbContext con MySQL, la convención snake_case y el acortamiento de nombres largos de claves e índices. | 6 | Cayanchi Avila, Milenko Rubén | Done |
+| TS06 | Contratos del RESTful API | T-43 | OpenAPI, Scalar y localización | Configurar la generación de OpenAPI, la documentación con Scalar, las rutas kebab-case y los mensajes localizados en inglés y español. | 5 | Rodriguez Rojas, Miler Alexander | Done |
+| TS07 | Persistencia y migraciones | T-44 | Migraciones y datos de demostración | Generar las migraciones de cada bounded context y cargar los datos de demostración de agencias, usuarios, rutas y grupos. | 5 | León Naupari, Jorge Mateo | Done |
+| TS09 | Seguridad, autenticación y privacidad | T-45 | Registro de agencias e inicio de sesión con JWT | Implementar sign-up y sign-in con contraseñas cifradas mediante BCrypt y emisión de tokens JWT firmados con HS256. | 8 | Cayanchi Avila, Milenko Rubén | Done |
+| TS09 | Seguridad, autenticación y privacidad | T-46 | Autorización por roles y gestión de usuarios | Implementar el middleware de autorización por rol y agencia, y los endpoints de consulta y creación de usuarios. | 6 | Mendoza Blanco, Ariel Roberto | Done |
+| TS09 | Seguridad, autenticación y privacidad | T-47 | Sesión JWT en las Web Applications | Consumir el inicio de sesión del API, guardar el token con su expiración y enviarlo mediante un interceptor HTTP. | 6 | Herrera Enriquez, Diego Fernando | Done |
+| US07 | Configuración de rutas | T-48 | Agregado Route y endpoints de rutas | Implementar el agregado Route y los endpoints de consulta, registro en `draft` y cambio de estado de rutas. | 6 | León Naupari, Jorge Mateo | Done |
+| US08 | Definición de checkpoints | T-49 | Endpoints de checkpoints | Implementar el registro y la consulta de checkpoints con validación de orden, coordenadas e identificador Bluetooth únicos. | 5 | Mendoza Blanco, Ariel Roberto | Done |
+| US09 | Ventanas de tiempo esperadas | T-50 | Endpoints de ventanas de tiempo | Implementar el registro y la consulta de ventanas esperadas por tramo con límites mínimo y máximo válidos. | 5 | Rodriguez Rojas, Miler Alexander | Done |
+| US10 | Protocolo de seguridad | T-51 | Protocolos de seguridad y notas de ruta | Implementar los endpoints de protocolos de seguridad y notas de ruta, e integrarlos en la preparación del grupo. | 5 | Herrera Enriquez, Diego Fernando | Done |
+| US11 | Creación del grupo de expedición | T-52 | Endpoints de grupos de expedición | Implementar la creación de grupos para rutas habilitadas con fecha de salida no pasada y capacidad máxima. | 5 | Rodriguez Rojas, Miler Alexander | Done |
+| US13 | Asignación del guía | T-53 | Guías de campo y asignación con control de fechas | Implementar el registro de guías y la asignación al grupo con confirmación explícita ante cruces de fecha. | 5 | León Naupari, Jorge Mateo | Done |
+| US12 | Registro del manifiesto | T-54 | Endpoints del manifiesto de turistas | Implementar el registro de participantes con validación de documento único, cruce de fechas y capacidad del grupo. | 5 | Mendoza Blanco, Ariel Roberto | Done |
+| US15 | Asignación del wearable | T-55 | Inventario y asignación de wearables | Implementar el inventario de wearables y su asignación a la preparación de cada participante. | 6 | Cayanchi Avila, Milenko Rubén | Done |
+| US14 | Registro de contacto de emergencia | T-56 | Endpoint de contacto de emergencia | Implementar el registro del contacto de emergencia por el propio Adventure Tourist. | 4 | Herrera Enriquez, Diego Fernando | Done |
+| US16 | Activación del wearable | T-57 | Consentimiento y activación del wearable | Implementar el otorgamiento y la revocación del consentimiento de monitoreo, que activa o desactiva el wearable asignado. | 4 | Rodriguez Rojas, Miler Alexander | Done |
+| US07 | Configuración de rutas | T-58 | Integración de Expedition Setup en las Web Applications | Adaptar los stores de rutas, checkpoints, ventanas, grupos, guías y manifiesto a los endpoints del API. | 6 | León Naupari, Jorge Mateo | Done |
+| US15 | Asignación del wearable | T-59 | Integración de la preparación del participante | Adaptar la asignación de wearables, el contacto de emergencia y el consentimiento a los endpoints del API. | 5 | Mendoza Blanco, Ariel Roberto | Done |
+| TS06 | Contratos del RESTful API | T-60 | Despliegue del API en Render y Aiven | Configurar la base de datos MySQL en Aiven, el Web Service con Docker en Render y sus variables de entorno. | 6 | Cayanchi Avila, Milenko Rubén | Done |
+| TS06 | Contratos del RESTful API | T-61 | Despliegue de las Web Applications y del Landing Page | Publicar las versiones `v1.1.0` en Vercel y configurar la URL del API desplegado. | 4 | Herrera Enriquez, Diego Fernando | Done |
+| — | Mejoras del Landing Page (feedback TB1) | T-62 | Responsive y contenido del hero | Corregir la grilla de características en móvil y el texto duplicado del hero. | 4 | Herrera Enriquez, Diego Fernando | Done |
+| — | Mejoras del Landing Page (feedback TB1) | T-63 | Enlaces a la app y redes sociales | Centralizar la URL de las Web Applications en los CTA y agregar redes sociales y ubicación. | 4 | Rodriguez Rojas, Miler Alexander | Done |
 
-<!-- COMPLETAR: si se mantiene el formato del Sprint 2, agregar debajo el resumen (tasks, horas mínimas y máximas, total de horas) y la distribución de carga por integrante. -->
+
+**Resumen del Sprint Backlog 3**
+
+| Concepto | Valor |
+| --- | ---: |
+| User Stories y Technical Stories asignadas | 13 |
+| Work-items resultantes de la descomposición | 22 |
+| Estimación mínima de una task | 4 horas |
+| Estimación máxima de una task | 8 horas |
+| Total de horas estimadas | 115 |
+| Sum of Story Points | 57 |
+
+**Distribución de la carga por integrante**
+
+| Integrante | Tasks | Horas |
+| --- | ---: | ---: |
+| Cayanchi Avila, Milenko Rubén | 4 | 26 |
+| León Naupari, Jorge Mateo | 4 | 22 |
+| Mendoza Blanco, Ariel Roberto | 4 | 21 |
+| Rodriguez Rojas, Miler Alexander | 5 | 23 |
+| Herrera Enriquez, Diego Fernando | 5 | 23 |
+| **Total** | **22** | **115** |
+
+Las dos tasks de mejora del Landing Page responden a la retroalimentación de TB1 y no suman Story Points.
 
 #### 5.2.3.4. Development Evidence for Sprint Review
 
-En el Sprint 3 se implementó la primera versión del RESTful Web Services de VitalTrek en el repositorio [web-services](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-services), desarrollado con ASP.NET Core y C# en JetBrains Rider. El proyecto aplica los bounded contexts definidos en el diseño de la sección 4.6, implementa la persistencia en PostgreSQL mediante Entity Framework Core e incluye pruebas unitarias y de integración en el mismo repositorio. Asimismo, se registran los cambios realizados en el Landing Page y en las Web Applications durante el Sprint. Todas las contribuciones se integraron siguiendo GitFlow, con feature branches, Pull Requests hacia `develop` y mensajes de commit según Conventional Commits.
-
-<!-- COMPLETAR: resumir en 2-3 frases los principales avances reales. -->
+En el Sprint 3 se implementó la primera versión del RESTful Web Services de VitalTrek en el repositorio [vitaltrek-backend](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend), desarrollado con ASP.NET Core 10 y C# en JetBrains Rider. El proyecto se organiza en los módulos Shared, IAM y Expedition Setup, aplica las capas de dominio, aplicación, infraestructura e interfaces, implementa la persistencia en MySQL mediante Entity Framework Core con migraciones versionadas y documenta sus endpoints con OpenAPI. La versión `v1.0.0` se preparó en la rama `release/v1.0.0`, se integró en `main` y `develop` mediante Pull Requests y se etiquetó en `main`. Asimismo, se registran los cambios realizados en el Landing Page y en las Web Applications durante el Sprint. Todas las contribuciones siguieron GitFlow y Conventional Commits.
 
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
 | --- | --- | --- | --- | --- | --- |
-| 1ASI0729-2620-16712-G4-Nexatech/web-services | <!-- COMPLETAR --> | | | | |
-| 1ASI0729-2620-16712-G4-Nexatech/web-applications | <!-- COMPLETAR --> | | | | |
-| 1ASI0729-2620-16712-G4-Nexatech/landing-page | <!-- COMPLETAR --> | | | | |
-
-<!-- TIP: lista de commits por repo con:
-git log develop --since=YYYY-MM-DD --pretty=format:"| %h | %s | %b | %ad |" --date=short -->
+| 1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend | `main` | `ee3c556` | chore: initial scaffold | — | 2026-10-28 |
+| 1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend | `main` | `9345935` | fix: remove corrupted VitalRek.Apí folder | — | 2026-10-28 |
+| 1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend | `feature/shared-infrastructure` | `def4ee0` | chore: rename solution to VitalTrek and add shared infrastructure | Add Shared kernel (Result, repositories, unit of work, DbContext, kebab-case routes), i18n resources, MySQL configuration, CORS, Scalar and Dockerfile. | 2026-10-28 |
+| 1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend | `feature/iam-bounded-context` | `3a5c3f6` | feat(iam): add IAM bounded context with JWT authentication | Add agencies and users, sign-up and sign-in, role-based authorization middleware, users endpoints, localized OpenAPI metadata, demo data seeding and initial migration. | 2026-10-29 |
+| 1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend | `feature/iam-bounded-context` | `cd32c5f` | feat(iam): add initial database migration | — | 2026-10-29 |
+| 1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend | `feature/expedition-setup-routes` | `4514175` | feat(expedition-setup): add routes, checkpoints, expected time windows, route notes and safety protocols | — | 2026-10-29 |
+| 1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend | `feature/expedition-setup-routes` | `d62e131` | fix(expedition-setup): shorten segment index name and add database migration | — | 2026-10-29 |
+| 1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend | `feature/expedition-setup-groups` | `ebe5c10` | feat(expedition-setup): add expedition groups, field guides, tourist manifest, wearables and participant preparation | — | 2026-10-29 |
+| 1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend | `release/v1.0.0` | `3df83d0` | chore(deploy): configure production database connection and container port | — | 2026-10-29 |
+| 1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend | `main` | `8886380` | Release/v1.0.0 | Pull Request de `release/v1.0.0` hacia `main`; etiqueta `v1.0.0`. | 2026-10-31 |
+| 1ASI0729-2620-16712-G4-Nexatech/web-applications | `feature/backend-integration` | `9e824d8` | feat(webapp): consume VitalTrek RESTful API for IAM and expedition setup | — | 2026-10-31 |
+| 1ASI0729-2620-16712-G4-Nexatech/web-applications | `develop` | `9585e7b` | feat(webapp): consume VitalTrek RESTful API for IAM and expedition setup | Pull Request de `feature/backend-integration` hacia `develop`. | 2026-10-31 |
+| 1ASI0729-2620-16712-G4-Nexatech/web-applications | `main` | `4166921` | Release/v1.1.0 | Pull Request de `release/v1.1.0` hacia `main`; etiqueta `v1.1.0`. | 2026-10-31 |
+| 1ASI0729-2620-16712-G4-Nexatech/landing-page | `main` | `5b1d52c` | feat: redirige botones Get Started y Go to VitalTrek a la app | — | 2026-10-06 |
+| 1ASI0729-2620-16712-G4-Nexatech/landing-page | `develop` | `69cf64e` | fix(responsive): use single-column features grid on mobile to remove horizontal scroll | — | 2026-10-28 |
+| 1ASI0729-2620-16712-G4-Nexatech/landing-page | `develop` | `1ce678c` | feat(links): centralize Web App URL with data-app-path and point segment CTAs to the app | — | 2026-10-28 |
+| 1ASI0729-2620-16712-G4-Nexatech/landing-page | `develop` | `4e88070` | feat(social): add social media links and location to contact and footer | — | 2026-10-28 |
+| 1ASI0729-2620-16712-G4-Nexatech/landing-page | `develop` | `c96a3c3` | fix: remove duplicated hero text, dev comments and fix login placeholder i18n | — | 2026-10-28 |
+| 1ASI0729-2620-16712-G4-Nexatech/landing-page | `main` | `4649e05` | Release/v1.1.0 | Pull Request de `release/v1.1.0` hacia `main`; etiqueta `v1.1.0`. | 2026-10-31 |
 
 #### 5.2.3.5. Execution Evidence for Sprint Review
 
-Al cierre del Sprint 3, el RESTful Web Services de VitalTrek expone los recursos necesarios para las funcionalidades seleccionadas, y las Web Applications consumen dichos servicios en lugar de la Fake API. A continuación se presentan capturas de las principales vistas implementadas y de la ejecución de los servicios, junto con el video que ilustra la visualización y navegación logradas en este Sprint.
+Al cierre del Sprint 3, las Web Applications de VitalTrek consumen el RESTful Web Services desplegado en Render para la autenticación y la gestión de cuentas (IAM) y para la configuración de expediciones (Expedition Setup). El inicio de sesión obtiene un token JWT que se envía en cada solicitud, y el API restringe cada operación según el rol y la agencia del usuario. Las funcionalidades de Field Tracking, Checkpoint Sync, Safety Monitoring, Incident Response y Tour Closure se muestran como disponibles en un próximo sprint, a la espera de su implementación en el backend. A continuación se presentan capturas del recorrido realizado con las cuentas de demostración de Operations Administrator, Field Guide y Adventure Tourist.
 
-<!-- COMPLETAR: capturas con datos cargados desde el backend real (no estados de carga ni errores). -->
+![Listado de rutas cargado desde el RESTful API](../assets/images/chapter-5/sprint3-exec-01.png)
 
-![<!-- COMPLETAR: descripción -->](../assets/images/chapter-5/sprint3-exec-1.png)
+*Figura 5.X. Listado de rutas de la agencia obtenido con `GET /api/v1/routes`.*
 
-*Figura 5.X. <!-- COMPLETAR -->*
+![Formulario de registro de una nueva ruta](../assets/images/chapter-5/sprint3-exec-02.png)
+
+*Figura 5.X. Registro de la ruta `Laguna 69 Demo` (US07), enviado con `POST /api/v1/routes`.*
+
+![Checkpoint registrado en la nueva ruta](../assets/images/chapter-5/sprint3-exec-03.png)
+
+*Figura 5.X. Registro del checkpoint `Cebollapampa` con coordenadas e identificador Bluetooth (US08).*
+
+![Ruta habilitada para la planificación de tours](../assets/images/chapter-5/sprint3-exec-04.png)
+
+*Figura 5.X. Habilitación de la ruta mediante `PATCH /api/v1/routes/{id}/status`.*
+
+![Grupo de expedición con guía asignado](../assets/images/chapter-5/sprint3-exec-05.png)
+
+*Figura 5.X. Creación del grupo `Laguna 69 Grupo Demo` y asignación de la guía Lucía Paredes (US11 y US13).*
+
+![Cuentas de la agencia](../assets/images/chapter-5/sprint3-exec-06.png)
+
+*Figura 5.X. Creación de la cuenta del Field Guide `lucia@vitaltrek.demo` mediante `POST /api/v1/users`.*
+
+![Notas de ruta y protocolo de seguridad](../assets/images/chapter-5/sprint3-exec-07.png)
+
+*Figura 5.X. Registro de las notas de ruta y del protocolo de seguridad del grupo (US10).*
+
+![Funcionalidad pendiente para el próximo sprint](../assets/images/chapter-5/sprint3-exec-08.png)
+
+*Figura 5.X. Pestaña de seguimiento en campo, cuya integración con el RESTful API se realizará en un próximo sprint.*
+
+![Manifiesto de turistas actualizado](../assets/images/chapter-5/sprint3-exec-09.png)
+
+*Figura 5.X. Registro del participante `Lucas Prado` en el manifiesto por la guía asignada (US12).*
+
+![Asignación de wearable al participante](../assets/images/chapter-5/sprint3-exec-10.png)
+
+*Figura 5.X. Asignación del wearable `VT-W-010` mediante `PUT /api/v1/participant-preparations/{id}/wearable-assignment` (US15).*
+
+![Preparación del turista](../assets/images/chapter-5/sprint3-exec-11.png)
+
+*Figura 5.X. Registro del contacto de emergencia y del consentimiento del turista; el wearable queda activado (US14 y US16).*
 
 **Video de navegación del Sprint 3:** [upc-pre-202620-1asi0730-16712-nexatech-productnavigation-sprint-3](<!-- COMPLETAR: URL de Microsoft Stream -->)
 
 #### 5.2.3.6. Services Documentation Evidence for Sprint Review
 
-En el Sprint 3 se documentaron con OpenAPI Specification, mediante Swagger, los endpoints implementados en el RESTful Web Services. La documentación se genera a partir del proyecto ASP.NET Core y describe, para cada endpoint, el verbo HTTP, la ruta, los parámetros, el cuerpo de la solicitud y los posibles responses. El idioma por defecto de la interfaz de documentación y de los mensajes del API es inglés.
+En el Sprint 3 se documentaron con OpenAPI Specification los 41 endpoints implementados en el RESTful Web Services. La especificación se genera a partir del proyecto ASP.NET Core con `Microsoft.AspNetCore.OpenApi` y se publica mediante **Scalar**, que permite explorar y ejecutar cada operación desde el navegador. Para cada endpoint se describen el verbo HTTP, la ruta, los parámetros, el cuerpo de la solicitud y los posibles responses; las descripciones de las operaciones se muestran en español mediante recursos localizados. Todos los endpoints, excepto los de autenticación, requieren el header `Authorization: Bearer <token>` con el token obtenido en el inicio de sesión, y cada operación se limita a los datos de la agencia del usuario autenticado.
 
-**Repositorio:** [web-services](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-services)
-**Documentación desplegada (Swagger UI):** <!-- COMPLETAR: URL pública de /swagger -->
+**Repositorio:** [vitaltrek-backend](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend)<br>
+**Documentación desplegada (Scalar):** [https://vitaltrek-api.onrender.com/scalar](https://vitaltrek-api.onrender.com/scalar)<br>
+**Especificación OpenAPI:** [https://vitaltrek-api.onrender.com/openapi/v1.json](https://vitaltrek-api.onrender.com/openapi/v1.json)
 
 | Endpoint | HTTP Verb | Call Syntax | Parameters | Response Example | Response Explanation |
 | --- | --- | --- | --- | --- | --- |
-| <!-- COMPLETAR: p. ej. /api/v1/routes --> | GET | <!-- p. ej. `GET /api/v1/routes` --> | | | |
-| | POST | | | | |
+| `/api/v1/authentication/sign-up` | POST | `POST /api/v1/authentication/sign-up` | Body: `agencyName`, `name`, `username`, `password` | `201 Created` — `{ "id": 3, "username": "owner@agency.pe", "role": "operations_administrator", "agencyId": 2 }` | Registra una agencia y su Operations Administrator. 400 si los datos son inválidos y 409 si el usuario ya existe. No requiere token. |
+| `/api/v1/authentication/sign-in` | POST | `POST /api/v1/authentication/sign-in` | Body: `username`, `password` | `200 OK` — `{ "id": 1, "username": "admin@vitaltrek.demo", "role": "operations_administrator", "agencyId": 1, "token": "eyJ..." }` | Autentica al usuario y devuelve un token bearer válido por 12 horas. 401 si las credenciales son inválidas. No requiere token. |
+| `/api/v1/users` | GET | `GET /api/v1/users` | Header: `Authorization: Bearer <token>` | `200 OK` — lista de usuarios de la agencia | Lista los usuarios de la agencia. Solo Operations Administrator (403 para otros roles). |
+| `/api/v1/users/{id}` | GET | `GET /api/v1/users/{id}` | Path: `id` | `200 OK` — usuario | Obtiene un usuario de la agencia. 404 si no existe. |
+| `/api/v1/users` | POST | `POST /api/v1/users` | Body: `name`, `username`, `password`, `role`, `fieldGuideId`, `identityDocument` | `201 Created` — usuario creado | Crea un usuario Field Guide o Adventure Tourist en la agencia. Solo Operations Administrator; 409 si el usuario ya existe. |
+| `/api/v1/routes` | GET | `GET /api/v1/routes` | — | `200 OK` — `[{ "id": 1, "name": "Cordillera Huayhuash Circuit", "difficulty": "Advanced", "status": "enabled" }]` | Lista las rutas de la agencia (US07). |
+| `/api/v1/routes/{id}` | GET | `GET /api/v1/routes/{id}` | Path: `id` | `200 OK` — ruta | Obtiene una ruta de la agencia. 404 si no existe. |
+| `/api/v1/routes` | POST | `POST /api/v1/routes` | Body: `name`, `origin`, `destination`, `distanceKm`, `elevationGainMeters`, `difficulty`, `estimatedDurationMinutes` | `201 Created` — ruta en estado `draft` | Registra una ruta en borrador (US07). Solo Operations Administrator. |
+| `/api/v1/routes/{id}/status` | PATCH | `PATCH /api/v1/routes/{id}/status` | Path: `id`; Body: `status` | `200 OK` — ruta con el nuevo estado | Habilita o deshabilita una ruta. 409 si se intenta habilitar sin checkpoints. |
+| `/api/v1/checkpoints` | GET | `GET /api/v1/checkpoints` | Query opcional: `routeId` | `200 OK` — lista de checkpoints | Lista los checkpoints de la agencia, opcionalmente por ruta (US08). |
+| `/api/v1/checkpoints/{id}` | GET | `GET /api/v1/checkpoints/{id}` | Path: `id` | `200 OK` — checkpoint | Obtiene un checkpoint. 404 si no existe. |
+| `/api/v1/checkpoints` | POST | `POST /api/v1/checkpoints` | Body: `routeId`, `location`, `sequenceOrder`, `bluetoothId`, `latitude`, `longitude` | `201 Created` — checkpoint creado | Registra un checkpoint Bluetooth en una ruta (US08). 409 ante orden o identificador duplicado. |
+| `/api/v1/expected-time-windows` | GET | `GET /api/v1/expected-time-windows` | Query opcional: `routeId` | `200 OK` — lista de ventanas | Lista las ventanas de tiempo esperadas (US09). |
+| `/api/v1/expected-time-windows/{id}` | GET | `GET /api/v1/expected-time-windows/{id}` | Path: `id` | `200 OK` — ventana | Obtiene una ventana de tiempo. 404 si no existe. |
+| `/api/v1/expected-time-windows` | POST | `POST /api/v1/expected-time-windows` | Body: `routeId`, `fromCheckpointId`, `toCheckpointId`, `minimumMinutes`, `maximumMinutes` | `201 Created` — ventana creada | Registra el tiempo mínimo y máximo entre dos checkpoints (US09). |
+| `/api/v1/route-notes` | GET | `GET /api/v1/route-notes` | Query opcional: `routeId` | `200 OK` — lista de notas | Lista las notas de ruta de la agencia. |
+| `/api/v1/route-notes/{id}` | GET | `GET /api/v1/route-notes/{id}` | Path: `id` | `200 OK` — nota | Obtiene una nota de ruta. 404 si no existe. |
+| `/api/v1/route-notes` | POST | `POST /api/v1/route-notes` | Body: `routeId`, `title`, `content`, `displayOrder` | `201 Created` — nota creada | Registra una nota de ruta consultable en campo. Solo Operations Administrator. |
+| `/api/v1/route-notes/{id}` | PUT | `PUT /api/v1/route-notes/{id}` | Path: `id`; Body: `title`, `content`, `displayOrder` | `200 OK` — nota actualizada | Actualiza una nota de ruta. |
+| `/api/v1/safety-protocols` | GET | `GET /api/v1/safety-protocols` | Query opcional: `routeId` | `200 OK` — lista de protocolos | Lista los protocolos de seguridad (US10). |
+| `/api/v1/safety-protocols/{id}` | GET | `GET /api/v1/safety-protocols/{id}` | Path: `id` | `200 OK` — protocolo | Obtiene un protocolo. 404 si no existe. |
+| `/api/v1/safety-protocols` | POST | `POST /api/v1/safety-protocols` | Body: `routeId`, `instructions` | `201 Created` — protocolo creado | Registra el protocolo de seguridad de una ruta (US10). |
+| `/api/v1/safety-protocols/{id}` | PUT | `PUT /api/v1/safety-protocols/{id}` | Path: `id`; Body: `instructions`, `status` | `200 OK` — protocolo actualizado | Actualiza las instrucciones o el estado de un protocolo. |
+| `/api/v1/field-guides` | GET | `GET /api/v1/field-guides` | — | `200 OK` — lista de guías | Lista los guías de la agencia. Solo Operations Administrator. |
+| `/api/v1/field-guides/{id}` | GET | `GET /api/v1/field-guides/{id}` | Path: `id` | `200 OK` — guía | Obtiene un guía. 404 si no existe. |
+| `/api/v1/field-guides` | POST | `POST /api/v1/field-guides` | Body: `name` | `201 Created` — guía creado | Registra un guía en la agencia. |
+| `/api/v1/expedition-groups` | GET | `GET /api/v1/expedition-groups` | Query opcional: `routeId` | `200 OK` — lista de grupos | El administrador ve todos los grupos de la agencia; el guía, solo los asignados (US11). |
+| `/api/v1/expedition-groups/{id}` | GET | `GET /api/v1/expedition-groups/{id}` | Path: `id` | `200 OK` — grupo | Obtiene un grupo visible para el usuario. 404 si no existe. |
+| `/api/v1/expedition-groups` | POST | `POST /api/v1/expedition-groups` | Body: `routeId`, `name`, `departureDate`, `maximumCapacity` | `201 Created` — grupo en estado `scheduled` | Crea un grupo para una ruta habilitada (US11). Solo Operations Administrator. |
+| `/api/v1/expedition-groups/{id}/field-guide` | PUT | `PUT /api/v1/expedition-groups/{id}/field-guide` | Path: `id`; Body: `fieldGuideId`, `confirmScheduleConflict` | `200 OK` — grupo con guía asignado | Asigna el guía responsable (US13). 409 si el guía tiene otro grupo en la misma fecha y no se confirmó el conflicto. |
+| `/api/v1/manifest-entries` | GET | `GET /api/v1/manifest-entries` | Query opcional: `expeditionGroupId` | `200 OK` — lista de participantes | Lista los participantes visibles para el usuario (US12). |
+| `/api/v1/manifest-entries/{id}` | GET | `GET /api/v1/manifest-entries/{id}` | Path: `id` | `200 OK` — participante | Obtiene un participante del manifiesto. 404 si no existe. |
+| `/api/v1/manifest-entries` | POST | `POST /api/v1/manifest-entries` | Body: `expeditionGroupId`, `fullName`, `identityDocument` | `201 Created` — participante registrado | Registra un turista en el manifiesto y crea su preparación (US12). 409 si el grupo está lleno o el documento ya existe. |
+| `/api/v1/wearable-devices` | GET | `GET /api/v1/wearable-devices` | — | `200 OK` — lista de wearables | Lista los wearables de la agencia. Solo Operations Administrator. |
+| `/api/v1/wearable-devices/{id}` | GET | `GET /api/v1/wearable-devices/{id}` | Path: `id` | `200 OK` — wearable | Obtiene un wearable. 404 si no existe. |
+| `/api/v1/wearable-devices` | POST | `POST /api/v1/wearable-devices` | Body: `code` | `201 Created` — wearable registrado | Registra un wearable disponible en la agencia. |
+| `/api/v1/participant-preparations` | GET | `GET /api/v1/participant-preparations` | Query opcional: `expeditionGroupId` | `200 OK` — lista de preparaciones | Lista las preparaciones visibles para el usuario; el turista solo ve la suya. |
+| `/api/v1/participant-preparations/{id}` | GET | `GET /api/v1/participant-preparations/{id}` | Path: `id` | `200 OK` — preparación | Obtiene una preparación. 404 si no existe. |
+| `/api/v1/participant-preparations/{id}/wearable-assignment` | PUT | `PUT /api/v1/participant-preparations/{id}/wearable-assignment` | Path: `id`; Body: `wearableDeviceId` | `200 OK` — preparación con wearable asignado | Asigna un wearable a un participante (US15). 409 si el wearable no está disponible. |
+| `/api/v1/participant-preparations/{id}/emergency-contact` | PUT | `PUT /api/v1/participant-preparations/{id}/emergency-contact` | Path: `id`; Body: `name`, `phone`, `relationship` | `200 OK` — preparación con contacto registrado | El turista registra su contacto de emergencia (US14). Solo Adventure Tourist. |
+| `/api/v1/participant-preparations/{id}/consent` | PUT | `PUT /api/v1/participant-preparations/{id}/consent` | Path: `id`; Body: `granted` | `200 OK` — preparación con consentimiento y activación | El turista otorga o revoca el consentimiento de monitoreo; al otorgarlo se activa el wearable (US16). Solo Adventure Tourist. |
 
-<!-- COMPLETAR: una fila por acción. Incluir códigos de respuesta (200, 201, 400, 404). -->
+Los endpoints de creación responden `201 Created` y los de actualización `200 OK`. Ante datos inválidos responden `400 Bad Request`; sin token, `401 Unauthorized`; con un rol no autorizado, `403 Forbidden`; si el recurso no existe en la agencia, `404 Not Found`; y si se incumple una regla de negocio, `409 Conflict`.
 
-A continuación se muestran capturas de la interacción con la documentación en Swagger UI usando datos de muestra.
+A continuación se muestran capturas de la interacción con la documentación desplegada en Scalar usando los datos de demostración.
 
-![<!-- COMPLETAR -->](../assets/images/chapter-5/sprint3-swagger-1.png)
+![Portada de la documentación del VitalTrek Platform API en Scalar](../assets/images/chapter-5/sprint3-scalar-home.png)
 
-*Figura 5.X. <!-- COMPLETAR: endpoint y acción ejecutada con datos de muestra -->*
+*Figura 5.X. Documentación del VitalTrek Platform API publicada con Scalar en Render.*
+
+![Inicio de sesión ejecutado desde Scalar](../assets/images/chapter-5/sprint3-scalar-sign-in.png)
+
+*Figura 5.X. Ejecución de `POST /api/v1/authentication/sign-in` con el usuario `admin@vitaltrek.demo`: respuesta `200 OK` con el token bearer.*
+
+![Consulta de rutas ejecutada desde Scalar](../assets/images/chapter-5/sprint3-scalar-routes.png)
+
+*Figura 5.X. Ejecución de `GET /api/v1/routes` con token bearer: respuesta `200 OK` con las cuatro rutas de la agencia.*
 
 **Commits relacionados con la documentación de servicios:**
 
 | Commit Id | Commit Message | Committed on (Date) |
 | --- | --- | --- |
-| <!-- COMPLETAR --> | | |
+| `def4ee0` | chore: rename solution to VitalTrek and add shared infrastructure (configuración de OpenAPI y Scalar) | 2026-10-28 |
+| `3a5c3f6` | feat(iam): add IAM bounded context with JWT authentication (metadatos OpenAPI localizados) | 2026-10-29 |
+| `4514175` | feat(expedition-setup): add routes, checkpoints, expected time windows, route notes and safety protocols | 2026-10-29 |
+| `ebe5c10` | feat(expedition-setup): add expedition groups, field guides, tourist manifest, wearables and participant preparation | 2026-10-29 |
 
 #### 5.2.3.7. Software Deployment Evidence for Sprint Review
 
-En el Sprint 3 se realizó el primer despliegue del RESTful Web Services de VitalTrek y se publicaron nuevas versiones del Landing Page y de las Web Applications. Las actividades comprendieron la configuración de los recursos en el proveedor cloud para el servicio y la base de datos, la configuración de las variables de entorno con la cadena de conexión y la URL base del API, y la actualización de la variable `VITE_VITALTREK_API_URL` de las Web Applications para consumir el API desplegado. A continuación se describen los pasos realizados y se presentan capturas de cada uno.
+En el Sprint 3 se realizó el primer despliegue del RESTful Web Services de VitalTrek y se publicaron las versiones `v1.1.0` de las Web Applications, que consume dicho servicio, y del Landing Page. Las actividades comprendieron la creación de las cuentas en Aiven y Render, el aprovisionamiento de la base de datos MySQL administrada, la configuración del Web Service basado en Docker con sus variables de entorno, la publicación de la versión `v1.0.0` mediante GitFlow y la verificación del servicio desplegado a través de Scalar. La configuración detallada se describe en la sección 5.1.4. Para las Web Applications se actualizó en Vercel la variable `VITE_VITALTREK_API_URL` con la URL del API desplegado. La versión se numeró `v1.1.0` según Semantic Versioning, porque agrega funcionalidad compatible sobre la versión publicada en TB1.
 
 | Producto | Plataforma | Repositorio | URL pública |
 | --- | --- | --- | --- |
 | Landing Page | Vercel | [landing-page](https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page) | https://landing-page-mrca1.vercel.app/ |
-| Web Applications | Vercel | [web-applications](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications) | <!-- COMPLETAR --> |
-| RESTful Web Services | <!-- COMPLETAR: Azure App Service u otro --> | [web-services](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-services) | <!-- COMPLETAR --> |
-| Base de datos | <!-- COMPLETAR: servicio de PostgreSQL --> | — | — |
+| Web Applications | Vercel | [web-applications](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications) | https://web-applications-vert.vercel.app/ |
+| RESTful Web Services | Render (Web Service con Docker) | [vitaltrek-backend](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend) | https://vitaltrek-api.onrender.com/scalar |
+| Base de datos | Aiven for MySQL 8.4 (plan Free) | — | Acceso privado mediante credenciales |
 
 **Pasos del despliegue del RESTful Web Services**
 
-<!-- COMPLETAR: un paso por captura; ajustar al proceso real. -->
-1. Creación del recurso del servicio en <!-- COMPLETAR --> y selección del runtime .NET.
-2. Creación de la base de datos PostgreSQL y configuración de la cadena de conexión como variable de entorno.
-3. Publicación del proyecto desde el repositorio <!-- COMPLETAR: GitHub Actions / publicación desde Rider -->.
-4. Verificación del servicio desplegado mediante Swagger UI.
+1. Creación del servicio MySQL `vitaltrek-db` en Aiven, en plan Free, y obtención de los datos de conexión: host, puerto, usuario, base de datos `defaultdb` y modo SSL `REQUIRED`.
 
-![<!-- COMPLETAR -->](../assets/images/chapter-5/sprint3-deploy-1.png)
+![Servicio MySQL vitaltrek-db en Aiven](../assets/images/chapter-5/sprint3-deploy-aiven.png)
 
-*Figura 5.X. <!-- COMPLETAR -->*
+*Figura 5.X. Servicio `vitaltrek-db` en estado Running en Aiven, con los datos de conexión.*
+
+2. Preparación de la versión en la rama `release/v1.0.0`: cadena de conexión de producción con puerto y SSL, `Dockerfile` que escucha en el puerto asignado por la plataforma y `.dockerignore`. La rama se integró en `main` y `develop` mediante Pull Requests y `main` se etiquetó como `v1.0.0`.
+3. Creación del Web Service `vitaltrek-api` en Render conectado al repositorio `vitaltrek-backend`, con runtime Docker, rama `main` y plan Free, y registro de las variables de entorno de la base de datos y de la clave de firma JWT.
+
+![Variables de entorno del servicio en Render](../assets/images/chapter-5/sprint3-deploy-render-env.png)
+
+*Figura 5.X. Variables de entorno del Web Service `vitaltrek-api` en Render, con los valores ocultos.*
+
+4. Construcción de la imagen Docker e inicio del contenedor: la aplicación aplicó las migraciones `InitialCreate`, `AddExpeditionSetupContext` y `AddExpeditionGroupsContext` sobre la base de datos de Aiven, cargó los datos de demostración y quedó publicada en https://vitaltrek-api.onrender.com.
+
+![Despliegue exitoso del servicio en Render](../assets/images/chapter-5/sprint3-deploy-render-live.png)
+
+*Figura 5.X. Despliegue `Release/v1.0.0` del commit `8886380` en estado Live en Render.*
+
+5. Verificación del servicio en https://vitaltrek-api.onrender.com/scalar: el inicio de sesión con `admin@vitaltrek.demo` respondió `200 OK` con el token bearer y `GET /api/v1/routes` respondió `200 OK` con las cuatro rutas de la agencia (sección 5.2.3.6).
+
+**Pasos del despliegue de las Web Applications**
+
+1. Integración de `feature/backend-integration` en `develop` mediante Pull Request, creación de la rama `release/v1.1.0` e integración en `main` y `develop`, con la etiqueta `v1.1.0` en `main`.
+2. Actualización de la variable de entorno `VITE_VITALTREK_API_URL` en Vercel con la URL base del RESTful Web Services, para los entornos Production y Preview.
+
+![Variable de entorno de las Web Applications en Vercel](../assets/images/chapter-5/sprint3-deploy-vercel-env.png)
+
+*Figura 5.X. Variable `VITE_VITALTREK_API_URL` configurada en Vercel con la URL del API desplegado.*
+
+3. Verificación de `main` como Production Branch del proyecto en Vercel.
+
+![Production Branch del proyecto en Vercel](../assets/images/chapter-5/sprint3-deploy-vercel-branch.png)
+
+*Figura 5.X. Configuración de `main` como Production Branch y dominio `web-applications-vert.vercel.app`.*
+
+4. Nuevo despliegue de producción a partir del commit `4166921` (`Release/v1.1.0`) de la rama `main`, en estado Ready.
+
+![Despliegue de las Web Applications en Vercel](../assets/images/chapter-5/sprint3-deploy-vercel-ready.png)
+
+*Figura 5.X. Despliegue de producción de las Web Applications `v1.1.0` en Vercel.*
+
+5. Verificación en https://web-applications-vert.vercel.app/: el inicio de sesión del Operations Administrator y el listado de rutas responden con datos del RESTful Web Services.
+
+![Listado de rutas en las Web Applications desplegadas](../assets/images/chapter-5/sprint3-deploy-webapp-routes.png)
+
+*Figura 5.X. Listado de rutas obtenido del RESTful Web Services desde las Web Applications desplegadas.*
+
+**Pasos del despliegue del Landing Page**
+
+1. Creación de la rama `release/v1.1.0` desde `develop` con los cambios del Sprint 3: enlaces a las Web Applications, grilla de una columna en móvil, redes sociales y ubicación en contacto y footer, y corrección del texto del hero y del i18n del login. La rama se integró en `main` mediante Pull Request y `main` se etiquetó como `v1.1.0`.
+2. Despliegue automático de producción en Vercel a partir del commit `4649e05` (`Release/v1.1.0`) de la rama `main`.
+
+![Despliegue del Landing Page en Vercel](../assets/images/chapter-5/sprint3-deploy-landing-ready.png)
+
+*Figura 5.X. Despliegue de producción del Landing Page `v1.1.0` en estado Ready en Vercel.*
+
+3. Verificación del Landing Page publicado, con los enlaces a redes sociales incorporados en el footer.
+
+![Footer del Landing Page con redes sociales](../assets/images/chapter-5/sprint3-deploy-landing-footer.png)
+
+*Figura 5.X. Footer del Landing Page `v1.1.0` con los enlaces a redes sociales.*
 
 #### 5.2.3.8. Team Collaboration Insights during Sprint
 
-Durante el Sprint 3, el equipo trabajó sobre los repositorios [web-services](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-services), [web-applications](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications) y [landing-page](https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page), aplicando GitFlow: `develop` como rama de integración, feature branches por funcionalidad y Pull Requests revisados por otro integrante antes de su integración. Todos los integrantes participaron en la implementación del RESTful Web Services. A continuación se resume la contribución de cada integrante y se presentan los analíticos de colaboración de GitHub.
+Durante el Sprint 3, el equipo trabajó sobre los repositorios [vitaltrek-backend](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend), [web-applications](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications) y [landing-page](https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page), aplicando GitFlow: `develop` como rama de integración, feature branches por funcionalidad y Pull Requests revisados por otro integrante antes de su integración. Todos los integrantes participaron en la implementación del RESTful Web Services. A continuación se resume la contribución de cada integrante y se presentan los analíticos de colaboración de GitHub.
 
 | Integrante | Contribución en el Sprint 3 | Evidencia de GitHub |
 | --- | --- | --- |
@@ -918,13 +609,13 @@ Durante el Sprint 3, el equipo trabajó sobre los repositorios [web-services](ht
 | Mendoza Blanco, Ariel Roberto (`Trepequiper`) | <!-- COMPLETAR --> | |
 | Rodriguez Rojas, Miler Alexander (`Miler2003`) | <!-- COMPLETAR --> | |
 
-![Commits del repositorio web-services durante el Sprint 3](../assets/images/chapter-5/sprint3-commits-web-services.png)
+![Commits del repositorio vitaltrek-backend durante el Sprint 3](../assets/images/chapter-5/sprint3-commits-vitaltrek-backend.png)
 
-*Figura 5.X. Commits del repositorio web-services durante el Sprint 3.*
+*Figura 5.X. Commits del repositorio vitaltrek-backend durante el Sprint 3.*
 
-![GitHub Insights del repositorio web-services durante el Sprint 3](../assets/images/chapter-5/sprint3-insights-web-services.png)
+![GitHub Insights del repositorio vitaltrek-backend durante el Sprint 3](../assets/images/chapter-5/sprint3-insights-vitaltrek-backend.png)
 
-*Figura 5.X. GitHub Insights (Contributors) del repositorio web-services para el periodo del Sprint 3.*
+*Figura 5.X. GitHub Insights (Contributors) del repositorio vitaltrek-backend para el periodo del Sprint 3.*
 
 ## 5.3. Validation Interviews
 

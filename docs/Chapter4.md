@@ -659,7 +659,7 @@ La **Tourist Web Application** es una Progressive Web Application (PWA) con enfo
 
 La **RESTful API**, desarrollada con ASP.NET Core, Entity Framework Core y C#, centraliza las reglas de negocio de VitalTrek. Gestiona autenticación, operaciones de rutas y expediciones, sincronización de telemetría, evaluación de seguridad, generación de alertas y gestión de incidentes. El IoT Telemetry Ecosystem envía lotes de telemetría a la API al habilitarse la sincronización en checkpoints Bluetooth. La API valida y almacena estos datos antes de evaluarlos según ventanas de tiempo esperadas, rangos basales y desviaciones de ruta.
 
-La **VitalTrek Relational Database**, implementada con PostgreSQL, almacena información de agencias, usuarios, rutas, checkpoints, grupos de expedición, telemetría, alertas, incidentes y notas de ruta. Se utiliza una única tecnología de base de datos para evitar ambigüedad arquitectónica en este diseño inicial.
+La **VitalTrek Relational Database**, implementada con MySQL, almacena información de agencias, usuarios, rutas, checkpoints, grupos de expedición, telemetría, alertas, incidentes y notas de ruta. Se utiliza una única tecnología de base de datos para evitar ambigüedad arquitectónica en este diseño inicial.
 
 La API se integra con dos sistemas externos: el Notification Provider, encargado de entregar alertas tempranas y notificaciones de emergencia; y el Map Provider, desde el cual la Tourist Web Application obtiene mapas descargables. El procesamiento de pagos se mantiene fuera del alcance de AV1 y TB1: es una hipótesis comercial posterior al MVP, sin User Story funcional ni capacidad implementada.
 
@@ -682,7 +682,7 @@ El componente **Telemetry Synchronization** recibe lotes de telemetría de ubica
 
 El componente **Safety & Alerting** evalúa la telemetría validada considerando reglas de seguridad, ventanas de tiempo esperadas, rangos basales e indicadores de desviación de ruta. Cuando detecta una condición relevante de riesgo, genera una alerta temprana y la envía mediante el Notification Provider. Las alertas críticas pueden escalarse al componente **Incident & Emergency Management**, responsable de gestionar la confirmación del incidente, declaración de emergencia, notificación a contactos de emergencia y coordinación de evacuación.
 
-Todos los componentes de negocio utilizan **Persistence Infrastructure**. Este componente proporciona acceso a datos mediante Entity Framework Core, el DbContext de la aplicación y repositorios. Es el único componente que lee y escribe directamente en PostgreSQL, reduciendo el acoplamiento entre la lógica de negocio y la tecnología de almacenamiento.
+Todos los componentes de negocio utilizan **Persistence Infrastructure**. Este componente proporciona acceso a datos mediante Entity Framework Core, el DbContext de la aplicación y repositorios. Es el único componente que lee y escribe directamente en MySQL, reduciendo el acoplamiento entre la lógica de negocio y la tecnología de almacenamiento.
 
 El diagrama de componentes traduce los eventos identificados en el Design-Level EventStorming a responsabilidades arquitectónicas. Por ejemplo, la sincronización de telemetría conduce a la evaluación de seguridad; dicha evaluación puede generar una alerta temprana; y una alerta crítica puede iniciar el flujo de gestión de incidentes y emergencias.
 
@@ -786,7 +786,7 @@ En conjunto, los seis diagramas mantienen separación de responsabilidades y tra
 
 ## 4.8. Database Design.
 
-El diseño de base de datos de VitalTrek define una estructura relacional en PostgreSQL para almacenar de forma consistente la información operativa y de seguridad de las expediciones. El modelo persiste agencias, usuarios, rutas, checkpoints, grupos de expedición, turistas, wearables, telemetría sincronizada, alertas, incidentes y notificaciones. Las relaciones se implementan mediante claves primarias y foráneas, evitando duplicidad y manteniendo la integridad de los datos.
+El diseño de base de datos de VitalTrek define una estructura relacional en MySQL para almacenar de forma consistente la información operativa y de seguridad de las expediciones. El modelo persiste agencias, usuarios, rutas, checkpoints, grupos de expedición, turistas, wearables, telemetría sincronizada, alertas, incidentes y notificaciones. Las relaciones se implementan mediante claves primarias y foráneas, evitando duplicidad y manteniendo la integridad de los datos.
 
 
 ### 4.8.1. Database Diagrams
