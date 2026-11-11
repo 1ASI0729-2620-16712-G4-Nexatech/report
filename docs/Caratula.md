@@ -28,9 +28,9 @@
 <tr><td style="border:1px solid #000;padding:6px 14px;">u202319027</td><td style="border:1px solid #000;padding:6px 14px;">Herrera Enriquez, Diego Fernando</td></tr>
 <tr><td style="border:1px solid #000;padding:6px 14px;">u202422549</td><td style="border:1px solid #000;padding:6px 14px;">León Naupari, Jorge Mateo</td></tr>
 <tr><td style="border:1px solid #000;padding:6px 14px;">u202419667</td><td style="border:1px solid #000;padding:6px 14px;">Mendoza Blanco, Ariel Roberto</td></tr>
-<tr><td style="border:1px solid #000;padding:6px 14px;">U20241A827</td><td style="border:1px solid #000;padding:6px 14px;">Rodriguez Rojas, Miler Alexander</td></tr>
+<tr><td style="border:1px solid #000;padding:6px 14px;">u20241A827</td><td style="border:1px solid #000;padding:6px 14px;">Rodriguez Rojas, Miler Alexander</td></tr>
 </table>
 
-<p style="margin-top:30px;"><b>Período 202620</b><br><b>Septiembre 2026</b></p>
+<p style="margin-top:30px;"><b>Período 202620</b><br><b>Octubre 2026</b></p>
 
 </div>
