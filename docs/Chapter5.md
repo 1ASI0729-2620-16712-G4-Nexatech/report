@@ -27,7 +27,7 @@ La siguiente tabla especifica los productos de software que el equipo utiliza, a
 | Software Deployment | Vercel | Desplegar y publicar el Landing Page y las Web Applications a partir de sus repositorios de GitHub. | SaaS | https://vercel.com/ |
 | Software Deployment | Docker | Empaquetar el RESTful Web Services en una imagen de contenedor a partir del `Dockerfile` del repositorio. La imagen se construye en Render. | Archivo de configuración en el repositorio | https://www.docker.com/ |
 | Software Deployment | Render | Desplegar el RESTful Web Services como Web Service basado en Docker a partir de la rama `main`. | SaaS | https://render.com/ |
-| Software Deployment | Aiven for MySQL | Alojar la base de datos MySQL administrada que utiliza el RESTful Web Services desplegado. | SaaS | https://aiven.io/mysql |
+| Software Deployment | Railway MySQL | Alojar la base de datos MySQL administrada que utiliza el RESTful Web Services desplegado. | SaaS | https://railway.app/ |
 | Software Documentation | Scalar (OpenAPI) | Publicar y probar la documentación OpenAPI de los endpoints del RESTful Web Services. Implementado en el Sprint 3 (AV2). | Paquete NuGet del proyecto | https://scalar.com/ |
 | Software Documentation | Markdown | Redactar el informe del proyecto y los archivos README de cada repositorio. | Formato abierto | https://www.markdownguide.org/ |
 | Software Documentation | dbdiagram.io | Elaborar el Database Diagram de la sección 4.8. | SaaS | https://dbdiagram.io/ |
@@ -173,13 +173,13 @@ function setLanguage(selectedLocale) {
  
 ### 5.1.4. Software Deployment Configuration
  
-El despliegue de cada producto parte de su repositorio de código fuente. En AV1 se desplegó el Landing Page y en TB1 se desplegaron las Web Applications, ambos en Vercel a partir de sus repositorios de GitHub. En AV2 se desplegó el RESTful Web Services en Render como contenedor Docker, conectado a una base de datos MySQL administrada en Aiven.
+El despliegue de cada producto parte de su repositorio de código fuente. En AV1 se desplegó el Landing Page y en TB1 se desplegaron las Web Applications, ambos en Vercel a partir de sus repositorios de GitHub. En AV2 se desplegó el RESTful Web Services en Render como contenedor Docker, conectado a una base de datos MySQL administrada en Railway.
  
 | Producto | Plataforma | Rama de despliegue | Estado |
 | --- | --- | --- | --- |
 | Landing Page | Vercel | `main` | Desplegado (`v1.1.0`) |
 | Frontend Web Applications | Vercel | `main` | Desplegado (`v1.1.0`) |
-| RESTful Web Services | Render (Docker) y Aiven for MySQL | `main` | Desplegado (`v1.0.0`) |
+| RESTful Web Services | Render (Docker) y Railway MySQL | `main` | Desplegado (`v1.0.0`) |
  
 #### Configuración del Landing Page
  
@@ -216,7 +216,7 @@ El despliegue de cada producto parte de su repositorio de código fuente. En AV1
 | Build command | `npm run build` |
 | Output directory | `dist` |
 | Rewrites | `vercel.json` redirige todas las rutas a `index.html` para la navegación de la SPA |
-| Variable `VITE_VITALTREK_API_URL` | `https://vitaltrek-api.onrender.com/api/v1`, URL base del RESTful Web Services |
+| Variable `VITE_VITALTREK_API_URL` | `https://vitaltrek-backend.onrender.com/api/v1`, URL base del RESTful Web Services |
 | Variable `VITE_SIMULATED_OPERATIONS` | `false` (definida en `.env.production`); los contextos aún no implementados en el API muestran que estarán disponibles en un próximo sprint |
 | URL pública de producción | https://web-applications-vert.vercel.app/ |
 | Versión desplegada | `v1.1.0` |
@@ -231,11 +231,11 @@ El despliegue de cada producto parte de su repositorio de código fuente. En AV1
 | Production Branch | `main` |
 | Región | Singapore (Southeast Asia) |
 | Puerto | Variable `PORT` inyectada por Render; 8080 por defecto |
-| Base de datos | Aiven for MySQL 8.4, plan Free, conexión cifrada (`SslMode=Required`) |
+| Base de datos | Railway MySQL, plan Starter, conexión cifrada (`SslMode=Required`) |
 | Configuración de producción | `appsettings.Production.json`, cuya cadena de conexión y clave de firma se completan con variables de entorno al iniciar la aplicación |
 | Migraciones | Se aplican automáticamente al iniciar la aplicación mediante Entity Framework Core |
 | Documentación | Scalar en `/scalar` y especificación OpenAPI en `/openapi/v1.json` |
-| URL pública de producción | https://vitaltrek-api.onrender.com |
+| URL pública de producción | https://vitaltrek-backend.onrender.com |
 | Versión desplegada | `v1.0.0` |
 
 Las variables de entorno se registran únicamente en Render y no se versionan en el repositorio:
@@ -244,8 +244,8 @@ Las variables de entorno se registran únicamente en Render y no se versionan en
 | --- | --- |
 | `ASPNETCORE_ENVIRONMENT` | Valor `Production`; carga `appsettings.Production.json`. |
 | `ASPNETCORE_FORWARDEDHEADERS_ENABLED` | Valor `true`; permite reconocer el esquema HTTPS detrás del proxy de Render. |
-| `DATABASE_URL` | Host del servicio MySQL en Aiven. |
-| `DATABASE_PORT` | Puerto del servicio MySQL en Aiven. |
+| `DATABASE_URL` | Host del servicio MySQL en Railway. |
+| `DATABASE_PORT` | Puerto del servicio MySQL en Railway. |
 | `DATABASE_USER` | Usuario de la base de datos. |
 | `DATABASE_PASSWORD` | Contraseña de la base de datos. |
 | `DATABASE_SCHEMA` | Base de datos utilizada (`defaultdb`). |
@@ -257,7 +257,7 @@ Las variables de entorno se registran únicamente en Render y no se versionan en
 2. Al cerrar el Sprint se crea la rama `release/vX.Y.Z` desde `develop`, donde se incorporan los ajustes de configuración de producción.
 3. La rama de Release se integra en `main` y en `develop` mediante Pull Requests, y `main` se etiqueta con su número de versión.
 4. Render detecta el cambio en la Production Branch, construye la imagen Docker y reinicia el servicio.
-5. Al iniciar, la aplicación aplica las migraciones pendientes sobre la base de datos de Aiven y carga los datos de demostración si la base de datos está vacía.
+5. Al iniciar, la aplicación aplica las migraciones pendientes sobre la base de datos de Railway y carga los datos de demostración si la base de datos está vacía.
 6. Se verifica la documentación en `/scalar` ejecutando el inicio de sesión y una consulta autenticada, y se registra la evidencia en la sección 5.2.X.7 del Sprint correspondiente.
 
 ## 5.2. Landing Page, Services & Applications Implementation
@@ -338,7 +338,7 @@ El Sprint Backlog 3 se enfoca en la primera versión del RESTful Web Services de
 | US16 | Activación del wearable | T-57 | Consentimiento y activación del wearable | Implementar el otorgamiento y la revocación del consentimiento de monitoreo, que activa o desactiva el wearable asignado. | 4 | Rodriguez Rojas, Miler Alexander | Done |
 | US07 | Configuración de rutas | T-58 | Integración de Expedition Setup en las Web Applications | Adaptar los stores de rutas, checkpoints, ventanas, grupos, guías y manifiesto a los endpoints del API. | 6 | León Naupari, Jorge Mateo | Done |
 | US15 | Asignación del wearable | T-59 | Integración de la preparación del participante | Adaptar la asignación de wearables, el contacto de emergencia y el consentimiento a los endpoints del API. | 5 | Mendoza Blanco, Ariel Roberto | Done |
-| TS06 | Contratos del RESTful API | T-60 | Despliegue del API en Render y Aiven | Configurar la base de datos MySQL en Aiven, el Web Service con Docker en Render y sus variables de entorno. | 6 | Cayanchi Avila, Milenko Rubén | Done |
+| TS06 | Contratos del RESTful API | T-60 | Despliegue del API en Render y Railway | Configurar la base de datos MySQL en Railway, el Web Service con Docker en Render y sus variables de entorno. | 6 | Cayanchi Avila, Milenko Rubén | Done |
 | TS06 | Contratos del RESTful API | T-61 | Despliegue de las Web Applications y del Landing Page | Publicar las versiones `v1.1.0` en Vercel y configurar la URL del API desplegado. | 4 | Herrera Enriquez, Diego Fernando | Done |
 | — | Mejoras del Landing Page (feedback TB1) | T-62 | Responsive y contenido del hero | Corregir la grilla de características en móvil y el texto duplicado del hero. | 4 | Herrera Enriquez, Diego Fernando | Done |
 | — | Mejoras del Landing Page (feedback TB1) | T-63 | Enlaces a la app y redes sociales | Centralizar la URL de las Web Applications en los CTA y agregar redes sociales y ubicación. | 4 | Rodriguez Rojas, Miler Alexander | Done |
@@ -449,8 +449,8 @@ Al cierre del Sprint 3, las Web Applications de VitalTrek consumen el RESTful We
 En el Sprint 3 se documentaron con OpenAPI Specification los 41 endpoints implementados en el RESTful Web Services. La especificación se genera a partir del proyecto ASP.NET Core con `Microsoft.AspNetCore.OpenApi` y se publica mediante **Scalar**, que permite explorar y ejecutar cada operación desde el navegador. Para cada endpoint se describen el verbo HTTP, la ruta, los parámetros, el cuerpo de la solicitud y los posibles responses; las descripciones de las operaciones se muestran en español mediante recursos localizados. Todos los endpoints, excepto los de autenticación, requieren el header `Authorization: Bearer <token>` con el token obtenido en el inicio de sesión, y cada operación se limita a los datos de la agencia del usuario autenticado.
 
 **Repositorio:** [vitaltrek-backend](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend)<br>
-**Documentación desplegada (Scalar):** [https://vitaltrek-api.onrender.com/scalar](https://vitaltrek-api.onrender.com/scalar)<br>
-**Especificación OpenAPI:** [https://vitaltrek-api.onrender.com/openapi/v1.json](https://vitaltrek-api.onrender.com/openapi/v1.json)
+**Documentación desplegada (Scalar):** [https://vitaltrek-backend.onrender.com/scalar](https://vitaltrek-backend.onrender.com/scalar)<br>
+**Especificación OpenAPI:** [https://vitaltrek-backend.onrender.com/openapi/v1.json](https://vitaltrek-backend.onrender.com/openapi/v1.json)
 
 | Endpoint | HTTP Verb | Call Syntax | Parameters | Response Example | Response Explanation |
 | --- | --- | --- | --- | --- | --- |
@@ -523,22 +523,22 @@ A continuación se muestran capturas de la interacción con la documentación de
 
 #### 5.2.3.7. Software Deployment Evidence for Sprint Review
 
-En el Sprint 3 se realizó el primer despliegue del RESTful Web Services de VitalTrek y se publicaron las versiones `v1.1.0` de las Web Applications, que consume dicho servicio, y del Landing Page. Las actividades comprendieron la creación de las cuentas en Aiven y Render, el aprovisionamiento de la base de datos MySQL administrada, la configuración del Web Service basado en Docker con sus variables de entorno, la publicación de la versión `v1.0.0` mediante GitFlow y la verificación del servicio desplegado a través de Scalar. La configuración detallada se describe en la sección 5.1.4. Para las Web Applications se actualizó en Vercel la variable `VITE_VITALTREK_API_URL` con la URL del API desplegado. La versión se numeró `v1.1.0` según Semantic Versioning, porque agrega funcionalidad compatible sobre la versión publicada en TB1.
+En el Sprint 3 se realizó el primer despliegue del RESTful Web Services de VitalTrek y se publicaron las versiones `v1.1.0` de las Web Applications, que consume dicho servicio, y del Landing Page. Las actividades comprendieron la creación de los servicios en Railway y Render, el aprovisionamiento de la base de datos MySQL administrada, la configuración del Web Service basado en Docker con sus variables de entorno, la publicación de la versión `v1.0.0` mediante GitFlow y la verificación del servicio desplegado a través de Scalar. La configuración detallada se describe en la sección 5.1.4. Para las Web Applications se actualizó en Vercel la variable `VITE_VITALTREK_API_URL` con la URL del API desplegado. La versión se numeró `v1.1.0` según Semantic Versioning, porque agrega funcionalidad compatible sobre la versión publicada en TB1.
 
 | Producto | Plataforma | Repositorio | URL pública |
 | --- | --- | --- | --- |
 | Landing Page | Vercel | [landing-page](https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page) | https://landing-page-mrca1.vercel.app/ |
 | Web Applications | Vercel | [web-applications](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications) | https://web-applications-vert.vercel.app/ |
-| RESTful Web Services | Render (Web Service con Docker) | [vitaltrek-backend](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend) | https://vitaltrek-api.onrender.com/scalar |
-| Base de datos | Aiven for MySQL 8.4 (plan Free) | — | Acceso privado mediante credenciales |
+| RESTful Web Services | Render (Web Service con Docker) | [vitaltrek-backend](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend) | https://vitaltrek-backend.onrender.com/scalar |
+| Base de datos | Railway MySQL (plan Starter) | — | Acceso privado mediante credenciales |
 
 **Pasos del despliegue del RESTful Web Services**
 
-1. Creación del servicio MySQL `vitaltrek-db` en Aiven, en plan Free, y obtención de los datos de conexión: host, puerto, usuario, base de datos `defaultdb` y modo SSL `REQUIRED`.
+1. Creación del servicio MySQL en Railway con Public Networking habilitado, y obtención de los datos de conexión: host público (`centerbeam.proxy.rlwy.net`), puerto, usuario, nombre de base de datos y modo SSL `REQUIRED`.
 
-![Servicio MySQL vitaltrek-db en Aiven](../assets/images/chapter-5/sprint3-deploy-aiven.png)
+![Servicio MySQL en Railway](../assets/images/chapter-5/sprint3-deploy-aiven.png)
 
-*Figura 5.X. Servicio `vitaltrek-db` en estado Running en Aiven, con los datos de conexión.*
+*Figura 5.X. Servicio MySQL en estado Online en Railway, con Public Networking habilitado y los datos de conexión.*
 
 2. Preparación de la versión en la rama `release/v1.0.0`: cadena de conexión de producción con puerto y SSL, `Dockerfile` que escucha en el puerto asignado por la plataforma y `.dockerignore`. La rama se integró en `main` y `develop` mediante Pull Requests y `main` se etiquetó como `v1.0.0`.
 3. Creación del Web Service `vitaltrek-api` en Render conectado al repositorio `vitaltrek-backend`, con runtime Docker, rama `main` y plan Free, y registro de las variables de entorno de la base de datos y de la clave de firma JWT.
@@ -547,13 +547,13 @@ En el Sprint 3 se realizó el primer despliegue del RESTful Web Services de Vita
 
 *Figura 5.X. Variables de entorno del Web Service `vitaltrek-api` en Render, con los valores ocultos.*
 
-4. Construcción de la imagen Docker e inicio del contenedor: la aplicación aplicó las migraciones `InitialCreate`, `AddExpeditionSetupContext` y `AddExpeditionGroupsContext` sobre la base de datos de Aiven, cargó los datos de demostración y quedó publicada en https://vitaltrek-api.onrender.com.
+4. Construcción de la imagen Docker e inicio del contenedor: la aplicación leyó las variables de entorno de Railway, aplicó las migraciones sobre la base de datos, cargó los datos de demostración y quedó publicada en https://vitaltrek-backend.onrender.com.
 
 ![Despliegue exitoso del servicio en Render](../assets/images/chapter-5/sprint3-deploy-render-live.png)
 
-*Figura 5.X. Despliegue `Release/v1.0.0` del commit `8886380` en estado Live en Render.*
+*Figura 5.X. Despliegue en estado Live en Render.*
 
-5. Verificación del servicio en https://vitaltrek-api.onrender.com/scalar: el inicio de sesión con `admin@vitaltrek.demo` respondió `200 OK` con el token bearer y `GET /api/v1/routes` respondió `200 OK` con las cuatro rutas de la agencia (sección 5.2.3.6).
+5. Verificación del servicio en https://vitaltrek-backend.onrender.com/scalar: el inicio de sesión con `admin@vitaltrek.demo` respondió `200 OK` con el token bearer y `GET /api/v1/routes` respondió `200 OK` con las rutas de la agencia (sección 5.2.3.6).
 
 **Pasos del despliegue de las Web Applications**
 
@@ -603,11 +603,11 @@ Durante el Sprint 3, el equipo trabajó sobre los repositorios [vitaltrek-backen
 
 | Integrante | Contribución en el Sprint 3 | Evidencia de GitHub |
 | --- | --- | --- |
-| Cayanchi Avila, Milenko Rubén (`MaxghZZ`) | <!-- COMPLETAR --> | <!-- PRs / commits --> |
-| Herrera Enriquez, Diego Fernando (`DerDFHE`) | <!-- COMPLETAR --> | |
-| León Naupari, Jorge Mateo (`mateool10`) | <!-- COMPLETAR --> | |
-| Mendoza Blanco, Ariel Roberto (`Trepequiper`) | <!-- COMPLETAR --> | |
-| Rodriguez Rojas, Miler Alexander (`Miler2003`) | <!-- COMPLETAR --> | |
+| Cayanchi Avila, Milenko Rubén (`MaxghZZ`) | Implementó el bounded context IAM (autenticación JWT, registro y login), el bounded context Expedition Setup (rutas, checkpoints, grupos de expedición, guías de campo, manifiesto turístico, wearables y preparación de participantes) y el bounded context Field Tracking. Configuró el contenedor Docker, las variables de entorno de producción y el despliegue en Render. Integró el frontend con el RESTful Web Services (IAM y Expedition Setup) y publicó la Release `v1.1.0` del frontend. Revisó y aprobó los PRs de los demás bounded contexts. Commits representativos: `8759081`, `4514175`, `b5331de`, `a6241c8`, `8886380`, `cab65a3`. | [vitaltrek-backend](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend) · [web-applications](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications) |
+| Herrera Enriquez, Diego Fernando (`DerDFHE`) | Implementó el bounded context Safety Monitoring (modelo de dominio EarlyWarningAlert, servicios de aplicación, fachada ACL con ExpectedTimeWindow, persistencia con EF Core, endpoints REST y migración de base de datos). En las Web Applications, configuró el entorno de desarrollo para apuntar al backend local y agregó pruebas unitarias para los flujos de sesión IAM, pantalla de errores y preparación de participantes. Commits representativos: `b4afa03`, `95dda1d`, `ef1b583`, `6e30a3a`, `9d74e83`. | [vitaltrek-backend](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend) · [web-applications](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications) |
+| León Naupari, Jorge Mateo (`mateool10`) | Implementó el bounded context Incident Response (modelo de dominio Incident y Notification, servicios de aplicación con validación de sesión de expedición, fachada ACL para contar incidentes, persistencia con EF Core, endpoints REST y migración de base de datos). Colaboró en la integración de los bounded contexts de Expedition Setup mediante pruebas unitarias de reglas de rutas y checkpoints. Commits representativos: `843ef1c`, `b7a9cd7`, `2937cdb`, `3b99692`, `b7318fd`. | [vitaltrek-backend](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend) |
+| Mendoza Blanco, Ariel Roberto (`Trepequiper`) | Implementó el bounded context Tour Closure completo: modelo de dominio TourSummary, comandos y queries, interfaces de repositorio y servicios, implementaciones de servicios de comando y consulta, repositorio EF Core, configuración de entidad, DTOs de recursos y assembler, endpoints REST en TourSummariesController, registro DI en Program.cs y migración de base de datos. Colaboró en pruebas unitarias de Expedition Setup. Commits representativos: `dd7b0d9`, `268f33f`, `0421678`, `1527d2e`, `4cd43e6`, `5fb3b48`. | [vitaltrek-backend](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend) |
+| Rodriguez Rojas, Miler Alexander (`Miler2003`) | Implementó el bounded context Checkpoint Sync (modelo de dominio CheckpointPassage, servicios de aplicación, fachada ACL, persistencia EF Core, endpoints REST y migración de base de datos). Actualizó las pruebas unitarias de Expedition Setup al API de dominio actual y agregó pruebas de paso por checkpoint. Protegió la configuración de desarrollo removiendo credenciales de los archivos versionados y documentó el README inicial del repositorio. Commits representativos: `0265254`, `864b3b9`, `6067764`, `fc16027`, `41f4bfd`. | [vitaltrek-backend](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend) |
 
 ![Commits del repositorio vitaltrek-backend durante el Sprint 3](../assets/images/chapter-5/sprint3-commits-vitaltrek-backend.png)
 
