@@ -794,17 +794,17 @@ En esta sección se presentan los registros de las entrevistas de validación re
 
 | **Entrevista #1** | |
 | --- | --- |
-| **Nombre** | <!-- COMPLETAR --> |
-| **Apellidos** | <!-- COMPLETAR --> |
-| **Edad** | <!-- COMPLETAR --> |
-| **Distrito** | <!-- COMPLETAR --> |
+| **Nombre** | Alejandro Manuel |
+| **Apellidos** | Molina Vasquez |
+| **Edad** | 25 años |
+| **Distrito** | San Miguel, Lima |
 | **Rol** | Turista de aventura |
-| **Dispositivo y navegador** | <!-- COMPLETAR --> |
+| **Dispositivo y navegador** | Samsung S24, Google Chrome |
 | **Evidencias** | ![Entrevista de validación 1 del segmento 2](../assets/images/chapter-5/validation/Validacion1Segmento2.png) |
-| **Link** | [Ver Video](<!-- COMPLETAR -->) |
-| **Timing donde inicia la entrevista** | <!-- COMPLETAR --> |
-| **Duración de la entrevista** | <!-- COMPLETAR --> |
-| **Resumen** | <!-- COMPLETAR --> |
+| **Link** | [Ver Video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241a827_upc_edu_pe/IQC3hudLgmLgQ6F1w5X9UWWAAe0BWKtMND8Eg8Zj-wCulDc?e=MsBi7v) |
+| **Timing donde inicia la entrevista** | 00:00 min |
+| **Duración de la entrevista** | 09:36 min |
+| **Resumen** | Manuel Alejandro revisó la landing page, comprendió la propuesta de monitoreo sin conexión y verificó el funcionamiento del cambio de idioma. En la aplicación, ingresó con su cuenta de turista, registró un contacto de emergencia, otorgó su consentimiento y descargó la información de la ruta para uso offline; completó todas las tareas sin dificultades y describió la interfaz como intuitiva. Valoró especialmente el acceso offline, la sincronización de puntos de control y la visualización del mapa con sus checkpoints, aunque señaló como mejora prioritaria mostrar su ubicación exacta y el progreso por tramos ya recorridos. Indicó que recomendaría la aplicación a su agencia una vez incorporadas esas mejoras de seguimiento. |
 
 <!-- COMPLETAR: repetir la tabla para las entrevistas #2 y #3 (hasta #5) -->
 
