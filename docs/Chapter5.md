@@ -307,6 +307,49 @@ La siguiente matriz organiza el liderazgo y la colaboración del equipo durante 
 
 **Leyenda:** L = Leader; C = Collaborator.
 
+### 5.2.3. Sprint 3
+
+El Sprint 3 tiene como objetivo implementar y desplegar la primera versión del RESTful Web Services de VitalTrek e integrarlo con las Web Applications. El alcance comprende las Technical Stories TS06, TS07 y TS09 y las User Stories US07 a US16, que habilitan la infraestructura de persistencia, la documentación OpenAPI, la seguridad con JWT y los endpoints de Expedition Setup. La estimación total del Sprint es de 57 Story Points.
+
+| Campo | Valor |
+| --- | --- |
+| Sprint Velocity | 57 Story Points |
+| Total de Story Points | 57 |
+
+#### 5.2.3.1. Sprint Planning 3
+
+La reunión de planificación permitió definir el objetivo, alcance, responsabilidades y tareas del tercer Sprint. El trabajo se enfocó en entregar el backend productivo del bounded context Expedition Setup con persistencia en MySQL, integrado con las Web Applications ya desplegadas en Vercel.
+
+| **Sprint #** | **Sprint 3** |
+| --- | --- |
+| **Sprint Planning Background** |  |
+| Date | <!-- COMPLETAR --> |
+| Time | <!-- COMPLETAR --> |
+| Location | Reunión virtual en Discord |
+| Prepared By | Rodriguez Rojas, Miler Alexander |
+| Attendees (to planning meeting) | Cayanchi Avila, Milenko Rubén / Herrera Enriquez, Diego Fernando / León Naupari, Jorge Mateo / Mendoza Blanco, Ariel Roberto / Rodriguez Rojas, Miler Alexander |
+| Sprint 2 Review Summary | <!-- COMPLETAR --> |
+| Sprint 2 Retrospective Summary | <!-- COMPLETAR --> |
+| **Sprint Goal & User Stories** |  |
+| Sprint 3 Goal | <!-- COMPLETAR --> |
+| Sprint 3 Velocity | 57 Story Points |
+| Sum of Story Points | 57 Story Points (TS06, TS07, TS09, US07, US08, US09, US10, US11, US12, US13, US14, US15, US16) |
+
+
+#### 5.2.3.2. Aspect Leaders and Collaborators
+
+La siguiente matriz organiza el liderazgo y la colaboración del equipo durante el Sprint 3, en correspondencia con las tareas registradas en el Sprint Backlog.
+
+| Integrante | Usuario de GitHub | IAM y seguridad | Expedition Setup API | Persistencia y OpenAPI | Integración de Web Applications | Landing Page y despliegue |
+| --- | --- | --- | --- | --- | --- | --- |
+| Cayanchi Avila, Milenko Rubén | `MaxghZZ` | L | C | C | C | C |
+| León Naupari, Jorge Mateo | `mateool10` | C | L | C | C | C |
+| Rodriguez Rojas, Miler Alexander | `Miler2003` | C | C | L | C | C |
+| Mendoza Blanco, Ariel Roberto | `Trepequiper` | C | C | C | L | C |
+| Herrera Enriquez, Diego Fernando | `DerDFHE` | C | C | C | C | L |
+
+**Leyenda:** L = Leader; C = Collaborator.
+
 #### 5.2.3.3. Sprint Backlog 3
 
 El Sprint Backlog 3 se enfoca en la primera versión del RESTful Web Services de VitalTrek y en su integración con las Web Applications. Las User Stories y Technical Stories seleccionadas se descompusieron en tasks estimadas entre 4 y 8 horas, cuyo avance se registró en Jira Software con los estados To-do, In-Process, To-Review y Done.
