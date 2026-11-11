@@ -659,14 +659,12 @@ Las sesiones de validación buscan comprobar si la solución implementada resuel
 
 **Tareas en la Web Application (user flows de la sección 4.4.4)**
 
-6. Registre una nueva ruta con sus datos principales.
-7. Agregue los checkpoints de la ruta en el orden del recorrido.
-8. Defina el tiempo esperado para cada tramo entre checkpoints.
-9. Cree un grupo de expedición para esa ruta y asígnele un guía.
-10. Como guía, registre a los participantes del grupo.
-11. Consulte el progreso estimado de un grupo que se encuentra en ruta.
-
-<!-- COMPLETAR: ajustar las tareas 6-11 a las funcionalidades realmente desplegadas al momento de la validación. -->
+6. Inicia sesión con tu cuenta de administrador de operaciones.
+7. Registra una nueva ruta con sus datos principales (nombre, origen, destino, distancia, dificultad y duración estimada).
+8. Agrega los checkpoints de la ruta en el orden del recorrido y define los tiempos esperados entre cada tramo.
+9. Crea un grupo de expedición para esa ruta y asígnale un guía de campo.
+10. Con el rol de guía, registra a los participantes del grupo en el manifiesto.
+11. Consulta el progreso en tiempo real de un grupo que se encuentra actualmente en ruta.
 
 **Preguntas posteriores a las tareas**
 
@@ -695,7 +693,12 @@ Las sesiones de validación buscan comprobar si la solución implementada resuel
 
 **Tareas en la Web Application**
 
-<!-- COMPLETAR: tareas del turista según lo implementado (p. ej. US14 Registro de contacto de emergencia). Si no hay vistas para turistas, indicarlo y validar solo el Landing Page con este segmento. -->
+6. Inicia sesión con tu cuenta de turista.
+7. Busca el grupo de expedición al que estás inscrito.
+8. Registra tu contacto de emergencia (nombre, teléfono y parentesco).
+9. Da tu consentimiento para participar en el tour.
+10. Descarga la información del tour para acceder sin señal.
+11. Consulta la ruta y los checkpoints de tu expedición.
 
 **Preguntas posteriores a las tareas**
 
