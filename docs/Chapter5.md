@@ -868,7 +868,7 @@ Las heurísticas aplicadas son:
 | **SECCIÓN** | 16712 |
 | **PROFESORES** | Sánchez Seña, Alberto Wilmer |
 | **AUDITOR** | NexaTech |
-| **CLIENTE(S)** | <!-- COMPLETAR: nombres de los participantes de las sesiones --> |
+| **CLIENTE(S)** | Diego Livimoro, Luis Mendoza y Alejandro Manuel Molina Vasquez |
 
 **SITE o APP A EVALUAR:** VitalTrek: Landing Page y Web Applications.
 
@@ -878,24 +878,24 @@ El alcance de esta evaluación incluye la revisión de la usabilidad de las sigu
 
 1. Consulta de la propuesta de valor y de los planes en el Landing Page.
 2. Cambio de idioma en el Landing Page y en la Web Application.
-3. Solicitud de información o demostración desde el Landing Page.
-4. Acceso a la Web Application desde los Call-To-Action de cada segmento.
-5. Registro de una ruta con sus checkpoints y ventanas de tiempo esperadas.
-6. Creación de un grupo de expedición y asignación de un guía.
-7. Registro del manifiesto de turistas.
-8. Consulta del progreso estimado de un grupo.
-
-<!-- COMPLETAR: ajustar a las tareas realmente evaluadas (agregar las del turista si las hay). -->
+3. Acceso a la Web Application desde los Call-To-Action de cada segmento.
+4. Registro de una ruta con sus datos geográficos y operativos.
+5. Definición de los checkpoints de una ruta y habilitación de la misma.
+6. Configuración de las ventanas de tiempo esperadas por tramo.
+7. Creación de un grupo de expedición y asignación de un guía de campo.
+8. Registro de un guía de campo y creación de su cuenta de acceso.
+9. Registro del manifiesto de turistas con el rol de guía de campo.
+10. Registro del contacto de emergencia y del consentimiento con el rol de turista.
 
 No están incluidas en esta versión de la evaluación las siguientes tareas:
 
-1. Asignación y activación de wearables.
-2. Captura offline y sincronización de telemetría en checkpoints.
-3. Evaluación de riesgo y generación de alertas.
+1. Consulta del progreso estimado de un grupo de expedición.
+2. Revisión y atención de alertas tempranas.
+3. Captura offline y sincronización de telemetría en checkpoints.
 4. Gestión de incidentes, emergencias y evacuaciones.
 5. Cierre del tour y generación del Tour Summary.
 
-<!-- COMPLETAR: quitar de esta lista lo que sí se haya implementado y evaluado. -->
+Las dos primeras corresponden a funcionalidades cuya integración con el RESTful Web Services está planificada para el siguiente Sprint, por lo que en la versión desplegada presentan el aviso correspondiente y no fueron sometidas a evaluación.
 
 **ESCALA DE SEVERIDAD:**
 
@@ -912,26 +912,104 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
 
 | # | Problema | Escala de severidad | Heurística/Principio violada(o) |
 | :---: | --- | :---: | --- |
-| 1 | <!-- COMPLETAR --> | <!-- 1-4 --> | <!-- p. ej. Usability: Visibilidad del estado del sistema --> |
+| 1 | Las ventanas de tiempo esperadas se solicitan en minutos | 3 | Usability: Coincidencia entre el sistema y el mundo real |
+| 2 | El estado de borrador de una ruta no comunica la acción necesaria para habilitarla | 3 | Usability: Visibilidad del estado del sistema |
+| 3 | El manifiesto de turistas no admite información de salud del participante | 3 | Inclusive Design: Considera la situación |
+| 4 | La duración estimada de la ruta se solicita en horas | 2 | Usability: Coincidencia entre el sistema y el mundo real |
+| 5 | La lista de guías de campo no permite distinguir entre guías homónimos | 2 | Usability: Reconocimiento antes que recuerdo |
+| 6 | Registrar un guía de campo y crear su cuenta de acceso son dos acciones separadas | 2 | Usability: Consistencia y estándares |
 
 **DESCRIPCIÓN DE PROBLEMAS:**
 
-**PROBLEMA #1:** <!-- COMPLETAR: título del problema -->
+**PROBLEMA #1:** Las ventanas de tiempo esperadas se solicitan en minutos
 
-**Severidad:** <!-- COMPLETAR -->
-**Heurística violada:** <!-- COMPLETAR -->
+**Severidad:** 3
+**Heurística violada:** Usability: Coincidencia entre el sistema y el mundo real
 
 **Problema:**
 
-<!-- COMPLETAR: qué ocurrió, en qué tarea, cuántos participantes lo experimentaron -->
+En la tarea de configuración de las ventanas de tiempo esperadas, la pantalla solicita los campos `Tiempo mínimo (minutos)` y `Tiempo máximo (minutos)` para cada tramo entre checkpoints. Dos de los tres participantes del Segmento 1 estimaron la duración de los tramos en horas, que es la unidad con la que planifican sus itinerarios, y tuvieron que realizar la conversión mentalmente antes de completar el formulario. Uno de ellos manifestó además que la magnitud resultante le resultaba poco natural para describir un tramo de caminata, y otro indicó que un administrador sin experiencia de campo difícilmente sabría qué valor ingresar. Ninguno de los dos cometió un error de conversión, pero ambos interrumpieron la tarea para calcular.
 
-![<!-- COMPLETAR -->](../assets/images/chapter-5/validation/problema1.png)
+![Ventanas de tiempo esperadas de una ruta, con el rango de cada tramo expresado en minutos](../assets/images/chapter-5/validation/problema1.png)
 
 **Recomendación:**
 
-<!-- COMPLETAR: corrección propuesta y User Story o task del Product Backlog donde se registra -->
+Expresar las ventanas de tiempo en horas y minutos mediante dos campos independientes, o permitir el ingreso en horas con conversión automática a minutos en la capa de persistencia, conservando el modelo actual del dominio. La corrección se registra en el Product Backlog como mejora de la User Story US09, Ventanas de tiempo esperadas.
 
-<!-- COMPLETAR: repetir el bloque por cada problema de la tabla resumen -->
+**PROBLEMA #2:** El estado de borrador de una ruta no comunica la acción necesaria para habilitarla
+
+**Severidad:** 3
+**Heurística violada:** Usability: Visibilidad del estado del sistema
+
+**Problema:**
+
+Una ruta recién registrada permanece en estado `Borrador — Pendiente de puntos de control` y no puede utilizarse para crear grupos de expedición hasta que se pulse explícitamente el botón `Habilitar ruta`, ubicado en la pantalla de configuración de checkpoints. En la tarea de habilitación, un participante del Segmento 1 dio por terminada la configuración tras guardar los checkpoints y tuvo que releer la pantalla para localizar la acción pendiente. El sistema informa el estado, pero no señala con suficiente jerarquía cuál es el siguiente paso ni la consecuencia de omitirlo, que solo se descubre al intentar crear un grupo.
+
+![Pantalla de puntos de control con la ruta en estado de borrador y el botón de habilitación](../assets/images/chapter-5/validation/problema2.png)
+
+**Recomendación:**
+
+Mostrar en el listado de rutas y en la pantalla de checkpoints un indicador de progreso con los requisitos pendientes de la ruta, y anticipar en la propia tarjeta de la ruta que los grupos de expedición no podrán crearse mientras no esté habilitada. La corrección se registra en el Product Backlog como mejora de las User Stories US07, Configuración de rutas, y US08, Definición de checkpoints.
+
+**PROBLEMA #3:** El manifiesto de turistas no admite información de salud del participante
+
+**Severidad:** 3
+**Heurística violada:** Inclusive Design: Considera la situación
+
+**Problema:**
+
+En la tarea de registro del manifiesto, el guía de campo solo dispone de los campos `Nombre completo` y `Documento de identidad`, y la vista del manifiesto desde operaciones muestra únicamente el nombre, el dispositivo wearable asignado, el consentimiento y el estado de activación. Un participante del Segmento 1 buscó un campo donde consignar alergias o condiciones médicas, información que declaró recoger siempre antes de iniciar un recorrido, y manifestó que la registraría dentro del campo de nombre a falta de un espacio propio. El contacto de emergencia sí está contemplado, pero depende de que cada turista lo confirme desde su propia cuenta, de modo que el guía no tiene forma de completarlo cuando el participante no lo ha hecho. La omisión resulta especialmente relevante en el contexto de uso del producto, donde la atención de una emergencia en zona sin cobertura depende de la información que el guía lleve consigo.
+
+![Manifiesto de turistas de un grupo de expedición, sin campos de información de salud](../assets/images/chapter-5/validation/problema3.png)
+
+**Recomendación:**
+
+Incorporar al manifiesto un campo opcional de condiciones médicas relevantes y permitir que el guía de campo registre el contacto de emergencia de un participante que no lo haya confirmado desde su cuenta, con el tratamiento de datos sensibles descrito en la sección de Safety & Privacy del Landing Page. La corrección se registra en el Product Backlog como mejora de las User Stories US12, Registro del manifiesto, y US14, Registro de contacto de emergencia.
+
+**PROBLEMA #4:** La duración estimada de la ruta se solicita en horas
+
+**Severidad:** 2
+**Heurística violada:** Usability: Coincidencia entre el sistema y el mundo real
+
+**Problema:**
+
+En la tarea de registro de una ruta, el formulario solicita el campo `Duración estimada (horas)`. Un participante del Segmento 1 describió la duración de la ruta en días, que es la unidad con la que comercializa sus recorridos, y tuvo que convertirla a horas antes de continuar. El problema es de menor severidad que el anterior porque la conversión es directa y el campo se completa una sola vez por ruta, pero evidencia la misma distancia entre la unidad del sistema y la del dominio.
+
+![Formulario de registro de ruta con el campo Duración estimada expresado en horas](../assets/images/chapter-5/validation/problema4.png)
+
+**Recomendación:**
+
+Permitir el ingreso de la duración en días y horas, o mostrar bajo el campo la equivalencia calculada en días a medida que se escribe. La corrección se registra en el Product Backlog como mejora de la User Story US07, Configuración de rutas.
+
+**PROBLEMA #5:** La lista de guías de campo no permite distinguir entre guías homónimos
+
+**Severidad:** 2
+**Heurística violada:** Usability: Reconocimiento antes que recuerdo
+
+**Problema:**
+
+En la tarea de asignación de un guía a un grupo de expedición, el selector presenta únicamente el nombre de cada guía registrado. Un participante del Segmento 1, que declaró operar con quince guías, advirtió que no podría identificar con certeza a cuál está asignando si dos de ellos compartieran nombre, y señaló que en su propio sistema cada guía cuenta con un código. La tarea se completó sin error porque el conjunto de datos de la demostración es reducido, pero el riesgo se manifiesta al escalar la operación.
+
+![Selector de asignación de guía de campo, que muestra únicamente el nombre](../assets/images/chapter-5/validation/problema5.png)
+
+**Recomendación:**
+
+Añadir al selector un identificador del guía, su documento de identidad parcialmente enmascarado o el número de grupos que ya tiene asignados en el periodo, de modo que la elección pueda verificarse sin salir de la pantalla. La corrección se registra en el Product Backlog como mejora de la User Story US13, Asignación del guía.
+
+**PROBLEMA #6:** Registrar un guía de campo y crear su cuenta de acceso son dos acciones separadas
+
+**Severidad:** 2
+**Heurística violada:** Usability: Consistencia y estándares
+
+**Problema:**
+
+En la pantalla de cuentas y guías conviven dos formularios independientes: uno para registrar al guía de campo y otro para crear la cuenta de acceso que se vincula a ese guía. Un participante del Segmento 1 interpretó inicialmente que ambas acciones eran la misma y esperó que la creación de la cuenta diera de alta también al guía. Completó la tarea tras releer la pantalla, pero la relación entre las dos entidades no resulta evidente a primera vista.
+
+![Pantalla de cuentas y guías con los formularios de creación de cuenta y de registro de guía separados](../assets/images/chapter-5/validation/problema6.png)
+
+**Recomendación:**
+
+Presentar ambos formularios como pasos consecutivos de un mismo flujo de alta de guía, o permitir crear la cuenta directamente desde el guía recién registrado mediante una acción contextual. La corrección se registra en el Product Backlog como mejora de la User Story US13, Asignación del guía.
 
 ## 5.4. Video About-the-Product
 
