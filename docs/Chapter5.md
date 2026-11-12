@@ -331,7 +331,7 @@ La reunión de planificación permitió definir el objetivo, alcance, responsabi
 | Sprint 2 Review Summary | <!-- COMPLETAR --> |
 | Sprint 2 Retrospective Summary | <!-- COMPLETAR --> |
 | **Sprint Goal & User Stories** |  |
-| Sprint 3 Goal | <!-- COMPLETAR --> |
+| Sprint 3 Goal | **Our focus is on** implementing and deploying the first version of VitalTrek's RESTful Web Services, covering authentication with JWT, the Expedition Setup bounded context and MySQL persistence via Entity Framework Core, integrated with the already-deployed Web Applications.<br>**We believe it delivers** a functional, documented and publicly accessible backend that enables agencies to configure routes, checkpoints, time windows, expedition groups and manifests through a real API **to** Operations Administrators, Field Guides and Adventure Tourists using the platform.<br>**This will be confirmed when** the Web Services are deployed on a public URL in Render, the OpenAPI documentation is accessible at `/scalar`, and the Web Applications consume the real API for authentication and expedition setup flows without errors. |
 | Sprint 3 Velocity | 57 Story Points |
 | Sum of Story Points | 57 Story Points (TS06, TS07, TS09, US07, US08, US09, US10, US11, US12, US13, US14, US15, US16) |
 
@@ -485,7 +485,7 @@ Al cierre del Sprint 3, las Web Applications de VitalTrek consumen el RESTful We
 
 *Figura 5.X. Registro del contacto de emergencia y del consentimiento del turista; el wearable queda activado (US14 y US16).*
 
-**Video de navegación del Sprint 3:** [upc-pre-202620-1asi0730-16712-nexatech-productnavigation-sprint-3](<!-- COMPLETAR: URL de Microsoft Stream -->)
+**Video de navegación del Sprint 3:** [upc-pre-202620-1asi0730-16712-nexatech-productnavigation-sprint-3](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312566_upc_edu_pe/IQDKeKk3TNpkTYYaH-CaM33lARxSFJg5juS51cXSIAO2Wlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=m6od4Y)
 
 #### 5.2.3.6. Services Documentation Evidence for Sprint Review
 
@@ -840,11 +840,22 @@ En esta sección se presentan los registros de las entrevistas de validación re
 
 Para cada segmento se consolida cuántos participantes completaron cada tarea sin ayuda, siguiendo el mismo criterio de la sección 2.2.3.
 
-| Tarea | Segmento 1: completada sin ayuda | Segmento 2: completada sin ayuda | Observación principal |
-| --- | --- | --- | --- |
-| <!-- COMPLETAR: p. ej. Solicitar información desde el Landing Page --> | <!-- X de 3 (%) --> | <!-- X de 3 (%) --> | <!-- COMPLETAR --> |
+*Nota: los porcentajes del Segmento 1 se basan en 2 de 3 entrevistas completadas (entrevista #1 pendiente de registro); los del Segmento 2, en 1 de 3 (entrevistas #2 y #3 pendientes). La tabla se actualizará al concluir todas las sesiones.*
 
-<!-- COMPLETAR: 2-3 párrafos que contrasten los resultados con los problemas de la sección 2.2.3 y con las Hypothesis Statements de la sección 1.2.2.3: qué se confirmó, qué no y qué se debe cambiar. -->
+| Tarea | Seg. 1 — Agencias (n = 2) | Seg. 2 — Turistas (n = 1) | Observación principal |
+| --- | --- | --- | --- |
+| Identificar la propuesta de valor en el Landing Page | 2 de 2 (100 %) | 1 de 1 (100 %) | Ambos segmentos comprendieron la propuesta de monitoreo por checkpoints sin cobertura móvil. |
+| Localizar planes y precios (Seg. 1) / beneficios para turistas (Seg. 2) | 2 de 2 (100 %) | 1 de 1 (100 %) | Seg. 1: un participante relacionó el plan Operator con su operación de cinco grupos activos. |
+| Cambiar el idioma a inglés y volver a español | 2 de 2 (100 %) | 1 de 1 (100 %) | Seg. 1: un participante señaló que sus mayoristas extranjeros exigen el sitio en inglés. |
+| Solicitar información o demostración / acceder a la app desde el Landing Page | 2 de 2 (100 %) | 1 de 1 (100 %) | — |
+| Iniciar sesión con la cuenta del rol asignado | 2 de 2 (100 %) | 1 de 1 (100 %) | — |
+| Registrar ruta y checkpoints con tiempos esperados (Seg. 1) / registrar contacto de emergencia y dar consentimiento (Seg. 2) | 2 de 2 (100 %) | 1 de 1 (100 %) | Seg. 1: los dos participantes tuvieron que convertir horas a minutos para las ventanas de tiempo. |
+| Crear grupo, asignar guía y registrar manifiesto (Seg. 1) / descargar información de la ruta offline (Seg. 2) | 2 de 2 (100 %) | 1 de 1 (100 %) | Seg. 1: la lista de guías sin identificador único dificulta la selección en equipos grandes. |
+| Consultar el progreso de un grupo en ruta (Seg. 1) / consultar ruta y checkpoints de la expedición (Seg. 2) | 2 de 2 (100 %) | 1 de 1 (100 %) | Seg. 2: el turista solicitó visualizar su ubicación exacta y el progreso por tramos ya recorridos. |
+
+Los resultados de las entrevistas disponibles confirman que los flujos principales de VitalTrek son completables sin asistencia del entrevistador en ambos segmentos. Las fricciones detectadas se concentran en la unidad de las ventanas de tiempo (minutos en la interfaz, horas en el dominio del negocio) y en la identificación de guías por nombre cuando el equipo es amplio, problemas clasificados en la sección 5.3.3 con severidad 3 y 2 respectivamente. Ninguno de los participantes abandonó una tarea ni requirió intervención del entrevistador para completarla.
+
+En relación con los Lean UX Hypothesis Statements de la sección 1.2.2.3, se confirma que los administradores de operaciones pueden configurar rutas y grupos desde la web sin formación previa, y que los turistas comprenden y ejecutan los pasos de preparación offline. La hipótesis de que el monitoreo por checkpoints genera más confianza que la ausencia de seguimiento fue avalada verbalmente por ambos segmentos. Se identificó como no validada la hipótesis de que la vista de progreso en tiempo real resulta suficiente para el turista: el participante del Segmento 2 solicitó información de ubicación más precisa, lo que se registra como oportunidad de mejora para el Sprint 4.
 
 > Los porcentajes corresponden a la muestra de participantes de las sesiones de validación y no representan a todas las agencias o turistas del Perú.
 
