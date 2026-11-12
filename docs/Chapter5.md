@@ -806,6 +806,20 @@ En esta sección se presentan los registros de las entrevistas de validación re
 | **Duración de la entrevista** | 09:36 min |
 | **Resumen** | Manuel Alejandro revisó la landing page, comprendió la propuesta de monitoreo sin conexión y verificó el funcionamiento del cambio de idioma. En la aplicación, ingresó con su cuenta de turista, registró un contacto de emergencia, otorgó su consentimiento y descargó la información de la ruta para uso offline; completó todas las tareas sin dificultades y describió la interfaz como intuitiva. Valoró especialmente el acceso offline, la sincronización de puntos de control y la visualización del mapa con sus checkpoints, aunque señaló como mejora prioritaria mostrar su ubicación exacta y el progreso por tramos ya recorridos. Indicó que recomendaría la aplicación a su agencia una vez incorporadas esas mejoras de seguimiento. |
 
+| **Entrevista #2** | |
+| --- | --- |
+| **Nombre** | Fernando |
+| **Apellidos** | Flores Pinchi |
+| **Edad** | 22 años |
+| **Distrito** | Callao, Lima |
+| **Rol** | Turista de aventura |
+| **Dispositivo y navegador** | Google Chrome |
+| **Evidencias** | ![Entrevista de validación 1 del segmento 2](../assets/images/chapter-5/validation/Validacion2Segmento2.png) |
+| **Link** | [Ver Video](https://upcedupe-my.sharepoint.com/personal/u20241a827_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu20241a827_upc_edu_pe%2FDocuments%2FEntrevistas%2FSegmento%202%2F2026-11-12%2000-02-06%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E60f04891-a616-4409-bba7-4db012ed4cef) |
+| **Timing donde inicia la entrevista** | 00:00 min |
+| **Duración de la entrevista** | 06:06 min |
+| **Resumen** | Fernando (22 años), quien cuenta con experiencia en rutas de trekking sin cobertura móvil, revisó la landing page de Vital Trek y la describió como visualmente atractiva, intuitiva y bien organizada por secciones, sin encontrar dificultades para navegarla; comprendió claramente la propuesta de expediciones sincronizadas y la generación de puntos de control (checkpoints) para resguardar su ubicación y evitar extravíos al perder la señal. En la aplicación, ingresó bajo el perfil de aventurero (con datos precargados de prueba), revisó el resumen del recorrido, la configuración del contacto de emergencia (nombre, teléfono y parentesco) y el mapa con las coordenadas exactas de parada y alojamiento, entendiendo qué información registra el sistema y con qué finalidad. Valoró especialmente la seguridad de conservar sus coordenadas exactas sin conexión y afirmó que viajaría más tranquilo si su agencia usara la plataforma, aunque señaló como mejora la posibilidad de ingresar manualmente sus propios datos personales (como nombre y edad) y registrar por sí mismo la ruta que va a recorrer. Finalmente, indicó que sí recomendaría a una agencia implementar la versión final de la aplicación para garantizar la seguridad de los turistas de aventura. |
+
 <!-- COMPLETAR: repetir la tabla para las entrevistas #2 y #3 (hasta #5) -->
 
 #### Resultados de las tareas por segmento
