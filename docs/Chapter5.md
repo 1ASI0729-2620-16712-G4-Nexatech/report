@@ -1029,9 +1029,9 @@ El Video About-the-Product presenta VitalTrek a los visitantes del Landing Page 
 | Elemento | Información |
 | --- | --- |
 | Nombre del video | upc-pre-202620-1asi0730-16712-nexatech-about-the-product-sprint-3 |
-| Duración | <!-- COMPLETAR: mm:ss (entre 1 y 3 minutos) --> |
+| Duración | <!-- COMPLETAR: mm:ss --> |
 | Microsoft Stream | [Ver video](<!-- COMPLETAR -->) |
-| YouTube (incrustado en el Landing Page) | [Ver video](<!-- COMPLETAR -->) |
+| YouTube (incrustado en el Landing Page) | [Ver video](https://youtu.be/dLyAscgf9Uw) |
 
 ![Captura del Video About-the-Product](../assets/images/chapter-5/about-the-product.png)
 <!-- COMPLETAR: captura representativa -->
