@@ -776,19 +776,33 @@ En esta sección se presentan los registros de las entrevistas de validación re
 
 | **Entrevista #1** | |
 | --- | --- |
-| **Nombre** | <!-- COMPLETAR --> |
-| **Apellidos** | <!-- COMPLETAR --> |
+| **Nombre** | <!-- COMPLETAR: pedir a Miler --> |
+| **Apellidos** | <!-- COMPLETAR: pedir a Miler --> |
+| **Edad** | <!-- COMPLETAR: pedir a Miler --> |
+| **Distrito** | <!-- COMPLETAR: pedir a Miler --> |
+| **Rol** | Dueño / responsable de agencia de turismo de aventura |
+| **Dispositivo y navegador** | Laptop, Google Chrome |
+| **Evidencias** | ![Entrevista de validación 1 del segmento 1](../assets/images/chapter-5/validation/Validacion1Segmento1.png) |
+| **Link** | [Ver Video](<!-- COMPLETAR: enlace directo de Segmento-1-miler-rodriguez.mp4 -->) |
+| **Timing donde inicia la entrevista** | 00:00 min |
+| **Duración de la entrevista** | <!-- COMPLETAR: pedir a Miler --> |
+| **Resumen** | <!-- COMPLETAR: pedir a Miler qué tareas completó sin ayuda, en cuáles tuvo dificultades y por qué, y cuál fue su apreciación general --> |
+
+| **Entrevista #2** | |
+| --- | --- |
+| **Nombre** | Diego |
+| **Apellidos** | Livimoro |
 | **Edad** | <!-- COMPLETAR --> |
 | **Distrito** | <!-- COMPLETAR --> |
-| **Rol** | <!-- COMPLETAR --> |
-| **Dispositivo y navegador** | <!-- COMPLETAR --> |
-| **Evidencias** | ![Entrevista de validación 1 del segmento 1](../assets/images/chapter-5/validation/Validacion1Segmento1.png) |
-| **Link** | [Ver Video](<!-- COMPLETAR -->) |
-| **Timing donde inicia la entrevista** | <!-- COMPLETAR: mm:ss min --> |
-| **Duración de la entrevista** | <!-- COMPLETAR: mm:ss min --> |
-| **Resumen** | <!-- COMPLETAR: qué tareas completó sin ayuda, en cuáles tuvo dificultades y por qué, qué comentó al finalizar y cuál fue su apreciación general --> |
+| **Rol** | Dueño / responsable de agencia de turismo de aventura |
+| **Dispositivo y navegador** | Laptop con Windows, navegador Brave |
+| **Evidencias** | ![Entrevista de validación 2 del segmento 1](../assets/images/chapter-5/validation/Validacion2Segmento1.png) |
+| **Link** | [Ver Video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241a827_upc_edu_pe/IQBtOnmgiHHkRqqiVnRZTWB6AXinsHZ_8DOSNfUrMwRdAlc?e=t7fDHG) |
+| **Timing donde inicia la entrevista** | 00:00 min |
+| **Duración de la entrevista** | 10:21 min |
+| **Resumen** | Diego recorrió el Landing Page, identificó la propuesta de monitoreo por puntos de control en zonas sin cobertura, ubicó la sección de planes y verificó el cambio de idioma entre español e inglés. En las Web Applications ingresó con el rol de administrador de operaciones y completó el flujo de configuración de una expedición: registró la ruta Trekking Colca Sangalle, agregó sus puntos de control ordenados, habilitó la ruta, configuró las ventanas de tiempo esperadas por tramo y creó el grupo de expedición Grupo Colca Diciembre con fecha de salida 20/12/2026 y capacidad 12. <!-- REVISAR: ajustar según lo que Diego comente en el video --> |
 
-<!-- COMPLETAR: repetir la tabla para las entrevistas #2 y #3 (hasta #5) -->
+<!-- COMPLETAR: repetir la tabla para la entrevista #3 -->
 
 #### Segmento 2: Turistas de Aventura
 
