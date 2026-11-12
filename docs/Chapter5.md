@@ -788,7 +788,21 @@ En esta sección se presentan los registros de las entrevistas de validación re
 | **Duración de la entrevista** | <!-- COMPLETAR: mm:ss min --> |
 | **Resumen** | <!-- COMPLETAR: qué tareas completó sin ayuda, en cuáles tuvo dificultades y por qué, qué comentó al finalizar y cuál fue su apreciación general --> |
 
-<!-- COMPLETAR: repetir la tabla para las entrevistas #2 y #3 (hasta #5) -->
+| **Entrevista #2** | |
+| --- | --- |
+| **Nombre** | Diego |
+| **Apellidos** | Livimoro |
+| **Edad** | 38 años |
+| **Distrito** | Magdalena del Mar, Lima |
+| **Rol** | Dueño / responsable de agencia de turismo de aventura |
+| **Dispositivo y navegador** | Laptop con Windows, navegador Brave |
+| **Evidencias** | ![Entrevista de validación 2 del segmento 1](../assets/images/chapter-5/validation/Validacion2Segmento1.png) |
+| **Link** | [Ver Video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241a827_upc_edu_pe/IQBtOnmgiHHkRqqiVnRZTWB6AXinsHZ_8DOSNfUrMwRdAlc?e=t7fDHG) |
+| **Timing donde inicia la entrevista** | 00:00 min |
+| **Duración de la entrevista** | 10:21 min |
+| **Resumen** | Diego completó sin ayuda las once tareas propuestas. En el Landing Page identificó la propuesta de monitoreo por puntos de control en zonas sin cobertura y valoró que la solución no prometa cobertura continua sino evidencia periódica, ubicó la sección de planes, verificó el cambio de idioma entre español e inglés —señaló que sus mayoristas extranjeros se lo exigirían en inglés— y envió una solicitud de demostración. En las Web Applications ingresó con el rol de administrador de operaciones y ejecutó el flujo completo de configuración: registró la ruta Trekking Colca Sangalle, agregó sus tres puntos de control ordenados, habilitó la ruta, configuró las ventanas de tiempo esperadas de cada tramo y creó el grupo Grupo Colca Diciembre con fecha de salida 20/12/2026 y capacidad 12; con el rol de guía de campo registró al participante en el manifiesto y, de vuelta como administrador, consultó el progreso de un grupo en ruta. Observó dos limitaciones. Al asignar el guía, la lista muestra únicamente nombres sin un identificador que permita distinguir entre guías homónimos, lo que considera un riesgo en una operación con quince guías. Al revisar el seguimiento preguntó si el historial queda almacenado y puede descargarse para responder a una aseguradora o a una homologación de mayorista, y no encontró una opción de exportación. Sobre las ventanas de tiempo comentó que le parece correcto que se pida un rango y no un valor fijo, aunque los campos están en minutos y él maneja horas. En su apreciación general comparó la solución con su protocolo de seguridad en papel, que depende de que el guía recuerde reportar y encuentre señal, y valoró que aquí el registro se genere al paso por el punto de control. Como mejoras prioritarias pidió la exportación del historial por grupo con horas y códigos de identificación para los guías. Indicó que recomendaría el producto a agencias que operen rutas de varios días. |
+
+<!-- COMPLETAR: repetir la tabla para la entrevista #3 (hasta #5) -->
 
 #### Segmento 2: Turistas de Aventura
 
