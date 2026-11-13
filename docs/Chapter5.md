@@ -831,8 +831,12 @@ El Sprint 3 tiene como objetivo implementar y desplegar la primera versión del 
 
 | Campo | Valor |
 | --- | --- |
-| Sprint Velocity | 57 Story Points |
-| Total de Story Points | 57 |
+| Sprint Goal | Implementar y desplegar la primera versión del RESTful Web Services con autenticación JWT, persistencia en MySQL y los endpoints de Expedition Setup, e integrarla con las Web Applications ya desplegadas. |
+| Historias incluidas | TS06, TS07, TS09, US07, US08, US09, US10, US11, US12, US13, US14, US15 y US16 |
+| Total de historias | 13 (3 Technical Stories y 10 User Stories) |
+| Sprint Velocity / Total de Story Points | 57 Story Points |
+| Contextos de dominio | `iam` y `expedition-setup`, integrados con las Web Applications; `field-tracking`, `checkpoint-sync`, `safety-monitoring`, `incident-response` y `tour-closure`, implementados además en el backend. |
+| Resultado | RESTful Web Services desplegado en Render con MySQL en Railway; Web Applications `v1.1.0` consumiendo el API en autenticación y configuración de expediciones. |
 
 #### 5.2.3.1. Sprint Planning 3
 
@@ -868,41 +872,42 @@ La siguiente matriz organiza el liderazgo y la colaboración del equipo durante 
 
 **Leyenda:** L = Leader; C = Collaborator.
 
+La autoría de los commits y el estado de integración de cada cambio se detallan en la sección 5.2.3.4.
+
 #### 5.2.3.3. Sprint Backlog 3
 
 El Sprint Backlog 3 se enfoca en la primera versión del RESTful Web Services de VitalTrek y en su integración con las Web Applications. Las User Stories y Technical Stories seleccionadas se descompusieron en tasks estimadas entre 4 y 8 horas, cuyo avance se registró en Jira Software con los estados To-do, In-Process, To-Review y Done.
 
 ![Board del Sprint 3 en Jira](../assets/images/chapter-5/sprint3-board-jira.png)
 
-*Figura 5.X. Board del Sprint 3 en Jira Software con las 13 historias (57 Story Points) en estado Finalizado.*
+*Figura 5.2.3.3-1. Board del Sprint 3 en Jira Software con las 13 historias (57 Story Points) en estado Finalizado.*
 
 **Enlace público del board:** [Jira — VitalTrek](https://milenkorvu.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog)
 
-| **Sprint #** | **Sprint 3** | | | | | | |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| **User Story Id** | **User Story Title** | **Work-Item / Task Id** | **Title** | **Description** | **Estimation (Hours)** | **Assigned To** | **Status (To-do / In-Process / To-Review / Done)** |
-| TS07 | Persistencia y migraciones | T-42 | Infraestructura compartida y contexto de datos | Configurar el Shared kernel, el DbContext con MySQL, la convención snake_case y el acortamiento de nombres largos de claves e índices. | 6 | Cayanchi Avila, Milenko Rubén | Done |
-| TS06 | Contratos del RESTful API | T-43 | OpenAPI, Scalar y localización | Configurar la generación de OpenAPI, la documentación con Scalar, las rutas kebab-case y los mensajes localizados en inglés y español. | 5 | Rodriguez Rojas, Miler Alexander | Done |
-| TS07 | Persistencia y migraciones | T-44 | Migraciones y datos de demostración | Generar las migraciones de cada bounded context y cargar los datos de demostración de agencias, usuarios, rutas y grupos. | 5 | León Naupari, Jorge Mateo | Done |
-| TS09 | Seguridad, autenticación y privacidad | T-45 | Registro de agencias e inicio de sesión con JWT | Implementar sign-up y sign-in con contraseñas cifradas mediante BCrypt y emisión de tokens JWT firmados con HS256. | 8 | Cayanchi Avila, Milenko Rubén | Done |
-| TS09 | Seguridad, autenticación y privacidad | T-46 | Autorización por roles y gestión de usuarios | Implementar el middleware de autorización por rol y agencia, y los endpoints de consulta y creación de usuarios. | 6 | Mendoza Blanco, Ariel Roberto | Done |
-| TS09 | Seguridad, autenticación y privacidad | T-47 | Sesión JWT en las Web Applications | Consumir el inicio de sesión del API, guardar el token con su expiración y enviarlo mediante un interceptor HTTP. | 6 | Herrera Enriquez, Diego Fernando | Done |
-| US07 | Configuración de rutas | T-48 | Agregado Route y endpoints de rutas | Implementar el agregado Route y los endpoints de consulta, registro en `draft` y cambio de estado de rutas. | 6 | León Naupari, Jorge Mateo | Done |
-| US08 | Definición de checkpoints | T-49 | Endpoints de checkpoints | Implementar el registro y la consulta de checkpoints con validación de orden, coordenadas e identificador Bluetooth únicos. | 5 | Mendoza Blanco, Ariel Roberto | Done |
-| US09 | Ventanas de tiempo esperadas | T-50 | Endpoints de ventanas de tiempo | Implementar el registro y la consulta de ventanas esperadas por tramo con límites mínimo y máximo válidos. | 5 | Rodriguez Rojas, Miler Alexander | Done |
-| US10 | Protocolo de seguridad | T-51 | Protocolos de seguridad y notas de ruta | Implementar los endpoints de protocolos de seguridad y notas de ruta, e integrarlos en la preparación del grupo. | 5 | Herrera Enriquez, Diego Fernando | Done |
-| US11 | Creación del grupo de expedición | T-52 | Endpoints de grupos de expedición | Implementar la creación de grupos para rutas habilitadas con fecha de salida no pasada y capacidad máxima. | 5 | Rodriguez Rojas, Miler Alexander | Done |
-| US13 | Asignación del guía | T-53 | Guías de campo y asignación con control de fechas | Implementar el registro de guías y la asignación al grupo con confirmación explícita ante cruces de fecha. | 5 | León Naupari, Jorge Mateo | Done |
-| US12 | Registro del manifiesto | T-54 | Endpoints del manifiesto de turistas | Implementar el registro de participantes con validación de documento único, cruce de fechas y capacidad del grupo. | 5 | Mendoza Blanco, Ariel Roberto | Done |
-| US15 | Asignación del wearable | T-55 | Inventario y asignación de wearables | Implementar el inventario de wearables y su asignación a la preparación de cada participante. | 6 | Cayanchi Avila, Milenko Rubén | Done |
-| US14 | Registro de contacto de emergencia | T-56 | Endpoint de contacto de emergencia | Implementar el registro del contacto de emergencia por el propio Adventure Tourist. | 4 | Herrera Enriquez, Diego Fernando | Done |
-| US16 | Activación del wearable | T-57 | Consentimiento y activación del wearable | Implementar el otorgamiento y la revocación del consentimiento de monitoreo, que activa o desactiva el wearable asignado. | 4 | Rodriguez Rojas, Miler Alexander | Done |
-| US07 | Configuración de rutas | T-58 | Integración de Expedition Setup en las Web Applications | Adaptar los stores de rutas, checkpoints, ventanas, grupos, guías y manifiesto a los endpoints del API. | 6 | León Naupari, Jorge Mateo | Done |
-| US15 | Asignación del wearable | T-59 | Integración de la preparación del participante | Adaptar la asignación de wearables, el contacto de emergencia y el consentimiento a los endpoints del API. | 5 | Mendoza Blanco, Ariel Roberto | Done |
-| TS06 | Contratos del RESTful API | T-60 | Despliegue del API en Render y Railway | Configurar la base de datos MySQL en Railway, el Web Service con Docker en Render y sus variables de entorno. | 6 | Cayanchi Avila, Milenko Rubén | Done |
-| TS06 | Contratos del RESTful API | T-61 | Despliegue de las Web Applications y del Landing Page | Publicar las versiones `v1.1.0` en Vercel y configurar la URL del API desplegado. | 4 | Herrera Enriquez, Diego Fernando | Done |
-| — | Mejoras del Landing Page (feedback TB1) | T-62 | Responsive y contenido del hero | Corregir la grilla de características en móvil y el texto duplicado del hero. | 4 | Herrera Enriquez, Diego Fernando | Done |
-| — | Mejoras del Landing Page (feedback TB1) | T-63 | Enlaces a la app y redes sociales | Centralizar la URL de las Web Applications en los CTA y agregar redes sociales y ubicación. | 4 | Rodriguez Rojas, Miler Alexander | Done |
+| Sprint # | Story Id | Story Title | Task Id | Task Title | Task Description | Estimation (Hours) | Assigned To | Status |
+| --- | --- | --- | --- | --- | --- | ---: | --- | --- |
+| Sprint 3 | TS07 | Persistencia y migraciones | T-42 | Infraestructura compartida y contexto de datos | Configurar el Shared kernel, el DbContext con MySQL, la convención snake_case y el acortamiento de nombres largos de claves e índices. | 6 | Cayanchi Avila, Milenko Rubén | Done |
+| Sprint 3 | TS06 | Contratos del RESTful API | T-43 | OpenAPI, Scalar y localización | Configurar la generación de OpenAPI, la documentación con Scalar, las rutas kebab-case y los mensajes localizados en inglés y español. | 5 | Rodriguez Rojas, Miler Alexander | Done |
+| Sprint 3 | TS07 | Persistencia y migraciones | T-44 | Migraciones y datos de demostración | Generar las migraciones de cada bounded context y cargar los datos de demostración de agencias, usuarios, rutas y grupos. | 5 | León Naupari, Jorge Mateo | Done |
+| Sprint 3 | TS09 | Seguridad, autenticación y privacidad | T-45 | Registro de agencias e inicio de sesión con JWT | Implementar sign-up y sign-in con contraseñas cifradas mediante BCrypt y emisión de tokens JWT firmados con HS256. | 8 | Cayanchi Avila, Milenko Rubén | Done |
+| Sprint 3 | TS09 | Seguridad, autenticación y privacidad | T-46 | Autorización por roles y gestión de usuarios | Implementar el middleware de autorización por rol y agencia, y los endpoints de consulta y creación de usuarios. | 6 | Mendoza Blanco, Ariel Roberto | Done |
+| Sprint 3 | TS09 | Seguridad, autenticación y privacidad | T-47 | Sesión JWT en las Web Applications | Consumir el inicio de sesión del API, guardar el token con su expiración y enviarlo mediante un interceptor HTTP. | 6 | Herrera Enriquez, Diego Fernando | Done |
+| Sprint 3 | US07 | Configuración de rutas | T-48 | Agregado Route y endpoints de rutas | Implementar el agregado Route y los endpoints de consulta, registro en `draft` y cambio de estado de rutas. | 6 | León Naupari, Jorge Mateo | Done |
+| Sprint 3 | US08 | Definición de checkpoints | T-49 | Endpoints de checkpoints | Implementar el registro y la consulta de checkpoints con validación de orden, coordenadas e identificador Bluetooth únicos. | 5 | Mendoza Blanco, Ariel Roberto | Done |
+| Sprint 3 | US09 | Ventanas de tiempo esperadas | T-50 | Endpoints de ventanas de tiempo | Implementar el registro y la consulta de ventanas esperadas por tramo con límites mínimo y máximo válidos. | 5 | Rodriguez Rojas, Miler Alexander | Done |
+| Sprint 3 | US10 | Protocolo de seguridad | T-51 | Protocolos de seguridad y notas de ruta | Implementar los endpoints de protocolos de seguridad y notas de ruta, e integrarlos en la preparación del grupo. | 5 | Herrera Enriquez, Diego Fernando | Done |
+| Sprint 3 | US11 | Creación del grupo de expedición | T-52 | Endpoints de grupos de expedición | Implementar la creación de grupos para rutas habilitadas con fecha de salida no pasada y capacidad máxima. | 5 | Rodriguez Rojas, Miler Alexander | Done |
+| Sprint 3 | US13 | Asignación del guía | T-53 | Guías de campo y asignación con control de fechas | Implementar el registro de guías y la asignación al grupo con confirmación explícita ante cruces de fecha. | 5 | León Naupari, Jorge Mateo | Done |
+| Sprint 3 | US12 | Registro del manifiesto | T-54 | Endpoints del manifiesto de turistas | Implementar el registro de participantes con validación de documento único, cruce de fechas y capacidad del grupo. | 5 | Mendoza Blanco, Ariel Roberto | Done |
+| Sprint 3 | US15 | Asignación del wearable | T-55 | Inventario y asignación de wearables | Implementar el inventario de wearables y su asignación a la preparación de cada participante. | 6 | Cayanchi Avila, Milenko Rubén | Done |
+| Sprint 3 | US14 | Registro de contacto de emergencia | T-56 | Endpoint de contacto de emergencia | Implementar el registro del contacto de emergencia por el propio Adventure Tourist. | 4 | Herrera Enriquez, Diego Fernando | Done |
+| Sprint 3 | US16 | Activación del wearable | T-57 | Consentimiento y activación del wearable | Implementar el otorgamiento y la revocación del consentimiento de monitoreo, que activa o desactiva el wearable asignado. | 4 | Rodriguez Rojas, Miler Alexander | Done |
+| Sprint 3 | US07 | Configuración de rutas | T-58 | Integración de Expedition Setup en las Web Applications | Adaptar los stores de rutas, checkpoints, ventanas, grupos, guías y manifiesto a los endpoints del API. | 6 | León Naupari, Jorge Mateo | Done |
+| Sprint 3 | US15 | Asignación del wearable | T-59 | Integración de la preparación del participante | Adaptar la asignación de wearables, el contacto de emergencia y el consentimiento a los endpoints del API. | 5 | Mendoza Blanco, Ariel Roberto | Done |
+| Sprint 3 | TS06 | Contratos del RESTful API | T-60 | Despliegue del API en Render y Railway | Configurar la base de datos MySQL en Railway, el Web Service con Docker en Render y sus variables de entorno. | 6 | Cayanchi Avila, Milenko Rubén | Done |
+| Sprint 3 | TS06 | Contratos del RESTful API | T-61 | Despliegue de las Web Applications y del Landing Page | Publicar las versiones `v1.1.0` en Vercel y configurar la URL del API desplegado. | 4 | Herrera Enriquez, Diego Fernando | Done |
+| Sprint 3 | — | Mejoras del Landing Page (feedback TB1) | T-62 | Responsive y contenido del hero | Corregir la grilla de características en móvil y el texto duplicado del hero. | 4 | Herrera Enriquez, Diego Fernando | Done |
+| Sprint 3 | — | Mejoras del Landing Page (feedback TB1) | T-63 | Enlaces a la app y redes sociales | Centralizar la URL de las Web Applications en los CTA y agregar redes sociales y ubicación. | 4 | Rodriguez Rojas, Miler Alexander | Done |
 
 
 **Resumen del Sprint Backlog 3**
@@ -931,7 +936,7 @@ Las dos tasks de mejora del Landing Page responden a la retroalimentación de TB
 
 #### 5.2.3.4. Development Evidence for Sprint Review
 
-En el Sprint 3 se implementó la primera versión del RESTful Web Services de VitalTrek en el repositorio [vitaltrek-backend](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend), desarrollado con ASP.NET Core 10 y C# en JetBrains Rider. El proyecto se organiza en los módulos Shared, IAM y Expedition Setup, aplica las capas de dominio, aplicación, infraestructura e interfaces, implementa la persistencia en MySQL mediante Entity Framework Core con migraciones versionadas y documenta sus endpoints con OpenAPI. La versión `v1.0.0` se preparó en la rama `release/v1.0.0`, se integró en `main` y `develop` mediante Pull Requests y se etiquetó en `main`. Asimismo, se registran los cambios realizados en el Landing Page y en las Web Applications durante el Sprint. Todas las contribuciones siguieron GitFlow y Conventional Commits.
+En el Sprint 3 se implementó la primera versión del RESTful Web Services de VitalTrek en el repositorio [vitaltrek-backend](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend), desarrollado con ASP.NET Core 10 y C# en JetBrains Rider. El proyecto se organiza en los módulos Shared, IAM, Expedition Setup, Field Tracking, Checkpoint Sync, Safety Monitoring, Incident Response y Tour Closure, aplica las capas de dominio, aplicación, infraestructura e interfaces, implementa la persistencia en MySQL mediante Entity Framework Core con migraciones versionadas y documenta sus endpoints con OpenAPI. La versión `v1.0.0` se preparó en la rama `release/v1.0.0`, se integró en `main` y `develop` mediante Pull Requests y se etiquetó en `main`. Asimismo, se registran los cambios realizados en el Landing Page y en las Web Applications durante el Sprint. Todas las contribuciones siguieron GitFlow y Conventional Commits.
 
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
 | --- | --- | --- | --- | --- | --- |
@@ -955,53 +960,117 @@ En el Sprint 3 se implementó la primera versión del RESTful Web Services de Vi
 | 1ASI0729-2620-16712-G4-Nexatech/landing-page | `develop` | `c96a3c3` | fix: remove duplicated hero text, dev comments and fix login placeholder i18n | — | 2026-10-28 |
 | 1ASI0729-2620-16712-G4-Nexatech/landing-page | `main` | `4649e05` | Release/v1.1.0 | Pull Request de `release/v1.1.0` hacia `main`; etiqueta `v1.1.0`. | 2026-10-31 |
 
+**Pull Requests del Sprint 3**
+
+Los cambios del RESTful Web Services y de la integración del frontend se incorporaron mediante los siguientes Pull Requests, consultados en GitHub.
+
+| Repositorio | PR | Contenido | Autor | Rama | Fecha de integración | Estado |
+| --- | --- | --- | --- | --- | --- | --- |
+| [vitaltrek-backend](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend) | [#1](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend/pull/1) | Infraestructura compartida (Shared kernel, DbContext, OpenAPI y Scalar) | `MaxghZZ` | `feature/shared-infrastructure → develop` | 2026-10-29 | Integrado |
+| [vitaltrek-backend](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend) | [#2](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend/pull/2) | Bounded context IAM con autenticación JWT | `MaxghZZ` | `feature/iam-bounded-context → develop` | 2026-10-29 | Integrado |
+| [vitaltrek-backend](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend) | [#3](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend/pull/3) | Migración inicial de IAM | `MaxghZZ` | `feature/iam-bounded-context → develop` | 2026-10-29 | Integrado |
+| [vitaltrek-backend](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend) | [#4](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend/pull/4) | Rutas, checkpoints, ventanas de tiempo, notas de ruta y protocolos de seguridad | `MaxghZZ` | `feature/expedition-setup-routes → develop` | 2026-10-29 | Integrado |
+| [vitaltrek-backend](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend) | [#5](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend/pull/5) | Grupos de expedición, guías, manifiesto, wearables y preparación del participante | `MaxghZZ` | `feature/expedition-setup-groups → develop` | 2026-10-29 | Integrado |
+| [vitaltrek-backend](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend) | [#6](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend/pull/6) | Release `v1.0.0` | `MaxghZZ` | `release/v1.0.0 → main` | 2026-10-31 | Integrado |
+| [vitaltrek-backend](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend) | [#7](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend/pull/7) | Configuración de producción de la base de datos y del contenedor | `MaxghZZ` | `release/v1.0.0 → develop` | 2026-10-31 | Integrado |
+| [vitaltrek-backend](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend) | [#8](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend/pull/8) | Pruebas unitarias de reglas de rutas y checkpoints | `mateool10` | `feature/unit-tests → develop` | 2026-11-08 | Integrado |
+| [vitaltrek-backend](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend) | [#9](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend/pull/9) | Pruebas unitarias de preparación del participante y grupos | `Trepequiper` | `feature/unit-tests-preparation → develop` | 2026-11-10 | Integrado |
+| [vitaltrek-backend](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend) | [#10](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend/pull/10) | Bounded context Field Tracking | `MaxghZZ` | `feature/field-tracking → develop` | 2026-11-10 | Integrado |
+| [vitaltrek-backend](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend) | [#11](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend/pull/11) | Bounded context Checkpoint Sync | `maxrodev` | `feature/checkpoint-sync → develop` | 2026-11-10 | Integrado |
+| [vitaltrek-backend](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend) | [#12](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend/pull/12) | Bounded context Incident Response (primer intento) | `mateool10` | `feature/incident-response → develop` | — | Cerrado sin integrar; reemplazado por el PR #15 |
+| [vitaltrek-backend](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend) | [#13](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend/pull/13) | Bounded context Safety Monitoring | `DerDFHE` | `feature/safety-monitoring → develop` | 2026-11-11 | Integrado |
+| [vitaltrek-backend](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend) | [#14](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend/pull/14) | Migración de base de datos de Safety Monitoring | `DerDFHE` | `feature/safety-monitoring-migration → develop` | 2026-11-11 | Integrado |
+| [vitaltrek-backend](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend) | [#15](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend/pull/15) | Bounded context Incident Response | `mateool10` | `feature/incident-response → develop` | 2026-11-11 | Integrado |
+| [vitaltrek-backend](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend) | [#16](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend/pull/16) | Bounded context Tour Closure | `Trepequiper` | `feature/tour-closure → develop` | 2026-11-11 | Integrado |
+| [web-applications](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications) | [#14](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/14) | Consumo del RESTful API para IAM y Expedition Setup | `MaxghZZ` | `feature/backend-integration → develop` | 2026-10-31 | Integrado |
+| [web-applications](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications) | [#15](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/15) | Release `v1.1.0` | `MaxghZZ` | `release/v1.1.0 → main` | 2026-10-31 | Integrado |
+| [web-applications](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications) | [#16](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/16) | Entorno de desarrollo apuntando al backend local y pruebas unitarias | `DerDFHE` | `feature/dev-env-local-api → develop` | 2026-11-10 | Integrado |
+
+Las siguientes capturas de GitHub respaldan la evidencia de desarrollo del Sprint 3: los Pull Requests integrados en `vitaltrek-backend` (uno por bounded context), sus ramas de funcionalidad, el historial de commits y los cambios realizados en `web-applications` y `landing-page`.
+
+![Pull Requests de vitaltrek-backend](../assets/images/chapter-5/sprint3-backend-prs.png)
+
+*Figura 5.2.3.4-1. Pull Requests cerrados de `vitaltrek-backend`: IAM, Expedition Setup, Field Tracking, Checkpoint Sync, Safety Monitoring, Incident Response y Tour Closure.*
+
+![Ramas de vitaltrek-backend](../assets/images/chapter-5/sprint3-backend-branches.png)
+
+*Figura 5.2.3.4-2. Ramas `feature/*` y `release/v1.0.0` de `vitaltrek-backend` con su Pull Request asociado.*
+
+![Commits de vitaltrek-backend](../assets/images/chapter-5/sprint3-backend-commits.png)
+
+*Figura 5.2.3.4-3. Historial de commits de la rama `develop` de `vitaltrek-backend`.*
+
+![Commits de web-applications](../assets/images/chapter-5/sprint3-webapp-commits.png)
+
+*Figura 5.2.3.4-4. Historial de commits de la rama `develop` de `web-applications`, con la integración del RESTful API.*
+
+![Commits de landing-page](../assets/images/chapter-5/sprint3-landing-commits.png)
+
+*Figura 5.2.3.4-5. Historial de commits de la rama `develop` de `landing-page` durante el Sprint 3.*
+
 #### 5.2.3.5. Execution Evidence for Sprint Review
 
-Al cierre del Sprint 3, las Web Applications de VitalTrek consumen el RESTful Web Services desplegado en Render para la autenticación y la gestión de cuentas (IAM) y para la configuración de expediciones (Expedition Setup). El inicio de sesión obtiene un token JWT que se envía en cada solicitud, y el API restringe cada operación según el rol y la agencia del usuario. Las funcionalidades de Field Tracking, Checkpoint Sync, Safety Monitoring, Incident Response y Tour Closure se muestran como disponibles en un próximo sprint, a la espera de su implementación en el backend. A continuación se presentan capturas del recorrido realizado con las cuentas de demostración de Operations Administrator, Field Guide y Adventure Tourist.
+Al cierre del Sprint 3, las Web Applications de VitalTrek consumen el RESTful Web Services desplegado en Render para la autenticación y la gestión de cuentas (IAM) y para la configuración de expediciones (Expedition Setup). El inicio de sesión obtiene un token JWT que se envía en cada solicitud, y el API restringe cada operación según el rol y la agencia del usuario. Los bounded contexts de Field Tracking, Checkpoint Sync, Safety Monitoring, Incident Response y Tour Closure ya están implementados en el backend (PR #10 a #16 de `vitaltrek-backend`); su integración en las Web Applications se realizará en un próximo sprint, por lo que el frontend los muestra como disponibles próximamente. A continuación se presentan capturas del recorrido realizado con las cuentas de demostración de Operations Administrator, Field Guide y Adventure Tourist.
+
+La validación funcional del Sprint 3 cubre los escenarios principales de las historias integradas entre las Web Applications y el RESTful Web Services. Las capturas posteriores documentan su ejecución con las cuentas de demostración.
+
+| Historia | Escenario de validación | Resultado esperado |
+| --- | --- | --- |
+| TS09 | Iniciar sesión con credenciales válidas e inválidas; consultar un endpoint sin token y con un rol no autorizado. | El inicio de sesión devuelve un token JWT; las credenciales inválidas responden `401`, la ausencia de token `401` y el rol no autorizado `403`. |
+| US07 | Registrar una ruta válida y consultar el listado de la agencia. | La ruta se crea en estado `draft` y aparece en el listado con los datos del API. |
+| US08 | Registrar un checkpoint con orden e identificador Bluetooth únicos; repetir alguno de ellos; habilitar la ruta. | El checkpoint se asocia a la ruta; el duplicado responde `409`; la ruta con checkpoints puede habilitarse. |
+| US09 | Registrar la ventana de tiempo de un tramo con límites válidos. | La ventana se guarda con su mínimo y máximo en minutos. |
+| US10 | Registrar las notas de ruta y el protocolo de seguridad de una ruta. | Ambos registros se almacenan y quedan disponibles para el grupo. |
+| US11 | Crear un grupo para una ruta habilitada. | El grupo queda en estado `scheduled` asociado a la ruta. |
+| US13 | Registrar un guía, crear su cuenta y asignarlo al grupo. | La asignación se registra; ante un cruce de fechas el API responde `409` hasta que se confirma. |
+| US12 | Registrar un participante en el manifiesto con el rol de guía; repetir el documento de identidad. | El participante se agrega y se crea su preparación; el documento duplicado responde `409`. |
+| US15 | Asignar un wearable disponible a un participante. | El wearable queda asignado; si no está disponible, el API responde `409`. |
+| US14 y US16 | Con el rol de turista, registrar el contacto de emergencia y otorgar el consentimiento. | El contacto se guarda y el consentimiento activa el wearable asignado. |
+| Integración | Ejecutar las Web Applications desplegadas contra el API de producción. | Las pantallas de IAM y Expedition Setup muestran datos reales; los contextos aún no integrados indican que estarán disponibles en un próximo sprint. |
 
 ![Listado de rutas cargado desde el RESTful API](../assets/images/chapter-5/sprint3-exec-01.png)
 
-*Figura 5.X. Listado de rutas de la agencia obtenido con `GET /api/v1/routes`.*
+*Figura 5.2.3.5-1. Listado de rutas de la agencia obtenido con `GET /api/v1/routes`.*
 
 ![Formulario de registro de una nueva ruta](../assets/images/chapter-5/sprint3-exec-02.png)
 
-*Figura 5.X. Registro de la ruta `Laguna 69 Demo` (US07), enviado con `POST /api/v1/routes`.*
+*Figura 5.2.3.5-2. Registro de la ruta `Laguna 69 Demo` (US07), enviado con `POST /api/v1/routes`.*
 
 ![Checkpoint registrado en la nueva ruta](../assets/images/chapter-5/sprint3-exec-03.png)
 
-*Figura 5.X. Registro del checkpoint `Cebollapampa` con coordenadas e identificador Bluetooth (US08).*
+*Figura 5.2.3.5-3. Registro del checkpoint `Cebollapampa` con coordenadas e identificador Bluetooth (US08).*
 
 ![Ruta habilitada para la planificación de tours](../assets/images/chapter-5/sprint3-exec-04.png)
 
-*Figura 5.X. Habilitación de la ruta mediante `PATCH /api/v1/routes/{id}/status`.*
+*Figura 5.2.3.5-4. Habilitación de la ruta mediante `PATCH /api/v1/routes/{id}/status`.*
 
 ![Grupo de expedición con guía asignado](../assets/images/chapter-5/sprint3-exec-05.png)
 
-*Figura 5.X. Creación del grupo `Laguna 69 Grupo Demo` y asignación de la guía Lucía Paredes (US11 y US13).*
+*Figura 5.2.3.5-5. Creación del grupo `Laguna 69 Grupo Demo` y asignación de la guía Lucía Paredes (US11 y US13).*
 
 ![Cuentas de la agencia](../assets/images/chapter-5/sprint3-exec-06.png)
 
-*Figura 5.X. Creación de la cuenta del Field Guide `lucia@vitaltrek.demo` mediante `POST /api/v1/users`.*
+*Figura 5.2.3.5-6. Creación de la cuenta del Field Guide `lucia@vitaltrek.demo` mediante `POST /api/v1/users`.*
 
 ![Notas de ruta y protocolo de seguridad](../assets/images/chapter-5/sprint3-exec-07.png)
 
-*Figura 5.X. Registro de las notas de ruta y del protocolo de seguridad del grupo (US10).*
+*Figura 5.2.3.5-7. Registro de las notas de ruta y del protocolo de seguridad del grupo (US10).*
 
 ![Funcionalidad pendiente para el próximo sprint](../assets/images/chapter-5/sprint3-exec-08.png)
 
-*Figura 5.X. Pestaña de seguimiento en campo, cuya integración con el RESTful API se realizará en un próximo sprint.*
+*Figura 5.2.3.5-8. Pestaña de seguimiento en campo, cuya integración con el RESTful API se realizará en un próximo sprint.*
 
 ![Manifiesto de turistas actualizado](../assets/images/chapter-5/sprint3-exec-09.png)
 
-*Figura 5.X. Registro del participante `Lucas Prado` en el manifiesto por la guía asignada (US12).*
+*Figura 5.2.3.5-9. Registro del participante `Lucas Prado` en el manifiesto por la guía asignada (US12).*
 
 ![Asignación de wearable al participante](../assets/images/chapter-5/sprint3-exec-10.png)
 
-*Figura 5.X. Asignación del wearable `VT-W-010` mediante `PUT /api/v1/participant-preparations/{id}/wearable-assignment` (US15).*
+*Figura 5.2.3.5-10. Asignación del wearable `VT-W-010` mediante `PUT /api/v1/participant-preparations/{id}/wearable-assignment` (US15).*
 
 ![Preparación del turista](../assets/images/chapter-5/sprint3-exec-11.png)
 
-*Figura 5.X. Registro del contacto de emergencia y del consentimiento del turista; el wearable queda activado (US14 y US16).*
+*Figura 5.2.3.5-11. Registro del contacto de emergencia y del consentimiento del turista; el wearable queda activado (US14 y US16).*
 
 **Video de navegación del Sprint 3:** [upc-pre-202620-1asi0730-16712-nexatech-productnavigation-sprint-3](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312566_upc_edu_pe/IQDKeKk3TNpkTYYaH-CaM33lARxSFJg5juS51cXSIAO2Wlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=m6od4Y)
 
@@ -1063,15 +1132,15 @@ A continuación se muestran capturas de la interacción con la documentación de
 
 ![Portada de la documentación del VitalTrek Platform API en Scalar](../assets/images/chapter-5/sprint3-scalar-home.png)
 
-*Figura 5.X. Documentación del VitalTrek Platform API publicada con Scalar en Render.*
+*Figura 5.2.3.6-1. Documentación del VitalTrek Platform API publicada con Scalar en Render.*
 
 ![Inicio de sesión ejecutado desde Scalar](../assets/images/chapter-5/sprint3-scalar-sign-in.png)
 
-*Figura 5.X. Ejecución de `POST /api/v1/authentication/sign-in` con el usuario `admin@vitaltrek.demo`: respuesta `200 OK` con el token bearer.*
+*Figura 5.2.3.6-2. Ejecución de `POST /api/v1/authentication/sign-in` con el usuario `admin@vitaltrek.demo`: respuesta `200 OK` con el token bearer.*
 
 ![Consulta de rutas ejecutada desde Scalar](../assets/images/chapter-5/sprint3-scalar-routes.png)
 
-*Figura 5.X. Ejecución de `GET /api/v1/routes` con token bearer: respuesta `200 OK` con las cuatro rutas de la agencia.*
+*Figura 5.2.3.6-3. Ejecución de `GET /api/v1/routes` con token bearer: respuesta `200 OK` con las cuatro rutas de la agencia.*
 
 **Commits relacionados con la documentación de servicios:**
 
@@ -1099,20 +1168,20 @@ En el Sprint 3 se realizó el primer despliegue del RESTful Web Services de Vita
 
 ![Servicio MySQL en Railway](../assets/images/chapter-5/sprint3-deploy-aiven.png)
 
-*Figura 5.X. Servicio MySQL en estado Online en Railway, con Public Networking habilitado y los datos de conexión.*
+*Figura 5.2.3.7-1. Servicio MySQL en estado Online en Railway, con Public Networking habilitado y los datos de conexión.*
 
 2. Preparación de la versión en la rama `release/v1.0.0`: cadena de conexión de producción con puerto y SSL, `Dockerfile` que escucha en el puerto asignado por la plataforma y `.dockerignore`. La rama se integró en `main` y `develop` mediante Pull Requests y `main` se etiquetó como `v1.0.0`.
 3. Creación del Web Service `vitaltrek-api` en Render conectado al repositorio `vitaltrek-backend`, con runtime Docker, rama `main` y plan Free, y registro de las variables de entorno de la base de datos y de la clave de firma JWT.
 
 ![Variables de entorno del servicio en Render](../assets/images/chapter-5/sprint3-deploy-render-env.png)
 
-*Figura 5.X. Variables de entorno del Web Service `vitaltrek-api` en Render, con los valores ocultos.*
+*Figura 5.2.3.7-2. Variables de entorno del Web Service `vitaltrek-api` en Render, con los valores ocultos.*
 
 4. Construcción de la imagen Docker e inicio del contenedor: la aplicación leyó las variables de entorno de Railway, aplicó las migraciones sobre la base de datos, cargó los datos de demostración y quedó publicada en https://vitaltrek-backend.onrender.com.
 
 ![Despliegue exitoso del servicio en Render](../assets/images/chapter-5/sprint3-deploy-render-live.png)
 
-*Figura 5.X. Despliegue en estado Live en Render.*
+*Figura 5.2.3.7-3. Despliegue en estado Live en Render.*
 
 5. Verificación del servicio en https://vitaltrek-backend.onrender.com/scalar: el inicio de sesión con `admin@vitaltrek.demo` respondió `200 OK` con el token bearer y `GET /api/v1/routes` respondió `200 OK` con las rutas de la agencia (sección 5.2.3.6).
 
@@ -1123,25 +1192,25 @@ En el Sprint 3 se realizó el primer despliegue del RESTful Web Services de Vita
 
 ![Variable de entorno de las Web Applications en Vercel](../assets/images/chapter-5/sprint3-deploy-vercel-env.png)
 
-*Figura 5.X. Variable `VITE_VITALTREK_API_URL` configurada en Vercel con la URL del API desplegado.*
+*Figura 5.2.3.7-4. Variable `VITE_VITALTREK_API_URL` configurada en Vercel con la URL del API desplegado.*
 
 3. Verificación de `main` como Production Branch del proyecto en Vercel.
 
 ![Production Branch del proyecto en Vercel](../assets/images/chapter-5/sprint3-deploy-vercel-branch.png)
 
-*Figura 5.X. Configuración de `main` como Production Branch y dominio `web-applications-vert.vercel.app`.*
+*Figura 5.2.3.7-5. Configuración de `main` como Production Branch y dominio `web-applications-vert.vercel.app`.*
 
 4. Nuevo despliegue de producción a partir del commit `4166921` (`Release/v1.1.0`) de la rama `main`, en estado Ready.
 
 ![Despliegue de las Web Applications en Vercel](../assets/images/chapter-5/sprint3-deploy-vercel-ready.png)
 
-*Figura 5.X. Despliegue de producción de las Web Applications `v1.1.0` en Vercel.*
+*Figura 5.2.3.7-6. Despliegue de producción de las Web Applications `v1.1.0` en Vercel.*
 
 5. Verificación en https://web-applications-vert.vercel.app/: el inicio de sesión del Operations Administrator y el listado de rutas responden con datos del RESTful Web Services.
 
 ![Listado de rutas en las Web Applications desplegadas](../assets/images/chapter-5/sprint3-deploy-webapp-routes.png)
 
-*Figura 5.X. Listado de rutas obtenido del RESTful Web Services desde las Web Applications desplegadas.*
+*Figura 5.2.3.7-7. Listado de rutas obtenido del RESTful Web Services desde las Web Applications desplegadas.*
 
 **Pasos del despliegue del Landing Page**
 
@@ -1150,13 +1219,27 @@ En el Sprint 3 se realizó el primer despliegue del RESTful Web Services de Vita
 
 ![Despliegue del Landing Page en Vercel](../assets/images/chapter-5/sprint3-deploy-landing-ready.png)
 
-*Figura 5.X. Despliegue de producción del Landing Page `v1.1.0` en estado Ready en Vercel.*
+*Figura 5.2.3.7-8. Despliegue de producción del Landing Page `v1.1.0` en estado Ready en Vercel.*
 
 3. Verificación del Landing Page publicado, con los enlaces a redes sociales incorporados en el footer.
 
 ![Footer del Landing Page con redes sociales](../assets/images/chapter-5/sprint3-deploy-landing-footer.png)
 
-*Figura 5.X. Footer del Landing Page `v1.1.0` con los enlaces a redes sociales.*
+*Figura 5.2.3.7-9. Footer del Landing Page `v1.1.0` con los enlaces a redes sociales.*
+
+**Etiquetas de versión publicadas**
+
+![Etiqueta v1.0.0 de vitaltrek-backend](../assets/images/chapter-5/sprint3-backend-tags.png)
+
+*Figura 5.2.3.7-10. Etiqueta `v1.0.0` de `vitaltrek-backend`, creada en `main`.*
+
+![Etiquetas de web-applications](../assets/images/chapter-5/sprint3-webapp-tags.png)
+
+*Figura 5.2.3.7-11. Etiquetas de versión de `web-applications`, entre ellas `v1.1.0`.*
+
+![Etiquetas de landing-page](../assets/images/chapter-5/sprint3-landing-tags.png)
+
+*Figura 5.2.3.7-12. Etiquetas `v1.0.0` y `v1.1.0` de `landing-page`.*
 
 #### 5.2.3.8. Team Collaboration Insights during Sprint
 
@@ -1164,19 +1247,27 @@ Durante el Sprint 3, el equipo trabajó sobre los repositorios [vitaltrek-backen
 
 | Integrante | Contribución en el Sprint 3 | Evidencia de GitHub |
 | --- | --- | --- |
-| Cayanchi Avila, Milenko Rubén (`MaxghZZ`) | Implementó el bounded context IAM (autenticación JWT, registro y login), el bounded context Expedition Setup (rutas, checkpoints, grupos de expedición, guías de campo, manifiesto turístico, wearables y preparación de participantes) y el bounded context Field Tracking. Configuró el contenedor Docker, las variables de entorno de producción y el despliegue en Render. Integró el frontend con el RESTful Web Services (IAM y Expedition Setup) y publicó la Release `v1.1.0` del frontend. Revisó y aprobó los PRs de los demás bounded contexts. Commits representativos: `8759081`, `4514175`, `b5331de`, `a6241c8`, `8886380`, `cab65a3`. | [vitaltrek-backend](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend) · [web-applications](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications) |
-| Herrera Enriquez, Diego Fernando (`DerDFHE`) | Implementó el bounded context Safety Monitoring (modelo de dominio EarlyWarningAlert, servicios de aplicación, fachada ACL con ExpectedTimeWindow, persistencia con EF Core, endpoints REST y migración de base de datos). En las Web Applications, configuró el entorno de desarrollo para apuntar al backend local y agregó pruebas unitarias para los flujos de sesión IAM, pantalla de errores y preparación de participantes. Commits representativos: `b4afa03`, `95dda1d`, `ef1b583`, `6e30a3a`, `9d74e83`. | [vitaltrek-backend](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend) · [web-applications](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications) |
-| León Naupari, Jorge Mateo (`mateool10`) | Implementó el bounded context Incident Response (modelo de dominio Incident y Notification, servicios de aplicación con validación de sesión de expedición, fachada ACL para contar incidentes, persistencia con EF Core, endpoints REST y migración de base de datos). Colaboró en la integración de los bounded contexts de Expedition Setup mediante pruebas unitarias de reglas de rutas y checkpoints. Commits representativos: `843ef1c`, `b7a9cd7`, `2937cdb`, `3b99692`, `b7318fd`. | [vitaltrek-backend](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend) |
-| Mendoza Blanco, Ariel Roberto (`Trepequiper`) | Implementó el bounded context Tour Closure completo: modelo de dominio TourSummary, comandos y queries, interfaces de repositorio y servicios, implementaciones de servicios de comando y consulta, repositorio EF Core, configuración de entidad, DTOs de recursos y assembler, endpoints REST en TourSummariesController, registro DI en Program.cs y migración de base de datos. Colaboró en pruebas unitarias de Expedition Setup. Commits representativos: `dd7b0d9`, `268f33f`, `0421678`, `1527d2e`, `4cd43e6`, `5fb3b48`. | [vitaltrek-backend](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend) |
-| Rodriguez Rojas, Miler Alexander (`Miler2003`) | Implementó el bounded context Checkpoint Sync (modelo de dominio CheckpointPassage, servicios de aplicación, fachada ACL, persistencia EF Core, endpoints REST y migración de base de datos). Actualizó las pruebas unitarias de Expedition Setup al API de dominio actual y agregó pruebas de paso por checkpoint. Protegió la configuración de desarrollo removiendo credenciales de los archivos versionados y documentó el README inicial del repositorio. Commits representativos: `0265254`, `864b3b9`, `6067764`, `fc16027`, `41f4bfd`. | [vitaltrek-backend](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend) |
+| Cayanchi Avila, Milenko Rubén (`MaxghZZ`) | Implementó el bounded context IAM (autenticación JWT, registro y login), el bounded context Expedition Setup (rutas, checkpoints, grupos de expedición, guías de campo, manifiesto turístico, wearables y preparación de participantes) y el bounded context Field Tracking. Configuró el contenedor Docker, las variables de entorno de producción y el despliegue en Render. Integró el frontend con el RESTful Web Services (IAM y Expedition Setup) y publicó la Release `v1.1.0` del frontend. Revisó y aprobó los PRs de los demás bounded contexts. Commits representativos: `8759081`, `4514175`, `b5331de`, `a6241c8`, `8886380`, `cab65a3`. | **vitaltrek-backend:** [#1](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend/pull/1), [#2](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend/pull/2), [#3](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend/pull/3), [#4](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend/pull/4), [#5](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend/pull/5), [#6](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend/pull/6), [#7](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend/pull/7), [#10](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend/pull/10)<br>**web-applications:** [#14](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/14), [#15](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/15) |
+| Herrera Enriquez, Diego Fernando (`DerDFHE`) | Implementó el bounded context Safety Monitoring (modelo de dominio EarlyWarningAlert, servicios de aplicación, fachada ACL con ExpectedTimeWindow, persistencia con EF Core, endpoints REST y migración de base de datos). En las Web Applications, configuró el entorno de desarrollo para apuntar al backend local y agregó pruebas unitarias para los flujos de sesión IAM, pantalla de errores y preparación de participantes. Commits representativos: `b4afa03`, `95dda1d`, `ef1b583`, `6e30a3a`, `9d74e83`. | **vitaltrek-backend:** [#13](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend/pull/13), [#14](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend/pull/14)<br>**web-applications:** [#16](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/16), [#17](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/17) |
+| León Naupari, Jorge Mateo (`mateool10`) | Implementó el bounded context Incident Response (modelo de dominio Incident y Notification, servicios de aplicación con validación de sesión de expedición, fachada ACL para contar incidentes, persistencia con EF Core, endpoints REST y migración de base de datos). Colaboró en la integración de los bounded contexts de Expedition Setup mediante pruebas unitarias de reglas de rutas y checkpoints. Commits representativos: `843ef1c`, `b7a9cd7`, `2937cdb`, `3b99692`, `b7318fd`. | **vitaltrek-backend:** [#8](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend/pull/8), [#15](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend/pull/15) (el [#12](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend/pull/12) se cerró y se reemplazó por el #15) |
+| Mendoza Blanco, Ariel Roberto (`Trepequiper`) | Implementó el bounded context Tour Closure completo: modelo de dominio TourSummary, comandos y queries, interfaces de repositorio y servicios, implementaciones de servicios de comando y consulta, repositorio EF Core, configuración de entidad, DTOs de recursos y assembler, endpoints REST en TourSummariesController, registro DI en Program.cs y migración de base de datos. Colaboró en pruebas unitarias de Expedition Setup. Commits representativos: `dd7b0d9`, `268f33f`, `0421678`, `1527d2e`, `4cd43e6`, `5fb3b48`. | **vitaltrek-backend:** [#9](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend/pull/9), [#16](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend/pull/16) |
+| Rodriguez Rojas, Miler Alexander (`Miler2003`) | Implementó el bounded context Checkpoint Sync (modelo de dominio CheckpointPassage, servicios de aplicación, fachada ACL, persistencia EF Core, endpoints REST y migración de base de datos). Actualizó las pruebas unitarias de Expedition Setup al API de dominio actual y agregó pruebas de paso por checkpoint. Protegió la configuración de desarrollo removiendo credenciales de los archivos versionados y documentó el README inicial del repositorio. Commits representativos: `0265254`, `864b3b9`, `6067764`, `fc16027`, `41f4bfd`. | **vitaltrek-backend:** [#11](https://github.com/1ASI0729-2620-16712-G4-Nexatech/vitaltrek-backend/pull/11) (publicado desde la cuenta `maxrodev`, con commits firmados como `Miler2003`) |
 
 ![Commits del repositorio vitaltrek-backend durante el Sprint 3](../assets/images/chapter-5/sprint3-commits-vitaltrek-backend.png)
 
-*Figura 5.X. Commits del repositorio vitaltrek-backend durante el Sprint 3.*
+*Figura 5.2.3.8-1. Commits del repositorio vitaltrek-backend durante el Sprint 3.*
 
 ![GitHub Insights del repositorio vitaltrek-backend durante el Sprint 3](../assets/images/chapter-5/sprint3-insights-vitaltrek-backend.png)
 
-*Figura 5.X. GitHub Insights (Contributors) del repositorio vitaltrek-backend para el periodo del Sprint 3.*
+*Figura 5.2.3.8-2. GitHub Insights (Contributors) del repositorio vitaltrek-backend para el periodo del Sprint 3.*
+
+![GitHub Insights de web-applications](../assets/images/chapter-5/sprint3-insights-webapp.png)
+
+*Figura 5.2.3.8-3. GitHub Insights (Contributors) del repositorio web-applications.*
+
+![GitHub Insights de landing-page](../assets/images/chapter-5/sprint3-insights-landing.png)
+
+*Figura 5.2.3.8-4. GitHub Insights (Contributors) del repositorio landing-page.*
 
 ## 5.3. Validation Interviews
 
@@ -1285,10 +1376,9 @@ Las sesiones de validación buscan comprobar si la solución implementada resuel
 
 ### 5.3.2. Registro de Entrevistas
 
-En esta sección se presentan los registros de las entrevistas de validación realizadas para cada segmento objetivo. Todas las sesiones se consolidan en el video [upc-pre-202620-1asi0730-16712-nexatech-validation-sprint-3](<!-- COMPLETAR: URL de Microsoft Stream -->).
+En esta sección se presentan los registros de las entrevistas de validación realizadas para cada segmento objetivo. Todas las sesiones se consolidan en el video [upc-pre-202620-1asi0730-16712-nexatech-validation-sprint-3](https://upcedupe-my.sharepoint.com/:f:/g/personal/u20241a827_upc_edu_pe/IgCDDDnge2RlTqdtywHaRKDoASOv_ef4HIdnCLtcnvZZRJM?e=sCnxDd).
 
 ![Captura del video de validación](../assets/images/chapter-5/validation-video.png)
-<!-- COMPLETAR: captura representativa del video -->
 
 #### Segmento 1: Dueños o Responsables de Agencias de Turismo de Aventura
 
@@ -1301,7 +1391,7 @@ En esta sección se presentan los registros de las entrevistas de validación re
 | **Rol** | Administrador |
 | **Dispositivo y navegador** | computadora, google chrome |
 | **Evidencias** | ![Entrevista de validación 1 del segmento 1](../assets/images/chapter-5/validation/Validacion1Segmento1.png) |
-| **Link** | [Ver Video](<!-- COMPLETAR -->) |
+| **Link** | [Ver Video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241a827_upc_edu_pe/IQACaEOUd7bORImbT6vhGcXQARXICq3LYnzwYVQEP-Hv0e8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=UrNtmm) |
 | **Timing donde inicia la entrevista** | 00:00 min |
 | **Duración de la entrevista** | 06:33 min |
 | **Resumen** | Durante la prueba de VitalTrek, Renzo Huamán interactuó con la aplicación desde el perfil de administrador. Realizó el registro de una ruta propia, la administración de checkpoints y la gestión de grupos, asignando un guía disponible a cada uno. Al finalizar, manifestó que le gustó la aplicación y que estaría dispuesto a utilizarla y continuar probándola. Sin embargo, identificó oportunidades de mejora importantes: optimizar la rapidez y eficiencia de las acciones dentro de la plataforma, ya que algunas opciones se encontraban agrupadas y esto le generaba cierta confusión al momento de utilizarlas. Asimismo, recomendó mejorar la interfaz para hacerla más intuitiva, organizada y fácil de navegar. Principal aporte de la entrevista: Mejorar la organización de las funcionalidades y simplificar las acciones disponibles para ofrecer una experiencia de usuario más rápida, clara e intuitiva. |
@@ -1569,21 +1659,20 @@ El Video About-the-Product presenta VitalTrek a los visitantes del Landing Page 
 | Elemento | Información |
 | --- | --- |
 | Nombre del video | upc-pre-202620-1asi0730-16712-nexatech-about-the-product-sprint-3 |
-| Duración | <!-- COMPLETAR: mm:ss --> |
+| Duración | 5:00 min |
 | Microsoft Stream | [Ver video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312566_upc_edu_pe/IQAjsBrslu3MR7By39Fu-BsFAfiB4yq24hk4wPA72_Q76yM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=iGJMnP) |
 | YouTube (incrustado en el Landing Page) | [Ver video](https://youtu.be/dLyAscgf9Uw) |
 
 ![Captura del Video About-the-Product](../assets/images/chapter-5/about-the-product.png)
-<!-- COMPLETAR: captura representativa -->
 
-*Figura 5.X. Video About-the-Product de VitalTrek.*
+*Figura 5.4-1. Video About-the-Product de VitalTrek.*
 
 **Secuencia de contenido**
 
 | Inicio (hh:mm:ss) | Sección | Contenido |
 | --- | --- | --- |
-| | Problema | Situación de las agencias y turistas cuando un grupo pierde la cobertura durante el recorrido. |
-|  | Propuesta de valor | Presentación de VitalTrek: supervisión por checkpoints, telemetría offline y alertas. |
-|  | Producto | Escenas de interacción con el Landing Page y la Web Application. |
-|  | Testimonios | Opinión de un participante de cada segmento obtenida en las entrevistas de validación. |
-|  | Call-To-Action | Invitación a solicitar una demostración o acceder a la aplicación. |
+| 00:00 min| Problema | Situación de las agencias y turistas cuando un grupo pierde la cobertura durante el recorrido. |
+| 01:00 min | Propuesta de valor | Presentación de VitalTrek: supervisión por checkpoints, telemetría offline y alertas. |
+| 02:30 min | Producto | Escenas de interacción con el Landing Page y la Web Application. |
+| 03:00 min | Testimonios | Opinión de un participante de cada segmento obtenida en las entrevistas de validación. |
+| 04:00 min | Call-To-Action | Invitación a solicitar una demostración o acceder a la aplicación. |
