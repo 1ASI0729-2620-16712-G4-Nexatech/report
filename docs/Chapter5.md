@@ -1294,17 +1294,17 @@ En esta sección se presentan los registros de las entrevistas de validación re
 
 | **Entrevista #1** | |
 | --- | --- |
-| **Nombre** | <!-- COMPLETAR --> |
-| **Apellidos** | <!-- COMPLETAR --> |
-| **Edad** | <!-- COMPLETAR --> |
-| **Distrito** | <!-- COMPLETAR --> |
-| **Rol** | <!-- COMPLETAR --> |
-| **Dispositivo y navegador** | <!-- COMPLETAR --> |
+| **Nombre** | Renzo |
+| **Apellidos** | Huaman Baldera |
+| **Edad** | 27 |
+| **Distrito** | Huamanga, Ayacucho |
+| **Rol** | Administrador |
+| **Dispositivo y navegador** | computadora, google chrome |
 | **Evidencias** | ![Entrevista de validación 1 del segmento 1](../assets/images/chapter-5/validation/Validacion1Segmento1.png) |
 | **Link** | [Ver Video](<!-- COMPLETAR -->) |
-| **Timing donde inicia la entrevista** | <!-- COMPLETAR: mm:ss min --> |
-| **Duración de la entrevista** | <!-- COMPLETAR: mm:ss min --> |
-| **Resumen** | <!-- COMPLETAR: qué tareas completó sin ayuda, en cuáles tuvo dificultades y por qué, qué comentó al finalizar y cuál fue su apreciación general --> |
+| **Timing donde inicia la entrevista** | 00:00 min |
+| **Duración de la entrevista** | 06:33 min |
+| **Resumen** | Durante la prueba de VitalTrek, Renzo Huamán interactuó con la aplicación desde el perfil de administrador. Realizó el registro de una ruta propia, la administración de checkpoints y la gestión de grupos, asignando un guía disponible a cada uno. Al finalizar, manifestó que le gustó la aplicación y que estaría dispuesto a utilizarla y continuar probándola. Sin embargo, identificó oportunidades de mejora importantes: optimizar la rapidez y eficiencia de las acciones dentro de la plataforma, ya que algunas opciones se encontraban agrupadas y esto le generaba cierta confusión al momento de utilizarlas. Asimismo, recomendó mejorar la interfaz para hacerla más intuitiva, organizada y fácil de navegar. Principal aporte de la entrevista: Mejorar la organización de las funcionalidades y simplificar las acciones disponibles para ofrecer una experiencia de usuario más rápida, clara e intuitiva. |
 
 | **Entrevista #2** | |
 | --- | --- |
