@@ -297,15 +297,533 @@ La reunión de planificación permitió definir el objetivo, alcance, responsabi
 
 La siguiente matriz organiza el liderazgo y la colaboración del equipo durante el Sprint 1, en correspondencia con las tareas registradas en el Sprint Backlog.
 
-| Integrante | Usuario de GitHub | IAM y seguridad | Expedition Setup API | Persistencia y OpenAPI | Integración de Web Applications | Landing Page y despliegue |
-| --- | --- | --- | --- | --- | --- | --- |
-| Cayanchi Avila, Milenko Rubén | `MaxghZZ` | L | C | C | C | C |
-| León Naupari, Jorge Mateo | `mateool10` | C | L | C | C | C |
-| Rodriguez Rojas, Miler Alexander | `Miler2003` | C | C | L | C | C |
-| Mendoza Blanco, Ariel Roberto | `Trepequiper` | C | C | C | L | C |
-| Herrera Enriquez, Diego Fernando | `DerDFHE` | C | C | C | C | L |
+| Integrante                       | Usuario de GitHub | Landing Page structure | Responsive UI | i18n y a11y | QA y deployment | Documentación |
+| -------------------------------- | ----------------- | ---------------------- | ------------- | ----------- | --------------- | ------------- |
+| Cayanchi Avila, Milenko Rubén    | `MaxghZZ`         | L                      | C             | C           | C               | L             |
+| León Naupari, Jorge Mateo        | `mateool10`       | C                      | L             | C           | C               | C             |
+| Mendoza Blanco, Ariel Roberto    | `Trepequiper`     | C                      | C             | L           | C               | C             |
+| Rodriguez Rojas, Miler Alexander | `Miler2003`       | C                      | C             | C           | L               | L             |
+| Herrera Enriquez, Diego Fernando | `DerDFHE`         | C                      | C             | C           | C               | C             |
 
 **Leyenda:** L = Leader; C = Collaborator.
+
+#### 5.2.1.3. Sprint Backlog 1
+
+El Sprint Backlog 1 agrupa las siete User Stories de la Landing Page y las cuatro Technical Stories que la habilitan, seleccionadas desde el Product Backlog de la sección 3.3. La descomposición produjo veintiún Work-items, estimados individualmente entre 4 y 8 horas, con un total de 105 horas. Las tareas se repartieron según la matriz de líderes y colaboradores de la sección 5.2.1.2: cada integrante asume las tareas del aspecto que lidera y colabora en los aspectos restantes.
+ 
+**Evidencia del Board del Sprint**
+
+![Product Backlog de VitalTrek en Jira](../assets/images/chapter-3/product-backlog-jira.png)
+ 
+*Figura 5.1. Board del Sprint 1 en Jira.*
+ 
+**Enlace público del board Jira:** [Ver Product Backlog](https://milenkorvu.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog)
+ 
+| Sprint # | Story Id | Story Title | Task Id | Task Title | Task Description | Estimation (Hours) | Assigned To | Status |
+| --- | --- | --- | --- | --- | --- | ---: | --- | --- |
+| Sprint 1 | US01 | Navegación principal | T-01 | Estructura del header y de las secciones principales | Construir el encabezado y el esqueleto de las secciones del sitio con elementos semánticos, de modo que cada sección sea alcanzable desde la navegación. | 5 | Cayanchi Avila, Milenko Rubén | Done |
+| Sprint 1 | US01 | Navegación principal | T-02 | Navegación para pantallas reducidas | Implementar el comportamiento de la navegación por debajo de 768 px conservando las mismas opciones que la vista de escritorio. | 4 | Herrera Enriquez, Diego Fernando | Done |
+| Sprint 1 | US02 | Propuesta de valor | T-03 | Sección inicial con problema, solución y beneficios | Maquetar la sección inicial que presenta el problema de las zonas sin cobertura, la solución por checkpoints y los beneficios principales. | 6 | Cayanchi Avila, Milenko Rubén | Done |
+| Sprint 1 | US02 | Propuesta de valor | T-04 | Contenido de beneficios por segmento | Redactar e integrar el contenido que diferencia los beneficios para agencias y para turistas, a partir de los insights del capítulo II. | 4 | Mendoza Blanco, Ariel Roberto | Done |
+| Sprint 1 | US03 | Consulta de planes y precios | T-05 | Sección comparativa de planes | Construir la presentación de los planes con su precio, alcance y características, de forma que puedan compararse entre sí. | 5 | Rodriguez Rojas, Miler Alexander | Done |
+| Sprint 1 | US03 | Consulta de planes y precios | T-06 | Continuidad desde el plan hacia el contacto | Enlazar cada plan con el formulario de contacto de modo que el plan de interés quede identificado en la solicitud. | 4 | Rodriguez Rojas, Miler Alexander | Done |
+| Sprint 1 | US04 | Información del equipo | T-07 | Sección de equipo con los perfiles de NexaTech | Construir la sección de equipo con el nombre, el rol y la descripción de cada integrante, y sus fotografías. | 5 | Mendoza Blanco, Ariel Roberto | Done |
+| Sprint 1 | US05 | Solicitud de información o demostración | T-08 | Formulario de contacto y estructura de campos | Construir el formulario con los campos requeridos para registrar una solicitud de información o demostración. | 5 | Mendoza Blanco, Ariel Roberto | Done |
+| Sprint 1 | US05 | Solicitud de información o demostración | T-09 | Validación de campos obligatorios y formato de correo | Implementar la validación que impide el envío con campos obligatorios vacíos o con correo de formato inválido, e informa qué corregir. | 4 | Herrera Enriquez, Diego Fernando | Done |
+| Sprint 1 | US06 | Consulta del contenido en el idioma del visitante | T-10 | Mecanismo de cambio de idioma y diccionario de claves | Implementar la función que recorre las cadenas marcadas y las sustituye por el bloque de idioma seleccionado. | 6 | León Naupari, Jorge Mateo | Done |
+| Sprint 1 | US06 | Consulta del contenido en el idioma del visitante | T-11 | Persistencia de la preferencia de idioma | Conservar el idioma seleccionado entre visitas y actualizar el idioma declarado del documento al cambiarlo. | 4 | Mendoza Blanco, Ariel Roberto | Done |
+| Sprint 1 | US33 | Consulta del tratamiento de datos personales | T-12 | Páginas de términos de servicio y política de privacidad | Construir ambas páginas con las categorías de datos registrados, su finalidad, el plazo de conservación y los derechos del titular. | 6 | León Naupari, Jorge Mateo | Done |
+| Sprint 1 | US33 | Consulta del tratamiento de datos personales | T-13 | Contenido legal bilingüe y acceso desde el pie de página | Traducir el contenido legal a ambos idiomas y habilitar su acceso desde el pie de página de todas las vistas. | 5 | León Naupari, Jorge Mateo | Done |
+| Sprint 1 | TS01 | Estructura técnica del Landing Page | T-14 | Estructura de directorios, tokens de estilo y README | Separar marcado, estilos y scripts en directorios propios, centralizar color y tipografía como variables, y documentar la estructura y la ejecución local. | 6 | Cayanchi Avila, Milenko Rubén | Done |
+| Sprint 1 | TS02 | Adaptación del Landing Page a distintos dispositivos | T-15 | Adaptación a los anchos de referencia | Ajustar la presentación en 360, 768, 1024 y 1440 px verificando que no se produzca desplazamiento horizontal ni recorte de texto. | 8 | Herrera Enriquez, Diego Fernando | Done |
+| Sprint 1 | TS02 | Adaptación del Landing Page a distintos dispositivos | T-16 | Áreas táctiles y escala tipográfica móvil | Verificar el área mínima de los controles interactivos y aplicar la escala tipográfica móvil por debajo de 768 px. | 4 | Herrera Enriquez, Diego Fernando | Done |
+| Sprint 1 | TS03 | Internacionalización y accesibilidad del Landing Page | T-17 | Acceso al contenido principal, elementos semánticos y orden de tabulación | Incorporar el acceso directo al contenido principal como primer elemento enfocable, aplicar los elementos semánticos de referencia y verificar el orden de tabulación. | 6 | León Naupari, Jorge Mateo | Done |
+| Sprint 1 | TS03 | Internacionalización y accesibilidad del Landing Page | T-18 | Verificación de contraste y textos alternativos | Comprobar que el contraste cumple WCAG 2.1 AA y que las imágenes informativas declaran texto alternativo descriptivo. | 5 | Rodriguez Rojas, Miler Alexander | Done |
+| Sprint 1 | TS03 | Internacionalización y accesibilidad del Landing Page | T-19 | Paridad de claves entre los bloques de idioma | Verificar que ambos bloques de idioma contienen el mismo conjunto de claves y corregir las ausencias detectadas. | 4 | Mendoza Blanco, Ariel Roberto | Done |
+| Sprint 1 | TS04 | Validación y despliegue del Landing Page | T-20 | Metadatos de identificación e indexación | Declarar en cada página el título, la descripción, la URL canónica, las alternativas de idioma y los metadatos de previsualización social. | 5 | León Naupari, Jorge Mateo | Done |
+| Sprint 1 | TS04 | Validación y despliegue del Landing Page | T-21 | Validación del marcado, de los enlaces y despliegue | Ejecutar la validación del W3C, comprobar que ningún enlace interno responde 404 y publicar la versión aprobada desde la rama estable. | 4 | Rodriguez Rojas, Miler Alexander | Done |
+ 
+**Resumen del Sprint Backlog 1**
+ 
+| Concepto | Valor |
+| --- | ---: |
+| User Stories y Technical Stories asignadas | 11 |
+| Work-items resultantes de la descomposición | 21 |
+| Estimación mínima de una task | 4 horas |
+| Estimación máxima de una task | 8 horas |
+| Total de horas estimadas | 105 |
+| Sum of Story Points | 30 |
+ 
+**Distribución de la carga por integrante**
+ 
+| Integrante | Tasks | Horas |
+| --- | ---: | ---: |
+| León Naupari, Jorge Mateo | 5 | 28 |
+| Mendoza Blanco, Ariel Roberto | 5 | 22 |
+| Herrera Enriquez, Diego Fernando | 4 | 20 |
+| Rodriguez Rojas, Miler Alexander | 4 | 18 |
+| Cayanchi Avila, Milenko Rubén | 3 | 17 |
+| **Total** | **21** | **105** |
+ 
+---
+
+#### 5.2.1.4. Development Evidence for Sprint Review
+
+##### Report Development Evidence
+Durante el Sprint 1 se implementaron los componentes correspondientes al Report. La siguiente tabla relaciona cada cambio con su repositorio, rama, commit y fecha de realización.
+
+| Repositorio                                                          | Rama                                           | Commit ID | Mensaje del commit                                                                                                            | Fecha      | Sección / Capítulo relacionada |
+| -------------------------------------------------------------------- | ---------------------------------------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------- | ---------- | ------------------------------ |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `dd2827f` | `Merge pull request #29 from 1ASI0729-2620-16712-G4-Nexatech/feature/chapter-5-development-evidence`                          | 2026-09-17 | Capítulo 5                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-5-development-evidence`       | `f410575` | `docs(chapter5): add Jorge Mateo Leon commits to 5.2.1.4 development evidence`                                                | 2026-09-17 | Capítulo 5                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `842b4a3` | `Merge pull request #28 from 1ASI0729-2620-16712-G4-Nexatech/feature/chapter-5-collaboration-insights`                        | 2026-09-17 | Capítulo 5                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-5-collaboration-insights`     | `e9ae4cc` | `docs(chapter5): complete 5.2.1.8 collaboration insights for Jorge Mateo Leon`                                                | 2026-09-17 | Capítulo 5                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-5-collaboration-insights`     | `410f207` | `docs(chapter5): add collaboration evidence screenshots`                                                                      | 2026-09-17 | Capítulo 5                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `398d3e2` | `docs(chapter3): add epics table.`                                                                                            | 2026-09-17 | Capítulo 3                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `ed4bec2` | `docs(chapter3): update user stories:`                                                                                        | 2026-09-17 | Capítulo 3                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `main`                                         | `374dd07` | `chore: update readme.`                                                                                                       | 2026-09-17 | Documentación                  |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `main`                                         | `bfee799` | `chore: update readme.`                                                                                                       | 2026-09-17 | Documentación                  |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-5`                            | `8b648e3` | `docs(chapter5): add chapter 5.`                                                                                              | 2026-09-17 | Capítulo 5                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-5`                            | `abfcbf3` | `docs(chapter5): add chapter 5.`                                                                                              | 2026-09-17 | Capítulo 5                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `a5a3931` | `Merge branch 'feature/documentation-profile' into develop`                                                                   | 2026-09-16 | Documentación                  |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/documentation-profile`                | `8519f14` | `docs: add Student Outcome section with communication criteria and actions`                                                   | 2026-09-16 | Documentación                  |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/documentation-profile`                | `2856a3e` | `docs: add collaboration insights for project report`                                                                         | 2026-09-16 | Documentación                  |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/documentation-profile`                | `7a1cc16` | `docs: add version history for project report`                                                                                | 2026-09-16 | Documentación                  |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `2196ad8` | `docs(chapter4): update section headings for consistency and clarity`                                                         | 2026-09-16 | Capítulo 4                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/documentation-profile`                | `a460900` | `docs: add cover page for final project report`                                                                               | 2026-09-16 | Documentación                  |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-4-wireframes`                 | `027a2a1` | `docs(chapter4): add login wireframes and mockups.`                                                                           | 2026-09-15 | Capítulo 4                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-4-wireframes`                 | `737470f` | `docs(chapter4): add wireframes and mockups descriptions.`                                                                    | 2026-09-15 | Capítulo 4                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-4-wireframes`                 | `0f63dd3` | `docs(chapter4): add wireframes and mockups web.`                                                                             | 2026-09-15 | Capítulo 4                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-4-wireframes`                 | `0bd53a1` | `docs(chapter4): add assets`                                                                                                  | 2026-09-15 | Capítulo 4                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-4-wireframes`                 | `f7a00a6` | `docs(chapter4): add wireframes and mockups web.`                                                                             | 2026-09-14 | Capítulo 4                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-4-wireframes`                 | `4f39ddb` | `docs(chapter4): add wireframes and mockups web.`                                                                             | 2026-09-14 | Capítulo 4                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter4-architecture`                | `b5ec32a` | `docs(chapter4): add class diagrams.`                                                                                         | 2026-09-13 | Capítulo 4                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `06a7842` | `Merge pull request #24 from 1ASI0729-2620-16712-G4-Nexatech/feature/chapter-4-event-storming`                                | 2026-09-13 | Capítulo 4                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-4-event-storming`             | `5525c8b` | `docs(chapter4): add 4.6.1 design-level event storming`                                                                       | 2026-09-13 | Capítulo 4                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-4-event-storming`             | `cdf9343` | `docs(chapter4): add event storming board screenshots`                                                                        | 2026-09-13 | Capítulo 4                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `a114277` | `Merge remote-tracking branch 'origin/develop' into develop`                                                                  | 2026-09-13 | Documentación                  |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-4-database`                   | `ba5ba04` | `docs(chapter4): add database diagram`                                                                                        | 2026-09-13 | Capítulo 4                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-4-database`                   | `50d57b4` | `docs(chapter4): add database diagram`                                                                                        | 2026-09-13 | Capítulo 4                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter4-architecture`                | `dabdd80` | `docs(chapter4): add software achitecture diagrams.`                                                                          | 2026-09-13 | Capítulo 4                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter4-architecture`                | `2384479` | `docs(chapter4): add software achitecture diagrams.`                                                                          | 2026-09-13 | Capítulo 4                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `df04fcb` | `Merge pull request #20 from 1ASI0729-2620-16712-G4-Nexatech/feature/chapter4-architecture`                                   | 2026-09-12 | Capítulo 4                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter4-architecture`                | `792c63c` | `docs(chapter4): add sections 4.6.2 context and 4.6.3 container diagrams`                                                     | 2026-09-12 | Capítulo 4                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `727277d` | `Merge branch 'feature/chapter-4-information-architecture' into develop`                                                      | 2026-09-10 | Capítulo 4                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-4-information-architecture`   | `d798a57` | `docs(chapter4): add section on information architecture and organization systems`                                            | 2026-09-10 | Capítulo 4                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-4-style-guidelines`           | `ba24361` | `Feature/chapter 4 style guidelines`                                                                                          | 2026-09-10 | Capítulo 4                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-4-style-guidelines`           | `708d7cc` | `docs(chapter4): add chapter 4.1 Style Guidelines`                                                                            | 2026-09-10 | Capítulo 4                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-4-style-guidelines`           | `4f0a81d` | `docs(chapter4): add chapter 4`                                                                                               | 2026-09-10 | Capítulo 4                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-3-product-backlog`            | `14fc8b5` | `docs: add point 3.3 product backlog`                                                                                         | 2026-09-09 | Capítulo 3                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-3-product-backlog`            | `de00def` | `docs: add point 3.3 product backlog`                                                                                         | 2026-09-09 | Capítulo 3                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `3f61ff8` | `Merge branch 'feature/chapter3-impact-mapping' into develop`                                                                 | 2026-09-09 | Capítulo 3                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter3-impact-mapping`              | `4744c54` | `docs(chapter3): add impact mapping diagram`                                                                                  | 2026-09-09 | Capítulo 3                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter3-impact-mapping`              | `9610c3d` | `docs(chapter3): add impact mapping section with user personas and business goals`                                            | 2026-09-09 | Capítulo 3                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `256b027` | `docs(chapter2): update section headings and improve structure for clarity`                                                   | 2026-09-09 | Capítulo 2                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-3-user-stories`               | `82de5d3` | `docs: add chapter 3.1 user stories`                                                                                          | 2026-09-08 | Capítulo 3                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-3-user-stories`               | `85f00c5` | `docs: add chapter 3.1 user stories`                                                                                          | 2026-09-08 | Capítulo 3                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-3-event-storming`             | `d5e5cc2` | `docs: update event storming`                                                                                                 | 2026-09-08 | Capítulo 3                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-3-user-journey`               | `fa74dfa` | `docs: add user journey maping`                                                                                               | 2026-09-08 | Capítulo 3                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-3-event-storming`             | `796d8a7` | `docs: add event storming point`                                                                                              | 2026-09-08 | Capítulo 3                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-3-event-storming`             | `4c1ac88` | `docs: add event storming point`                                                                                              | 2026-09-08 | Capítulo 3                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-3-event-storming`             | `c4e1e45` | `docs: add event storming image`                                                                                              | 2026-09-08 | Capítulo 3                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `d335beb` | `Merge branch 'feature/chapter-2-graficos-entrevistas' into develop`                                                          | 2026-09-08 | Capítulo 2                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-2-graficos-entrevistas`       | `7cf074a` | `docs(chapter2): add graphical representations for agency and tourist data`                                                   | 2026-09-08 | Capítulo 2                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-2-graficos-entrevistas`       | `2b36dfb` | `docs(chapter2): update interview analysis and add visual data representation`                                                | 2026-09-08 | Capítulo 2                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `2ff9f6e` | `Merge pull request #15 from Vitalrek-Project/feature/chapter2-user-task-matrix`                                              | 2026-09-07 | Capítulo 2                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter2-user-task-matrix`            | `fd23036` | `docs(chapter2): agregar seccion 2.3.2 User Task Matrix`                                                                      | 2026-09-07 | Capítulo 2                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-2-user-segments`              | `bde7426` | `docs: add users by object segment`                                                                                           | 2026-09-07 | Capítulo 2                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-2-user-segments`              | `0681347` | `docs: add users by object segment`                                                                                           | 2026-09-07 | Capítulo 2                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `495d242` | `docs: update document points`                                                                                                | 2026-09-07 | Documentación                  |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `ae2b8db` | `Merge pull request #13 from Vitalrek-Project/feature/chapter2-ubiquitous-language-v2`                                        | 2026-09-07 | Capítulo 2                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter2-ubiquitous-language-v2`      | `50ff348` | `docs(chapter2): agregar seccion 2.5 Ubiquitous Language`                                                                     | 2026-09-07 | Capítulo 2                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-1`                            | `66a2a15` | `docs(chapter1): add member photo and description`                                                                            | 2026-09-07 | Capítulo 1                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `main`                                         | `beb1ee5` | `docs(readme): fix team`                                                                                                      | 2026-09-07 | Documentación                  |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `9896b41` | `Merge branch 'feature/chapter-2-analissi-entrevistas' into develop`                                                          | 2026-09-07 | Capítulo 2                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-2-analissi-entrevistas`       | `d192aa5` | `docs(chapter2): refine interview analysis for adventure tourism stakeholders`                                                | 2026-09-07 | Capítulo 2                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-2-analissi-entrevistas`       | `37ad77b` | `docs(chapter2): add interview analysis for adventure tourism stakeholders`                                                   | 2026-09-07 | Capítulo 2                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `56c6462` | `Merge branch 'feature/chapter2-entrevistas' into develop`                                                                    | 2026-09-07 | Capítulo 2                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter2-entrevistas`                 | `22767b7` | `Merge branch 'develop' of https://github.com/Vitalrek-Project/VitalRek-Documents into feature/chapter2-entrevistas`          | 2026-09-07 | Capítulo 2                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter2-entrevistas`                 | `0f7cf2c` | `docs(chapter2): add interview segment images to assets`                                                                      | 2026-09-07 | Capítulo 2                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter2-entrevista-segmento1`        | `f237d53` | `docs(chapter2): update interview details with extended summaries and additional records`                                     | 2026-09-07 | Capítulo 2                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `296689b` | `Merge branch 'feature/chapter2-entrevista-segmento1' into develop`                                                           | 2026-09-07 | Capítulo 2                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter2-entrevista-segmento1`        | `30aa8c0` | `Merge branch 'develop' of https://github.com/Vitalrek-Project/VitalRek-Documents into feature/chapter2-entrevista-segmento1` | 2026-09-07 | Capítulo 2                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter2-entrevista-segmento1`        | `7d17d15` | `docs(chapter2): update interview records and add project configuration files`                                                | 2026-09-07 | Capítulo 2                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `56474a5` | `Merge branch 'feature/chapter-2-analisis-entrevistas' into develop`                                                          | 2026-09-07 | Capítulo 2                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-2-analisis-entrevistas`       | `98bda71` | `docs(chapter2): add analysis of interviews with adventure tourism stakeholders`                                              | 2026-09-07 | Capítulo 2                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-2-entrevista-miler-rodriguez` | `cf441d0` | `docs: add second interview`                                                                                                  | 2026-09-06 | Capítulo 2                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-2-entrevista-miler-rodriguez` | `64c6608` | `docs: add second interview`                                                                                                  | 2026-09-06 | Capítulo 2                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `a3efb26` | `Merge branch 'feature/chapter-2-entrevista-miler-rodriguez' into develop`                                                    | 2026-09-06 | Capítulo 2                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-2-entrevista-miler-rodriguez` | `fbc3b37` | `docs(chapter2): add details for second interview with Celeste Rodriguez`                                                     | 2026-09-06 | Capítulo 2                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-2-entrevista-miler-rodriguez` | `cbbcf3e` | `docs: add image for third interview segment 1 into assets file`                                                              | 2026-09-06 | Capítulo 2                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-2-entrevista-miler-rodriguez` | `7ca0097` | `docs(chapter2): add evidence for third interview with Miler Rodriguez`                                                       | 2026-09-06 | Capítulo 2                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-2-entrevista-miler-rodriguez` | `c8f57f4` | `docs(chapter2): add second interview details for Celeste Rodriguez`                                                          | 2026-09-06 | Capítulo 2                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter2-entrevista-segmento1`        | `defbc42` | `docs(chapter2): agregar registro entrevista 2 segmento 1`                                                                    | 2026-09-06 | Capítulo 2                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter2-entrevista-segmento1`        | `f959752` | `docs(chapter2): agregar registro entrevista 2 segmento 1`                                                                    | 2026-09-06 | Capítulo 2                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter2-entrevista-segmento1`        | `193f12a` | `evidencia entrevista 2 segmento 1`                                                                                           | 2026-09-06 | Capítulo 2                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `d3ee05a` | `Merge branch 'feature/chapter2-entrevistas' into develop`                                                                    | 2026-09-06 | Capítulo 2                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter2-entrevistas`                 | `b413637` | `docs(chapter2): add interviews`                                                                                              | 2026-09-06 | Capítulo 2                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter2-entrevistas`                 | `0132a61` | `docs: add interviews`                                                                                                        | 2026-09-06 | Capítulo 2                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter2-entrevistas`                 | `30cbdac` | `docs: add interviews`                                                                                                        | 2026-09-06 | Capítulo 2                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `main`                                         | `cc46ed5` | `docs: update readme`                                                                                                         | 2026-09-04 | Documentación                  |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-2-interview-design`           | `fe22b36` | `docs: add interview design section (2.2.1) to Chapter2.md`                                                                   | 2026-09-04 | Capítulo 2                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-2-interview-design`           | `af48411` | `docs: add interview design section (2.2.1) to Chapter2.md`                                                                   | 2026-09-04 | Capítulo 2                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-2-competitor-analysis`        | `686c807` | `docs: add competitor analysis section (2.1) to Chapter2.md`                                                                  | 2026-09-04 | Capítulo 2                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter-2-competitor-analysis`        | `d7620ad` | `docs: add competitor analysis section (2.1) to Chapter2.md`                                                                  | 2026-09-04 | Capítulo 2                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `18f0e58` | `docs: update lean ux assumption.`                                                                                            | 2026-09-01 | Capítulo 1                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `d4bca68` | `docs: update lean ux assumption.`                                                                                            | 2026-09-01 | Capítulo 1                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `b3e69c0` | `docs: update problem statement.`                                                                                             | 2026-09-01 | Capítulo 1                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `eb6ccb8` | `docs: update problem statement.`                                                                                             | 2026-09-01 | Capítulo 1                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `develop`                                      | `3620c5f` | `Merge branch 'feature/chapter1-solution-profile' into develop`                                                               | 2026-09-01 | Capítulo 1                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `897a35a` | `docs(chapter1): fix 1.2.2.3 Lean UX Hypothesis Statement`                                                                    | 2026-09-01 | Capítulo 1                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `7f28d62` | `docs: update Jorge's photo filename in Chapter1 and adjust image path`                                                       | 2026-09-01 | Capítulo 1                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `3e34365` | `docs: update team profiles and add Lean UX Canvas details`                                                                   | 2026-09-01 | Capítulo 1                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `4a20f6f` | `fix: resolve merge conflict in Chapter1`                                                                                     | 2026-09-01 | Capítulo 1                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `1dedf24` | `docs: update team member profiles; add Ariel's photo and description`                                                        | 2026-09-01 | Capítulo 1                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `37a9c73` | `docs: add Ariel's photo to assets`                                                                                           | 2026-09-01 | Capítulo 1                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `7cd5d4a` | `docs: refine team member profiles; update Miler's photo and descriptions`                                                    | 2026-09-01 | Capítulo 1                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `bed538d` | `docs: update team member profiles; include Lean UX Canvas image`                                                             | 2026-09-01 | Capítulo 1                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `23a15be` | `docs: add Miler's photo to assets`                                                                                           | 2026-09-01 | Capítulo 1                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `2476747` | `docs: add image of lean ux canvas into assets file`                                                                          | 2026-09-01 | Capítulo 1                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `49fcc4d` | `docs: add Lean UX Canvas section with detailed descriptions and structured content`                                          | 2026-09-01 | Capítulo 1                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `0be047c` | `docs: add team profile (Ariel) and Lean UX hypothesis statements (1.2.2.3. Lean UX Hypothesis Statement)`                    | 2026-08-30 | Capítulo 1                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `23c2fdd` | `docs: add team profile (Ariel) and Lean UX hypothesis statements (1.2.2.3)`                                                  | 2026-08-30 | Capítulo 1                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `a5d158f` | `Update Chapter1.md`                                                                                                          | 2026-08-30 | Capítulo 1                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `790af9c` | `Add files via upload`                                                                                                        | 2026-08-30 | Capítulo 1                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `main`                                         | `9cfa9d6` | `Update README.md`                                                                                                            | 2026-08-30 | Documentación                  |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `main`                                         | `95b583a` | `Update README.md`                                                                                                            | 2026-08-30 | Documentación                  |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `main`                                         | `9ae61f6` | `docs: update the data in the README file.`                                                                                   | 2026-08-30 | Documentación                  |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `86f8263` | `docs: update section 1.3 - align target segments with checkpoint-based monitoring language`                                  | 2026-08-30 | Capítulo 1                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `58fbaee` | `docs: add section 1.3 - align target segments with checkpoint-based monitoring language.`                                    | 2026-08-30 | Capítulo 1                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `d05545e` | `docs: add section 1.2.1 fix real time monitoring language to checkpoint-based alerts.`                                       | 2026-08-30 | Capítulo 1                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `9ef7345` | `docs: add section 1.2.1 fix real time monitoring language to checkpoint-based alerts.`                                       | 2026-08-30 | Capítulo 1                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `main`                                         | `afe4cdb` | `add structure base od readme.`                                                                                               | 2026-08-30 | Documentación                  |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `main`                                         | `1d4261c` | `add structure base od readme.`                                                                                               | 2026-08-30 | Documentación                  |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `87f7b69` | `feat: create first chapter file`                                                                                             | 2026-08-30 | Capítulo 1                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `feature/chapter1-solution-profile`            | `a10b6e0` | `feat: create first chapter file`                                                                                             | 2026-08-30 | Capítulo 1                     |
+| [Reporte](https://github.com/1ASI0729-2620-16712-G4-Nexatech/report) | `main`                                         | `6b44ca3` | `Initial commit`                                                                                                              | 2026-08-29 | Configuración inicial          |
+
+
+##### Landing Page Development Evidence
+Durante el Sprint 1 se implementaron los componentes correspondientes al Landing Page. La siguiente tabla relaciona cada cambio con su repositorio, rama, commit y fecha de realización.
+
+| Repositorio                                                                     | Rama                       | Commit ID | Mensaje del commit                                      | Fecha      | User Story relacionada |
+| ------------------------------------------------------------------------------- | -------------------------- | --------- | ------------------------------------------------------- | ---------- | ---------------------- |
+| [Landing Page](https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page) | `feature/landing-seo-a11y` | `2cebb2f` | `docs(readme): fix brand asset file extensions`         | 2026-09-17 | US01–US06              |
+| [Landing Page](https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page) | `feature/landing-seo-a11y` | `d216d5e` | `feat(a11y): add skip to main content link`             | 2026-09-17 | US01–US06              |
+| [Landing Page](https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page) | `feature/landing-seo-a11y` | `9252476` | `feat(seo): complete meta tags defined in report 4.2.3` | 2026-09-17 | US01–US06              |
+| [Landing Page](https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page) | `feature/landing-seo-a11y` | `b296ddc` | `feat(i18n): add skip link translation keys`            | 2026-09-17 | US01–US06              |
+| [Landing Page](https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page) | `feature/landing-seo-a11y` | `36b333b` | `style(a11y): add skip link styles`                     | 2026-09-17 | US01–US06              |
+| [Landing Page](https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page) | `main`                     | `11ac9e2` | `chore(team): fix Team Member`                          | 2026-09-17 | US04                   |
+| [Landing Page](https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page) | `main`                     | `645afa1` | `chore(team): add Team Member`                          | 2026-09-17 | US04                   |
+| [Landing Page](https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page) | `main`                     | `9a91594` | `2da version landing page`                              | 2026-09-12 | US01–US06              |
+| [Landing Page](https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page) | `main`                     | `117ad46` | `docs: add project documentation`                       | 2026-09-08 | Documentación          |
+| [Landing Page](https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page) | `main`                     | `935e346` | `docs: add project documentation`                       | 2026-09-08 | Documentación          |
+| [Landing Page](https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page) | `main`                     | `869b9db` | `Initial commit`                                        | 2026-08-30 | Configuración inicial  |
+
+![Commits del Sprint 1](../assets/images/chapter-5/development-commits.png)
+
+*Figura 5.2. Commits relacionados con la implementación del Landing Page durante el Sprint 1.*
+
+#### 5.2.1.5. Execution Evidence for Sprint Review
+
+La ejecución del Sprint produjo una primera versión funcional del Landing Page. La página presenta la propuesta de valor de VitalTrek, explica el problema de monitoreo en rutas remotas, muestra el funcionamiento por checkpoints, diferencia los beneficios para operadores y turistas, presenta las funcionalidades, planes, equipo, preguntas frecuentes y formulario de contacto.
+
+![Landing Page desktop](../assets/images/chapter-4/mockups/hero-metrics.png)
+
+*Figura 5.3. Vista desktop del Landing Page implementado.*
+
+![Secciones principales del Landing Page](../assets/images/chapter-5/landing-page-sections.png)
+
+*Figura 5.4. Secciones principales implementadas en el Sprint 1.*
+
+La validación visual comprende la navegación entre secciones, el comportamiento responsive, el cambio de idioma, los call-to-action, el formulario de contacto y la legibilidad del contenido.
+
+#### 5.2.1.6. Services Documentation Evidence for Sprint Review
+
+El alcance del Sprint 1 se limita al Landing Page estático desarrollado con HTML5, CSS3 y JavaScript. No se implementaron endpoints RESTful ni una API en este Sprint; por ello, la documentación OpenAPI y Swagger no aplican a esta entrega. La implementación de Web Services se planifica para una entrega posterior.
+
+| Producto             | Endpoint              | Método HTTP | Estado      |
+| -------------------- | --------------------- | ----------- | ----------- |
+| RESTful Web Services | No aplica en Sprint 1 | No aplica   | Planificado |
+
+#### 5.2.1.7. Software Deployment Evidence for Sprint Review
+
+La primera versión del Landing Page se publica desde el repositorio de GitHub hacia la plataforma de despliegue configurada.
+
+| Elemento             | Información                                                     |
+| -------------------- | --------------------------------------------------------------- |
+| Producto             | Landing Page                                                    |
+| Plataforma           | Vercel                                                          |
+| Repositorio          | https://github.com/1ASI0729-2620-16712-G4-Nexatech/landing-page |
+| Rama desplegada      | main                                                            |
+| Build command        | No aplica para HTML5, CSS3 y JavaScript estático                |
+| Output directory     | Directorio raíz del repositorio                                 |
+| Variables de entorno | No requeridas                                                   |
+| URL pública          | https://landing-page-mrca1.vercel.app/                          |
+
+![Configuración del despliegue](../assets/images/chapter-5/deployment-configuration.png)
+
+*Figura 5.5. Configuración del proyecto en la plataforma de despliegue.*
+
+![Despliegue exitoso](../assets/images/chapter-5/deployment-success.png)
+
+*Figura 5.6. Despliegue exitoso de la primera versión del Landing Page.*
+
+**Landing Page desplegado:** [https://landing-page-mrca1.vercel.app/](https://landing-page-mrca1.vercel.app/)
+
+#### 5.2.1.8. Team Collaboration Insights during Sprint
+
+El trabajo colaborativo del Sprint 1 se realizó mediante GitHub, Jira/Trello y herramientas de diseño. Cada integrante participó en actividades de planificación, diseño, implementación, validación o documentación.
+
+![GitHub Insights del Sprint 1](../assets/images/chapter-5/github-insights.png)
+
+*Figura 5.7. Analítica de colaboración del repositorio durante el Sprint 1.*
+
+![Participación mediante commits](../assets/images/chapter-5/team-commits.png)
+
+*Figura 5.8. Participación de los integrantes mediante commits.*
+
+| Integrante                       | Actividad realizada                                                                                                                                                                                                   | Evidencia                                                                                                                    |
+| -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Cayanchi Avila, Milenko Rubén    | Especificación de User Stories y Product Backlog; diagramas de arquitectura y base de datos.                                                                                                                          | Commits `ed4bec2`, `398d3e2`, `dabdd80` y `ba5ba04`.                                                                         |
+| León Naupari, Jorge Mateo        | Modelado del Ubiquitous Language, User Task Matrix, diagramas C4 de contexto y contenedores, Design-Level Event Storming (4.6.1) y, en el Landing Page, meta tags de SEO, skip link de accesibilidad e i18n asociado. | 16 commits en report y 6 en landing-page; PRs #13, #15, #20 y #24 (report) y PR #2 (landing-page). Figuras 5.9, 5.10 y 5.11. |
+| Mendoza Blanco, Ariel Roberto    | Registro de entrevistas y User Journey Maps del Chapter II.                                                                                                                                                           | Commits `cf441d0` y `fa74dfa`.                                                                                               |
+| Rodriguez Rojas, Miler Alexander | Impact Mapping, perfil de colaboración, Student Outcome e integración de Chapters IV y V.                                                                                                                             | Commits `9610c3d`, `8519f14`, `7a1cc16` y `98b172a`.                                                                         |
+| Herrera Enriquez, Diego Fernando | Style Guidelines y wireframes/mock-ups de Landing Page y Web Applications.                                                                                                                                            | Commits `708d7cc`, `737470f` y `027a2a1`.                                                                                    |
+
+**Evidencia individual - León Naupari, Jorge Mateo (mateool10)**
+
+Los siguientes registros corresponden a la participación verificable del integrante en los repositorios del equipo durante el Sprint 1.
+
+![Commits de mateool10 en el repositorio report](../assets/images/chapter-5/5218-commits-mateo-report.jpg)
+
+*Figura 5.9. Historial de commits de mateool10 en el repositorio report.*
+
+![Commits de mateool10 en el repositorio landing-page](../assets/images/chapter-5/5218-commits-mateo-landing.jpg)
+
+*Figura 5.10. Historial de commits de mateool10 en el repositorio landing-page (rama main).*
+
+![Pull requests creados por mateool10](../assets/images/chapter-5/5218-pull-requests-mateo.jpg)
+
+*Figura 5.11. Pull requests creados y fusionados por mateool10 en el repositorio report.*
+
+### 5.2.2. Sprint 2
+
+El Sprint 2 entrega la primera versión de las **Web Applications frontend** de VitalTrek para TB1. El alcance combina la configuración de rutas y expediciones dentro del bounded context `expedition-setup` con la consulta del progreso simulado en `field-tracking`. Se completaron US07, US08, US09, US11, US13, US12 y US20, con un total de **28 Story Points**, conforme al Product Backlog de la sección 3.3.
+
+La aplicación está construida con Vue 3 y Vite; utiliza Pinia, Vue Router, Axios, PrimeVue y vue-i18n para el estado, navegación, componentes, consumo HTTP e internacionalización. json-server@0.17.4 proporciona los datos de prueba. Las capas `domain`, `application`, `infrastructure` y `presentation` separan las entidades, casos de uso/estado, acceso y mapeo de datos, e interfaz. El alcance no incluye autenticación real, backend productivo, persistencia real, Bluetooth, GPS, wearables, telemetría ni alertas reales.
+
+| Campo | Valor |
+| --- | --- |
+| Sprint Goal | Completar el flujo frontend de preparación de expediciones y consulta de progreso estimado para Operations Administrators y Field Guides. |
+| Historias incluidas | US07, US08, US09, US11, US13, US12 y US20 |
+| Total de historias | 7 User Stories |
+| Sprint Velocity / Total de Story Points | 28 Story Points |
+| Contextos de dominio | `expedition-setup` y `field-tracking` |
+| Resultado | Web Application frontend implementada; Fake API y telemetría de prueba. |
+
+#### 5.2.2.1. Sprint Planning 2
+
+La planificación del Sprint 2 definió como objetivo completar el flujo de preparación de una expedición —desde la configuración de la Route hasta el registro del Tourist Manifest— y agregar la consulta del progreso estimado del grupo. Las historias se seleccionaron del Product Backlog y se ordenaron según sus dependencias: primero la configuración de rutas, checkpoints y ventanas; luego la creación del grupo, la asignación del guía y el manifiesto; finalmente, el dashboard de seguimiento.
+
+| **Sprint #** | **Sprint 2** |
+| --- | --- |
+| **Sprint Planning Background** | |
+| Date | 2026-10-04 |
+| Time | 08:00 PM |
+| Location | Reunión virtual en Discord |
+| Prepared By | Cayanchi Avila, Milenko Rubén |
+| Attendees (to planning meeting) | Cayanchi Avila, Milenko Rubén / Herrera Enriquez, Diego Fernando / León Naupari, Jorge Mateo / Mendoza Blanco, Ariel Roberto / Rodriguez Rojas, Miler Alexander |
+| Sprint 1 Review Summary | • Se presentó la primera versión del Landing Page de VitalTrek, desplegada en Vercel y entregada en AV1.<br>• Se completaron las 11 historias comprometidas (US01–US06, US33 y TS01–TS04), equivalentes a 30 Story Points: navegación, propuesta de valor, planes, equipo, solicitud de información, cambio de idioma ES/EN y publicación de términos de servicio y política de privacidad.<br>• El Landing Page se adapta a dispositivos desktop y mobile e incorpora internacionalización y atributos de accesibilidad.<br>• A partir de la revisión de AV1, el equipo corrigió la consistencia, los enlaces, la estructura y las evidencias del informe, y ajustó los roles, el flujo del frontend y la priorización del backlog, dejando los pagos fuera del MVP (versiones 1.6 y 1.7 del Registro de Versiones). |
+| Sprint 1 Retrospective Summary | • **Aciertos:** el Sprint se desarrolló según lo planificado; todos los integrantes cumplieron sus tareas dentro del plazo y el incremento se entregó completo.<br>• **Aciertos:** la comunicación por Discord y la división del trabajo por secciones del Landing Page permitieron avanzar en paralelo sin bloqueos.<br>• **Oportunidad de mejora:** la integración del trabajo se concentró al final del Sprint, lo que dificultó revisar los cambios con anticipación.<br>• **Acciones para el Sprint 2:** descomponer cada User Story en tasks de 4 a 8 horas registradas en Jira, desarrollar cada funcionalidad en su propia feature branch e integrarla en `develop` mediante Pull Requests revisados. |
+| **Sprint Goal & User Stories** | |
+| Sprint 2 Goal | **Our focus is on** enabling the preparation of a complete expedition (route, checkpoints, expected time windows, expedition group, field guide assignment and tourist manifest) and the consultation of the estimated progress of a group.<br>**We believe it delivers** faster and more organized tour preparation **to** Operations Administrators, and a reliable way to register participants and follow the group progress **to** Field Guides.<br>**This will be confirmed when** an Operations Administrator can configure a route with its checkpoints and expected time windows, create an expedition group and assign a field guide, a Field Guide can register the tourist manifest, and both can view the estimated progress of the group in the deployed Web Application, in Spanish and English. |
+| Sprint 2 Velocity | 28 Story Points |
+| Sum of Story Points | 28 Story Points (US07, US08, US09, US11, US13, US12 y US20) |
+
+
+#### 5.2.2.2. Aspect Leaders and Collaborators
+
+Milenko Rubén Cayanchi Avila coordinó el trabajo general del Sprint. La matriz resume el liderazgo por aspecto a partir de los cambios de código y Pull Requests consultados en GitHub al 2026-10-05.
+
+| Integrante | Usuario de GitHub | Coordinación | Rutas, checkpoints y ventanas | Grupos, guías, manifiesto y progreso | Espacios de trabajo, navegación e idioma |
+| --- | --- | --- | --- | --- | --- |
+| Cayanchi Avila, Milenko Rubén | `MaxghZZ` | L | L | C | L |
+| León Naupari, Jorge Mateo | `mateool10` | C | C | C | C |
+| Mendoza Blanco, Ariel Roberto | `Trepequiper` | C | C | C | L |
+| Rodriguez Rojas, Miler Alexander | `Miler2003` | C | C | L | C |
+| Herrera Enriquez, Diego Fernando | `DerDFHE` | C | C | C | C |
+
+**Leyenda:** L = líder del aspecto; C = colaborador.
+
+La autoría de los commits y el estado de integración de cada cambio se detallan en la sección 5.2.2.4.
+
+#### 5.2.2.3. Sprint Backlog 2
+
+El Sprint Backlog 2 comprende las siete User Stories seleccionadas para TB1. La tabla conserva las estimaciones del Product Backlog de la sección 3.3 y presenta la descomposición de cada historia en tareas, horas estimadas y responsables.
+
+| Sprint # | Story Id | Story Title | Task Id | Task Title | Task Description | Estimation (Hours) | Assigned To | Status |
+| --- | --- | --- | --- | --- | --- | ---: | --- | --- |
+| Sprint 2 | US07 | Configuración de rutas | T-22 | Definición del modelo de Route y estado inicial | Implementar la entidad Route con los atributos geográficos y operativos de la historia, e inicializar cada ruta nueva en estado `draft`. | 5 | Cayanchi Avila, Milenko Rubén | Done |
+| Sprint 2 | US07 | Configuración de rutas | T-23 | Formulario y listado de rutas | Construir las vistas para consultar las rutas existentes y registrar nombre, origen, destino, distancia, desnivel, dificultad y duración. | 6 | Herrera Enriquez, Diego Fernando | Done |
+| Sprint 2 | US07 | Configuración de rutas | T-24 | Persistencia y validación de rutas | Integrar assembler, Fake API y store para crear rutas; validar campos obligatorios y nombres duplicados, y presentar los mensajes de error localizados. | 5 | Cayanchi Avila, Milenko Rubén | Done |
+| Sprint 2 | US08 | Definición de checkpoints | T-25 | Modelo y asociación de Checkpoint | Implementar la entidad Checkpoint y asociarla a una Route mediante su identificador, ubicación y posición en la secuencia. | 5 | Cayanchi Avila, Milenko Rubén | Done |
+| Sprint 2 | US08 | Definición de checkpoints | T-26 | Vista de configuración de checkpoints | Construir la vista para consultar los checkpoints de una ruta seleccionada y registrar nuevos puntos con su ubicación y orden. | 6 | Herrera Enriquez, Diego Fernando | Done |
+| Sprint 2 | US08 | Definición de checkpoints | T-27 | Validación de secuencia y habilitación de ruta | Integrar la persistencia y las reglas del store para rechazar órdenes repetidos e impedir que una ruta sin checkpoints pase de `draft` a `enabled`. | 5 | Cayanchi Avila, Milenko Rubén | Done |
+| Sprint 2 | US09 | Ventanas de tiempo esperadas | T-28 | Modelo y mapeo de Expected Time Window | Implementar la entidad y el assembler de ExpectedTimeWindow con ruta, checkpoints de inicio y fin, y límites mínimo y máximo en minutos. | 5 | Mendoza Blanco, Ariel Roberto | Done |
+| Sprint 2 | US09 | Ventanas de tiempo esperadas | T-29 | Identificación y configuración de tramos | Construir la vista para ordenar los checkpoints, generar los tramos consecutivos y permitir configurar la ventana esperada de cada uno. | 6 | Rodriguez Rojas, Miler Alexander | Done |
+| Sprint 2 | US09 | Ventanas de tiempo esperadas | T-30 | Reglas de validación de ventanas | Integrar Fake API y store para rechazar máximos menores o iguales a los mínimos, evitar ventanas duplicadas e identificar tramos pendientes de configuración. | 5 | Cayanchi Avila, Milenko Rubén | Done |
+| Sprint 2 | US11 | Creación del grupo de expedición | T-31 | Modelo y recursos de Expedition Group | Implementar la entidad del grupo y agregar a la Fake API los datos necesarios para relacionarlo con una ruta habilitada, fecha de salida y capacidad máxima. | 6 | Rodriguez Rojas, Miler Alexander | Done |
+| Sprint 2 | US11 | Creación del grupo de expedición | T-32 | Vista de creación y consulta de grupos | Construir el flujo para consultar grupos asociados a una ruta y registrar un nuevo grupo desde la gestión de rutas. | 6 | Herrera Enriquez, Diego Fernando | Done |
+| Sprint 2 | US11 | Creación del grupo de expedición | T-33 | Validaciones y localización de grupos | Integrar la creación en el store y validar la ruta habilitada, la fecha no pasada y los datos obligatorios; agregar mensajes en español e inglés. | 5 | Mendoza Blanco, Ariel Roberto | Done |
+| Sprint 2 | US13 | Asignación del guía | T-34 | Recurso y consulta de Field Guides | Incorporar guías de prueba a la Fake API y mapearlos a entidades de dominio consultables desde el contexto de configuración de expediciones. | 5 | León Naupari, Jorge Mateo | Done |
+| Sprint 2 | US13 | Asignación del guía | T-35 | Asignación y control de cruce de fechas | Implementar la asignación de un guía al grupo, informar si ya tiene otro tour en la misma fecha y solicitar confirmación explícita ante el cruce. | 6 | Rodriguez Rojas, Miler Alexander | Done |
+| Sprint 2 | US12 | Registro del manifiesto | T-36 | Modelo y endpoint de Manifest Entries | Implementar el modelo de entrada del manifiesto y conectar su consulta y registro con el recurso de prueba asociado al Expedition Group. | 5 | Mendoza Blanco, Ariel Roberto | Done |
+| Sprint 2 | US12 | Registro del manifiesto | T-37 | Vista de registro del Tourist Manifest | Construir la vista del Field Guide para consultar los participantes del grupo y registrar turistas con los datos requeridos. | 6 | Herrera Enriquez, Diego Fernando | Done |
+| Sprint 2 | US12 | Registro del manifiesto | T-38 | Validación de identidad y capacidad del grupo | Rechazar documentos de identidad duplicados y nuevos participantes que excedan la capacidad máxima; mostrar errores localizados. | 5 | León Naupari, Jorge Mateo | Done |
+| Sprint 2 | US20 | Seguimiento del progreso | T-39 | Modelo y fuente de datos de seguimiento | Crear la estructura del bounded context `field-tracking` y mapear datos simulados de grupo, checkpoint, tramo, progreso, estado y sincronización. | 6 | León Naupari, Jorge Mateo | Done |
+| Sprint 2 | US20 | Seguimiento del progreso | T-40 | Dashboard de progreso del grupo | Construir la vista para presentar el tramo actual, último checkpoint confirmado y porcentaje de progreso estimado del grupo. | 6 | Rodriguez Rojas, Miler Alexander | Done |
+| Sprint 2 | US20 | Seguimiento del progreso | T-41 | Estados de seguimiento y mensajes bilingües | Presentar la antigüedad de la última sincronización y aclarar que el progreso es estimado; informar cuando el tour todavía no está activo. | 5 | Mendoza Blanco, Ariel Roberto | Done |
+
+**Resumen del Sprint Backlog 2**
+
+| Concepto | Valor |
+| --- | ---: |
+| User Stories asignadas | 7 |
+| Work-items resultantes de la descomposición | 20 |
+| Estimación mínima de una task | 5 horas |
+| Estimación máxima de una task | 6 horas |
+| Total de horas estimadas | 109 |
+| Sum of Story Points | 28 |
+
+**Distribución de la carga por integrante**
+
+| Integrante | Tasks | Horas |
+| --- | ---: | ---: |
+| Cayanchi Avila, Milenko Rubén | 5 | 25 |
+| León Naupari, Jorge Mateo | 3 | 16 |
+| Mendoza Blanco, Ariel Roberto | 4 | 20 |
+| Rodriguez Rojas, Miler Alexander | 4 | 24 |
+| Herrera Enriquez, Diego Fernando | 4 | 24 |
+| **Total** | **20** | **109** |
+
+El Sprint se planificó con el orden de dependencias **US07 → US08 → US09 → US11 → US13 → US12 → US20**.
+
+#### 5.2.2.4. Development Evidence for Sprint Review
+
+La evidencia de desarrollo del Sprint 2 se encuentra en el repositorio [web-applications](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications). Los cambios de US07, US08 y US09 se integraron en `develop` mediante los PR #4, #5 y #6, y los de US11, US13, US12 y US20 mediante el PR #7.
+
+| User Story | Rama | Commit de referencia | Evidencia de integración |
+| --- | --- | --- | --- |
+| US07 — Configuración de rutas | `feature/webapp-route-configuration` | [`77e6fda`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/77e6fda005b45ac9347db60c9d6781675cb9313a) | [PR #4](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/4), integrado en `develop`. |
+| US08 — Definición de checkpoints | `feature/webapp-checkpoints` | [`29b84cc`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/29b84cca5935d0fcf8f9f20fc999c770368a6541) | [PR #5](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/5), integrado en `develop`. |
+| US09 — Ventanas de tiempo esperadas | `feature/webapp-expected-time-windows` | [`f0af953`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/f0af953046fc8ceefbca4bd305598fedea35648c) | [PR #6](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/6), integrado en `develop`. |
+| US11 — Creación del grupo de expedición | `feature/webapp-expedition-group-creation` | [`e1cb43a`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/e1cb43a792ddb626779e2d27d33acc15ed81cdea) | [PR #7](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/7), integrado en `develop`. |
+| US13 — Asignación del guía | `feature/webapp-field-guide-assignment` | [`21aedcd`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/21aedcd63b2b18f91487b86a2fce768c38644c8a) | [PR #7](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/7), integrado en `develop`. |
+| US12 — Registro del manifiesto | `feature/webapp-tourist-manifest` | [`71bbcaca`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/71bbcaca4648445471ce6b81c3f0431925fac282) | [PR #7](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/7), integrado en `develop`. |
+| US20 — Seguimiento del progreso | `feature/webapp-group-progress-dashboard` | [`cef703d`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/cef703d1c403cd0ff50717a9f5bebd45b2bfdad1) | [PR #7](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/7), integrado en `develop`. |
+
+El PR #7 agrupó la creación de Expedition Groups, la asignación de Field Guides, el Tourist Manifest y el Group Progress Dashboard. Fue integrado en `develop` el 2026-10-05 y contiene 37 commits con cambios en 22 archivos. Sus commits de funcionalidad fueron realizados principalmente por `Miler2003`; el PR fue creado e integrado por `MaxghZZ`.
+
+**Cambios colaborativos complementarios del frontend**
+
+| Cambio | Autor / rama | Commit | Estado en GitHub |
+| --- | --- | --- | --- |
+| Espacios de trabajo por rol y vistas de Operations Administrator y Field Guide | `MaxghZZ` / `field-guide-views` | [`207f528`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/207f52815862f5dc284f9400c26e97d9fed70025) | Integrado en `develop` mediante commit directo. |
+| Corrección de visualización del selector de rol | `DerDFHE` / `develop` | [`2c66861`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/2c66861a26154775d1e1336fd3e13b7ef9bedf82) | Integrado en `develop` el 2026-10-05. |
+| Cambio del selector de idioma a botones ES/EN con etiquetas accesibles y documentación | `Trepequiper` / `feature/button-update` | [`bc74c80`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/bc74c80b990714031109cd7c9c01a537a6f39083) | [PR #9](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/9), 5 commits integrados en `develop` el 2026-10-05. |
+| Ajuste de marca en la barra lateral del espacio de trabajo | `mateool10` / `feature/webapp-sidebar-brand` | [`91ebc19`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/91ebc19b067eeb642804865f893534a555ed8016) | [PR #8](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/8), integrado en `develop`. |
+| Ajuste de layout para pasar el espacio de trabajo desde la metadata de ruta | `mateool10` / `feature/webapp-workspace-layout-fix` | [`c3a1ae6`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/c3a1ae61e7e53875dd213ec8b020cfd5d4ea47b0) | Disponible en la rama `feature/webapp-workspace-layout-fix`. |
+
+#### 5.2.2.5. Execution Evidence for Sprint Review
+
+La validación funcional del Sprint 2 cubre los escenarios principales de las User Stories implementadas. La telemetría y los datos de seguimiento utilizados en US20 son simulados; la aplicación no sustituye sistemas de comunicación o respuesta de emergencia.
+
+| User Story | Escenario de validación | Resultado esperado |
+| --- | --- | --- |
+| US07 | Registrar una Route válida y probar un nombre duplicado o campos obligatorios incompletos. | La ruta se crea en estado `draft`; los datos inválidos o duplicados se rechazan y se informa el problema. |
+| US08 | Registrar checkpoints con órdenes únicos; intentar duplicar un orden y habilitar una ruta sin checkpoints. | Se asocian los checkpoints a la ruta; se rechaza el orden duplicado y no se habilita la ruta vacía. Con al menos un checkpoint, la ruta puede habilitarse. |
+| US09 | Guardar una ventana válida, invertir los límites mínimo/máximo y consultar tramos sin configuración. | Se guarda la ventana válida, se rechazan límites inconsistentes y se identifican los tramos pendientes. |
+| US11 | Crear un Expedition Group para una ruta habilitada y probar una fecha anterior a la actual. | El grupo se asocia a la ruta; una fecha pasada se rechaza. |
+| US13 | Asignar un guía disponible, seleccionar uno con cruce de fecha y comprobar el requisito de responsable. | La asignación se registra; el cruce requiere confirmación y el sistema identifica un grupo sin guía. |
+| US12 | Registrar participantes, repetir un documento de identidad y superar la capacidad del grupo. | El manifiesto se actualiza; el documento duplicado y el participante que excede la capacidad se rechazan. |
+| US20 | Consultar un tour activo con datos de seguimiento, uno sin sincronización reciente y uno no iniciado. | Se muestran último checkpoint, tramo y progreso estimado; se indica la antigüedad de la información y que es una estimación; un tour no iniciado informa que el seguimiento se habilita al comenzar. |
+
+**Capturas de ejecución**
+
+Las siguientes capturas documentan las vistas de la aplicación observadas durante la ejecución. Exec1 muestra la vista de seguimiento de progreso durante la carga de rutas; Exec2, el listado de rutas en estado de carga con un mensaje de error de creación; Exec3 y Exec5, la selección de espacio de trabajo y rol en español y en inglés; y Exec4, el formulario de registro de una nueva Route.
+
+![Exec1: vista de seguimiento de progreso mientras se cargan las rutas](../assets/images/chapter-5/Exec1.png)
+
+*Figura 5.12. Vista de seguimiento de progreso durante la carga de rutas.*
+
+![Exec2: listado de rutas durante la carga, con mensaje de error visible](../assets/images/chapter-5/Exec2.png)
+
+*Figura 5.13. Listado de rutas en estado de carga y mensaje de error de creación.*
+
+![Exec3: selección de espacio de trabajo y rol en español](../assets/images/chapter-5/Exec3.png)
+
+*Figura 5.14. Selección de espacio de trabajo para Operations Administrator o Field Guide.*
+
+![Exec4: formulario para registrar una nueva ruta](../assets/images/chapter-5/Exec4.png)
+
+*Figura 5.15. Formulario de configuración de una nueva Route.*
+
+![Exec5: selección de espacio de trabajo y rol en inglés](../assets/images/chapter-5/Exec5.png)
+
+*Figura 5.16. Selector de espacio de trabajo en inglés.*
+
+
+#### 5.2.2.6. Services Documentation Evidence for Sprint Review
+
+El Sprint 2 no implementa el RESTful Web Services productivo. Para habilitar el frontend se utiliza una **Fake API** ejecutada con json-server@0.17.4 y recursos JSON de prueba. Los datos de US20 se simulan para presentar el estado de seguimiento. Por ello, no se genera una especificación OpenAPI/Swagger de servicios productivos en esta entrega.
+
+| Recurso de prueba | Endpoint local | Métodos utilizados | Propósito |
+| --- | --- | --- | --- |
+| Routes | `/api/v1/routes` | GET, POST y actualización de estado | Consultar y registrar rutas; habilitar una ruta después de agregar checkpoints. |
+| Checkpoints | `/api/v1/checkpoints` | GET, POST | Consultar y registrar puntos de control asociados a una ruta. |
+| Expected Time Windows | `/api/v1/expected-time-windows` | GET, POST | Consultar y registrar ventanas esperadas entre checkpoints. |
+| Expedition Groups | `/api/v1/expedition-groups` | GET, POST y actualización | Consultar y crear grupos vinculados a una ruta; actualizar su guía asignado. |
+| Field Guides | `/api/v1/field-guides` | GET | Consultar guías de prueba disponibles para la asignación. |
+| Manifest Entries | `/api/v1/manifest-entries` | GET, POST | Consultar y registrar participantes asociados a un Expedition Group. |
+| Group Progress | `/api/v1/group-progress` | GET | Leer registros simulados de último checkpoint, tramo, progreso, estado y antigüedad de sincronización. |
+
+La ruta `/api/v1/*` se resuelve mediante `server/routes.json`. La URL configurada en `.env.development` (`http://localhost:3000/api/v1`) corresponde al entorno de desarrollo local. Los manifiestos y el progreso se persisten en el archivo JSON atendido por json-server.
+
+#### 5.2.2.7. Software Deployment Evidence for Sprint Review
+
+La Web Application del Sprint 2 se encuentra desplegada para su revisión. El despliegue corresponde al frontend de TB1. La aplicación consume una Fake API con datos simulados.
+
+| Elemento | Información |
+| --- | --- |
+| Producto | VitalTrek Web Applications — frontend TB1 |
+| Plataforma de despliegue | Vercel |
+| Repositorio | https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications |
+| Build command | `npm run build` |
+| Output directory | `dist` |
+| Variable de entorno de producción | `VITE_VITALTREK_API_URL`: URL de la Fake API consumida por el despliegue; la URL `localhost` corresponde al entorno de desarrollo local. |
+
+#### 5.2.2.8. Team Collaboration Insights during Sprint
+
+El equipo colaboró sobre el repositorio [web-applications](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications), utilizando `develop` como rama de integración, ramas de funcionalidad y Pull Requests. Los PR #4, #5 y #6 integraron US07, US08 y US09; el PR #7 integró US11, US13, US12 y US20. Después se incorporaron mejoras transversales de selección de espacio de trabajo y cambio de idioma mediante cambios de varios integrantes. El estado de cada contribución se reporta según la rama y el PR visibles en GitHub al 2026-10-05.
+
+| Integrante | Contribución comprobable en TB1 | Evidencia de GitHub |
+| --- | --- | --- |
+| Cayanchi Avila, Milenko Rubén (`MaxghZZ`) | Liderazgo general; configuración de rutas, checkpoints y ventanas de tiempo; incorporación de los espacios de trabajo según rol y de las vistas para Operations Administrator y Field Guide. | PR #4, #5 y #6; commit [`207f528`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/207f52815862f5dc284f9400c26e97d9fed70025). |
+| León Naupari, Jorge Mateo (`mateool10`) | Ajustes de marca y layout para la selección de espacio de trabajo y la barra lateral. | Commit [`c3a1ae6`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/c3a1ae61e7e53875dd213ec8b020cfd5d4ea47b0) en `feature/webapp-workspace-layout-fix`; [PR #8](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/8) con commit [`91ebc19`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/91ebc19b067eeb642804865f893534a555ed8016), integrado en `develop`. |
+| Mendoza Blanco, Ariel Roberto (`Trepequiper`) | Actualización del selector de idioma ES/EN a botones, incluyendo etiquetas accesibles y documentación del componente. | [PR #9](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/9), 5 commits; [`bc74c80`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/bc74c80b990714031109cd7c9c01a537a6f39083). |
+| Rodriguez Rojas, Miler Alexander (`Miler2003`) | Implementación de la creación de grupos, asignación de guías, registro del manifiesto y dashboard de progreso estimado mediante Fake API y datos simulados. | 37 commits integrados mediante [PR #7](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/pull/7); commits representativos [`e1cb43a`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/e1cb43a792ddb626779e2d27d33acc15ed81cdea), [`21aedcd`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/21aedcd63b2b18f91487b86a2fce768c38644c8a), [`71bbcaca`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/71bbcaca4648445471ce6b81c3f0431925fac282) y [`cef703d`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/cef703d1c403cd0ff50717a9f5bebd45b2bfdad1). |
+| Herrera Enriquez, Diego Fernando (`DerDFHE`) | Corrección de la vista de selección de rol para mejorar su visualización. | Commit [`2c66861`](https://github.com/1ASI0729-2620-16712-G4-Nexatech/web-applications/commit/2c66861a26154775d1e1336fd3e13b7ef9bedf82), integrado en `develop`. |
+
+Al 2026-10-05, el historial mostraba `develop` actualizado hasta el commit `2c66861`. Posteriormente, el PR #8 fue integrado en `develop`.
+
+![Commits de colaboración en web-applications durante TB1](../assets/images/chapter-5/ColabInsights21.png)
+
+*Figura 5.17. Historial de commits del repositorio web-applications durante TB1.*
+
+![GitHub Insights de web-applications durante TB1](../assets/images/chapter-5/ColabInsights22.png)
+
+*Figura 5.18. GitHub Insights del repositorio web-applications para el período del 28 de septiembre al 5 de octubre de 2026.*
 
 ### 5.2.3. Sprint 3
 
@@ -326,12 +844,12 @@ La reunión de planificación permitió definir el objetivo, alcance, responsabi
 | Date | <!-- COMPLETAR --> |
 | Time | <!-- COMPLETAR --> |
 | Location | Reunión virtual en Discord |
-| Prepared By | Rodriguez Rojas, Miler Alexander |
+| Prepared By | <!-- COMPLETAR: Apellidos, Nombres --> |
 | Attendees (to planning meeting) | Cayanchi Avila, Milenko Rubén / Herrera Enriquez, Diego Fernando / León Naupari, Jorge Mateo / Mendoza Blanco, Ariel Roberto / Rodriguez Rojas, Miler Alexander |
-| Sprint 2 Review Summary | <!-- COMPLETAR --> |
+| Sprint 2 Review Summary | • Se presentó la primera versión de las Web Applications frontend de VitalTrek, desarrolladas con Vue 3, PrimeVue, Pinia, Vue Router y vue-i18n, desplegadas en Vercel e integradas con una Fake API.<br>• Se completaron las 7 User Stories comprometidas (US07, US08, US09, US11, US13, US12 y US20), equivalentes a 28 Story Points, correspondientes a los bounded contexts `expedition-setup` y `field-tracking`.<br>• La retroalimentación de TB1 señaló como oportunidades de mejora la aplicación parcial de Responsive Web Design en el Landing Page y la ausencia de algunas de sus secciones, la necesidad de evidenciar la participación de todos los integrantes en la implementación, la evidencia de mejora continua entre entregas y la calidad de la comunicación escrita del informe.<br>• En respuesta, el equipo corrigió el informe (versión 1.9 del Registro de Versiones) e incorporó al Sprint 3 las mejoras pendientes del Landing Page. |
 | Sprint 2 Retrospective Summary | <!-- COMPLETAR --> |
 | **Sprint Goal & User Stories** |  |
-| Sprint 3 Goal | <!-- COMPLETAR --> |
+| Sprint 3 Goal | **Our focus is on** implementing and deploying the first version of VitalTrek's RESTful Web Services, covering authentication with JWT, the Expedition Setup bounded context and MySQL persistence via Entity Framework Core, integrated with the already-deployed Web Applications.<br>**We believe it delivers** a functional, documented and publicly accessible backend that enables agencies to configure routes, checkpoints, time windows, expedition groups and manifests through a real API **to** Operations Administrators, Field Guides and Adventure Tourists using the platform.<br>**This will be confirmed when** the Web Services are deployed on a public URL in Render, the OpenAPI documentation is accessible at `/scalar`, and the Web Applications consume the real API for authentication and expedition setup flows without errors. |
 | Sprint 3 Velocity | 57 Story Points |
 | Sum of Story Points | 57 Story Points (TS06, TS07, TS09, US07, US08, US09, US10, US11, US12, US13, US14, US15, US16) |
 
@@ -485,7 +1003,7 @@ Al cierre del Sprint 3, las Web Applications de VitalTrek consumen el RESTful We
 
 *Figura 5.X. Registro del contacto de emergencia y del consentimiento del turista; el wearable queda activado (US14 y US16).*
 
-**Video de navegación del Sprint 3:** [upc-pre-202620-1asi0730-16712-nexatech-productnavigation-sprint-3](<!-- COMPLETAR: URL de Microsoft Stream -->)
+**Video de navegación del Sprint 3:** [upc-pre-202620-1asi0730-16712-nexatech-productnavigation-sprint-3](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312566_upc_edu_pe/IQDKeKk3TNpkTYYaH-CaM33lARxSFJg5juS51cXSIAO2Wlk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=m6od4Y)
 
 #### 5.2.3.6. Services Documentation Evidence for Sprint Review
 
@@ -776,19 +1294,47 @@ En esta sección se presentan los registros de las entrevistas de validación re
 
 | **Entrevista #1** | |
 | --- | --- |
-| **Nombre** | <!-- COMPLETAR --> |
-| **Apellidos** | <!-- COMPLETAR --> |
-| **Edad** | <!-- COMPLETAR --> |
-| **Distrito** | <!-- COMPLETAR --> |
-| **Rol** | <!-- COMPLETAR --> |
-| **Dispositivo y navegador** | <!-- COMPLETAR --> |
+| **Nombre** | Renzo |
+| **Apellidos** | Huaman Baldera |
+| **Edad** | 27 |
+| **Distrito** | Huamanga, Ayacucho |
+| **Rol** | Administrador |
+| **Dispositivo y navegador** | computadora, google chrome |
 | **Evidencias** | ![Entrevista de validación 1 del segmento 1](../assets/images/chapter-5/validation/Validacion1Segmento1.png) |
 | **Link** | [Ver Video](<!-- COMPLETAR -->) |
-| **Timing donde inicia la entrevista** | <!-- COMPLETAR: mm:ss min --> |
-| **Duración de la entrevista** | <!-- COMPLETAR: mm:ss min --> |
-| **Resumen** | <!-- COMPLETAR: qué tareas completó sin ayuda, en cuáles tuvo dificultades y por qué, qué comentó al finalizar y cuál fue su apreciación general --> |
+| **Timing donde inicia la entrevista** | 00:00 min |
+| **Duración de la entrevista** | 06:33 min |
+| **Resumen** | Durante la prueba de VitalTrek, Renzo Huamán interactuó con la aplicación desde el perfil de administrador. Realizó el registro de una ruta propia, la administración de checkpoints y la gestión de grupos, asignando un guía disponible a cada uno. Al finalizar, manifestó que le gustó la aplicación y que estaría dispuesto a utilizarla y continuar probándola. Sin embargo, identificó oportunidades de mejora importantes: optimizar la rapidez y eficiencia de las acciones dentro de la plataforma, ya que algunas opciones se encontraban agrupadas y esto le generaba cierta confusión al momento de utilizarlas. Asimismo, recomendó mejorar la interfaz para hacerla más intuitiva, organizada y fácil de navegar. Principal aporte de la entrevista: Mejorar la organización de las funcionalidades y simplificar las acciones disponibles para ofrecer una experiencia de usuario más rápida, clara e intuitiva. |
 
-<!-- COMPLETAR: repetir la tabla para las entrevistas #2 y #3 (hasta #5) -->
+| **Entrevista #2** | |
+| --- | --- |
+| **Nombre** | Diego |
+| **Apellidos** | Livimoro |
+| **Edad** | 38 años |
+| **Distrito** | Magdalena del Mar, Lima |
+| **Rol** | Dueño / responsable de agencia de turismo de aventura |
+| **Dispositivo y navegador** | Laptop con Windows, navegador Brave |
+| **Evidencias** | ![Entrevista de validación 2 del segmento 1](../assets/images/chapter-5/validation/Validacion2Segmento1.png) |
+| **Link** | [Ver Video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241a827_upc_edu_pe/IQBtOnmgiHHkRqqiVnRZTWB6AXinsHZ_8DOSNfUrMwRdAlc?e=t7fDHG) |
+| **Timing donde inicia la entrevista** | 00:00 min |
+| **Duración de la entrevista** | 10:21 min |
+| **Resumen** | Diego completó sin ayuda las once tareas propuestas. En el Landing Page identificó la propuesta de monitoreo por puntos de control en zonas sin cobertura y valoró que la solución no prometa cobertura continua sino evidencia periódica, ubicó la sección de planes, verificó el cambio de idioma entre español e inglés —señaló que sus mayoristas extranjeros se lo exigirían en inglés— y envió una solicitud de demostración. En las Web Applications ingresó con el rol de administrador de operaciones y ejecutó el flujo completo de configuración: registró la ruta Trekking Colca Sangalle, agregó sus tres puntos de control ordenados, habilitó la ruta, configuró las ventanas de tiempo esperadas de cada tramo y creó el grupo Grupo Colca Diciembre con fecha de salida 20/12/2026 y capacidad 12; con el rol de guía de campo registró al participante en el manifiesto y, de vuelta como administrador, consultó el progreso de un grupo en ruta. Observó dos limitaciones. Al asignar el guía, la lista muestra únicamente nombres sin un identificador que permita distinguir entre guías homónimos, lo que considera un riesgo en una operación con quince guías. Al revisar el seguimiento preguntó si el historial queda almacenado y puede descargarse para responder a una aseguradora o a una homologación de mayorista, y no encontró una opción de exportación. Sobre las ventanas de tiempo comentó que le parece correcto que se pida un rango y no un valor fijo, aunque los campos están en minutos y él maneja horas. En su apreciación general comparó la solución con su protocolo de seguridad en papel, que depende de que el guía recuerde reportar y encuentre señal, y valoró que aquí el registro se genere al paso por el punto de control. Como mejoras prioritarias pidió la exportación del historial por grupo con horas y códigos de identificación para los guías. Indicó que recomendaría el producto a agencias que operen rutas de varios días. |
+
+| **Entrevista #3** | |
+| --- | --- |
+| **Nombre** | Luis |
+| **Apellidos** | Mendoza |
+| **Edad** | 41 años |
+| **Distrito** | Santiago de Surco, Lima |
+| **Rol** | Dueño de agencia de turismo de aventura |
+| **Dispositivo y navegador** | Laptop con Windows, Opera GX |
+| **Evidencias** | ![Entrevista de validación 3 del segmento 1](../assets/images/chapter-5/validation/Validacion3Segmento1.png) |
+| **Link** | [Ver Video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241a827_upc_edu_pe/IQB9Gu0sEsMgQ6Th3nnuzVWWAaE0ZuAxk0x4ddSl9EI7ajM?e=3Zd72p) |
+| **Timing donde inicia la entrevista** | 00:00 min |
+| **Duración de la entrevista** | 09:56 min |
+| **Resumen** | Luis completó las quince tareas propuestas. En el Landing Page comprendió la propuesta de monitoreo por puntos de control en rutas sin cobertura y la relacionó con su propia operación, identificó en la sección de planes que una agencia con cinco grupos activos corresponde al plan Operator de S/ 199 por incluir hasta ocho grupos y las alertas tempranas, verificó el cambio de idioma entre español e inglés y consultó las preguntas frecuentes para confirmar que la solución no funciona como un rastreador GPS continuo sino por sincronización en checkpoints. En las Web Applications ingresó por el acceso de operaciones de la agencia, leyó el panel de operaciones para identificar cuántas rutas están registradas y cuántas habilitadas, y utilizó los filtros de dificultad y estado del listado de rutas. Registró la ruta Trekking Santa Cruz con sus datos geográficos y operativos, agregó sus tres puntos de control ordenados, habilitó la ruta, configuró las ventanas de tiempo esperadas de cada tramo y creó el grupo Grupo Santa Cruz Diciembre con fecha de salida 18/12/2026 y capacidad 12. Luego registró un guía de campo, le creó su cuenta de acceso vinculándola al guía y lo asignó al grupo; finalmente, con el rol de guía de campo, accedió al espacio de campo y registró a los participantes en el manifiesto. Señaló tres fricciones: el campo de duración de la ruta se expresa en horas mientras que él planifica en días, las ventanas de tiempo se piden en minutos cuando maneja horas, y dar de alta a un guía y crear su cuenta de acceso son dos acciones separadas que al inicio interpretó como una sola. También indicó que esperaba un formulario de contacto en el Landing Page y solo encontró una dirección de correo, y que echa en falta un campo para datos de salud o contacto de emergencia en el manifiesto. En su apreciación general valoró que la configuración se hace una sola vez y queda guardada, frente a su práctica actual de armar cada tour desde cero en una hoja de cálculo, y recomendaría el producto a agencias que operen rutas de varios días. |
+
+
 
 #### Segmento 2: Turistas de Aventura
 
@@ -804,7 +1350,7 @@ En esta sección se presentan los registros de las entrevistas de validación re
 | **Link** | [Ver Video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241a827_upc_edu_pe/IQC3hudLgmLgQ6F1w5X9UWWAAe0BWKtMND8Eg8Zj-wCulDc?e=MsBi7v) |
 | **Timing donde inicia la entrevista** | 00:00 min |
 | **Duración de la entrevista** | 09:36 min |
-| **Resumen** | Manuel Alejandro revisó la landing page, comprendió la propuesta de monitoreo sin conexión y verificó el funcionamiento del cambio de idioma. En la aplicación, ingresó con su cuenta de turista, registró un contacto de emergencia, otorgó su consentimiento y descargó la información de la ruta para uso offline; completó todas las tareas sin dificultades y describió la interfaz como intuitiva. Valoró especialmente el acceso offline, la sincronización de puntos de control y la visualización del mapa con sus checkpoints, aunque señaló como mejora prioritaria mostrar su ubicación exacta y el progreso por tramos ya recorridos. Indicó que recomendaría la aplicación a su agencia una vez incorporadas esas mejoras de seguimiento. |
+| **Resumen** | Manuel Alejandro revisó la landing page, comprendió la propuesta de monitoreo sin conexión y verificó el funcionamiento del cambio de idioma. En la aplicación, ingresó con su cuenta de turista, registró un contacto de emergencia, otorgó su consentimiento y descargó la información de la ruta para uso offline; completó todas las tareas sin dificultades, en parte porque recibió indicaciones paso a paso del entrevistador, y describió la interfaz como intuitiva. Valoró especialmente el acceso offline, la sincronización de puntos de control y la visualización del mapa con sus checkpoints, aunque señaló como mejora prioritaria mostrar su ubicación exacta y el progreso por tramos ya recorridos. Indicó que recomendaría la aplicación a una agencia siempre que se incorporen esas mejoras de seguimiento. |
 
 | **Entrevista #2** | |
 | --- | --- |
@@ -814,25 +1360,44 @@ En esta sección se presentan los registros de las entrevistas de validación re
 | **Distrito** | Callao, Lima |
 | **Rol** | Turista de aventura |
 | **Dispositivo y navegador** | Google Chrome |
-| **Evidencias** | ![Entrevista de validación 1 del segmento 2](../assets/images/chapter-5/validation/Validacion2Segmento2.png) |
+| **Evidencias** | ![Entrevista de validación 2 del segmento 2](../assets/images/chapter-5/Validacion2Segmento2.png) |
 | **Link** | [Ver Video](https://upcedupe-my.sharepoint.com/personal/u20241a827_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu20241a827_upc_edu_pe%2FDocuments%2FEntrevistas%2FSegmento%202%2F2026-11-12%2000-02-06%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E60f04891-a616-4409-bba7-4db012ed4cef) |
 | **Timing donde inicia la entrevista** | 00:00 min |
 | **Duración de la entrevista** | 06:06 min |
 | **Resumen** | Fernando (22 años), quien cuenta con experiencia en rutas de trekking sin cobertura móvil, revisó la landing page de Vital Trek y la describió como visualmente atractiva, intuitiva y bien organizada por secciones, sin encontrar dificultades para navegarla; comprendió claramente la propuesta de expediciones sincronizadas y la generación de puntos de control (checkpoints) para resguardar su ubicación y evitar extravíos al perder la señal. En la aplicación, ingresó bajo el perfil de aventurero (con datos precargados de prueba), revisó el resumen del recorrido, la configuración del contacto de emergencia (nombre, teléfono y parentesco) y el mapa con las coordenadas exactas de parada y alojamiento, entendiendo qué información registra el sistema y con qué finalidad. Valoró especialmente la seguridad de conservar sus coordenadas exactas sin conexión y afirmó que viajaría más tranquilo si su agencia usara la plataforma, aunque señaló como mejora la posibilidad de ingresar manualmente sus propios datos personales (como nombre y edad) y registrar por sí mismo la ruta que va a recorrer. Finalmente, indicó que sí recomendaría a una agencia implementar la versión final de la aplicación para garantizar la seguridad de los turistas de aventura. |
 
-<!-- COMPLETAR: repetir la tabla para las entrevistas #2 y #3 (hasta #5) -->
+| **Entrevista #3** | |
+| --- | --- |
+| **Nombre** | Carlos Alberto |
+| **Apellidos** | Lopez Goitia |
+| **Edad** | 23 años |
+| **Distrito** | San Miguel, Lima |
+| **Rol** | Turista de aventura |
+| **Dispositivo y navegador** | Google Chrome |
+| **Evidencias** | ![Entrevista de validación 3 del segmento 2](../assets/images/chapter-5/validation/Validacion3Segmento2.png) |
+| **Link** | [Ver Video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241a827_upc_edu_pe/IQAvM46LEaCHSLOW1p5uLFBmAd7UmOpD7urno9J8sijX9tM?e=eXWKXB) |
+| **Timing donde inicia la entrevista** | 00:00 min |
+| **Duración de la entrevista** | 06:37 min |
+| **Resumen** | En la entrevista de usabilidad del prototipo de VitalTrek, una plataforma de monitoreo y seguridad para turistas de aventura en zonas sin cobertura, el usuario valoró positivamente la aplicación, destacando que le brindaría mucha mayor tranquilidad al viajar gracias al sistema de puntos de control y alertas. Como oportunidades de mejora, el entrevistado señaló la necesidad de recibir mensajes más claros al descargar información para el uso offline, mayor transparencia sobre el tiempo de almacenamiento y acceso a sus datos médicos, y la inclusión de una función para ver su ubicación en tiempo real y la distancia hacia el siguiente punto. A pesar de estas observaciones, el usuario concluyó que la herramienta es muy útil y que elegiría definitivamente a una agencia de turismo que utilice este sistema sobre otra que no lo haga. |
 
 #### Resultados de las tareas por segmento
 
-Para cada segmento se consolida cuántos participantes completaron cada tarea sin ayuda, siguiendo el mismo criterio de la sección 2.2.3.
+Para cada segmento se consolida cuántos participantes completaron cada tarea, según lo registrado en el resumen de cada entrevista.
 
-| Tarea | Segmento 1: completada sin ayuda | Segmento 2: completada sin ayuda | Observación principal |
+| Tarea | Seg. 1 — Agencias (n = 2) | Seg. 2 — Turistas (n = 2) | Observación principal |
 | --- | --- | --- | --- |
-| <!-- COMPLETAR: p. ej. Solicitar información desde el Landing Page --> | <!-- X de 3 (%) --> | <!-- X de 3 (%) --> | <!-- COMPLETAR --> |
+| Identificar la propuesta de valor en el Landing Page | 2 de 2 | 2 de 2 | Ambos segmentos comprendieron la propuesta de monitoreo por checkpoints en rutas sin cobertura móvil. |
+| Localizar planes y precios (Seg. 1) / beneficios para turistas (Seg. 2) | 2 de 2 | 1 de 2\* | Seg. 1: un participante identificó que una agencia con cinco grupos activos corresponde al plan Operator. |
+| Cambiar el idioma a inglés y volver a español | 2 de 2 | 1 de 2\* | Seg. 1: un participante señaló que sus mayoristas extranjeros se lo exigirían en inglés. |
+| Solicitar información o demostración (Seg. 1) / acceder a la aplicación (Seg. 2) | 1 de 2\* | 2 de 2 | Seg. 1: un participante esperaba un formulario de contacto en el Landing Page y solo encontró una dirección de correo. |
+| Iniciar sesión con la cuenta del rol asignado | 2 de 2 | 2 de 2 | — |
+| Registrar ruta y checkpoints con tiempos esperados (Seg. 1) / registrar contacto de emergencia y dar consentimiento (Seg. 2) | 2 de 2 | 1 de 2\* | Seg. 1: los dos participantes señalaron que las ventanas de tiempo se piden en minutos, mientras ellos planifican en horas. Seg. 2: un participante pidió poder ingresar por sí mismo sus datos personales y la ruta que va a recorrer. |
+| Crear grupo, asignar guía y registrar manifiesto (Seg. 1) / descargar información de la ruta offline (Seg. 2) | 2 de 2 | 1 de 2\* | Seg. 1: la lista de guías muestra solo nombres, sin un identificador para distinguir guías homónimos; un participante echó en falta un campo para datos de salud en el manifiesto. |
+| Consultar el progreso de un grupo en ruta (Seg. 1) / consultar ruta y checkpoints de la expedición (Seg. 2) | 1 de 2\* | 2 de 2 | Seg. 1: un participante no encontró una opción para exportar el historial del grupo. Seg. 2: un participante pidió ver su ubicación exacta y el progreso por tramos ya recorridos. |
 
-<!-- COMPLETAR: 2-3 párrafos que contrasten los resultados con los problemas de la sección 2.2.3 y con las Hypothesis Statements de la sección 1.2.2.3: qué se confirmó, qué no y qué se debe cambiar. -->
+En las entrevistas registradas, los participantes de ambos segmentos completaron los flujos principales del Landing Page y de las Web Applications. En el Segmento 1, las fricciones se concentran en la unidad de las ventanas de tiempo (minutos en la interfaz, horas en la planificación de las agencias) y en la identificación de guías solo por nombre, problemas clasificados en la sección 5.3.3 con severidad 3 y 2 respectivamente. En el Segmento 2, un participante pidió ver su ubicación exacta y el progreso por tramos recorridos, y otro pidió poder registrar por sí mismo sus datos personales y su ruta.
 
-> Los porcentajes corresponden a la muestra de participantes de las sesiones de validación y no representan a todas las agencias o turistas del Perú.
+> Los resultados corresponden a la muestra de participantes de las sesiones de validación y no representan a todas las agencias o turistas del Perú.
 
 ### 5.3.3. Evaluaciones según heurísticas
 
@@ -854,7 +1419,7 @@ Las heurísticas aplicadas son:
 | **SECCIÓN** | 16712 |
 | **PROFESORES** | Sánchez Seña, Alberto Wilmer |
 | **AUDITOR** | NexaTech |
-| **CLIENTE(S)** | <!-- COMPLETAR: nombres de los participantes de las sesiones --> |
+| **CLIENTE(S)** | Diego Livimoro, Luis Mendoza y Alejandro Manuel Molina Vasquez |
 
 **SITE o APP A EVALUAR:** VitalTrek: Landing Page y Web Applications.
 
@@ -864,24 +1429,24 @@ El alcance de esta evaluación incluye la revisión de la usabilidad de las sigu
 
 1. Consulta de la propuesta de valor y de los planes en el Landing Page.
 2. Cambio de idioma en el Landing Page y en la Web Application.
-3. Solicitud de información o demostración desde el Landing Page.
-4. Acceso a la Web Application desde los Call-To-Action de cada segmento.
-5. Registro de una ruta con sus checkpoints y ventanas de tiempo esperadas.
-6. Creación de un grupo de expedición y asignación de un guía.
-7. Registro del manifiesto de turistas.
-8. Consulta del progreso estimado de un grupo.
-
-<!-- COMPLETAR: ajustar a las tareas realmente evaluadas (agregar las del turista si las hay). -->
+3. Acceso a la Web Application desde los Call-To-Action de cada segmento.
+4. Registro de una ruta con sus datos geográficos y operativos.
+5. Definición de los checkpoints de una ruta y habilitación de la misma.
+6. Configuración de las ventanas de tiempo esperadas por tramo.
+7. Creación de un grupo de expedición y asignación de un guía de campo.
+8. Registro de un guía de campo y creación de su cuenta de acceso.
+9. Registro del manifiesto de turistas con el rol de guía de campo.
+10. Registro del contacto de emergencia y del consentimiento con el rol de turista.
 
 No están incluidas en esta versión de la evaluación las siguientes tareas:
 
-1. Asignación y activación de wearables.
-2. Captura offline y sincronización de telemetría en checkpoints.
-3. Evaluación de riesgo y generación de alertas.
+1. Consulta del progreso estimado de un grupo de expedición.
+2. Revisión y atención de alertas tempranas.
+3. Captura offline y sincronización de telemetría en checkpoints.
 4. Gestión de incidentes, emergencias y evacuaciones.
 5. Cierre del tour y generación del Tour Summary.
 
-<!-- COMPLETAR: quitar de esta lista lo que sí se haya implementado y evaluado. -->
+Las dos primeras corresponden a funcionalidades cuya integración con el RESTful Web Services está planificada para el siguiente Sprint, por lo que en la versión desplegada presentan el aviso correspondiente y no fueron sometidas a evaluación.
 
 **ESCALA DE SEVERIDAD:**
 
@@ -898,26 +1463,104 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
 
 | # | Problema | Escala de severidad | Heurística/Principio violada(o) |
 | :---: | --- | :---: | --- |
-| 1 | <!-- COMPLETAR --> | <!-- 1-4 --> | <!-- p. ej. Usability: Visibilidad del estado del sistema --> |
+| 1 | Las ventanas de tiempo esperadas se solicitan en minutos | 3 | Usability: Coincidencia entre el sistema y el mundo real |
+| 2 | El estado de borrador de una ruta no comunica la acción necesaria para habilitarla | 3 | Usability: Visibilidad del estado del sistema |
+| 3 | El manifiesto de turistas no admite información de salud del participante | 3 | Inclusive Design: Considera la situación |
+| 4 | La duración estimada de la ruta se solicita en horas | 2 | Usability: Coincidencia entre el sistema y el mundo real |
+| 5 | La lista de guías de campo no permite distinguir entre guías homónimos | 2 | Usability: Reconocimiento antes que recuerdo |
+| 6 | Registrar un guía de campo y crear su cuenta de acceso son dos acciones separadas | 2 | Usability: Consistencia y estándares |
 
 **DESCRIPCIÓN DE PROBLEMAS:**
 
-**PROBLEMA #1:** <!-- COMPLETAR: título del problema -->
+**PROBLEMA #1:** Las ventanas de tiempo esperadas se solicitan en minutos
 
-**Severidad:** <!-- COMPLETAR -->
-**Heurística violada:** <!-- COMPLETAR -->
+**Severidad:** 3
+**Heurística violada:** Usability: Coincidencia entre el sistema y el mundo real
 
 **Problema:**
 
-<!-- COMPLETAR: qué ocurrió, en qué tarea, cuántos participantes lo experimentaron -->
+En la tarea de configuración de las ventanas de tiempo esperadas, la pantalla solicita los campos `Tiempo mínimo (minutos)` y `Tiempo máximo (minutos)` para cada tramo entre checkpoints. Dos de los tres participantes del Segmento 1 estimaron la duración de los tramos en horas, que es la unidad con la que planifican sus itinerarios, y tuvieron que realizar la conversión mentalmente antes de completar el formulario. Uno de ellos manifestó además que la magnitud resultante le resultaba poco natural para describir un tramo de caminata, y otro indicó que un administrador sin experiencia de campo difícilmente sabría qué valor ingresar. Ninguno de los dos cometió un error de conversión, pero ambos interrumpieron la tarea para calcular.
 
-![<!-- COMPLETAR -->](../assets/images/chapter-5/validation/problema1.png)
+![Ventanas de tiempo esperadas de una ruta, con el rango de cada tramo expresado en minutos](../assets/images/chapter-5/validation/problema1.png)
 
 **Recomendación:**
 
-<!-- COMPLETAR: corrección propuesta y User Story o task del Product Backlog donde se registra -->
+Expresar las ventanas de tiempo en horas y minutos mediante dos campos independientes, o permitir el ingreso en horas con conversión automática a minutos en la capa de persistencia, conservando el modelo actual del dominio. La corrección se registra en el Product Backlog como mejora de la User Story US09, Ventanas de tiempo esperadas.
 
-<!-- COMPLETAR: repetir el bloque por cada problema de la tabla resumen -->
+**PROBLEMA #2:** El estado de borrador de una ruta no comunica la acción necesaria para habilitarla
+
+**Severidad:** 3
+**Heurística violada:** Usability: Visibilidad del estado del sistema
+
+**Problema:**
+
+Una ruta recién registrada permanece en estado `Borrador — Pendiente de puntos de control` y no puede utilizarse para crear grupos de expedición hasta que se pulse explícitamente el botón `Habilitar ruta`, ubicado en la pantalla de configuración de checkpoints. En la tarea de habilitación, un participante del Segmento 1 dio por terminada la configuración tras guardar los checkpoints y tuvo que releer la pantalla para localizar la acción pendiente. El sistema informa el estado, pero no señala con suficiente jerarquía cuál es el siguiente paso ni la consecuencia de omitirlo, que solo se descubre al intentar crear un grupo.
+
+![Pantalla de puntos de control con la ruta en estado de borrador y el botón de habilitación](../assets/images/chapter-5/validation/problema2.png)
+
+**Recomendación:**
+
+Mostrar en el listado de rutas y en la pantalla de checkpoints un indicador de progreso con los requisitos pendientes de la ruta, y anticipar en la propia tarjeta de la ruta que los grupos de expedición no podrán crearse mientras no esté habilitada. La corrección se registra en el Product Backlog como mejora de las User Stories US07, Configuración de rutas, y US08, Definición de checkpoints.
+
+**PROBLEMA #3:** El manifiesto de turistas no admite información de salud del participante
+
+**Severidad:** 3
+**Heurística violada:** Inclusive Design: Considera la situación
+
+**Problema:**
+
+En la tarea de registro del manifiesto, el guía de campo solo dispone de los campos `Nombre completo` y `Documento de identidad`, y la vista del manifiesto desde operaciones muestra únicamente el nombre, el dispositivo wearable asignado, el consentimiento y el estado de activación. Un participante del Segmento 1 buscó un campo donde consignar alergias o condiciones médicas, información que declaró recoger siempre antes de iniciar un recorrido, y manifestó que la registraría dentro del campo de nombre a falta de un espacio propio. El contacto de emergencia sí está contemplado, pero depende de que cada turista lo confirme desde su propia cuenta, de modo que el guía no tiene forma de completarlo cuando el participante no lo ha hecho. La omisión resulta especialmente relevante en el contexto de uso del producto, donde la atención de una emergencia en zona sin cobertura depende de la información que el guía lleve consigo.
+
+![Manifiesto de turistas de un grupo de expedición, sin campos de información de salud](../assets/images/chapter-5/validation/problema3.png)
+
+**Recomendación:**
+
+Incorporar al manifiesto un campo opcional de condiciones médicas relevantes y permitir que el guía de campo registre el contacto de emergencia de un participante que no lo haya confirmado desde su cuenta, con el tratamiento de datos sensibles descrito en la sección de Safety & Privacy del Landing Page. La corrección se registra en el Product Backlog como mejora de las User Stories US12, Registro del manifiesto, y US14, Registro de contacto de emergencia.
+
+**PROBLEMA #4:** La duración estimada de la ruta se solicita en horas
+
+**Severidad:** 2
+**Heurística violada:** Usability: Coincidencia entre el sistema y el mundo real
+
+**Problema:**
+
+En la tarea de registro de una ruta, el formulario solicita el campo `Duración estimada (horas)`. Un participante del Segmento 1 describió la duración de la ruta en días, que es la unidad con la que comercializa sus recorridos, y tuvo que convertirla a horas antes de continuar. El problema es de menor severidad que el anterior porque la conversión es directa y el campo se completa una sola vez por ruta, pero evidencia la misma distancia entre la unidad del sistema y la del dominio.
+
+![Formulario de registro de ruta con el campo Duración estimada expresado en horas](../assets/images/chapter-5/validation/problema4.png)
+
+**Recomendación:**
+
+Permitir el ingreso de la duración en días y horas, o mostrar bajo el campo la equivalencia calculada en días a medida que se escribe. La corrección se registra en el Product Backlog como mejora de la User Story US07, Configuración de rutas.
+
+**PROBLEMA #5:** La lista de guías de campo no permite distinguir entre guías homónimos
+
+**Severidad:** 2
+**Heurística violada:** Usability: Reconocimiento antes que recuerdo
+
+**Problema:**
+
+En la tarea de asignación de un guía a un grupo de expedición, el selector presenta únicamente el nombre de cada guía registrado. Un participante del Segmento 1, que declaró operar con quince guías, advirtió que no podría identificar con certeza a cuál está asignando si dos de ellos compartieran nombre, y señaló que en su propio sistema cada guía cuenta con un código. La tarea se completó sin error porque el conjunto de datos de la demostración es reducido, pero el riesgo se manifiesta al escalar la operación.
+
+![Selector de asignación de guía de campo, que muestra únicamente el nombre](../assets/images/chapter-5/validation/problema5.png)
+
+**Recomendación:**
+
+Añadir al selector un identificador del guía, su documento de identidad parcialmente enmascarado o el número de grupos que ya tiene asignados en el periodo, de modo que la elección pueda verificarse sin salir de la pantalla. La corrección se registra en el Product Backlog como mejora de la User Story US13, Asignación del guía.
+
+**PROBLEMA #6:** Registrar un guía de campo y crear su cuenta de acceso son dos acciones separadas
+
+**Severidad:** 2
+**Heurística violada:** Usability: Consistencia y estándares
+
+**Problema:**
+
+En la pantalla de cuentas y guías conviven dos formularios independientes: uno para registrar al guía de campo y otro para crear la cuenta de acceso que se vincula a ese guía. Un participante del Segmento 1 interpretó inicialmente que ambas acciones eran la misma y esperó que la creación de la cuenta diera de alta también al guía. Completó la tarea tras releer la pantalla, pero la relación entre las dos entidades no resulta evidente a primera vista.
+
+![Pantalla de cuentas y guías con los formularios de creación de cuenta y de registro de guía separados](../assets/images/chapter-5/validation/problema6.png)
+
+**Recomendación:**
+
+Presentar ambos formularios como pasos consecutivos de un mismo flujo de alta de guía, o permitir crear la cuenta directamente desde el guía recién registrado mediante una acción contextual. La corrección se registra en el Product Backlog como mejora de la User Story US13, Asignación del guía.
 
 ## 5.4. Video About-the-Product
 
@@ -926,9 +1569,9 @@ El Video About-the-Product presenta VitalTrek a los visitantes del Landing Page 
 | Elemento | Información |
 | --- | --- |
 | Nombre del video | upc-pre-202620-1asi0730-16712-nexatech-about-the-product-sprint-3 |
-| Duración | <!-- COMPLETAR: mm:ss (entre 1 y 3 minutos) --> |
-| Microsoft Stream | [Ver video](<!-- COMPLETAR -->) |
-| YouTube (incrustado en el Landing Page) | [Ver video](<!-- COMPLETAR -->) |
+| Duración | <!-- COMPLETAR: mm:ss --> |
+| Microsoft Stream | [Ver video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312566_upc_edu_pe/IQAjsBrslu3MR7By39Fu-BsFAfiB4yq24hk4wPA72_Q76yM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=iGJMnP) |
+| YouTube (incrustado en el Landing Page) | [Ver video](https://youtu.be/dLyAscgf9Uw) |
 
 ![Captura del Video About-the-Product](../assets/images/chapter-5/about-the-product.png)
 <!-- COMPLETAR: captura representativa -->
