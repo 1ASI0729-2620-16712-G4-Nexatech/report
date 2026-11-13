@@ -162,11 +162,12 @@
 - [Bibliografía](docs/Bibliografia.md)
 - [Anexos](docs/Anexos.md)
   - [Anexo A. Videos de entrevistas de descubrimiento](docs/Anexos.md#anexo-a-videos-de-entrevistas-de-descubrimiento)
-  - [Anexo B. Materiales de descubrimiento, diseño y arquitectura](docs/Anexos.md#anexo-b-materiales-de-descubrimiento-diseño-y-arquitectura)
-  - [Anexo C. Repositorios, tablero y despliegue](docs/Anexos.md#anexo-c-repositorios-tablero-y-despliegue)
-  - [Anexo D. Herramientas utilizadas](docs/Anexos.md#anexo-d-herramientas-utilizadas)
-  - [Anexo E. Fuentes consultadas](docs/Anexos.md#anexo-e-fuentes-consultadas)
-  - [Anexo F. Videos de Exposiciones](docs/Anexos.md#anexo-f-videos-de-exposiciones)
+  - [Anexo B. Materiales de descubrimiento, diseño y arquitectura (Capítulos I a IV)](docs/Anexos.md#anexo-b-materiales-de-descubrimiento-diseño-y-arquitectura-capítulos-i-a-iv)
+  - [Anexo C. Repositorios, despliegue y evidencias por Sprint (Capítulo V)](docs/Anexos.md#anexo-c-repositorios-despliegue-y-evidencias-por-sprint-capítulo-v)
+  - [Anexo D. Videos de validación y del producto (Capítulo V)](docs/Anexos.md#anexo-d-videos-de-validación-y-del-producto-capítulo-v)
+  - [Anexo E. Herramientas utilizadas](docs/Anexos.md#anexo-e-herramientas-utilizadas)
+  - [Anexo F. Fuentes consultadas](docs/Anexos.md#anexo-f-fuentes-consultadas)
+  - [Anexo G. Videos de Exposiciones](docs/Anexos.md#anexo-g-videos-de-exposiciones)
 
 ## Student Outcome
 
