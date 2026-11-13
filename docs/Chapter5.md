@@ -1334,7 +1334,7 @@ En esta sección se presentan los registros de las entrevistas de validación re
 | **Duración de la entrevista** | 09:56 min |
 | **Resumen** | Luis completó las quince tareas propuestas. En el Landing Page comprendió la propuesta de monitoreo por puntos de control en rutas sin cobertura y la relacionó con su propia operación, identificó en la sección de planes que una agencia con cinco grupos activos corresponde al plan Operator de S/ 199 por incluir hasta ocho grupos y las alertas tempranas, verificó el cambio de idioma entre español e inglés y consultó las preguntas frecuentes para confirmar que la solución no funciona como un rastreador GPS continuo sino por sincronización en checkpoints. En las Web Applications ingresó por el acceso de operaciones de la agencia, leyó el panel de operaciones para identificar cuántas rutas están registradas y cuántas habilitadas, y utilizó los filtros de dificultad y estado del listado de rutas. Registró la ruta Trekking Santa Cruz con sus datos geográficos y operativos, agregó sus tres puntos de control ordenados, habilitó la ruta, configuró las ventanas de tiempo esperadas de cada tramo y creó el grupo Grupo Santa Cruz Diciembre con fecha de salida 18/12/2026 y capacidad 12. Luego registró un guía de campo, le creó su cuenta de acceso vinculándola al guía y lo asignó al grupo; finalmente, con el rol de guía de campo, accedió al espacio de campo y registró a los participantes en el manifiesto. Señaló tres fricciones: el campo de duración de la ruta se expresa en horas mientras que él planifica en días, las ventanas de tiempo se piden en minutos cuando maneja horas, y dar de alta a un guía y crear su cuenta de acceso son dos acciones separadas que al inicio interpretó como una sola. También indicó que esperaba un formulario de contacto en el Landing Page y solo encontró una dirección de correo, y que echa en falta un campo para datos de salud o contacto de emergencia en el manifiesto. En su apreciación general valoró que la configuración se hace una sola vez y queda guardada, frente a su práctica actual de armar cada tour desde cero en una hoja de cálculo, y recomendaría el producto a agencias que operen rutas de varios días. |
 
-<!-- COMPLETAR: repetir la tabla para las entrevistas #4 y #5 -->
+
 
 #### Segmento 2: Turistas de Aventura
 
@@ -1366,13 +1366,23 @@ En esta sección se presentan los registros de las entrevistas de validación re
 | **Duración de la entrevista** | 06:06 min |
 | **Resumen** | Fernando (22 años), quien cuenta con experiencia en rutas de trekking sin cobertura móvil, revisó la landing page de Vital Trek y la describió como visualmente atractiva, intuitiva y bien organizada por secciones, sin encontrar dificultades para navegarla; comprendió claramente la propuesta de expediciones sincronizadas y la generación de puntos de control (checkpoints) para resguardar su ubicación y evitar extravíos al perder la señal. En la aplicación, ingresó bajo el perfil de aventurero (con datos precargados de prueba), revisó el resumen del recorrido, la configuración del contacto de emergencia (nombre, teléfono y parentesco) y el mapa con las coordenadas exactas de parada y alojamiento, entendiendo qué información registra el sistema y con qué finalidad. Valoró especialmente la seguridad de conservar sus coordenadas exactas sin conexión y afirmó que viajaría más tranquilo si su agencia usara la plataforma, aunque señaló como mejora la posibilidad de ingresar manualmente sus propios datos personales (como nombre y edad) y registrar por sí mismo la ruta que va a recorrer. Finalmente, indicó que sí recomendaría a una agencia implementar la versión final de la aplicación para garantizar la seguridad de los turistas de aventura. |
 
-<!-- COMPLETAR: repetir la tabla para las entrevistas #2 y #3 (hasta #5) -->
+| **Entrevista #3** | |
+| --- | --- |
+| **Nombre** | Carlos Alberto |
+| **Apellidos** | Lopez Goitia |
+| **Edad** | 23 años |
+| **Distrito** | San Miguel, Lima |
+| **Rol** | Turista de aventura |
+| **Dispositivo y navegador** | Google Chrome |
+| **Evidencias** | ![Entrevista de validación 3 del segmento 2](../assets/images/chapter-5/validation/Validacion3Segmento2.png) |
+| **Link** | [Ver Video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241a827_upc_edu_pe/IQAvM46LEaCHSLOW1p5uLFBmAd7UmOpD7urno9J8sijX9tM?e=eXWKXB) |
+| **Timing donde inicia la entrevista** | 00:00 min |
+| **Duración de la entrevista** | 06:37 min |
+| **Resumen** | En la entrevista de usabilidad del prototipo de VitalTrek, una plataforma de monitoreo y seguridad para turistas de aventura en zonas sin cobertura, el usuario valoró positivamente la aplicación, destacando que le brindaría mucha mayor tranquilidad al viajar gracias al sistema de puntos de control y alertas. Como oportunidades de mejora, el entrevistado señaló la necesidad de recibir mensajes más claros al descargar información para el uso offline, mayor transparencia sobre el tiempo de almacenamiento y acceso a sus datos médicos, y la inclusión de una función para ver su ubicación en tiempo real y la distancia hacia el siguiente punto. A pesar de estas observaciones, el usuario concluyó que la herramienta es muy útil y que elegiría definitivamente a una agencia de turismo que utilice este sistema sobre otra que no lo haga. |
 
 #### Resultados de las tareas por segmento
 
 Para cada segmento se consolida cuántos participantes completaron cada tarea, según lo registrado en el resumen de cada entrevista.
-
-*Nota: el Segmento 1 considera 2 de 3 entrevistas registradas (la entrevista #1 está pendiente) y el Segmento 2, 2 de 3 (la entrevista #3 está pendiente). En el Segmento 1, Diego Livimoro completó sus tareas sin ayuda; el resumen de Luis Mendoza no indica si requirió ayuda. En el Segmento 2, Alejandro Manuel Molina Vasquez completó las tareas siguiendo indicaciones paso a paso del entrevistador. El asterisco (\*) indica que el resumen de uno de los participantes no registra esa tarea. La tabla se actualizará al concluir todas las sesiones.*
 
 | Tarea | Seg. 1 — Agencias (n = 2) | Seg. 2 — Turistas (n = 2) | Observación principal |
 | --- | --- | --- | --- |
